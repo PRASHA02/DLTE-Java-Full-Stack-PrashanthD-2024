@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5487b751-0b88-4073-9cab-3184cd1a559c" name="Default Changelist" comment="" />
+    <list default="true" id="6d57656f-62c1-414b-8d95-caa57940cd37" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/basics/services/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/basics/services/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DLTE-java-001-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/DLTE-java-001-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/basics/services/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/basics/services/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-basics.services.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-basics.services.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/basics.services.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/basics.services.AppTest.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="2cQwGxltIUzNty5Aa9QHZgQ8Ukr" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2cRUYYB0KNeYCJCk28OqLoGHXE1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -15,6 +35,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
@@ -35,12 +56,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5487b751-0b88-4073-9cab-3184cd1a559c" name="Default Changelist" comment="" />
-      <created>1708057017121</created>
+      <changelist id="6d57656f-62c1-414b-8d95-caa57940cd37" name="Default Changelist" comment="" />
+      <created>1708073932766</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1708057017121</updated>
-      <workItem from="1708057023855" duration="3455000" />
+      <updated>1708073932766</updated>
+      <workItem from="1708073935385" duration="1090000" />
     </task>
     <servers />
   </component>
@@ -48,21 +69,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1202" height="145" key="GridCell.Tab.0.bottom" timestamp="1708065921466">
+    <state width="1237" height="161" key="GridCell.Tab.0.bottom" timestamp="1708073992923">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
-    <state width="1202" height="145" key="GridCell.Tab.0.bottom/0.0.1280.672@0.0.1280.672" timestamp="1708065921466" />
-    <state width="1202" height="145" key="GridCell.Tab.0.center" timestamp="1708065921466">
+    <state width="1237" height="161" key="GridCell.Tab.0.bottom/0.0.1280.672@0.0.1280.672" timestamp="1708073992923" />
+    <state width="1237" height="161" key="GridCell.Tab.0.center" timestamp="1708073992923">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
-    <state width="1202" height="145" key="GridCell.Tab.0.center/0.0.1280.672@0.0.1280.672" timestamp="1708065921466" />
-    <state width="1202" height="145" key="GridCell.Tab.0.left" timestamp="1708065921466">
+    <state width="1237" height="161" key="GridCell.Tab.0.center/0.0.1280.672@0.0.1280.672" timestamp="1708073992923" />
+    <state width="1237" height="161" key="GridCell.Tab.0.left" timestamp="1708073992909">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
-    <state width="1202" height="145" key="GridCell.Tab.0.left/0.0.1280.672@0.0.1280.672" timestamp="1708065921466" />
-    <state width="1202" height="145" key="GridCell.Tab.0.right" timestamp="1708065921466">
+    <state width="1237" height="161" key="GridCell.Tab.0.left/0.0.1280.672@0.0.1280.672" timestamp="1708073992909" />
+    <state width="1237" height="161" key="GridCell.Tab.0.right" timestamp="1708073992923">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
-    <state width="1202" height="145" key="GridCell.Tab.0.right/0.0.1280.672@0.0.1280.672" timestamp="1708065921466" />
+    <state width="1237" height="161" key="GridCell.Tab.0.right/0.0.1280.672@0.0.1280.672" timestamp="1708073992923" />
+    <state x="349" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1708073937393">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="349" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.672@0.0.1280.672" timestamp="1708073937393" />
   </component>
 </project>

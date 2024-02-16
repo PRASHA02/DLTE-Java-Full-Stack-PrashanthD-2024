@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>basics.services</groupId>
-  <artifactId>DLTE-java-001</artifactId>
+  <artifactId>DLTE-Java-001</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>DLTE-java-001</name>
+  <name>DLTE-Java-001</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -51,6 +51,15 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <mainClass>
+                  basics.services.App
+                </mainClass>
+              </manifest>
+            </archive>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
