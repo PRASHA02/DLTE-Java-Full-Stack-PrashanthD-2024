@@ -14,15 +14,21 @@ public class CreditCardAnalysis {
                 new CreditCard(8765678764545L,"Vignesh",new Date(2031,5,15),455,80000,new Date(2024,3,10),new Date(2024,03,11),9764),
                 new CreditCard(1234565456767L,"Akash",new Date(2032,8,11),767,800000,new Date(2024,3,18),new Date(2024,03,29),1645),
         };
+
+        //creating an instance for a class
+        CreditCardAnalysis analysis=new CreditCardAnalysis();
+
         int limit,day,mpin,date;
 
         //limit customers
         System.out.println("Enter the limit");
         limit = scanner.nextInt();
+        analysis.limitCustomers(Bank,limit);
 
         //billpayment
         System.out.println("Enter the day");
         day = scanner.nextInt();
+        analysis.billPayment(Bank,day);
 
         //Update mpin
         long creditCardNo;
@@ -30,17 +36,10 @@ public class CreditCardAnalysis {
         creditCardNo = scanner.nextLong();
         System.out.println("Enter the  mpin number");
         mpin = scanner.nextInt();
-
+        analysis.updatePin(Bank,creditCardNo,mpin);
         //update limit
         System.out.println("Enter the date to updated in Customer bill generation");
         date = scanner.nextInt();
-
-        //creating an instance for a class
-        CreditCardAnalysis analysis=new CreditCardAnalysis();
-
-        analysis.limitCustomers(Bank,limit);
-        analysis.billPayment(Bank,day);
-        analysis.updatePin(Bank,creditCardNo,mpin);
         analysis.limitUpdate(Bank,date);
     }
 
