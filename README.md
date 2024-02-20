@@ -1,0 +1,5 @@
+Tietoevry Internship project structure
+
+
+
+
