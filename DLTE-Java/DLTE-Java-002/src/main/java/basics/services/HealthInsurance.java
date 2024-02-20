@@ -11,6 +11,7 @@ public class HealthInsurance {
         for(int i=0;i<health.length;i++){
             if(health[i].equalsIgnoreCase(matchingString)){
                 System.out.println("Your health insurance position is "+i);
+                scanner.close();
                 return;
             }
         }
