@@ -2,7 +2,7 @@
 
 project File Structure </br>
 DLTE-TopicName </br>
-  DLTE-TopicName-Task Number
+DLTE-TopicName-Task Number
   
 <h2>Agile Methodology</h2>
 DLTE-Report</br>
