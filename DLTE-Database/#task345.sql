@@ -14,20 +14,25 @@ insert into transaction(transactiondate,amount,recieptant,remarks) values('09feb
 
 --1.Filter based on given range of data
 
-select * from transaction where transactiondate between '09feb24' and '09feb29';
+create view range as select * from transaction where transactiondate between '09feb24' and '09feb29';
+select * from range;
 
 --2.least amount transferred
 
-select min(amount) as minimumamount from transaction;
+create view leastamount as select min(amount) as minimumamount from transaction;
+select * from leastamount;
 
 --3.Maximum amount transferred
 
-select max(amount) as maxamount from transaction;
+create view maxamount as select max(amount) as maxamount from transaction;
+select * from maxamount;
 
 --4.Number of Transaction made to particular beneficiary
 
-select recieptant as beneficiaryName,amount as transactionamount from transaction where recieptant='prashanth';
+create view beneficiary as select recieptant as beneficiaryName,amount as transactionamount from transaction where recieptant='prashanth';
+select * from beneficiary;
 
 --5.Filter based on particular remarks
 
-select * from transaction where remarks='education';
+create view arrangeremarks as select * from transaction where remarks='education';
+select * from arrangeremarks;
