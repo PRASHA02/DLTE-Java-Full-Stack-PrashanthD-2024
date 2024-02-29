@@ -58,6 +58,7 @@ public class TransactionAnalysis {
                 System.out.println(each.getDate().getDate()+" "+each.getTransactionAmount()+" "+each.getReceipt()+" "+each.getRemarks());
             }
         }
+
     }
     public void leastAmountTransfered(TransactionClass[] amount){
         Double min = amount[0].getTransactionAmount();

@@ -2,7 +2,7 @@ package basics.abstracts;
 
 import java.util.Scanner;
 
-public class BankTest implements bank {
+public class BankTest implements Bank {
     Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {

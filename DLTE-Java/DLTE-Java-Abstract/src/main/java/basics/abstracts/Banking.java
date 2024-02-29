@@ -30,6 +30,7 @@ class Test {
     public static void main(String[] args) {
         NetBanking bank = new NetBanking();
         bank.payment();
+
         MobileBanking banking = new MobileBanking();
         banking.payment();
     }

@@ -6,8 +6,18 @@ package basics.services;
  */
 public class App
 {
+    BankBondsAnalysis bank;
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        App app = new App();
+        app.test();
+    }
+
+    public void test(){
+        String sample = null;
+        System.out.println("Hello world "+sample);
+    }
+    public void employee(){
+
     }
 }
