@@ -20,15 +20,12 @@ class ThreadRunnable implements Runnable{
 public class Main {
 
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws InterruptedException {
             ThreadExtends thread1 = new ThreadExtends();
             ThreadExtends thread2 = new ThreadExtends();
             thread1.start();
             thread2.start();
-
             Thread.sleep(1000);
-
-
             ThreadRunnable run = new ThreadRunnable();
             Thread run1 = new Thread(run);
             Thread run2 = new Thread(run);

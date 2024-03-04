@@ -3,9 +3,11 @@ package oops.exceptions;
 import java.util.ResourceBundle;
 
 public class MyBankException extends RuntimeException{
+    public MyBankException() {
+    }
 
-    MyBankException(){
-        super(ResourceBundle.getBundle("application").getString("exception.wrong"));
+    public MyBankException(String message){
+        super(ResourceBundle.getBundle("application").getString(message));
     }
 
 }

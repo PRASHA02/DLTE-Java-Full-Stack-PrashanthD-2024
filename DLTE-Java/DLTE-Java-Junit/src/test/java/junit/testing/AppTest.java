@@ -2,9 +2,10 @@ package junit.testing;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,17 +19,17 @@ public class AppTest
      * Rigorous Test :-)
      */
     static List<Integer> myNumbers;
-    @BeforeAll
-    static void initiate(){
+    @Before
+    public void initiate(){
         myNumbers = Arrays.asList(12,10,5,4,9);
     }
 
-    @BeforeEach
-    void verify(){
+    @BeforeClass
+    public static void verify(){
         System.out.println(myNumbers);
     }
     @Test
-    void readTest(){
-        assertTrue(myNumbers.size()<0);
+    public void readTest(){
+        Assert.assertTrue(myNumbers.size()<0);
     }
 }
