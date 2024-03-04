@@ -4,12 +4,12 @@ import java.util.*;
 
 public abstract  class Generics {
     public static  void main(String[] args) {
-        Test test = new Test();
-        ArrayList<Test> arrayList = new ArrayList<>();
-        arrayList.add(new Test(22));
-        for(Test each:arrayList){
-            System.out.println("My Age is "+each.getAge());
-        }
+          Test test = new Test();
+//        ArrayList<Test> arrayList = new ArrayList<>();
+//        arrayList.add(new Test(22));
+//        for(Test each:arrayList){
+//            System.out.println("My Age is "+each.getAge());
+//        }
 
 //        arrayList.add("name");
 //        System.out.println(arrayList.get(0));
@@ -31,6 +31,7 @@ public abstract  class Generics {
 //           linkedList.add(2,"gender");
 //           linkedList.forEach(System.out::println);
 //
+
            Sample<Integer> sampleInteger = new Sample<>(10);
            Sample<String> sampleString = new Sample<>("Name: Prashanth");
            System.out.println(sampleInteger.getTask());
@@ -64,6 +65,7 @@ class Test{
     }
 }
 
+
 class Sample<T>{
     private  T task;
 
@@ -73,5 +75,12 @@ class Sample<T>{
 
     public T getTask() {
         return task;
+    }
+}
+
+class BoxType<T>{
+    private  T type;
+    public  BoxType(T type){
+        this.type = type;
     }
 }
