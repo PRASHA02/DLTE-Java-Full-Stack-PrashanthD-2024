@@ -1,6 +1,8 @@
 package technical.review;
 
-public class EmployeeAddress extends Employee{
+import java.io.Serializable;
+
+public class EmployeeAddress implements Serializable {
     private String address;
     private String houseName;
     private String streetName;

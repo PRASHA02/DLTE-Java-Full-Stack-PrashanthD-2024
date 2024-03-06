@@ -1,8 +1,9 @@
 package technical.review;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Employee {
+public class Employee implements Serializable {
    private String firstName;
    private String middleName;
    private String lastName;

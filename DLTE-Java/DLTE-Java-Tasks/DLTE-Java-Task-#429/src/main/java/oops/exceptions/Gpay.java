@@ -51,12 +51,16 @@ public class Gpay extends Accounts {
         System.out.println("Enter the mPin");
         Integer mPin = scanner.nextInt();
          while(true && attempt<=4){
-
-             if(validPin(mPin)){
-
-                payBill();
-                return;
-             }else{
+             try{
+                 if(validPin(mPin)){
+                     try{
+                         payBill();
+                     }catch(MyBankException e){
+                         System.out.println(resourceBundle.getString("insufficient.balance"));
+                     }
+                     return;
+                 }
+             }catch(MyBankException e){
                  attempt++;
                  if(attempt<5){
                      logger.log(Level.WARNING,resourceBundle.getString("exception.retry"));
@@ -64,16 +68,18 @@ public class Gpay extends Accounts {
                      mPin = scanner.nextInt();
                      continue;
                  }
+                 if(attempt>=5){
+                     logger.log(Level.SEVERE,resourceBundle.getString("max.try"));
+                     throw new MyBankException("Account Blocked");
+                 }
              }
-             if(attempt>=5){
-                 logger.log(Level.SEVERE,resourceBundle.getString("max.try"));
-                 throw new MyBankException("Account Blocked");
-             }
+
+
         }
 
     }
 
-    public static void payBill() throws MyBankException{
+    public static void payBill(){
         scanner.nextLine();
         System.out.println("Enter the Biller Name");
         String billedName = scanner.nextLine();
@@ -84,17 +90,19 @@ public class Gpay extends Accounts {
 
             if(gPay.getAccountBalance()-billedAmount>=0){
                 gPay.setAccountBalance(gPay.getAccountBalance()-billedAmount);
+                logger.log(Level.INFO,resourceBundle.getString("payment.successfull"));
                 System.out.println("Payment successfully done By "+billedName+" of amount "+billedAmount+" and your current account balance is "+gPay.getAccountBalance());
             }else{
-                System.out.println("Insufficient Balance.");
-                throw new MyBankException(resourceBundle.getString("insufficient.balance"));
+                logger.log(Level.SEVERE,resourceBundle.getString("insufficient.funds"));
+                throw new MyBankException();
             }
         }
-    static Boolean validPin(Integer mPin) {
+    static Boolean validPin(Integer mPin){
         if(gPay.getUpiPin().equals(mPin)){
+            logger.log(Level.INFO,resourceBundle.getString("mpin.successful"));
             return true;
         }else{
-            return false;
+            throw new MyBankException();
         }
     }
 }

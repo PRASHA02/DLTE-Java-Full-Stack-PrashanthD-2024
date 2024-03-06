@@ -46,27 +46,37 @@ public class CustomerSupport {
     }
     public void creditCardLimit(CreditCard[] creditCardLimit){
         CreditCard temp = null;
-        for(int select=0;select<creditCardLimit.length-1;select++){
-            for (int next =select+1;next<creditCardLimit.length;next++){
-              if(creditCardLimit[select].getCreditCardLimit().compareTo(creditCardLimit[next].getCreditCardLimit())<0){
-                  temp = creditCardLimit[select];
-                  creditCardLimit[select] = creditCardLimit[next];
-                  creditCardLimit[next] = temp;
-              }
+        try {
+            for (int select = 0; select < creditCardLimit.length - 1; select++) {
+                for (int next = select + 1; next < creditCardLimit.length; next++) {
+                    if (creditCardLimit[select].getCreditCardLimit().compareTo(creditCardLimit[next].getCreditCardLimit()) < 0) {
+                        temp = creditCardLimit[select];
+                        creditCardLimit[select] = creditCardLimit[next];
+                        creditCardLimit[next] = temp;
+                    }
 
+                }
             }
-        }
-        for(CreditCard each:creditCardLimit){
-            System.out.println("The Card limit is "+each);
+            for (CreditCard each : creditCardLimit) {
+                System.out.println("The Card limit is " + each);
+            }
+        }catch(MyBankCreditCardException e){
+            throw new MyBankCreditCardException(resourceBundle.getString("limit.exception"));
         }
 
     }
 
     public void creditCardBillPayment(CreditCard[] creditCard,Date start,Date end){
-        for(CreditCard each:creditCard){
-            if (each.getDateOfBillGeneration().getDate() >= start.getDate() && each.getDateOfBillGeneration().getDate() <= end.getDate()) {
-                System.out.println(each.getCreditCardHolder() + " " + each.getDateOfBillGeneration().getDate());
+        try{
+            for(CreditCard each:creditCard){
+                if (each.getDateOfBillGeneration().getDate() >= start.getDate() && each.getDateOfBillGeneration().getDate() <= end.getDate()) {
+                    System.out.println(each.getCreditCardHolder() + " " + each.getDateOfBillGeneration().getDate());
+                }
             }
+        }catch(MyBankCreditCardException e){
+            throw new MyBankCreditCardException(resourceBundle.getString("bill.exception"));
+
         }
+
     }
 }
