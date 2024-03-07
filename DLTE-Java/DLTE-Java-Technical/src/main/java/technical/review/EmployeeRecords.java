@@ -163,21 +163,21 @@ public class EmployeeRecords implements EmployeeDetailsInterface{
                 System.out.println(employeeOutput);
                 System.out.println("\nEmployee " + (counter + 1) + " Permanent Details ");
                 System.out.println(employeePermanentOutput);
-//                permanentAddress = employeePermanentOutput.get(counter);
-//                System.out.println("Employee House Name: " + permanentAddress.getHouseName());
-//                System.out.println("Employee Street Name: " + permanentAddress.getStreetName());
-//                System.out.println("Employee City Name: " + permanentAddress.getCityName());
-//                System.out.println("Employee State Name: " + permanentAddress.getStateName());
-//                System.out.println("Employee Pin Code :" + permanentAddress.getPinCode());
+                permanentAddress = employeePermanentOutput.get(counter);
+                System.out.println("Employee House Name: " + permanentAddress.getHouseName());
+                System.out.println("Employee Street Name: " + permanentAddress.getStreetName());
+                System.out.println("Employee City Name: " + permanentAddress.getCityName());
+                System.out.println("Employee State Name: " + permanentAddress.getStateName());
+                System.out.println("Employee Pin Code :" + permanentAddress.getPinCode());
 //
 //
-//                System.out.println("\nEmployee " + (counter + 1) + " Temporary Details ");
-//                tempAddress = employeeTemporaryOutput.get(counter);
-//                System.out.println("Employee House Name: " + tempAddress.getHouseName());
-//                System.out.println("Employee Street Name: " + tempAddress.getStreetName());
-//                System.out.println("Employee City Name: " + tempAddress.getCityName());
-//                System.out.println("Employee State Name: " + tempAddress.getStateName());
-//                System.out.println("Employee Pin Code :" + tempAddress.getPinCode());
+                System.out.println("\nEmployee " + (counter + 1) + " Temporary Details ");
+                tempAddress = employeeTemporaryOutput.get(counter);
+                System.out.println("Employee House Name: " + tempAddress.getHouseName());
+                System.out.println("Employee Street Name: " + tempAddress.getStreetName());
+                System.out.println("Employee City Name: " + tempAddress.getCityName());
+                System.out.println("Employee State Name: " + tempAddress.getStateName());
+                System.out.println("Employee Pin Code :" + tempAddress.getPinCode());
 //                objects.add(emp);
 //                objects.add(permanentAddress);
 //                objects.add(tempAddress);
