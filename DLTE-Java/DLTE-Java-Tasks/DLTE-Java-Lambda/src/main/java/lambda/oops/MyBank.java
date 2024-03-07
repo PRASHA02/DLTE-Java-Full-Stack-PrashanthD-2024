@@ -1,10 +1,9 @@
 package lambda.oops;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public interface MyBank {
 
-    void addNewLoan();
-    void checkAvailableLoans();
-    void checkClosedLoans();
+    void filterDates(Date start,Date end);
 }

@@ -2,10 +2,13 @@ package oops.exceptions;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
+import java.io.IOException;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class Gpay extends Accounts {
     static Scanner scanner = new Scanner(System.in);
@@ -43,7 +46,7 @@ public class Gpay extends Accounts {
     static ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
     static Logger logger= Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
          System.out.println("Welcome to Mobile Banking");
          Gpay gpay = new Gpay();
@@ -56,7 +59,8 @@ public class Gpay extends Accounts {
                      try{
                          payBill();
                      }catch(MyBankException e){
-                         System.out.println(resourceBundle.getString("insufficient.balance"));
+                         logger.log(Level.SEVERE,resourceBundle.getString("insufficient.funds"));
+                         System.out.println("Insufficient balance");
                      }
                      return;
                  }
@@ -73,9 +77,9 @@ public class Gpay extends Accounts {
                      throw new MyBankException("Account Blocked");
                  }
              }
-
-
         }
+
+
 
     }
 
@@ -93,7 +97,6 @@ public class Gpay extends Accounts {
                 logger.log(Level.INFO,resourceBundle.getString("payment.successfull"));
                 System.out.println("Payment successfully done By "+billedName+" of amount "+billedAmount+" and your current account balance is "+gPay.getAccountBalance());
             }else{
-                logger.log(Level.SEVERE,resourceBundle.getString("insufficient.funds"));
                 throw new MyBankException();
             }
         }

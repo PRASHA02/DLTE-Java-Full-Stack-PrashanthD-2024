@@ -69,4 +69,16 @@ public class Loan {
         this.borrowerName = borrowerName;
         this.borrowerNumber = borrowerNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Loan{" +
+                "loanNumber=" + loanNumber +
+                ", loanAmount=" + loanAmount +
+                ", loanDate=" + loanDate +
+                ", loanStatus='" + loanStatus + '\'' +
+                ", borrowerName='" + borrowerName + '\'' +
+                ", borrowerNumber=" + borrowerNumber +
+                '}';
+    }
 }
