@@ -9,7 +9,7 @@ public class TransactionScheduler {
     public static void main(String[] args) {
         TransactionClass transactionAnalysis =new TransactionClass();
         ScheduledExecutorService service= Executors.newScheduledThreadPool(1);
-        ScheduledFuture future=service.scheduleAtFixedRate(transactionAnalysis,2,5, TimeUnit.SECONDS);
+        ScheduledFuture future=service.scheduleAtFixedRate(transactionAnalysis,5,5, TimeUnit.SECONDS);
         service.schedule(new Runnable() {
             @Override
             public void run() {
