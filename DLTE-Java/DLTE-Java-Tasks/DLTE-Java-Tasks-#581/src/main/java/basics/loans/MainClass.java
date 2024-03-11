@@ -1,20 +1,24 @@
 package basics.loans;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import sun.applet.Main;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MainClass implements MyBank {
 
+    static Logger logger = LoggerFactory.getLogger(MainClass.class);
+
+    static ResourceBundle resourceBundle = ResourceBundle.getBundle("loan");
+
     static ArrayList<LoanProduct> arrayListLoanProduct = new ArrayList<>();
 
     public static void main(String[] args) {
+//        System.setProperty("system.output.ansi.enabled","always");
         Scanner scanner = new Scanner(System.in);
         MainClass mainClass = new MainClass();
          LoanProduct[] loan = {
@@ -24,6 +28,7 @@ public class MainClass implements MyBank {
         };
          arrayListLoanProduct.addAll(Stream.of(loan).collect(Collectors.toList()));
          mainClass.writeFile();
+         logger.info(resourceBundle.getString("write.successful"));
          while(true){
              System.out.println("Welcome to My Banking");
              System.out.println("1->Add New Loan");
@@ -54,6 +59,7 @@ public class MainClass implements MyBank {
                      mainClass.addNewLoan(new LoanProduct(loanNumber,loanAmount,date,status,name,mobileNumber));
                      break;
                  case 2:mainClass.availableLoans();
+                        logger.info(resourceBundle.getString("available.loans"));
                         break;
                  case 3: mainClass.closedLoans();
                         break;

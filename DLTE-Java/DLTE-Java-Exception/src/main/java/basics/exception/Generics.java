@@ -78,9 +78,9 @@ class Sample<T>{
     }
 }
 
-class BoxType<T>{
-    private  T type;
-    public  BoxType(T type){
-        this.type = type;
-    }
-}
+//class BoxType<T>{
+//    private  T type;
+//    public  BoxType(T type){
+//        this.type = type;
+//    }
+//}

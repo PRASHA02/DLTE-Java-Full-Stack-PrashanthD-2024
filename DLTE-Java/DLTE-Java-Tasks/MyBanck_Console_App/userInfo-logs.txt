@@ -1,0 +1,22 @@
+Mar 05, 2024 8:57:18 AM org.example.Middleware.UserInformationFileRepository validateUser
+INFO: Username validated
+Mar 05, 2024 8:59:11 AM org.example.Middleware.UserInformationFileRepository DepositAmountInto
+INFO: Amount deposited
+Mar 05, 2024 9:00:47 AM org.example.Middleware.UserInformationFileRepository validateUser
+INFO: Username validated
+Mar 05, 2024 9:50:58 AM org.example.Middleware.UserInformationFileRepository validateUser
+INFO: The username entered is invalid
+Mar 05, 2024 9:52:17 AM org.example.Middleware.UserInformationFileRepository validateUser
+INFO: The username entered is invalid
+Mar 05, 2024 9:52:21 AM org.example.Middleware.UserInformationFileRepository validateUser
+INFO: Username validated
+Mar 05, 2024 9:52:40 AM org.example.Middleware.UserInformationFileRepository DepositAmountInto
+INFO: Amount deposited
+Mar 11, 2024 9:48:05 AM org.example.Middleware.UserInformationFileRepository validateUser
+INFO: Username validated
+Mar 11, 2024 9:48:51 AM org.example.Middleware.UserInformationFileRepository DepositAmountInto
+INFO: Amount deposited
+Mar 11, 2024 11:38:02 AM org.example.Middleware.UserInformationFileRepository validateUser
+INFO: Username validated
+Mar 11, 2024 11:45:57 AM org.example.Middleware.UserInformationFileRepository validateUser
+INFO: The username entered is invalid
