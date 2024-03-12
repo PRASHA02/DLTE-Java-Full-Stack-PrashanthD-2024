@@ -1,10 +1,11 @@
 package application.db.Services;
 
+import application.db.Entities.Customer;
 import application.db.Exception.UserNotFoundException;
 import application.db.Remotes.StorageTarget;
 import application.db.Remotes.UserInfoRepository;
-import org.example.Entities.Customer;
 
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class UserInfoServices {
@@ -15,18 +16,18 @@ public class UserInfoServices {
         userInfoRepository = storageTarget.getUserInfoRepository();
     }
 
-    public Customer callValidateUser(String userName){
+    public Customer callValidateUser(String userName,String password) throws SQLException {
         try{
-            return userInfoRepository.validateUser(userName);
-        }catch(UserNotFoundException userNotFoundException){
+            return userInfoRepository.validateUser(userName,password);
+        }catch(UserNotFoundException | SQLException userNotFoundException){
             throw userNotFoundException;
         }
     }
 
-    public void callDepositAmountInto(String userName,Long amount){
+    public void callDepositAmountInto(String userName,String password,Long amount){
         try{
 
-            userInfoRepository.DepositAmountInto(userName,amount);
+            userInfoRepository.DepositAmountInto(userName,password,amount);
         }catch(UserNotFoundException userNotFoundException){
             throw userNotFoundException;
         }

@@ -1,0 +1,2 @@
+Mar 12, 2024 5:01:25 PM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: inserted successfully

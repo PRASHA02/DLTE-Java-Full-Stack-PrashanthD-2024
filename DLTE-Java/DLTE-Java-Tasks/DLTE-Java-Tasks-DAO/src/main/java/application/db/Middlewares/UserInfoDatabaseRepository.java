@@ -1,8 +1,9 @@
 package application.db.Middlewares;
 
+import application.db.Entities.Customer;
+import application.db.Exception.UserNotFoundException;
 import application.db.Remotes.UserInfoRepository;
-import org.example.Entities.Customer;
-import org.example.Exception.UserNotFoundException;
+
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -36,34 +37,29 @@ public class UserInfoDatabaseRepository implements UserInfoRepository {
             System.out.println(e);
         }
     }
-    @Override
-    public Customer validateUser(String username) {
-        Customer customer = null;
-        try {
-            String query = "select * from user_info where username=?";
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, username);
-            resultSet = preparedStatement.executeQuery();
-            if(resultSet.next()){
-                if(!resultSet.getString(1).equalsIgnoreCase(username)){
-                    logger.log(Level.INFO,resourceBundle.getString("user.name"));
-                    throw new UserNotFoundException();
-                }
-                else{
-                    customer = new Customer();
-                    customer.setUsername(resultSet.getString(username));
-                }
-            }
-        }catch(SQLException sqlException){
-            System.out.println(sqlException);
-        }
-        return customer;
 
+
+    @Override
+    public Customer validateUser(String username, String password) throws SQLException {
+        String query = "select username, password from user_info where username=? and password=?";
+        preparedStatement = connection.prepareStatement(query);
+          preparedStatement.setString(1, username);
+          preparedStatement.setString(2, password);
+        resultSet = preparedStatement.executeQuery();
+
+        if (resultSet.next()) {
+            // Compare fetched username and password with provided ones
+            if (resultSet.getString(1).equals(username) &&  resultSet.getString(2).equals(password)) {
+                return new Customer(username, password);
+            }
+        }
+        return null;
     }
 
-    @Override
-    public void DepositAmountInto(String username, Long amount) {
 
+
+    @Override
+    public void DepositAmountInto(String username, String password, Long amount) {
 
     }
 
@@ -76,9 +72,9 @@ public class UserInfoDatabaseRepository implements UserInfoRepository {
             preparedStatement.setString(1,customer.getUsername());
             preparedStatement.setString(2,customer.getPassword());
             preparedStatement.setString(3,customer.getAddress());
-            preparedStatement.setString(4,customer.getAddress());
+            preparedStatement.setString(4,customer.getEmail());
             preparedStatement.setLong(5,customer.getContact());
-            preparedStatement.setLong(6,customer.getInitialBalace());
+            preparedStatement.setLong(6,customer.getInitialBalance());
             int resultSet = preparedStatement.executeUpdate();
             if (resultSet != 0) {
                 logger.log(Level.INFO, resourceBundle.getString("db.push.ok"));
@@ -92,6 +88,4 @@ public class UserInfoDatabaseRepository implements UserInfoRepository {
             System.out.println(e);
         }
     }
-
-
 }
