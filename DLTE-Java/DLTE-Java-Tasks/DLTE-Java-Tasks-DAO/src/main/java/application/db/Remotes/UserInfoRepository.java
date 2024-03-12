@@ -1,9 +1,12 @@
 package application.db.Remotes;
 
-import org.example.Entities.Customer;
+import application.db.Entities.Customer;
+
 
 public interface UserInfoRepository {
-    Customer validateUser(String username);
+    boolean validateUser(String username);
     void DepositAmountInto(String username,Long amount);
     void addInformation(Customer customer);
+     boolean passwordValidate(String username, String password);
+
 }

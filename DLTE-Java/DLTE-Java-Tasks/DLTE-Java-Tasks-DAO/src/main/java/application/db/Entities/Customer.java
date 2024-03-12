@@ -3,7 +3,7 @@ package application.db.Entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Customer implements Serializable{
+public class Customer {
 
     private String username;
     private String password;
