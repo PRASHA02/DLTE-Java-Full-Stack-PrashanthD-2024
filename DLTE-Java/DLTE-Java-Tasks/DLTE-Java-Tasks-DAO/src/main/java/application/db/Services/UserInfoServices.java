@@ -1,9 +1,10 @@
 package application.db.Services;
 
+import application.db.Entities.Customer;
 import application.db.Exception.UserNotFoundException;
 import application.db.Remotes.StorageTarget;
 import application.db.Remotes.UserInfoRepository;
-import org.example.Entities.Customer;
+
 
 import java.util.ResourceBundle;
 
@@ -15,9 +16,11 @@ public class UserInfoServices {
         userInfoRepository = storageTarget.getUserInfoRepository();
     }
 
-    public Customer callValidateUser(String userName){
+    public boolean callValidateUser(String userName){
         try{
-            return userInfoRepository.validateUser(userName);
+
+            boolean flag=userInfoRepository.validateUser(userName);
+            return flag;
         }catch(UserNotFoundException userNotFoundException){
             throw userNotFoundException;
         }
@@ -39,4 +42,15 @@ public class UserInfoServices {
             throw userNotFoundException;
         }
     }
+    public boolean callPasswordValidate(String username, String password)
+    {
+        try {
+         boolean check=userInfoRepository.passwordValidate(username,password);
+         return check;
+    }catch (Exception e){
+
+        }
+        return false;
+    }
+
 }
