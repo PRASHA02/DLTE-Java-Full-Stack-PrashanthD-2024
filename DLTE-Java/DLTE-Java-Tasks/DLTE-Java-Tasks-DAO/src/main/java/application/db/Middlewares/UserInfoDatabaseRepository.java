@@ -9,9 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -183,7 +181,73 @@ public class UserInfoDatabaseRepository implements UserInfoRepository {
 
     }
 
+    @Override
+    public List findAll() {
+        ArrayList<List> transactionArrayList=new ArrayList<>();
+        try{
+            String query="select * from transaction_user";
+            preparedStatement=connection.prepareStatement(query);
+            resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                //transactionArrayList.add(resultSet.getString(1),resultSet.getString(2),resultSet.getInt(3),resultSet.getString(4));
+                String user=resultSet.getString(1);
+                String type=resultSet.getString(2);
+                String amount=resultSet.getString(3);
+                String date=resultSet.getString(4);
+                StringBuilder builder = new StringBuilder(resultSet.getString(1)+","+resultSet.getString(2)+","+resultSet.getString(3)+","+resultSet.getString(4));
+                transactionArrayList.add(Collections.singletonList(builder));
+//        builder.append("," + new Date());
+//        ArrayList<StringBuilder> transactionOne = new ArrayList<>();
+            }
+        }
+        catch (SQLException sqlException){
+            System.out.println(sqlException);
+        }
+        return transactionArrayList;
+    }
 
+    @Override
+    public List findByUsername(String username) {
+        ArrayList<List> transactionArrayList=new ArrayList<>();
+        try{
+            String query="select * from transaction_user where username=?";
+            preparedStatement=connection.prepareStatement(query);
+            preparedStatement.setString(1,username);
+            resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                //transactionArrayList.add(resultSet.getString(1),resultSet.getString(2),resultSet.getInt(3),resultSet.getString(4));
+                StringBuilder builder = new StringBuilder(resultSet.getString(1)+","+resultSet.getString(2)+","+resultSet.getString(3)+","+resultSet.getString(4));
+                transactionArrayList.add(Collections.singletonList(builder));
+//        builder.append("," + new Date());
+//        ArrayList<StringBuilder> transactionOne = new ArrayList<>();
+            }
+        }
+        catch (SQLException sqlException){
+            System.out.println(sqlException);
+        }
+        return transactionArrayList;
+    }
 
+    @Override
+    public List findByDateAndUsername(String username, String date) {
+        ArrayList<List> transactionArrayList=new ArrayList<>();
+        try{
+            String query="select * from transaction_user where username=? and transactiondate=?";
+            preparedStatement=connection.prepareStatement(query);
+            preparedStatement.setString(1,username);
+            preparedStatement.setString(2,date);
+            resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
 
+                StringBuilder builder = new StringBuilder(resultSet.getString(1)+","+resultSet.getString(2)+","+resultSet.getString(3)+","+resultSet.getString(4));
+                transactionArrayList.add(Collections.singletonList(builder));
+//        builder.append("," + new Date());
+//        ArrayList<StringBuilder> transactionOne = new ArrayList<>();
+            }
+        }
+        catch (SQLException sqlException){
+            System.out.println(sqlException);
+        }
+        return transactionArrayList;
+    }
 }

@@ -6,6 +6,8 @@ import application.db.Remotes.StorageTarget;
 import application.db.Remotes.UserInfoRepository;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class UserInfoServices {
@@ -53,5 +55,41 @@ public class UserInfoServices {
         return false;
     }
 
+    public List callFindAll(){
+        try{
+            List<List> transaction=new ArrayList();
+            transaction=userInfoRepository.findAll();
+            return transaction;
+        }catch (Exception e){
+
+    }
+
+    return null;
+
+    }
+    public List callOneUserTransact(String username){
+        try{
+            List<List> transaction=new ArrayList();
+            transaction=userInfoRepository.findByUsername(username);
+            return transaction;
+        }catch (Exception e){
+
+        }
+
+        return null;
+
+    }
+    public List callTransactionByDate(String username,String date){
+        try{
+            List<List> transaction=new ArrayList();
+            transaction=userInfoRepository.findByDateAndUsername(username,date);
+            return transaction;
+        }catch (Exception e){
+
+        }
+
+        return null;
+
+    }
 
 }
