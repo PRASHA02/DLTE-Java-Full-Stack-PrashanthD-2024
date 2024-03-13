@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: dao.technical:DLTE-Java-TechnicalDAO:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/dao/technical/DLTE-Java-TechnicalDAO/1.0-SNAPSHOT/DLTE-Java-TechnicalDAO-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.m2/repository/dao/technical/DLTE-Java-TechnicalDAO/1.0-SNAPSHOT/DLTE-Java-TechnicalDAO-1.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.m2/repository/dao/technical/DLTE-Java-TechnicalDAO/1.0-SNAPSHOT/DLTE-Java-TechnicalDAO-1.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
