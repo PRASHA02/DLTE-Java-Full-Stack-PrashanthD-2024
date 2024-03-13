@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.Level;
 
@@ -27,11 +28,11 @@ public class App {
         logger = LoggerFactory.getLogger(App.class);
         StorageTarget storageTarget = new DatabaseTarget();
         UserInfoServices userInfoServices = new UserInfoServices(storageTarget);
-//        StringBuilder builder = new StringBuilder("Deposit,0");
-//        builder.append("," + new Date());
-//        ArrayList<StringBuilder> transactionOne = new ArrayList<>();
-//        transactionOne.add(builder);
-//        Customer customer2=new Customer("Prashanth", "prashanth123", "Mangalore", "prashanth@gmail", 987455335L, 1000L, transactionOne);
+//          StringBuilder builder = new StringBuilder("Deposit,0");
+//          builder.append("," + new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
+//         ArrayList<StringBuilder> transactionOne = new ArrayList<>();
+//           transactionOne.add(builder);
+//        Customer customer2=new Customer("Eeksha", "eeksha123", "Mangalore", "eeksha@gmail", 987455335L, 1000L, transactionOne);
 //        userInfoServices.callAddInformation(customer2);
         Scanner scanner = new Scanner(System.in);
         String username, password;
@@ -71,6 +72,9 @@ public class App {
                     }
                 }
             }
+//            List<List> transaction=new ArrayList();
+//            transaction=userInfoServices.callTransactionByDate(username,"13-03-2024");
+          //  System.out.println(transaction);
                 while (check) {
                     System.out.println(ResourceBundle.getBundle("information").getString("app.menu"));
                     int choice;
