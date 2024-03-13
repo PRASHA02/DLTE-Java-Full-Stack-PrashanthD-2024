@@ -5,7 +5,7 @@ import application.db.Exception.UserNotFoundException;
 import application.db.Remotes.StorageTarget;
 import application.db.Remotes.UserInfoRepository;
 
-import java.sql.SQLException;
+
 import java.util.ResourceBundle;
 
 public class UserInfoServices {
@@ -16,18 +16,20 @@ public class UserInfoServices {
         userInfoRepository = storageTarget.getUserInfoRepository();
     }
 
-    public Customer callValidateUser(String userName,String password) throws SQLException {
+    public boolean callValidateUser(String userName){
         try{
-            return userInfoRepository.validateUser(userName,password);
-        }catch(UserNotFoundException | SQLException userNotFoundException){
+
+            boolean flag=userInfoRepository.validateUser(userName);
+            return flag;
+        }catch(UserNotFoundException userNotFoundException){
             throw userNotFoundException;
         }
     }
 
-    public void callDepositAmountInto(String userName,String password,Long amount){
+    public void callDepositAmountInto(String userName,Long amount){
         try{
 
-            userInfoRepository.DepositAmountInto(userName,password,amount);
+            userInfoRepository.DepositAmountInto(userName,amount);
         }catch(UserNotFoundException userNotFoundException){
             throw userNotFoundException;
         }
@@ -40,4 +42,16 @@ public class UserInfoServices {
             throw userNotFoundException;
         }
     }
+    public boolean callPasswordValidate(String username, String password)
+    {
+        try {
+         boolean check=userInfoRepository.passwordValidate(username,password);
+         return check;
+    }catch (Exception e){
+
+        }
+        return false;
+    }
+
+
 }

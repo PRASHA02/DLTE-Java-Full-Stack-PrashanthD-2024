@@ -1,2 +1,20 @@
-Mar 12, 2024 5:01:25 PM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+Mar 12, 2024 5:37:37 PM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: inserted successfully
+Mar 12, 2024 6:11:18 PM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: inserted successfully
+Mar 12, 2024 6:11:18 PM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: inserted successfully
+Mar 12, 2024 8:53:21 PM application.db.Middlewares.UserInfoDatabaseRepository DepositAmountInto
+INFO: inserted successfully
+Mar 12, 2024 9:00:15 PM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: inserted successfully
+Mar 12, 2024 9:00:15 PM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: inserted successfully
+Mar 12, 2024 9:01:45 PM application.db.Middlewares.UserInfoDatabaseRepository DepositAmountInto
+INFO: inserted successfully
+Mar 13, 2024 5:20:16 AM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: inserted successfully
+Mar 13, 2024 5:20:16 AM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: inserted successfully
+Mar 13, 2024 5:20:52 AM application.db.Middlewares.UserInfoDatabaseRepository DepositAmountInto
 INFO: inserted successfully

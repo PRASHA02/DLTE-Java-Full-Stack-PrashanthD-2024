@@ -7,3 +7,4 @@ application\db\Exception\UserNotFoundException.class
 application\db\Middlewares\DatabaseTarget.class
 application\db\Services\UserInfoServices.class
 application\db\Remotes\StorageTarget.class
+application\db\Test.class

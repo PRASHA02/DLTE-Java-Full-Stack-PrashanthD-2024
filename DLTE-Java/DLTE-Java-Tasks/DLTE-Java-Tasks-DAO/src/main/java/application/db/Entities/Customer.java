@@ -1,46 +1,34 @@
 package application.db.Entities;
 
-
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Customer{
+public class Customer {
 
     private String username;
     private String password;
     private String address;
     private String email;
     private Long contact;
-    private Long initialBalance;
-    private ArrayList transaction;
+    private Long initialBalace;
+    private ArrayList transactionDetails;
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", contact=" + contact +
+                ", initialBalace=" + initialBalace +
+                ", transactionDetails=" + transactionDetails +
+                '}';
+    }
 
     public Customer() {
     }
 
-    public Customer(String username, String password, String address, String email, Long contact, Long initialBalance, ArrayList transaction) {
-        this.username = username;
-        this.password = password;
-        this.address = address;
-        this.email = email;
-        this.contact = contact;
-        this.initialBalance = initialBalance;
-        this.transaction = transaction;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getAddress() {
         return address;
@@ -66,24 +54,51 @@ public class Customer{
         this.contact = contact;
     }
 
-    public Long getInitialBalance() {
-        return initialBalance;
+    public Long getInitialBalace() {
+        return initialBalace;
     }
 
-    public void setInitialBalance(Long initialBalance) {
-        this.initialBalance = initialBalance;
+    public void setInitialBalace(Long initialBalace) {
+        this.initialBalace = initialBalace;
     }
 
-    public ArrayList getTransaction() {
-        return transaction;
+    public String getUsername() {
+        return username;
     }
 
-    public void setTransaction(ArrayList transaction) {
-        this.transaction = transaction;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public ArrayList getTransactionDetails() {
+        return transactionDetails;
+    }
+
+    public void setTransactionDetails(ArrayList transactionDetails) {
+        this.transactionDetails = transactionDetails;
+    }
+
+    public Customer(String username, String password, String address, String email, Long contact, Long initialBalace, ArrayList transactionDetails) {
+        this.username = username;
+        this.password = password;
+        this.address = address;
+        this.email = email;
+        this.contact = contact;
+        this.initialBalace = initialBalace;
+        this.transactionDetails = transactionDetails;
     }
 
     public Customer(String username, String password) {
         this.username = username;
         this.password = password;
     }
+
 }
