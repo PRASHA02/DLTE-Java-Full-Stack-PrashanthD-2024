@@ -16,6 +16,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,7 +32,7 @@ public class AppTest
     private UserInfoRepository userInfoRepository;
     private UserInfoServices services;
     @Before
-    public void prepareStore(){
+    public void prepareStore() throws IOException {
         when(mockStorageTarget.getUserInfoRepository()).thenReturn(userInfoRepository);
         services=new UserInfoServices(mockStorageTarget);
     }

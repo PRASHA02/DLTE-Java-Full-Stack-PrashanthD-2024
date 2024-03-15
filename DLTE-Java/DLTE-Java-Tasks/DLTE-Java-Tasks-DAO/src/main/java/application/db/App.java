@@ -11,6 +11,7 @@ import application.db.Services.UserInfoServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -23,7 +24,7 @@ import java.util.logging.Level;
 public class App {
     static  ResourceBundle resourceBundle = ResourceBundle.getBundle("information");
     static Logger logger;
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, IOException {
         System.out.println(ResourceBundle.getBundle("information").getString("app.greet"));
         logger = LoggerFactory.getLogger(App.class);
         StorageTarget storageTarget = new DatabaseTarget();
@@ -105,6 +106,7 @@ public class App {
 
                 System.out.println(ResourceBundle.getBundle("information").getString("account.suspended"));
                  logger.info(ResourceBundle.getBundle("information").getString("log.suspension"));
+
             }
         }
     }

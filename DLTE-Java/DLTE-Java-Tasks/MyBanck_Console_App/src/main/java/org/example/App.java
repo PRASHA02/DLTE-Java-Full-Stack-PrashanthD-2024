@@ -18,8 +18,8 @@ public class App {
         System.out.println(ResourceBundle.getBundle("information").getString("app.greet"));
         MyBankServices bankServices = new MyBankServices();
        //for entering the data to file for the first time uncomment the below line and execute
-        //bankServices.Intialize();
-        //bankServices.callCheck();
+        bankServices.Intialize();
+        // bankServices.callCheck();
         Scanner scanner = new Scanner(System.in);
         String username, password;
         Customer newCustomer=null;

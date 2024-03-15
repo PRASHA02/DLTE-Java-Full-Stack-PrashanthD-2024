@@ -2,12 +2,13 @@ package application.db.Remotes;
 
 import application.db.Entities.Customer;
 
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
 
 public interface UserInfoRepository {
-    boolean validateUser(String username);
+    boolean validateUser(String username) throws SQLException;
     void DepositAmountInto(String username,Long amount);
     void addInformation(Customer customer);
     boolean passwordValidate(String username, String password);

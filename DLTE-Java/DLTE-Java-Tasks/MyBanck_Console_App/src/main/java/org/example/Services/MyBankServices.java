@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class MyBankServices {
-    UserInfoRepository userInfoRepository;// = new UserInformationFileRepository();
-    //  UserInformation user2=new UserInformation("ajay","ad1234");
+    UserInfoRepository userInfoRepository;
 
     public MyBankServices() {
         userInfoRepository = new UserInformationFileRepository();
@@ -21,13 +20,17 @@ public class MyBankServices {
         builder.append("," + new Date());
         ArrayList<StringBuilder> transactionOne = new ArrayList<>();
         transactionOne.add(builder);
-        Customer user1 = new Customer("Akshira", "akshira123", "Kannur", "akash@gmail", 987455545L, 4444L, transactionOne);
-        Customer user2 = new Customer("Ajay", "ajay123", "Mangalore", "ajay@gmail", 9888888888L, 500L, transactionOne);
-        Customer user3 = new Customer("Akshay", "akshay123", "Dubai", "akshay@gmail", 9777777888L, 1000L, transactionOne);
+        Customer user1 = new Customer("prash02", "prash321", "karkala", "prash@gmail.com", 9777777888L, 1000L, transactionOne);
+       Customer user2 = new Customer("Akshira", "akshira123", "Kannur", "akash@gmail", 987455545L, 4444L, transactionOne);
+       Customer user3 = new Customer("Ajay", "ajay123", "Mangalore", "ajay@gmail", 9888888888L, 500L, transactionOne);
+       Customer user4 = new Customer("Akshay", "akshay123", "Dubai", "akshay@gmail", 9777777888L, 1000L, transactionOne);
+     
         UserInformationFileRepository userinfo = new UserInformationFileRepository();
-        userinfo.addInformation(user1);
-        userinfo.addInformation(user2);
+       userinfo.addInformation(user1);
+       userinfo.addInformation(user2);
         userinfo.addInformation(user3);
+        userinfo.addInformation(user4);
+        System.out.println("User created");
 
     }
 

@@ -25,19 +25,19 @@ public class UserInfoDatabaseRepository implements UserInfoRepository {
     private PreparedStatement preparedStatementThree;
     private ResultSet resultSet;
 
-    public UserInfoDatabaseRepository(Connection connection){
+    public UserInfoDatabaseRepository(Connection connection) throws IOException {
         try{
             this.connection = connection;
             FileHandler fileHandler=new FileHandler("credit-card-logs.txt",true);
             SimpleFormatter simpleFormatter = new SimpleFormatter();
             fileHandler.setFormatter(simpleFormatter);
             logger.addHandler(fileHandler);
-        } catch (IOException e) {
-            System.out.println(e);
+        } catch (IOException io) {
+            System.out.println(io);
         }
     }
     @Override
-    public boolean validateUser(String username) {
+    public boolean validateUser(String username) throws SQLException {
         boolean flag =false;
         System.out.println("check");
         try {
@@ -54,7 +54,6 @@ public class UserInfoDatabaseRepository implements UserInfoRepository {
             System.out.println(sqlException);
         }
         return flag;
-
     }
 
     @Override

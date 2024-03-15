@@ -20,3 +20,9 @@ Mar 11, 2024 11:38:02 AM org.example.Middleware.UserInformationFileRepository va
 INFO: Username validated
 Mar 11, 2024 11:45:57 AM org.example.Middleware.UserInformationFileRepository validateUser
 INFO: The username entered is invalid
+Mar 15, 2024 3:08:51 PM org.example.Middleware.UserInformationFileRepository validateUser
+INFO: The username entered is invalid
+Mar 15, 2024 3:08:55 PM org.example.Middleware.UserInformationFileRepository validateUser
+INFO: Username validated
+Mar 15, 2024 3:14:37 PM org.example.Middleware.UserInformationFileRepository validateUser
+INFO: Username validated

@@ -24,7 +24,8 @@ public class AccountSoap {
 
     @WebMethod
     @WebResult(name="Customer")
-    public Customer  getUsername(@WebParam(name="String") String username){
-        return userInfoServices.callFindusername(username);
+    public Customer getUsername(@WebParam(name="String") String username){
+        Customer customer =  userInfoServices.callFindusername(username);
+        return customer;
     }
 }

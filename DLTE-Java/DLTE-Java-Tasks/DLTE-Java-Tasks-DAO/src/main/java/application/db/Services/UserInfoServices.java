@@ -6,6 +6,8 @@ import application.db.Remotes.StorageTarget;
 import application.db.Remotes.UserInfoRepository;
 
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -14,16 +16,16 @@ public class UserInfoServices {
     UserInfoRepository userInfoRepository;
     private ResourceBundle resourceBundle = ResourceBundle.getBundle("information");
 
-    public UserInfoServices(StorageTarget storageTarget){
+    public UserInfoServices(StorageTarget storageTarget) throws IOException {
         userInfoRepository = storageTarget.getUserInfoRepository();
     }
 
-    public boolean callValidateUser(String userName){
+    public boolean callValidateUser(String userName) throws SQLException {
         try{
 
             boolean flag=userInfoRepository.validateUser(userName);
             return flag;
-        }catch(UserNotFoundException userNotFoundException){
+        }catch(UserNotFoundException | SQLException userNotFoundException){
             throw userNotFoundException;
         }
     }
