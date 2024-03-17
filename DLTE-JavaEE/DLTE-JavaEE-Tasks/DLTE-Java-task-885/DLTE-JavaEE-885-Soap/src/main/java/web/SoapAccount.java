@@ -15,5 +15,7 @@ public class SoapAccount {
     public SoapAccount() throws SQLException {
         StorageTarget storageTarget = new DatabaseTarget();
         userInfoServices =  new UserInfoServices(storageTarget);
+
+        
     }
 }
