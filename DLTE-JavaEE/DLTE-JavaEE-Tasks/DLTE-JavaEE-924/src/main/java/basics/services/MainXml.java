@@ -38,9 +38,11 @@ public class MainXml {
         System.out.println("XML Built Successfully");
         break;
             case 2:  Unmarshaller unmarshaller=jaxbContext.createUnmarshaller();
+                System.out.println("Enter the Recieptant Name");
+                String name = new Scanner(System.in).next();
                 TransactionList myLists = (TransactionList) unmarshaller.unmarshal(new FileInputStream("transactionMarshaller.xml"));
                 myLists.getTransactions().stream()
-                        .filter(each -> each.getToRecipient().equalsIgnoreCase("Prashanth"))
+                        .filter(each -> each.getToRecipient().equalsIgnoreCase(name))
                         .forEach(System.out::println);
                 break;
             default:
