@@ -12,9 +12,10 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
-@WebService
+@WebService()
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public class AccountSoap {
     private UserInfoServices userInfoServices;
@@ -24,11 +25,13 @@ public class AccountSoap {
     }
 
     @WebMethod
-    @WebResult(name="Customer")
-    public GroupAccount getUsername(@WebParam(name="String") String username){
+    @WebResult(name="GroupAccount")
+    public GroupAccount findAllUsername(@WebParam(name="String") String username){
+        Customer customer =  userInfoServices.callFindusername(username);
         GroupAccount groupAccount = new GroupAccount();
-        List<Customer> customerList = (List<Customer>) userInfoServices.callFindusername(username);
-        groupAccount.setCustomerList((Customer) customerList);
+        List<Customer> customerList = new ArrayList<>();
+        customerList.add(customer);
+        groupAccount.setCustomerList(customerList);
         return groupAccount;
     }
 }
