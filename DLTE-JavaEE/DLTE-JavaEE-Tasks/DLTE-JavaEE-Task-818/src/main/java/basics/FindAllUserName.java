@@ -20,8 +20,8 @@ import java.util.List;
 @WebServlet("/findAllUserName/")
 public class FindAllUserName extends HttpServlet {
 
-    private StorageTarget storageTarget;
-    private UserInfoServices userInfoServices;
+    public StorageTarget storageTarget;
+    public UserInfoServices userInfoServices;
     @Override
     public void init() throws ServletException {
         try {
@@ -32,7 +32,7 @@ public class FindAllUserName extends HttpServlet {
         userInfoServices = new UserInfoServices(storageTarget);
     }
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
         try{
             List<Customer> customerList = userInfoServices.callOneUserTransact("prash02");

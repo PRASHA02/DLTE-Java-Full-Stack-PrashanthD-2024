@@ -18,8 +18,8 @@ import java.util.List;
 
 @WebServlet("/findAll/")
 public class FindAll extends HttpServlet {
-    private StorageTarget storageTarget;
-    private UserInfoServices userInfoServices;
+   public StorageTarget storageTarget;
+    public UserInfoServices userInfoServices;
 
     @Override
     public void init() throws ServletException {
@@ -32,7 +32,7 @@ public class FindAll extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         resp.setContentType("application/json");
         try{

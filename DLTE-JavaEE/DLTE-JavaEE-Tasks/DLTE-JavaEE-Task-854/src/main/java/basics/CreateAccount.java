@@ -6,6 +6,7 @@ import application.db.Remotes.StorageTarget;
 import application.db.Services.UserInfoServices;
 import com.google.gson.Gson;
 
+import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,6 +23,8 @@ public class CreateAccount extends HttpServlet {
     UserInfoServices userInfoServices;
     @Override
     public void init() throws ServletException {
+
+
         StorageTarget storageTarget= null;
         try {
             storageTarget = new DatabaseTarget();
@@ -30,6 +33,7 @@ public class CreateAccount extends HttpServlet {
         }
             userInfoServices=new UserInfoServices(storageTarget);
     }
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -47,5 +51,6 @@ public class CreateAccount extends HttpServlet {
             System.out.println(e);
         }
     }
+
 
 }

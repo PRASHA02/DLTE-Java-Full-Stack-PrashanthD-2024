@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="branch1" class="spring.basics.Branch"/>
+    <bean id="branch2" class="spring.basics.Branch">
+ <property name="branchID" value="11610"/>
+    </bean>
+    <bean id="branch3"  class="spring.basics.Branch">
+        <property name="branchName" value="MyBank"/>
+        <property name="branchContact" value="7892675177"/>
+        <property name="branchID" value="117"/>
+        <property name="ifsCode" value="CNRB06601"/>
+        <property name="branchAccount" value="060987654321"/>
+    </bean>
+    <bean id="branch4" class="spring.basics.Branch">
+        <constructor-arg name="branchAccount" value="1029397464"/>
+        <constructor-arg name="branchContact" value="7892786576"/>
+        <constructor-arg name="branchID" value="123"/>
+        <constructor-arg name="branchName" value="CanaraBank"/>
+        <constructor-arg name="ifsCode" value="SYNB12345"/>
+
+    </bean>
+</beans>
