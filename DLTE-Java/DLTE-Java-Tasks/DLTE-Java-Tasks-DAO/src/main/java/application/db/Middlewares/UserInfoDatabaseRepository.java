@@ -107,6 +107,10 @@ public class UserInfoDatabaseRepository implements UserInfoRepository {
 
     @Override
     public void addInformation(Customer customer) {
+        if (customer == null) {
+            System.out.println("Customer is Empty");
+            return;
+        }
         try{
           //  String splitTransaction=customer.getTransactionDetails();
             customer.getTransactionDetails().size();
