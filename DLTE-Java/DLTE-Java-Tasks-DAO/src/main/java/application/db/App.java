@@ -26,7 +26,8 @@ public class App {
     public static void main(String[] args) throws SQLException {
         System.out.println(ResourceBundle.getBundle("information").getString("app.greet"));
         logger = LoggerFactory.getLogger(App.class);
-        StorageTarget storageTarget = new DatabaseTarget();
+        // StorageTarget storageTarget = new StorageTarget();//file
+        StorageTarget storageTarget = new DatabaseTarget();//database
         UserInfoServices userInfoServices = new UserInfoServices(storageTarget);
           StringBuilder builder = new StringBuilder("Deposit,0");
           builder.append("," + new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
