@@ -2,3 +2,7 @@ Mar 18, 2024 7:10:21 AM application.db.Middlewares.UserInfoDatabaseRepository De
 INFO: User inserted successfully
 Mar 18, 2024 7:10:56 AM application.db.Middlewares.UserInfoDatabaseRepository DepositAmountInto
 INFO: User inserted successfully
+Mar 18, 2024 8:08:22 AM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: User inserted successfully
+Mar 18, 2024 8:08:22 AM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: transaction Details inserted Suceesfully
