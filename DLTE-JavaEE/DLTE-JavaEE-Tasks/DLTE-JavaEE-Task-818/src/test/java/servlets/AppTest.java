@@ -93,8 +93,10 @@ public class AppTest {
         Customer customer3=new Customer("prash02", "prash321", "Mangalore", "rak@gmail", 987455335L, 1000L,transactionOne);
 
 
+        when(request.getParameter("username")).thenReturn("prasha02");
 
-        when(services.callOneUserTransact(anyString())).thenReturn(Collections.singletonList(customer1.getUsername()));
+        when(services.callFindusername(anyString())).thenReturn(customer1);
+
 
         findAllUserName.doGet(request,response);
 
@@ -115,15 +117,15 @@ public class AppTest {
         transactionOne.add(builder);
         Customer customer1 = new Customer("prasha02","prash321","karkala","prash@gmail.com",789267177L,1000000L,transactionOne);
         Customer customer2=new Customer("rakesh", "rak123", "Mangalore", "rak@gmail", 987455335L, 1000L,transactionOne);
-        Customer customer3=new Customer("prash02", "prash321", "Mangalore", "rak@gmail", 987455335L, 1000L,transactionOne);
-
-
+        String username = "prasha02";
+        String date = "18-03-2024";
         
+        when(request.getParameter("username")).thenReturn(username);
+        when(request.getParameter("date")).thenReturn(date);
 
+        when(services.callTransactionByDate(username, date)).thenReturn(Collections.singletonList(username));
         findByDateUserName.doGet(request,response);
-
         verify(response).setContentType("application/json");
-
         verify(services).callTransactionByDate(anyString(),anyString());
         assertNotEquals("expected: ","[{\"username\":\"prasha02\",\"password\":\"prash321\",\"address\":\"karkala\",\"email\":\"prash@gmail.com\",\"contact\":789267177,\"initialBalace\":1000000,\"transactionDetails\":[\"Deposit\",0,\"18-03-2024\"]},{\"username\":\"rakesh\",\"password\":\"rak123\",\"address\":\"Mangalore\",\"email\":\"rak@gmail\",\"contact\":987455335,\"initialBalace\":1000,\"transactionDetails\":[\"Deposit\",0,\"18-03-2024\"]},{\"username\":\"prash02\",\"password\":\"prash321\",\"address\":\"Mangalore\",\"email\":\"rak@gmail\",\"contact\":987455335,\"initialBalace\":1000,\"transactionDetails\":[\"Deposit\",0,\"18-03-2024\"]}]",stringWriter.toString().trim());
 
