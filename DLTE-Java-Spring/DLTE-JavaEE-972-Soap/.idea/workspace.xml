@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="327ee2b1-248b-47bc-8795-50127eec09e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo-spring/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo-spring/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo-spring/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo-spring/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo-spring/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo-spring/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo-spring/src/main/java/core/spring/demospring/DemoSpringApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo-spring/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo-spring/src/test/java/core/spring/demospring/DemoSpringApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/artifacts/spring_boot_starter_Web_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_13_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_13_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_13_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_12_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__net_minidev_accessors_smart_2_4_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__net_minidev_json_smart_2_4_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_17_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_17_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_73.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_73.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_73.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_assertj_assertj_core_3_22_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_mockito_mockito_core_4_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_4_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_ow2_asm_asm_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_36.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_36.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_spring_aop_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_spring_beans_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_spring_context_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_spring_core_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_spring_expression_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_spring_test_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_spring_web_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/libraries/Maven__org_yaml_snakeyaml_1_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot-starter/spring-boot-starter.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-972/DLTE-JavaEE-972-Soap/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-972/DLTE-JavaEE-972-Soap/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-972/DLTE-JavaEE-972-Soap/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-972/DLTE-JavaEE-972-Soap/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-972/DLTE-JavaEE-972-Soap/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-972/DLTE-JavaEE-972-Soap/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-972/DLTE-JavaEE-972-Soap/src/main/java/soap/services/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-972/DLTE-JavaEE-972-Soap/src/test/java/soap/services/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/backend/method/EmployeeInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/db/connection/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/entity/backend/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/entity/backend/EmployeeAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/BusinessLogic-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/classes/Entity/backend/Employee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/classes/Entity/backend/EmployeeAddress.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/classes/business/logic/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/surefire-reports/TEST-business.logic.AppTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/surefire-reports/business.logic.AppTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/test-classes/business/logic/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/Entities/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/Entities/EmployeeAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/Validation/Validation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/resources/employee.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/classes/Entities/Employee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/classes/Entities/EmployeeAddress.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/classes/console/application/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/classes/employee.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/classes/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/test-classes/console/application/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java-Technical-DAO/DLTE-Java-Technical/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java-Technical-DAO/DLTE-Java-Technical/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java-Technical-DAO/DLTE-Java-Technical/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/DLTE-Java-Spring-1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/src/main/java/spring/basics/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/src/main/java/spring/basics/Branch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/src/main/java/spring/basics/MyBankContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/src/main/resources/myBank-branches.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/src/test/java/spring/basics/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/target/classes/myBank-branches.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/target/classes/spring/basics/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/target/classes/spring/basics/Branch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/target/classes/spring/basics/MyBankContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Spring-1/target/test-classes/spring/basics/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/DLTE-Java-Console.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/src/main/java/Console/oops/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/src/test/java/Console/oops/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/DLTE-Java-FileRepository.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/src/main/java/filerepository/oops/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/src/test/java/filerepository/oops/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/project-review/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/project-review/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/project-review/project-review.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-Java-task-885/DLTE-JavaEE-885-Soap/src/main/java/web/SoapAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-Java-task-885/DLTE-JavaEE-885-Soap/src/main/java/web/SoapAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-818/src/test/java/servlets/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-818/src/test/java/servlets/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-818/target/test-classes/servlets/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-818/target/test-classes/servlets/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-854/src/main/java/basics/FindByUserName.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-854/src/main/java/basics/FindByUserName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-854/target/DLTE-JavaEE-Task-854/WEB-INF/classes/basics/CreateAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-854/target/DLTE-JavaEE-Task-854/WEB-INF/classes/basics/CreateAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-854/target/DLTE-JavaEE-Task-854/WEB-INF/lib/DLTE-Java-Tasks-DAO-2.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-854/target/DLTE-JavaEE-Task-854/WEB-INF/lib/DLTE-Java-Tasks-DAO-2.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-854/target/classes/basics/CreateAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-854/target/classes/basics/CreateAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/business/logic/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/business/logic/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/Entity/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/console/application/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/console/application/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Java-Technical-DAO/DLTE-Java-Technical/.idea/DLTE-Java-Technical.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java-Technical-DAO/DLTE-Java-Technical/.idea/DLTE-Java-Technical.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Java-Technical-DAO/DLTE-Java-Technical/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java-Technical-DAO/DLTE-Java-Technical/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2dtvmOxS65JcKIieJtiUPfhFNII" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-854" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="327ee2b1-248b-47bc-8795-50127eec09e5" name="Default Changelist" comment="" />
+      <created>1710840347319</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710840347319</updated>
+      <workItem from="1710840350245" duration="2549000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="164" key="FileChooserDialogImpl" timestamp="1710840667060">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="549" y="164" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1710840667060" />
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1710853053410">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1710853053410" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1710853053410">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1710853053410" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1710853053410">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1710853053410" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1710853053410">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1710853053410" />
+  </component>
+</project>

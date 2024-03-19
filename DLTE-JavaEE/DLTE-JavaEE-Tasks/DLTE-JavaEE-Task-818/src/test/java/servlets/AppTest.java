@@ -119,7 +119,7 @@ public class AppTest {
         Customer customer2=new Customer("rakesh", "rak123", "Mangalore", "rak@gmail", 987455335L, 1000L,transactionOne);
         String username = "prasha02";
         String date = "18-03-2024";
-        
+
         when(request.getParameter("username")).thenReturn(username);
         when(request.getParameter("date")).thenReturn(date);
 

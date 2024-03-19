@@ -1,7 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b991b85c-d4cd-4c3e-97a6-053db5c4c343" name="Default Changelist" comment="" />
+    <list default="true" id="b991b85c-d4cd-4c3e-97a6-053db5c4c343" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/DbConnection/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/Entities/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/Entities/EmployeeAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/Interface/EmployeeInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/BusinessLogic-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/classes/DbConnection/Database.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/classes/Entities/Employee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/classes/Entities/EmployeeAddress.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/classes/Interface/EmployeeInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/classes/business/logic/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/surefire-reports/TEST-business.logic.AppTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/surefire-reports/business.logic.AppTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/target/test-classes/business/logic/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/Entities/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/Entities/EmployeeAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/Validation/Validation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/resources/employee.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/classes/Entities/Employee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/classes/Entities/EmployeeAddress.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/classes/console/application/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/classes/employee.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/classes/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/target/test-classes/console/application/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/DLTE-Java-Console.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/src/main/java/Console/oops/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-Console/src/test/java/Console/oops/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/DLTE-Java-FileRepository.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/src/main/java/filerepository/oops/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/DLTE-Java-Tasks/DLTE-Java-FileRepository/src/test/java/filerepository/oops/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/project-review/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Java/project-review/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Java/project-review/project-review.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-Java-task-885/DLTE-JavaEE-885-Soap/src/main/java/web/SoapAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-Java-task-885/DLTE-JavaEE-885-Soap/src/main/java/web/SoapAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-818/src/test/java/servlets/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-818/src/test/java/servlets/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-818/target/test-classes/servlets/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-Tasks/DLTE-JavaEE-Task-818/target/test-classes/servlets/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/business/logic/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/BusinessLogic/src/main/java/business/logic/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/Entity/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/console/application/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Technical-Final/ConsoleApplication/src/main/java/console/application/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DLTE-Java-Technical.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DLTE-Java-Technical.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,6 +209,8 @@
       <workItem from="1710263081287" duration="436000" />
       <workItem from="1710290109991" duration="6128000" />
       <workItem from="1710299481696" duration="15788000" />
+      <workItem from="1710771148920" duration="117000" />
+      <workItem from="1710818362645" duration="3000" />
     </task>
     <servers />
   </component>

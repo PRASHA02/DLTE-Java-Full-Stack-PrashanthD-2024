@@ -34,7 +34,7 @@ public class SoapAccount {
         ArrayList<StringBuilder> transactionOne = new ArrayList<>();
         transactionOne.add(builder);
         Customer customer = new Customer(userName,password,Address,Email,contact,initialBalance,transactionOne);
-      userInfoServices.callAddInformation(customer);
+        userInfoServices.callAddInformation(customer);
     }
 
     @WebMethod
