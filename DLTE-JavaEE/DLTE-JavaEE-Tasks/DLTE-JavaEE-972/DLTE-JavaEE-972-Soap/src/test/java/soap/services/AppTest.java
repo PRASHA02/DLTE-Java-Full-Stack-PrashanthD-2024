@@ -89,7 +89,7 @@ public class AppTest {
         for (Customer customer : customers) {
             json.append(customerToJson(customer)).append(",");
         }
-        json.deleteCharAt(json.length() - 1); 
+        json.deleteCharAt(json.length() - 1);
         json.append("]");
         return json.toString();
     }

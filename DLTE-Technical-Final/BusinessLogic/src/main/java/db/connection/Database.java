@@ -1,5 +1,6 @@
 package db.connection;
 
+import backend.exceptions.ConnectionFailureException;
 import oracle.jdbc.driver.OracleDriver;
 
 import java.sql.Connection;
@@ -11,10 +12,15 @@ import java.util.ResourceBundle;
 public class Database {
     private Connection connection;
     public  Database() throws SQLException {
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
-        Driver driver = new OracleDriver();
-        DriverManager.registerDriver(driver);
-        connection = DriverManager.getConnection(resourceBundle.getString("db.url"),resourceBundle.getString("db.user"),resourceBundle.getString("db.pass"));
+        try{
+            ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
+            Driver driver = new OracleDriver();
+            DriverManager.registerDriver(driver);
+            connection = DriverManager.getConnection(resourceBundle.getString("db.url"),resourceBundle.getString("db.user"),resourceBundle.getString("db.pass"));
+        }catch(SQLException e){
+            throw new ConnectionFailureException();
+        }
+
     }
 
     public  Connection getConnection(){
