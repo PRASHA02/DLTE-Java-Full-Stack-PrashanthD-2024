@@ -15,12 +15,25 @@ import java.util.stream.Stream;
 
 @WebServlet("/transaction/*")
 public class MainTransaction extends HttpServlet {
+
+    @Override
+    public void init() throws ServletException {
+        System.out.println("Servlet is initialized");
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        System.out.println("Servlet destroyed");
+    }
+
     //array list using streams
     List<Transaction> transactionList = Stream.of(new Transaction(new Date(2024,11,9),10000.0,"vineeth","Family"),
             new Transaction(new Date(2025,02,19),50000.0,"Elroy","Education"),
             new Transaction(new Date(2022,12,18),10000.0,"Varun","Bills"),
             new Transaction(new Date(2025,06,5),10000.0,"Vignesh","Emergency"),
             new Transaction(new Date(2024,2,20),20000.0,"Shreyas","Friends")).collect(Collectors.toList());
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
