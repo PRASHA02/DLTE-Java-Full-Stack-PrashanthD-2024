@@ -33,7 +33,7 @@ public class Sample extends GenericServlet {
         String choice = servletRequest.getParameter("get");
 
         if (choice != null && choice.equals("get")){
-            servletResponse.setContentType("application/html");
+            servletResponse.setContentType("application/json");
             String transactionJson = gson.toJson(transactions);
             HttpServletResponse response = (HttpServletResponse) servletResponse;
             response.setStatus(HttpServletResponse.SC_OK);

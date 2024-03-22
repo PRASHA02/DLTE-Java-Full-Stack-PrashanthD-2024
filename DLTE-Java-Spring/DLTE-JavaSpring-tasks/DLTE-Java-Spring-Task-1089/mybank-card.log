@@ -1,675 +1,375 @@
-[31m2024-03-21 20:19:23,225[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarting DlteJavaSpringTask1089Application using Java 1.8.0_292 on WPF45DYSS with PID 9192 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
-[0;39m[31m2024-03-21 20:19:23,225[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-03-21 20:19:23,317[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [32mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
-[0;39m[31m2024-03-21 20:19:23,317[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[0;39m[31m2024-03-21 20:19:23,317[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[0;39m[31m2024-03-21 20:19:23,902[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mMultiple Spring Data modules found, entering strict repository configuration mode
-[0;39m[31m2024-03-21 20:19:23,902[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-03-21 20:19:23,917[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-03-21 20:19:23,917[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mMultiple Spring Data modules found, entering strict repository configuration mode
-[0;39m[31m2024-03-21 20:19:23,917[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JPA repositories in DEFAULT mode.
-[0;39m[31m2024-03-21 20:19:23,936[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
-[0;39m[31m2024-03-21 20:19:24,327[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
-[0;39m[31m2024-03-21 20:19:24,330[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
-[0;39m[31m2024-03-21 20:19:24,330[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
-[0;39m[31m2024-03-21 20:19:24,437[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
-[0;39m[31m2024-03-21 20:19:24,437[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 1120 ms
-[0;39m[31m2024-03-21 20:19:24,589[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Starting...
-[0;39m[31m2024-03-21 20:19:24,594[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-03-21 20:19:24,674[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-03-21 20:19:24,674[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-03-21 20:19:24,704[0;39m [32m[INFO][0;39m org.hibernate.jpa.internal.util.LogHelper restartedMain [32mHHH000204: Processing PersistenceUnitInfo [name: default]
-[0;39m[31m2024-03-21 20:19:24,768[0;39m [32m[INFO][0;39m org.hibernate.Version restartedMain [32mHHH000412: Hibernate ORM core version 5.6.15.Final
-[0;39m[31m2024-03-21 20:19:24,893[0;39m [32m[INFO][0;39m org.hibernate.annotations.common.Version restartedMain [32mHCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-[0;39m[31m2024-03-21 20:19:24,984[0;39m [32m[INFO][0;39m org.hibernate.dialect.Dialect restartedMain [32mHHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-[0;39m[31m2024-03-21 20:19:25,352[0;39m [32m[INFO][0;39m org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator restartedMain [32mHHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[0;39m[31m2024-03-21 20:19:25,368[0;39m [32m[INFO][0;39m org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean restartedMain [32mInitialized JPA EntityManagerFactory for persistence unit 'default'
-[0;39m[31m2024-03-21 20:19:25,399[0;39m [32m[WARN][0;39m org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration restartedMain [32mspring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[0;39m[31m2024-03-21 20:19:25,746[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
-[0;39m[31m2024-03-21 20:19:25,777[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
-[0;39m[31m2024-03-21 20:19:25,793[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarted DlteJavaSpringTask1089Application in 3.201 seconds (JVM running for 4.449)
-[0;39m[31m2024-03-21 20:26:02,020[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarting DlteJavaSpringTask1089Application using Java 1.8.0_292 on WPF45DYSS with PID 616 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
-[0;39m[31m2024-03-21 20:26:02,020[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-03-21 20:26:02,086[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [32mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
-[0;39m[31m2024-03-21 20:26:02,086[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[0;39m[31m2024-03-21 20:26:02,086[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[0;39m[31m2024-03-21 20:26:02,653[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-03-21 20:26:02,669[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-03-21 20:26:03,033[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
-[0;39m[31m2024-03-21 20:26:03,051[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
-[0;39m[31m2024-03-21 20:26:03,051[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
-[0;39m[31m2024-03-21 20:26:03,124[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
-[0;39m[31m2024-03-21 20:26:03,124[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 1038 ms
-[0;39m[31m2024-03-21 20:26:03,449[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Starting...
-[0;39m[31m2024-03-21 20:26:03,450[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-03-21 20:26:03,514[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-03-21 20:26:03,517[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-03-21 20:26:03,647[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
-[0;39m[31m2024-03-21 20:26:03,684[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
-[0;39m[31m2024-03-21 20:26:03,685[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarted DlteJavaSpringTask1089Application in 2.127 seconds (JVM running for 2.962)
-[0;39m[31m2024-03-21 20:27:55,862[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarting DlteJavaSpringTask1089Application using Java 1.8.0_292 on WPF45DYSS with PID 24380 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
-[0;39m[31m2024-03-21 20:27:55,863[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-03-21 20:27:55,894[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [32mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
-[0;39m[31m2024-03-21 20:27:55,894[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[0;39m[31m2024-03-21 20:27:55,894[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[0;39m[31m2024-03-21 20:27:56,450[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-03-21 20:27:56,450[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-03-21 20:27:56,792[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
-[0;39m[31m2024-03-21 20:27:56,792[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
-[0;39m[31m2024-03-21 20:27:56,792[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
-[0;39m[31m2024-03-21 20:27:56,870[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
-[0;39m[31m2024-03-21 20:27:56,870[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 960 ms
-[0;39m[31m2024-03-21 20:27:57,106[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Starting...
-[0;39m[31m2024-03-21 20:27:57,106[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-03-21 20:27:57,169[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-03-21 20:27:57,169[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-03-21 20:27:57,279[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
-[0;39m[31m2024-03-21 20:27:57,295[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
-[0;39m[31m2024-03-21 20:27:57,310[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarted DlteJavaSpringTask1089Application in 1.787 seconds (JVM running for 2.399)
-[0;39m[31m2024-03-21 21:01:00,266[0;39m [32m[WARN][0;39m com.zaxxer.hikari.pool.HikariPool HikariPool-1 housekeeper [32mHikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m2s562ms866µs300ns).
-[0;39m[31m2024-03-21 21:36:52,532[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarting DlteJavaSpringTask1089Application using Java 1.8.0_292 on WPF45DYSS with PID 12212 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
-[0;39m[31m2024-03-21 21:36:52,534[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-03-21 21:36:52,591[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [32mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
-[0;39m[31m2024-03-21 21:36:52,592[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[0;39m[31m2024-03-21 21:36:52,592[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[0;39m[31m2024-03-21 21:36:53,144[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-03-21 21:36:53,153[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-03-21 21:36:53,498[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
-[0;39m[31m2024-03-21 21:36:53,503[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
-[0;39m[31m2024-03-21 21:36:53,504[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
-[0;39m[31m2024-03-21 21:36:53,566[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
-[0;39m[31m2024-03-21 21:36:53,566[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 973 ms
-[0;39m[31m2024-03-21 21:36:53,833[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Starting...
-[0;39m[31m2024-03-21 21:36:53,835[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-03-21 21:36:53,933[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-03-21 21:36:53,936[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-03-21 21:36:54,003[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
-[0;39m[31m2024-03-21 21:36:54,025[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
-[0;39m[31m2024-03-21 21:36:54,032[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarted DlteJavaSpringTask1089Application in 1.831 seconds (JVM running for 2.444)
-[0;39m[31m2024-03-21 21:40:40,446[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] http-nio-8082-exec-1 [32mInitializing Spring DispatcherServlet 'dispatcherServlet'
-[0;39m[31m2024-03-21 21:40:40,446[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-1 [32mInitializing Servlet 'dispatcherServlet'
-[0;39m[31m2024-03-21 21:40:40,447[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-1 [32mCompleted initialization in 1 ms
-[0;39m[31m2024-03-21 21:40:40,463[0;39m [32m[WARN][0;39m org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver http-nio-8082-exec-1 [32mResolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-[0;39m[31m2024-03-21 21:41:47,290[0;39m [32m[ERROR][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] http-nio-8082-exec-10 [32mServlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [insert into transactions_model values(?,?,?,?,?,?)]; ORA-00001: unique constraint (DATABASE.SYS_C007345) violated
-; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DATABASE.SYS_C007345) violated
-] with root cause
-[0;39mjava.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DATABASE.SYS_C007345) violated
-
-	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
-	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
-	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
-	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
-	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
-	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
-	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
-	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
-	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
-	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
-	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
-	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
-	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
-	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
-	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
-	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
-	at element.spring.boot.springboot.TransactionServices.apiSave(TransactionServices.java:24)
-	at element.spring.boot.springboot.TransactionController.callSave(TransactionController.java:22)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:528)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-[31m2024-03-21 21:44:54,518[0;39m [32m[ERROR][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] http-nio-8082-exec-4 [32mServlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [insert into transactions_model values(?,?,?,?,?,?)]; ORA-00001: unique constraint (DATABASE.SYS_C007345) violated
-; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DATABASE.SYS_C007345) violated
-] with root cause
-[0;39mjava.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (DATABASE.SYS_C007345) violated
-
-	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
-	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
-	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
-	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
-	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
-	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
-	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
-	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
-	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
-	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
-	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
-	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
-	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
-	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
-	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
-	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
-	at element.spring.boot.springboot.TransactionServices.apiSave(TransactionServices.java:24)
-	at element.spring.boot.springboot.TransactionController.callSave(TransactionController.java:22)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:528)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-[31m2024-03-21 21:46:19,721[0;39m [32m[ERROR][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] http-nio-8082-exec-10 [32mServlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/transaction/find/prashanth': {public java.util.Optional element.spring.boot.springboot.TransactionController.callFindTo(java.lang.String), public java.util.Optional element.spring.boot.springboot.TransactionController.callFindBy(java.lang.String)}] with root cause
-[0;39mjava.lang.IllegalStateException: Ambiguous handler methods mapped for '/transaction/find/prashanth': {public java.util.Optional element.spring.boot.springboot.TransactionController.callFindTo(java.lang.String), public java.util.Optional element.spring.boot.springboot.TransactionController.callFindBy(java.lang.String)}
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:432)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:383)
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:125)
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:67)
-	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:498)
-	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1266)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1048)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:502)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-[31m2024-03-21 21:47:09,390[0;39m [32m[ERROR][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] http-nio-8082-exec-5 [32mServlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/transaction/find/vignesh': {public java.util.Optional element.spring.boot.springboot.TransactionController.callFindTo(java.lang.String), public java.util.Optional element.spring.boot.springboot.TransactionController.callFindBy(java.lang.String)}] with root cause
-[0;39mjava.lang.IllegalStateException: Ambiguous handler methods mapped for '/transaction/find/vignesh': {public java.util.Optional element.spring.boot.springboot.TransactionController.callFindTo(java.lang.String), public java.util.Optional element.spring.boot.springboot.TransactionController.callFindBy(java.lang.String)}
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:432)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:383)
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:125)
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:67)
-	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:498)
-	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1266)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1048)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:502)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-[31m2024-03-21 21:48:45,098[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarting DlteJavaSpringTask1089Application using Java 1.8.0_292 on WPF45DYSS with PID 24056 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
-[0;39m[31m2024-03-21 21:48:45,103[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-03-21 21:48:45,152[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [32mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
-[0;39m[31m2024-03-21 21:48:45,153[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[0;39m[31m2024-03-21 21:48:45,153[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[0;39m[31m2024-03-21 21:48:45,665[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-03-21 21:48:45,677[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-03-21 21:48:46,001[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
-[0;39m[31m2024-03-21 21:48:46,008[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
-[0;39m[31m2024-03-21 21:48:46,008[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
-[0;39m[31m2024-03-21 21:48:46,073[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
-[0;39m[31m2024-03-21 21:48:46,074[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 920 ms
-[0;39m[31m2024-03-21 21:48:46,404[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Starting...
-[0;39m[31m2024-03-21 21:48:46,405[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-03-21 21:48:46,463[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-03-21 21:48:46,502[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-03-21 21:48:46,565[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
-[0;39m[31m2024-03-21 21:48:46,587[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
-[0;39m[31m2024-03-21 21:48:46,595[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarted DlteJavaSpringTask1089Application in 1.804 seconds (JVM running for 2.483)
-[0;39m[31m2024-03-21 21:48:59,043[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] http-nio-8082-exec-5 [32mInitializing Spring DispatcherServlet 'dispatcherServlet'
-[0;39m[31m2024-03-21 21:48:59,043[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-5 [32mInitializing Servlet 'dispatcherServlet'
-[0;39m[31m2024-03-21 21:48:59,045[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-5 [32mCompleted initialization in 2 ms
-[0;39m[31m2024-03-21 21:48:59,171[0;39m [32m[ERROR][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] http-nio-8082-exec-5 [32mServlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.IncorrectResultSizeDataAccessException: Incorrect result size: expected 1, actual 3] with root cause
-[0;39morg.springframework.dao.IncorrectResultSizeDataAccessException: Incorrect result size: expected 1, actual 3
-	at org.springframework.dao.support.DataAccessUtils.nullableSingleResult(DataAccessUtils.java:100)
-	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:880)
-	at element.spring.boot.springboot.TransactionServices.apiFindBySender(TransactionServices.java:39)
-	at element.spring.boot.springboot.TransactionController.callFindBy(TransactionController.java:32)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:502)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-[31m2024-03-21 21:49:48,185[0;39m [32m[ERROR][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] http-nio-8082-exec-3 [32mServlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [select * from transactions_model where transaction_by=?]; ORA-01722: invalid number
-; nested exception is java.sql.SQLSyntaxErrorException: ORA-01722: invalid number
-] with root cause
-[0;39mjava.sql.SQLSyntaxErrorException: ORA-01722: invalid number
-
-	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
-	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
-	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
-	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
-	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
-	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
-	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
-	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
-	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
-	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
-	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
-	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
-	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
-	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:722)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:713)
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:744)
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:757)
-	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:879)
-	at element.spring.boot.springboot.TransactionServices.apiFindByAmount(TransactionServices.java:51)
-	at element.spring.boot.springboot.TransactionController.callFindBy(TransactionController.java:42)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:502)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-[31m2024-03-21 21:52:19,988[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarting DlteJavaSpringTask1089Application using Java 1.8.0_292 on WPF45DYSS with PID 21408 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
-[0;39m[31m2024-03-21 21:52:19,989[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-03-21 21:52:20,052[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [32mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
-[0;39m[31m2024-03-21 21:52:20,052[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[0;39m[31m2024-03-21 21:52:20,052[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[0;39m[31m2024-03-21 21:52:20,563[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-03-21 21:52:20,571[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-03-21 21:52:20,890[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
-[0;39m[31m2024-03-21 21:52:20,896[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
-[0;39m[31m2024-03-21 21:52:20,896[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
-[0;39m[31m2024-03-21 21:52:20,964[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
-[0;39m[31m2024-03-21 21:52:20,965[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 912 ms
-[0;39m[31m2024-03-21 21:52:21,242[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Starting...
-[0;39m[31m2024-03-21 21:52:21,243[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-03-21 21:52:21,341[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-03-21 21:52:21,344[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-03-21 21:52:21,406[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
-[0;39m[31m2024-03-21 21:52:21,428[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
-[0;39m[31m2024-03-21 21:52:21,441[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarted DlteJavaSpringTask1089Application in 1.758 seconds (JVM running for 2.423)
-[0;39m[31m2024-03-21 21:52:30,506[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] http-nio-8082-exec-1 [32mInitializing Spring DispatcherServlet 'dispatcherServlet'
-[0;39m[31m2024-03-21 21:52:30,506[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-1 [32mInitializing Servlet 'dispatcherServlet'
-[0;39m[31m2024-03-21 21:52:30,508[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-1 [32mCompleted initialization in 2 ms
-[0;39m[31m2024-03-21 21:54:44,557[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarting DlteJavaSpringTask1089Application using Java 1.8.0_292 on WPF45DYSS with PID 3160 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
-[0;39m[31m2024-03-21 21:54:44,558[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-03-21 21:54:44,604[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [32mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
-[0;39m[31m2024-03-21 21:54:44,604[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[0;39m[31m2024-03-21 21:54:44,604[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[0;39m[31m2024-03-21 21:54:45,123[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-03-21 21:54:45,135[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-03-21 21:54:45,470[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
-[0;39m[31m2024-03-21 21:54:45,475[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
-[0;39m[31m2024-03-21 21:54:45,476[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
-[0;39m[31m2024-03-21 21:54:45,535[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
-[0;39m[31m2024-03-21 21:54:45,535[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 929 ms
-[0;39m[31m2024-03-21 21:54:45,814[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Starting...
-[0;39m[31m2024-03-21 21:54:45,815[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-03-21 21:54:45,988[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-03-21 21:54:45,992[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-03-21 21:54:46,068[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
-[0;39m[31m2024-03-21 21:54:46,090[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
-[0;39m[31m2024-03-21 21:54:46,099[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarted DlteJavaSpringTask1089Application in 1.876 seconds (JVM running for 2.509)
-[0;39m[31m2024-03-21 21:55:07,433[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] http-nio-8082-exec-4 [32mInitializing Spring DispatcherServlet 'dispatcherServlet'
-[0;39m[31m2024-03-21 21:55:07,433[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-4 [32mInitializing Servlet 'dispatcherServlet'
-[0;39m[31m2024-03-21 21:55:07,435[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-4 [32mCompleted initialization in 2 ms
-[0;39m[31m2024-03-21 21:55:07,539[0;39m [32m[ERROR][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] http-nio-8082-exec-4 [32mServlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.IncorrectResultSizeDataAccessException: Incorrect result size: expected 1, actual 3] with root cause
-[0;39morg.springframework.dao.IncorrectResultSizeDataAccessException: Incorrect result size: expected 1, actual 3
-	at org.springframework.dao.support.DataAccessUtils.nullableSingleResult(DataAccessUtils.java:100)
-	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:880)
-	at element.spring.boot.springboot.TransactionServices.apiFindBySender(TransactionServices.java:39)
-	at element.spring.boot.springboot.TransactionController.callFindBy(TransactionController.java:32)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:502)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-[31m2024-03-21 21:55:41,998[0;39m [32m[ERROR][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] http-nio-8082-exec-3 [32mServlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.IncorrectResultSizeDataAccessException: Incorrect result size: expected 1, actual 2] with root cause
-[0;39morg.springframework.dao.IncorrectResultSizeDataAccessException: Incorrect result size: expected 1, actual 2
-	at org.springframework.dao.support.DataAccessUtils.nullableSingleResult(DataAccessUtils.java:100)
-	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:880)
-	at element.spring.boot.springboot.TransactionServices.apiFindByAmount(TransactionServices.java:51)
-	at element.spring.boot.springboot.TransactionController.callFindBy(TransactionController.java:42)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:502)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-[31m2024-03-21 22:04:50,933[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarting DlteJavaSpringTask1089Application using Java 1.8.0_292 on WPF45DYSS with PID 23580 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
-[0;39m[31m2024-03-21 22:04:50,934[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-03-21 22:04:50,975[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [32mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
-[0;39m[31m2024-03-21 22:04:50,975[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[0;39m[31m2024-03-21 22:04:50,975[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[0;39m[31m2024-03-21 22:04:51,483[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-03-21 22:04:51,492[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-03-21 22:04:51,798[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
-[0;39m[31m2024-03-21 22:04:51,804[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
-[0;39m[31m2024-03-21 22:04:51,805[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
-[0;39m[31m2024-03-21 22:04:51,865[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
-[0;39m[31m2024-03-21 22:04:51,865[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 889 ms
-[0;39m[31m2024-03-21 22:04:52,116[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Starting...
-[0;39m[31m2024-03-21 22:04:52,127[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-03-21 22:04:52,300[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-03-21 22:04:52,302[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-03-21 22:04:52,371[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
-[0;39m[31m2024-03-21 22:04:52,395[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
-[0;39m[31m2024-03-21 22:04:52,402[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089Application restartedMain [32mStarted DlteJavaSpringTask1089Application in 1.838 seconds (JVM running for 2.486)
-[0;39m[31m2024-03-21 22:05:01,005[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] http-nio-8082-exec-1 [32mInitializing Spring DispatcherServlet 'dispatcherServlet'
-[0;39m[31m2024-03-21 22:05:01,007[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-1 [32mInitializing Servlet 'dispatcherServlet'
-[0;39m[31m2024-03-21 22:05:01,007[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-1 [32mCompleted initialization in 0 ms
+[31m2024-03-22 14:41:18,089[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 17820 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 14:41:18,120[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 14:41:18,755[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 14:41:18,782[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 14:41:20,133[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 14:41:20,133[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 14:41:20,433[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 14:41:20,433[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 14:41:20,669[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.947 seconds (JVM running for 4.182)
+[0;39m[31m2024-03-22 14:41:21,598[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 14:41:21,613[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 14:48:32,613[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 7064 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 14:48:32,613[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 14:48:33,146[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 14:48:33,161[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 14:48:34,466[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 14:48:34,466[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 14:48:34,726[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 14:48:34,726[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 14:48:34,909[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.766 seconds (JVM running for 3.957)
+[0;39m[31m2024-03-22 14:48:35,837[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 14:48:35,869[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 14:49:36,863[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 1964 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 14:49:36,863[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 14:49:37,398[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 14:49:37,413[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 14:49:38,638[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 14:49:38,638[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 14:49:38,959[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 14:49:38,959[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 14:49:39,159[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.655 seconds (JVM running for 3.776)
+[0;39m[31m2024-03-22 14:49:40,103[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 14:49:40,120[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 14:50:51,657[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 1292 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 14:50:51,657[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 14:50:52,232[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 14:50:52,240[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 14:50:53,434[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 14:50:53,448[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 14:50:53,731[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 14:50:53,737[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 14:50:53,988[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.759 seconds (JVM running for 3.956)
+[0;39m[31m2024-03-22 14:50:54,822[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 14:50:54,829[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 14:52:06,819[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 12280 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 14:52:06,819[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 14:52:07,355[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 14:52:07,371[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 14:52:08,710[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 14:52:08,713[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 14:52:09,042[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 14:52:09,042[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 14:52:09,231[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.839 seconds (JVM running for 4.153)
+[0;39m[31m2024-03-22 14:52:10,175[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 14:52:10,195[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 14:52:23,498[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 11436 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 14:52:23,510[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 14:52:24,142[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 14:52:24,153[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 14:52:25,617[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 14:52:25,617[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 14:52:26,026[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 14:52:26,026[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 14:52:26,359[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 3.444 seconds (JVM running for 4.857)
+[0;39m[31m2024-03-22 14:52:28,127[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 14:52:28,150[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 14:53:15,606[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 23456 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 14:53:15,606[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 14:53:16,109[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 14:53:16,125[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 14:53:17,318[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 14:53:17,334[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 14:53:17,711[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 14:53:17,711[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 14:53:17,931[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.658 seconds (JVM running for 4.053)
+[0;39m[31m2024-03-22 14:53:18,733[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 14:53:18,746[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 14:58:49,865[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 25552 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 14:58:49,865[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 14:58:50,423[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 14:58:50,439[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 14:58:51,633[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 14:58:51,648[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 14:58:51,934[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 14:58:51,934[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 14:58:52,154[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.705 seconds (JVM running for 3.846)
+[0;39m[31m2024-03-22 14:58:53,027[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 14:58:53,035[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 15:27:40,066[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 15992 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 15:27:40,066[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 15:27:40,554[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 15:27:40,569[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 15:27:41,590[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 15:27:41,599[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 15:27:41,859[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 15:27:41,859[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 15:27:42,016[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.262 seconds (JVM running for 3.47)
+[0;39m[31m2024-03-22 15:27:42,755[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 15:27:42,774[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 16:55:22,533[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 20516 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 16:55:22,533[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 16:55:23,067[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 16:55:23,082[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 16:55:24,324[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 16:55:24,336[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 16:55:24,639[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 16:55:24,639[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 16:55:24,812[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.633 seconds (JVM running for 3.987)
+[0;39m[31m2024-03-22 16:55:25,567[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 16:55:25,583[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 16:55:37,069[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 9664 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 16:55:37,069[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 16:55:37,572[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 16:55:37,587[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 16:55:38,764[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 16:55:38,766[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 16:55:39,095[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 16:55:39,095[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 16:55:39,317[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.674 seconds (JVM running for 3.829)
+[0;39m[31m2024-03-22 16:55:40,416[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 16:55:40,438[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 16:57:20,710[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 19364 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 16:57:20,710[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 16:57:21,245[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 16:57:21,260[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 16:57:22,328[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 16:57:22,347[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 16:57:22,596[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 16:57:22,596[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 16:57:22,753[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.398 seconds (JVM running for 3.535)
+[0;39m[31m2024-03-22 16:57:23,447[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 16:57:23,466[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 16:59:04,034[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 26284 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 16:59:04,034[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 16:59:04,537[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 16:59:04,552[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 16:59:05,714[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 16:59:05,720[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 16:59:05,983[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 16:59:05,983[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 16:59:06,156[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.562 seconds (JVM running for 3.722)
+[0;39m[31m2024-03-22 16:59:06,894[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 16:59:06,912[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 16:59:27,116[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 24832 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 16:59:27,116[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 16:59:27,698[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 16:59:27,708[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 16:59:28,782[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 16:59:28,782[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 16:59:28,988[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 16:59:28,988[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 16:59:29,174[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.506 seconds (JVM running for 3.641)
+[0;39m[31m2024-03-22 16:59:29,991[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 16:59:29,991[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:01:29,532[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 9636 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:01:29,532[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:01:30,119[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:01:30,127[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:01:31,275[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:01:31,275[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:01:31,528[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:01:31,528[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:01:31,701[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.615 seconds (JVM running for 3.667)
+[0;39m[31m2024-03-22 17:01:32,440[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:01:32,460[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:06:26,667[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 20200 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:06:26,667[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:06:27,161[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:06:27,169[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:06:28,285[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:06:28,285[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:06:28,537[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:06:28,553[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:06:28,715[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.438 seconds (JVM running for 3.55)
+[0;39m[31m2024-03-22 17:06:29,448[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:06:29,468[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:07:12,581[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 16588 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:07:12,597[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:07:13,084[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:07:13,100[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 11 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:07:14,170[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:07:14,186[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:07:14,442[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:07:14,453[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:07:14,595[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.367 seconds (JVM running for 3.441)
+[0;39m[31m2024-03-22 17:07:15,368[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:07:15,374[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:07:58,731[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 22048 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:07:58,731[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:07:59,260[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:07:59,265[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:08:00,393[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:08:00,393[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:08:00,644[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:08:00,644[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:08:00,802[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.438 seconds (JVM running for 3.503)
+[0;39m[31m2024-03-22 17:08:01,526[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:08:01,545[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:08:29,434[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 5880 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:08:29,434[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:08:29,952[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:08:29,967[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:08:30,987[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:08:30,987[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:08:31,254[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:08:31,254[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:08:31,411[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.377 seconds (JVM running for 3.433)
+[0;39m[31m2024-03-22 17:08:32,150[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:08:32,158[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:08:48,322[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 23300 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:08:48,322[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:08:48,793[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:08:48,809[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:08:49,926[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:08:49,926[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:08:50,146[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:08:50,146[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:08:50,334[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.377 seconds (JVM running for 3.418)
+[0;39m[31m2024-03-22 17:08:51,091[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:08:51,105[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:09:55,948[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 3436 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:09:55,948[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:09:56,404[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:09:56,404[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:09:57,472[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:09:57,472[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:09:57,771[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:09:57,771[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:09:57,929[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.322 seconds (JVM running for 3.5)
+[0;39m[31m2024-03-22 17:09:58,698[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:09:58,714[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:10:13,268[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 25480 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:10:13,268[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:10:13,736[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:10:13,752[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:10:14,835[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:10:14,835[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:10:15,119[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:10:15,119[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:10:15,276[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.391 seconds (JVM running for 3.488)
+[0;39m[31m2024-03-22 17:10:15,999[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:10:16,008[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:10:44,270[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 20428 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:10:44,270[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:10:45,088[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:10:45,103[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 14 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:10:46,784[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:10:46,784[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:10:47,224[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:10:47,224[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:10:47,506[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 3.783 seconds (JVM running for 4.873)
+[0;39m[31m2024-03-22 17:10:48,716[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:10:48,738[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:12:25,745[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 4424 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:12:25,745[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:12:26,280[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:12:26,286[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:12:27,395[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:12:27,395[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:12:27,647[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:12:27,647[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:12:27,788[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.43 seconds (JVM running for 3.508)
+[0;39m[31m2024-03-22 17:12:28,636[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:12:28,647[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:12:34,630[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 16712 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:12:34,630[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:12:35,101[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:12:35,116[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:12:36,184[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:12:36,199[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:12:36,435[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:12:36,451[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:12:36,630[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.353 seconds (JVM running for 3.437)
+[0;39m[31m2024-03-22 17:12:37,836[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:12:37,849[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:13:06,935[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 20304 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:13:06,935[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:13:07,438[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:13:07,453[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:13:08,670[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:13:08,680[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:13:08,971[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:13:08,971[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:13:09,136[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.623 seconds (JVM running for 3.695)
+[0;39m[31m2024-03-22 17:13:09,858[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:13:09,874[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:15:07,815[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 10256 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:15:07,815[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:15:08,286[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:15:08,317[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 17 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:15:09,608[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:15:09,608[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:15:09,938[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:15:09,938[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:15:10,111[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.638 seconds (JVM running for 3.736)
+[0;39m[31m2024-03-22 17:15:10,911[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:15:10,929[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:15:47,852[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 8056 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:15:47,852[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:15:48,386[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:15:48,401[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:15:49,549[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:15:49,549[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:15:49,817[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:15:49,817[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:15:49,991[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.539 seconds (JVM running for 3.629)
+[0;39m[31m2024-03-22 17:15:50,842[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:15:50,857[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:19:00,947[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 12468 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:19:00,947[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:19:01,591[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:19:01,591[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:19:02,777[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:19:02,785[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:19:03,069[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:19:03,069[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:19:03,299[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.809 seconds (JVM running for 4.011)
+[0;39m[31m2024-03-22 17:19:04,139[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:19:04,154[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:19:21,380[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 21828 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:19:21,380[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:19:22,131[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:19:22,147[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:19:23,453[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:19:23,453[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:19:23,753[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:19:23,753[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:19:23,937[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 3.072 seconds (JVM running for 4.347)
+[0;39m[31m2024-03-22 17:19:25,086[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:19:25,103[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:22:24,159[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 22032 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:22:24,159[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:22:24,661[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:22:24,661[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:22:25,731[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:22:25,731[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:22:25,951[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:22:25,967[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:22:26,160[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.366 seconds (JVM running for 3.507)
+[0;39m[31m2024-03-22 17:22:26,879[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:22:26,887[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:23:41,308[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 10192 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:23:41,308[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:23:41,796[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:23:41,811[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:23:42,880[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:23:42,880[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:23:43,131[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:23:43,131[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:23:43,278[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.335 seconds (JVM running for 3.427)
+[0;39m[31m2024-03-22 17:23:44,027[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:23:44,042[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:23:58,967[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 26388 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:23:58,967[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:23:59,423[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:23:59,439[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:24:00,538[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:24:00,538[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:24:01,120[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:24:01,136[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:24:01,413[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.83 seconds (JVM running for 4.218)
+[0;39m[31m2024-03-22 17:24:02,750[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:24:02,758[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-22 17:25:09,986[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarting DlteJavaSpringTask1089ApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 18032 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Java-Spring\DLTE-JavaSpring-tasks\DLTE-Java-Spring-Task-1089)
+[0;39m[31m2024-03-22 17:25:10,002[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-22 17:25:10,583[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-22 17:25:10,599[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-22 17:25:11,714[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-22 17:25:11,730[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-22 17:25:11,950[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-22 17:25:11,966[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-22 17:25:12,108[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 2.551 seconds (JVM running for 3.667)
+[0;39m[31m2024-03-22 17:25:12,881[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-22 17:25:12,898[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
 [0;39m

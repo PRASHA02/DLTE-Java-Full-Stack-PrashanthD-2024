@@ -19,11 +19,23 @@ public class TransactionServices {
 
     //creates an instance of jdbcTemplate for Transaction Services
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    public JdbcTemplate jdbcTemplate;
 
     //create method
     public TransactionsModel apiSave(TransactionsModel transactionsModel){
-        int ack = jdbcTemplate.update("insert into transactions_model values(?,?,?,?,?,?)",new Object[]{
+//        int ack = jdbcTemplate.update("insert into transactions_model values(?,?,?,?,?,?)",new Object[]{
+//                transactionsModel.getTransactionId(),
+//                transactionsModel.getTransactionDate(),
+//                transactionsModel.getTransactionBy(),
+//                transactionsModel.getTransactionTo(),
+//                transactionsModel.getTransactionAmount(),
+//                transactionsModel.getTransactionFor()
+//        });
+//        if(ack!=0)
+//            return transactionsModel;
+//        else
+//            throw  new TransactionException("Insertion Failed");
+        jdbcTemplate.update("insert into transactions_model values(?,?,?,?,?,?)",new Object[]{
                 transactionsModel.getTransactionId(),
                 transactionsModel.getTransactionDate(),
                 transactionsModel.getTransactionBy(),
@@ -31,10 +43,7 @@ public class TransactionServices {
                 transactionsModel.getTransactionAmount(),
                 transactionsModel.getTransactionFor()
         });
-        if(ack!=0)
-            return transactionsModel;
-        else
-            throw  new TransactionException("Insertion Failed");
+        return transactionsModel;
     }
 
     //findBY method
