@@ -1,7 +1,8 @@
 package element.spring.boot.springboot;
 
 import java.io.Serializable;
-import java.sql.Date;
+//import java.sql.Date;
+import java.util.Date;
 
 public class TransactionsModel {
     private Long transactionId;
