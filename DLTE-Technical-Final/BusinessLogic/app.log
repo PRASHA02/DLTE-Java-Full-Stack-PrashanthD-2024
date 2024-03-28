@@ -13,3 +13,25 @@
 17:35:08.266 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
 17:37:21.803 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
 17:38:23.247 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+14:43:17.209 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+16:29:34.600 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+16:30:27.153 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+16:31:03.006 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+16:31:12.597 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+16:36:56.057 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+16:38:49.617 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+16:46:25.327 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+16:46:42.484 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+16:46:50.503 [31m[main][0;39m WARN  console.application.App - [31mInvalid input. Please enter a valid number not String or Special Characters[0;39m 
+16:47:04.275 [31m[main][0;39m WARN  console.application.App - [31mInvalid input. Please enter a valid 6 Digits.[0;39m 
+18:16:23.131 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+18:21:00.229 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+18:33:27.356 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+19:12:57.494 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+19:41:21.205 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+19:41:29.410 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+19:41:44.349 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+19:43:46.234 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+20:02:10.385 [34m[main][0;39m INFO  console.application.App - [34mstarted[0;39m 
+20:02:12.154 [1;31m[main][0;39m ERROR console.application.App - [1;31mInvalid input!! Try again[0;39m 
+20:03:07.300 [1;31m[main][0;39m ERROR console.application.App - [1;31mInvalid input!! Try again[0;39m 

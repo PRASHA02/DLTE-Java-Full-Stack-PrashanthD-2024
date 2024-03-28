@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+//Connecting the database connection
 public class Database {
     private Connection connection;
     public  Database() throws SQLException {

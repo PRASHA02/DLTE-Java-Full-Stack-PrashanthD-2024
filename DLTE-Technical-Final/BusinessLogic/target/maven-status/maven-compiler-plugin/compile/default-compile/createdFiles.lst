@@ -1,9 +1,11 @@
-business\logic\App.class
 backend\validations\Validation.class
 backend\exceptions\ConnectionFailureException.class
-backend\exceptions\EmployeeException.class
 backend\method\EmployeeInterface.class
+backend\exceptions\BusinessRuleException.class
+backend\exceptions\UserAlreadyExistException.class
+backend\exceptions\InsertionFailureException.class
+business\logic\App.class
+backend\exceptions\ValidationException.class
 db\connection\Database.class
 entity\backend\Employee.class
 entity\backend\EmployeeAddress.class
-backend\exceptions\UserAlreadyExistException.class

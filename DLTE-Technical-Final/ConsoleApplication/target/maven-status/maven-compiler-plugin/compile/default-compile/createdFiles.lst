@@ -1,4 +1,6 @@
-entity\console\EmployeeAddress.class
 check\validations\Validation.class
+console\services\EmployeeServices.class
+entity\console\EmployeeAddress.class
 entity\console\Employee.class
+console\repository\EmployeeRepository.class
 console\application\App.class

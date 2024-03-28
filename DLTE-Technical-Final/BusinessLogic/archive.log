@@ -1,0 +1,7 @@
+12:36:01.156 [31m[main][0;39m WARN  console.application.App - [31mInvalid Input. Please enter a valid number[0;39m 
+12:36:03.166 [31m[main][0;39m WARN  console.application.App - [31mInvalid Input. Please enter a valid number[0;39m 
+12:36:09.469 [31m[main][0;39m WARN  console.application.App - [31mInvalid input. Please enter a valid number not String or Special Characters[0;39m 
+13:03:13.358 [31m[main][0;39m WARN  console.application.App - [31mInvalid input. Please enter a valid 6 Digits.[0;39m 
+13:03:14.548 [31m[main][0;39m WARN  console.application.App - [31mInvalid input. Please enter a valid 6 Digits.[0;39m 
+13:03:15.630 [31m[main][0;39m WARN  console.application.App - [31mInvalid input. Please enter a valid 6 Digits.[0;39m 
+21:32:20.162 [31m[main][0;39m WARN  console.application.App - [31mInvalid input. Please enter a valid number not String or Special Characters[0;39m 

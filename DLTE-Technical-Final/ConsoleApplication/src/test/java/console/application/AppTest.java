@@ -1,20 +1,5 @@
 package console.application;
 
-import static org.junit.Assert.assertTrue;
+public class AppTest {
 
-import org.junit.Test;
-
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
-    }
 }

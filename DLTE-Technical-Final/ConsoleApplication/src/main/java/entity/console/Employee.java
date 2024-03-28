@@ -1,5 +1,5 @@
 package entity.console;
-//frontend
+//frontend Employee Entity
 public class Employee {
     private String firstName;
     private String middleName;

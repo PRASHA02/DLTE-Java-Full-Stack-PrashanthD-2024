@@ -1,10 +1,18 @@
 package check.validations;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.InputMismatchException;
+import java.util.ResourceBundle;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Validation {
-
+    static Logger logger = LoggerFactory.getLogger(console.application.App.class);
+    static  Scanner scanner = new Scanner(System.in);
+    static ResourceBundle resourceBundle = ResourceBundle.getBundle("employee");
     public boolean isValidateMobile(String number) {
         String phonePattern = "\\d{10}"; // 10-digit pattern
         return number.matches(phonePattern);
@@ -23,6 +31,29 @@ public class Validation {
      public boolean isValidPin(String pin) {
          String pinNumber = "\\d{6}";
         return pin.matches(pinNumber);
+    }
+
+    public String validateName() {
+
+        do {
+         try{
+             String name = scanner.next();
+             if (isValidName(name)) {
+                 return name;
+             } else {
+                 System.out.println("Invalid input. Please enter a valid  name containing only letters.");
+             }
+         } catch (InputMismatchException e) {
+             logger.warn(resourceBundle.getString("string.mismatch"));
+             System.out.println(resourceBundle.getString("string.mismatch"));
+             scanner.next();
+         }
+        } while (true);
+    }
+
+    public static boolean isValidName(String name) {
+        String namePattern = "^[a-zA-Z]+$"; // Pattern to match only letters (capital or small)
+        return name.matches(namePattern);
     }
 
 }

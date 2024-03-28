@@ -1,5 +1,6 @@
 package entity.console;
 
+//employeeAddress entity
 public class EmployeeAddress {
 
     private String houseName;

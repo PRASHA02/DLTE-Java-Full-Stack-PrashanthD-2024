@@ -1,8 +1,8 @@
 package entity.backend;
 
+//backend employeeAddress entity
 public class EmployeeAddress {
 
-    private String address;
     private String houseName;
     private String streetName;
     private String cityName;
@@ -12,8 +12,7 @@ public class EmployeeAddress {
     public EmployeeAddress() {
     }
 
-    public EmployeeAddress(String address, String houseName, String streetName, String cityName, String stateName, Integer pinCode) {
-        this.address = address;
+    public EmployeeAddress(String houseName, String streetName, String cityName, String stateName, Integer pinCode) {
         this.houseName = houseName;
         this.streetName = streetName;
         this.cityName = cityName;
@@ -21,13 +20,7 @@ public class EmployeeAddress {
         this.pinCode = pinCode;
     }
 
-    public String getAddress() {
-        return address;
-    }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public String getHouseName() {
         return houseName;

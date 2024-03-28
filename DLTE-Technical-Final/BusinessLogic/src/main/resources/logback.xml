@@ -1,24 +1,37 @@
 <configuration>
+    <appender name="myLogs" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>C:/Users/xxdddddp/OneDrive - Tietoevry/Documents/Logs/technicalLogs/app.log</file> <!-- Define log file name and path -->
 
-    <!-- Define appenders -->
-<!--    <appender name="myConsole" class="ch.qos.logback.core.ConsoleAppender">-->
-<!--        <encoder>-->
-<!--            <pattern>%highlight([%thread]) %highlight(%-5level) %logger{36} - %highlight(%msg) %d{dd/MM/YYYY HH:mm:ss} %n</pattern>-->
-<!--        </encoder>-->
-<!--    </appender>-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>C:/Users/xxdddddp/OneDrive - Tietoevry/Documents/Logs/technicalLogs/rollingFiles/app-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>2KB</maxFileSize> <!-- Define the maximum file size(once the log file reaches 2 kilobytes in size, it will be rolled over to a new file.) -->
+            <totalSizeCap>3KB</totalSizeCap> <!-- Total size cap for all log files( once the total size of all log files exceeds 3KB, the oldest log files will be deleted to make room for new ones.) -->
+            <maxHistory>1</maxHistory> <!-- Keep up to 30 days of logs(up to 1 historical log files will be retained. Older log files beyond this limit will be deleted.) -->
+        </rollingPolicy>
 
-    <!-- Define file appender -->
-    <appender name="myLogs" class="ch.qos.logback.core.FileAppender">
-        <file>C:/DLTE-Java-Full-Stack-PrashanthD-2024/DLTE-Technical-Final/BusinessLogic/app.log</file> <!-- Define log file name and path -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight([%thread]) %-5level %logger{36} - %highlight(%msg)  %n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Define archive appender -->
+    <appender name="myLogsArchive" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>C:/Users/xxdddddp/OneDrive - Tietoevry/Documents/Logs/technicalLogs/archive.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>C:/Users/xxdddddp/OneDrive - Tietoevry/Documents/Logs/technicalLogs/archiveFiles/archive-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <maxFileSize>2KB</maxFileSize> <!-- Define the maximum file size -->
+            <totalSizeCap>3KB</totalSizeCap> <!-- Total size cap for all log files -->
+            <maxHistory>1</maxHistory> <!-- Keep up to 30 days of logs -->
+        </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} %highlight([%thread]) %-5level %logger{36} - %highlight(%msg) %n</pattern>
         </encoder>
     </appender>
 
-    <!-- Root logger settings -->
+
     <root level="INFO">
-<!--        <appender-ref ref="myConsole" />-->
         <appender-ref ref="myLogs" /> <!-- Attach file appender -->
+        <appender-ref ref="myLogsArchive" /> <!-- Attach archive appender -->
     </root>
 
 </configuration>
