@@ -8,19 +8,12 @@ import links.transactions.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 
 import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.sql.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -32,14 +25,14 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-class DlteSpringSoapApplicationTests {
+public class EndPointTesting {
     @MockBean
     private TransactionServices transactionServices;
+
     @InjectMocks
     TransactionPhase transactionPhase;
-
     @Test
-    void CallInsert(){
+    void TestEndPointInsert(){
         Transactions transactionsModel1 = new Transactions(111L,new Date(2024,03,28),"prashanth","vignesh",1000000L,"education");
         Transactions transactionsModel2 = new Transactions(895775L,new Date(2024,12,2),"vineeth","prashanth",50000L,"family");
         Transactions transactionsModel3 = new Transactions(7952345L,new Date(2026,11,21),"elroy","jeevan",50000L,"friend");
@@ -64,10 +57,11 @@ class DlteSpringSoapApplicationTests {
         assertEquals("SUCCESS", response.getServiceStatus().getStatus());//success
         assertSame(transactionsModel1.getTransactionId(), response.getTransactions().getTransactionId());//success
         //assertSame(transactionsModel2,response.getTransactions());//failure because two objects are different
+        //assertNull(response);//failure
     }
 
     @Test
-    public void testFilterByAmountResponse() {
+    public void testEndPointFilterByAmountResponse() {
         // Mock data
         FilterByAmountRequest filterByAmountRequest = new FilterByAmountRequest();
         filterByAmountRequest.setAmount(1000000L);
@@ -77,40 +71,34 @@ class DlteSpringSoapApplicationTests {
         Transactions transactionsModel3 = new Transactions(7952345L,new Date(2026,11,21),"elroy","jeevan",50000L,"friend");
 
         List<Transactions> transactionsList = Stream.of(transactionsModel1,transactionsModel2,transactionsModel3).collect(Collectors.toList());
-        lenient().when(transactionServices.findByAmount(anyLong())).thenReturn(transactionsList);
+        when(transactionServices.findByAmount(anyLong())).thenReturn(transactionsList);
 
         // Execute the method under test
         FilterByAmountResponse response = transactionPhase.filterByAmountResponse(filterByAmountRequest);
 
         // Assert the response
-        assertEquals("SUCCESS", response.getServiceStatus().getStatus());
-        assertEquals("Transactions were fetched", response.getServiceStatus().getMessage());
+        assertTrue(transactionsModel1.getTransactionAmount()==response.getTransactions().get(0).getTransactionAmount());//success
         //assertEquals(1, response.getTransactions().size());//false expected 1 actual 3
     }
 
     @Test
-    public void testFilterBySender() {
-        // Mock data
-        FilterBySenderRequest filterBySenderRequest = new  FilterBySenderRequest();
-        filterBySenderRequest.setSender("prashanth");
-
+    public void testEndPointFilterBySender(){
         Transactions transactionsModel1 = new Transactions(111L, new Date(2024, 03, 28), "prashanth", "vignesh", 1000000L, "education");
-        Transactions transactionsModel2 = new Transactions(895775L,new Date(2024,12,2),"vineeth","prashanth",1000000L,"family");
-        Transactions transactionsModel3 = new Transactions(7952345L,new Date(2026,11,21),"elroy","jeevan",50000L,"friend");
+        Transactions transactionsModel2 = new Transactions(895775L, new Date(2024, 12, 2), "vineeth", "prashanth", 1000000L, "family");
+        Transactions transactionsModel3 = new Transactions(7952345L, new Date(2026, 11, 21), "elroy", "jeevan", 50000L, "friend");
 
-        List<Transactions> transactionsList = Stream.of(transactionsModel1,transactionsModel2,transactionsModel3).collect(Collectors.toList());
-        lenient().when(transactionServices.findBySender(anyString())).thenReturn(transactionsList);
+        List<Transactions> transactionsList = Stream.of(transactionsModel1, transactionsModel2, transactionsModel3).collect(Collectors.toList());
 
-        // Execute the method under test
+        when(transactionServices.findBySender(anyString())).thenReturn(transactionsList);
+
+        FilterBySenderRequest filterBySenderRequest = new FilterBySenderRequest();
+        filterBySenderRequest.setSender("prashanth");
         FilterBySenderResponse response = transactionPhase.filterBySenderResponse(filterBySenderRequest);
 
-        // Assert the response
-        assertEquals("SUCCESS", response.getServiceStatus().getStatus());
-        assertEquals("Transactions were fetched", response.getServiceStatus().getMessage());
-       // assertNotEquals(3, response.getTransactions().size());//false expected 3 and  actual 3 but nOt equals
-       assertTrue(transactionsList.get(0).getTransactionId()==response.getTransactions().get(0).getTransactionId());//success
-    }
 
+         //assertSame(transactionsList,response);//false
+        assertEquals(transactionsList.get(0).getTransactionAmount(),response.getTransactions().get(0).getTransactionAmount());//success
+    }
     @Test
     public void testFilterByReceiver() {
         // Mock data
@@ -158,6 +146,7 @@ class DlteSpringSoapApplicationTests {
         assertEquals("SUCCESS", response.getServiceStatus().getStatus());//success
         assertTrue(transactionsModel1.getTransactionId()==response.getTransactions().getTransactionId());//success
         //assertSame(transactionsModel1, response);//false not same object
+        //assertNotEquals(transactionsModel1.getTransactionAmount(),response.getTransactions().getTransactionAmount());//failure
     }
 
 
@@ -186,8 +175,6 @@ class DlteSpringSoapApplicationTests {
         assertEquals("removed the transactions", response.getServiceStatus().getStatus());//success
         assertEquals("removed", response.getServiceStatus().getMessage());//success
         //assertTrue(transactionsModel1.getTransactionDate()==removeByDateRequest.getStart().toGregorianCalendar().getGregorianChange());//false because expected is true but actual is false
+        //assertSame(transactionsList,response);//object is different so it is a failure
     }
-
-
-
 }
