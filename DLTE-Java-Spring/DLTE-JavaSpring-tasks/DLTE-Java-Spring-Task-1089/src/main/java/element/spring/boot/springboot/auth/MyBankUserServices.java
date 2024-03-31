@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+//specifying the signup,username and loading username
 @Service
 public class MyBankUserServices implements UserDetailsService {
     @Autowired

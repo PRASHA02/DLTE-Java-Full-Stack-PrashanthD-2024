@@ -1,4 +1,5 @@
-package element.spring.boot.springboot.auth;
+package element.spring.web.demo.security;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -6,17 +7,18 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-//levels of security is mentioned in this
 @Configuration
-public class UserConfig {
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class UserSecureConfig {
 
     @Autowired
-    MyBankUserServices service;
+    UsersServices usersServices;
 
     AuthenticationManager authenticationManager;
 
@@ -32,16 +34,22 @@ public class UserConfig {
         httpSecurity.formLogin();
         httpSecurity.csrf().disable();
 
-        httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();// 3rd level
+        httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
 
-        httpSecurity.authorizeRequests().antMatchers(HttpMethod.POST).hasAuthority("admin");
+        httpSecurity.authorizeRequests().antMatchers("/transRepo/newTransactionRequest/*").hasAuthority("admin");
 
-        httpSecurity.authorizeRequests().anyRequest().authenticated();//3rd level
+        httpSecurity.authorizeRequests().antMatchers("/transRepo/filterBySenderRequest/*").hasAuthority("customer");
+        httpSecurity.authorizeRequests().antMatchers("/transRepo/filterByReceiverRequest/*").hasAuthority("customer");
+        httpSecurity.authorizeRequests().antMatchers("/transRepo/filterByAmountRequest/*").hasAuthority("customer");
+        httpSecurity.authorizeRequests().antMatchers("/transRepo/removeByDateRequest/*").hasAuthority("admin");
+        httpSecurity.authorizeRequests().antMatchers("/transRepo/updateRemarksTransactionRequest/*").hasAnyAuthority("manager","admin");
+
+        httpSecurity.authorizeRequests().anyRequest().authenticated();
 
 
         AuthenticationManagerBuilder builder=httpSecurity.
                 getSharedObject(AuthenticationManagerBuilder.class);
-        builder.userDetailsService(service);
+        builder.userDetailsService(usersServices);
         authenticationManager=builder.build();
         httpSecurity.authenticationManager(authenticationManager);
 

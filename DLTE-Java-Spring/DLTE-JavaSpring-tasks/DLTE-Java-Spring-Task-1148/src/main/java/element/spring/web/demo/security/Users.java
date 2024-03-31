@@ -1,4 +1,4 @@
-package element.spring.boot.springboot.auth;
+package element.spring.web.demo.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -6,37 +6,29 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
-//entity along with user Details
-public class MyBankUsers implements UserDetails {
-
-    private String name;
+public class Users implements UserDetails {
     private String username;
     private String password;
-    private String email;
+    private String role;
+    private String address;
     private Long contact;
-    private Long aadhaar;
+    private String email;
 
-    public MyBankUsers() {
+    public Users() {
     }
 
-    public MyBankUsers(String name, String username, String password, String email, Long contact, Long aadhaar) {
-        this.name = name;
+    public Users(String username, String password, String role, String address, Long contact, String email) {
         this.username = username;
         this.password = password;
-        this.email = email;
+        this.role = role;
+        this.address = address;
         this.contact = contact;
-        this.aadhaar = aadhaar;
+        this.email = email;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    @Override
     public String getUsername() {
         return username;
     }
@@ -67,10 +59,12 @@ public class MyBankUsers implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }//3rd level only
+            Collection<SimpleGrantedAuthority> authorities=new ArrayList<>();
+            authorities.add(new SimpleGrantedAuthority(role));
+            return authorities;
+    }
 
-
+    @Override
     public String getPassword() {
         return password;
     }
@@ -79,12 +73,20 @@ public class MyBankUsers implements UserDetails {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getRole() {
+        return role;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Long getContact() {
@@ -95,23 +97,11 @@ public class MyBankUsers implements UserDetails {
         this.contact = contact;
     }
 
-    public Long getAadhaar() {
-        return aadhaar;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAadhaar(Long aadhaar) {
-        this.aadhaar = aadhaar;
-    }
-
-    @Override
-    public String toString() {
-        return "MyBankUsers{" +
-                "name='" + name + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", contact='" + contact + '\'' +
-                ", aadhaar=" + aadhaar +
-                '}';
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
