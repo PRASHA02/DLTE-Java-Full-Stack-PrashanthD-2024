@@ -36,13 +36,6 @@ public class UserSecureConfig {
 
         httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
 
-        httpSecurity.authorizeRequests().antMatchers("/transRepo/newTransactionRequest/*").hasAuthority("admin");
-
-        httpSecurity.authorizeRequests().antMatchers("/transRepo/filterBySenderRequest/*").hasAuthority("customer");
-        httpSecurity.authorizeRequests().antMatchers("/transRepo/filterByReceiverRequest/*").hasAuthority("customer");
-        httpSecurity.authorizeRequests().antMatchers("/transRepo/filterByAmountRequest/*").hasAuthority("customer");
-        httpSecurity.authorizeRequests().antMatchers("/transRepo/removeByDateRequest/*").hasAuthority("admin");
-        httpSecurity.authorizeRequests().antMatchers("/transRepo/updateRemarksTransactionRequest/*").hasAnyAuthority("manager","admin");
 
         httpSecurity.authorizeRequests().anyRequest().authenticated();
 

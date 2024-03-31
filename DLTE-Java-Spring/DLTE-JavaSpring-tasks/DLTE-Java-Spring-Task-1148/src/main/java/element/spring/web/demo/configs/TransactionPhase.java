@@ -6,6 +6,7 @@ import links.transactions.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -26,6 +27,7 @@ public class TransactionPhase {
     private TransactionServices transactionServices;
 
     //insertion
+    @PreAuthorize("hasAnyAuthority('admin')")
     @PayloadRoot(namespace = url,localPart = "newTransactionRequest")
     @ResponsePayload
     public NewTransactionResponse addNewTransaction(@RequestPayload NewTransactionRequest newTransactionRequest){
@@ -52,6 +54,7 @@ public class TransactionPhase {
         return newTransactionResponse;
     }
     //filter by sender
+    @PreAuthorize("hasAnyAuthority('customer')")
     @PayloadRoot(namespace = url,localPart = "filterBySenderRequest")
     @ResponsePayload
     public FilterBySenderResponse filterBySenderResponse(@RequestPayload FilterBySenderRequest filterBySenderRequest){
@@ -77,6 +80,7 @@ public class TransactionPhase {
         return  filterBySenderResponse;
     }
     //filter by receiver
+    @PreAuthorize("hasAnyAuthority('customer')")
     @PayloadRoot(namespace = url,localPart = "filterByReceiverRequest")
     @ResponsePayload
     public FilterByReceiverResponse filterByReceiverResponse(@RequestPayload FilterByReceiverRequest filterByReceiverRequest){
@@ -103,6 +107,7 @@ public class TransactionPhase {
         return  filterByReceiverResponse;
     }
     //filter by Amount
+    @PreAuthorize("hasAnyAuthority('customer')")
     @PayloadRoot(namespace = url,localPart = "filterByAmountRequest")
     @ResponsePayload
     public FilterByAmountResponse filterByAmountResponse(@RequestPayload FilterByAmountRequest filterByAmountRequest){
@@ -129,6 +134,7 @@ public class TransactionPhase {
         return  filterByAmountResponse;
     }
     //update based on remarks
+    @PreAuthorize("hasAnyAuthority('admin','manager')")
     @PayloadRoot(namespace = url, localPart = "updateRemarksTransactionRequest")
     @ResponsePayload
     public UpdateRemarksTransactionResponse updateRemarksTransactionResponse(@RequestPayload UpdateRemarksTransactionRequest updateRemarksTransactionRequest){
@@ -159,6 +165,7 @@ public class TransactionPhase {
     }
 
     //remove based on dates
+    @PreAuthorize("hasAnyAuthority('admin')")
     @PayloadRoot(namespace = url, localPart = "removeByDateRequest")
     @ResponsePayload
     public RemoveByDateResponse removeByDateResponse(@RequestPayload RemoveByDateRequest removeByDateRequest) throws DatatypeConfigurationException {
