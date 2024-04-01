@@ -13,7 +13,7 @@ CREATE TABLE mybank_app_customer (
 );
 
 CREATE OR REPLACE TRIGGER mybank_app_customer_trigger
-BEFORE INSERT ON mybank_app_customer_seq
+BEFORE INSERT ON mybank_app_customer
 FOR EACH ROW
 BEGIN
  SELECT mybank_app_customer_seq.NEXTVAL INTO :NEW.customer_id FROM dual;
@@ -71,7 +71,7 @@ CREATE TABLE mybank_app_transaction (
     transaction_from VARCHAR(255),
     transaction_to VARCHAR(255),
     transaction_date DATE,
-    transaction_amount DECIMAL(15,2),
+    transaction_amount DECIMAL(20,2),
     transaction_status VARCHAR(50),
     foreign key (account_id) REFERENCES  mybank_app_account(account_id) on delete cascade
 );
@@ -79,8 +79,6 @@ CREATE TABLE mybank_app_transaction (
 CREATE OR REPLACE TRIGGER mybank_app_transaction_trigger
 BEFORE INSERT ON mybank_app_transaction
 FOR EACH ROW
-DECLARE
-  account_id_count NUMBER;
 BEGIN   
     SELECT mybank_app_transaction_seq.NEXTVAL INTO :NEW.transaction_id FROM dual; 
 END;
@@ -95,7 +93,7 @@ CREATE TABLE MYBANK_APP_Payee (
     customer_id NUMBER,
     account_id NUMBER,
     payee_name VARCHAR(255),
-    foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade
+    foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade,
     foreign key (account_id) REFERENCES  mybank_app_account(account_id) on delete cascade
 
 );
@@ -103,8 +101,6 @@ CREATE TABLE MYBANK_APP_Payee (
 CREATE OR REPLACE TRIGGER mybank_app_payee_trigger
 BEFORE INSERT ON mybank_app_payee
 FOR EACH ROW
-DECLARE
-  account_id_count NUMBER;
 BEGIN   
     SELECT mybank_app_transaction_seq.NEXTVAL INTO :NEW.payee_id FROM dual;
 END;

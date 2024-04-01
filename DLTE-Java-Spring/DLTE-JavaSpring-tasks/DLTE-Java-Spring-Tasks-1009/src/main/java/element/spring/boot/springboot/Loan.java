@@ -1,5 +1,6 @@
 package element.spring.boot.springboot;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.stream.Stream;
 
@@ -7,19 +8,29 @@ public class Loan {
     private Integer loanNumber;
     private Double loanAmount;
     private String loanDate;
+    private ArrayList<Integer> number;
     private String loanType;
     private String borrowerName;
     private Long borrowerContact;
     public Loan() {
     }
 
-    public Loan(Integer loanNumber, Double loanAmount, String loanDate, String loanType, String borrowerName, Long borrowerContact) {
+    public Loan(Integer loanNumber, Double loanAmount, String loanDate, String loanType, String borrowerName, Long borrowerContact,ArrayList<Integer> number) {
         this.loanNumber = loanNumber;
         this.loanAmount = loanAmount;
         this.loanDate = loanDate;
         this.loanType = loanType;
         this.borrowerName = borrowerName;
         this.borrowerContact = borrowerContact;
+        this.number = number;
+    }
+
+    public ArrayList<Integer> getNumber() {
+        return number;
+    }
+
+    public void setNumber(ArrayList<Integer> number) {
+        this.number = number;
     }
 
     public Integer getLoanNumber() {
@@ -75,7 +86,8 @@ public class Loan {
         return "Loan{" +
                 "loanNumber=" + loanNumber +
                 ", loanAmount=" + loanAmount +
-                ", loanDate=" + loanDate +
+                ", loanDate='" + loanDate + '\'' +
+                ", number=" + number +
                 ", loanType='" + loanType + '\'' +
                 ", borrowerName='" + borrowerName + '\'' +
                 ", borrowerContact=" + borrowerContact +

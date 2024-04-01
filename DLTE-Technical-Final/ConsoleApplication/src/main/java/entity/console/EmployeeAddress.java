@@ -2,7 +2,6 @@ package entity.console;
 
 //employeeAddress entity
 public class EmployeeAddress {
-
     private String houseName;
     private String streetName;
     private String cityName;
