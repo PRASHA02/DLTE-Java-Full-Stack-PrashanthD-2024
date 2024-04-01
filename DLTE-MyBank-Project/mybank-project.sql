@@ -68,14 +68,14 @@ create sequence mybank_app_transaction_seq start with 300001 increment by 1;
 
 CREATE TABLE mybank_app_transaction (
     transaction_id NUMBER PRIMARY KEY,
-    account_id NUMBER,
     transaction_type VARCHAR(50),
-    transaction_from VARCHAR(255),
-    transaction_to VARCHAR(255),
+    transaction_from NUMBER,
+    transaction_to NUMBER,
     transaction_date DATE,
     transaction_amount DECIMAL(20,2),
     transaction_status VARCHAR(50),
-    foreign key (account_id) REFERENCES  mybank_app_account(account_id) on delete cascade
+    foreign key (transaction_from) REFERENCES  mybank_app_account(account_number) on delete cascade,
+    foreign key (transaction_to) REFERENCES  mybank_app_account(account_number) on delete cascade
 );
 
 CREATE OR REPLACE TRIGGER mybank_app_transaction_trigger
@@ -93,10 +93,10 @@ create sequence mybank_app_payee_seq start with 400001 increment by 1;
 CREATE TABLE MYBANK_APP_Payee (
     payee_id NUMBER PRIMARY KEY,
     customer_id NUMBER,
-    account_id NUMBER,
+    account_number NUMBER,
     payee_name VARCHAR(255),
-    foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade
-    foreign key (account_id) REFERENCES  mybank_app_account(account_id) on delete cascade
+    foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade,
+    foreign key (account_number) REFERENCES  mybank_app_account(account_number) on delete cascade
 
 );
 
@@ -207,7 +207,7 @@ create sequence mybank_app_debitcard_seq start with 900001 increment by 1;
  
 CREATE TABLE mybank_app_debitcard (
     debitcard_number NUMBER PRIMARY KEY,
-    account_id NUMBER,
+    account_number NUMBER,
     customer_id NUMBER,
     debitcard_cvv NUMBER(3),
     debitcard_pin NUMBER,
@@ -215,8 +215,8 @@ CREATE TABLE mybank_app_debitcard (
     debitcard_status VARCHAR(50),
     debitcard_domestic_limit DECIMAL(20,2),
     debitcard_international_limit DECIMAL(20,2),
-    foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade
-    foreign key (account_id) REFERENCES  mybank_app_account(account_id) on delete cascade
+    foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade,
+    foreign key (account_number) REFERENCES  mybank_app_account(account_number) on delete cascade
 
 );
 
@@ -224,7 +224,7 @@ CREATE OR REPLACE TRIGGER mybank_app_debitcard_trigger
 BEFORE INSERT ON mybank_app_debitcard
 FOR EACH ROW
 BEGIN
-SELECT my_bank_app_debitcard_seq.NEXTVAL INTO :NEW.debitcard_number FROM dual;
+SELECT mybank_app_debitcard_seq.NEXTVAL INTO :NEW.debitcard_number FROM dual;
 END;
 /
 
@@ -262,7 +262,7 @@ CREATE TABLE mybank_app_loanavailed (
     loan_emi DECIMAL(20,2),
     loan_tenure NUMBER,
     foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade,
-    foreign key (loan_id) REFERENCES  mybank_app_loanavailable(account_id) on delete cascade
+    foreign key (loan_id) REFERENCES  mybank_app_loanavailable(loan_id) on delete cascade
 
 );
 
