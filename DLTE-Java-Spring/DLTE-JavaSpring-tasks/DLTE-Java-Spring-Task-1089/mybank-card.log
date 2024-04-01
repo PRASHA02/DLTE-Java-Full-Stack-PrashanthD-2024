@@ -74,4 +74,7 @@
 [0;39m[31m2024-04-01 09:30:34,804[0;39m [32m[INFO][0;39m element.spring.boot.springboot.DlteJavaSpringTask1089ApplicationTests main [32mStarted DlteJavaSpringTask1089ApplicationTests in 8.094 seconds (JVM running for 11.828)
 [0;39m[31m2024-04-01 09:30:37,403[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
 [0;39m[31m2024-04-01 09:30:37,436[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-04-01 13:02:33,381[0;39m [32m[WARN][0;39m com.zaxxer.hikari.pool.HikariPool HikariPool-3 housekeeper [32mHikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=7m11s181ms722µs700ns).
+[0;39m[31m2024-04-01 13:13:00,583[0;39m [32m[WARN][0;39m com.zaxxer.hikari.pool.HikariPool HikariPool-3 housekeeper [32mHikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=9m27s173ms675µs500ns).
+[0;39m[31m2024-04-01 13:48:58,510[0;39m [32m[WARN][0;39m com.zaxxer.hikari.pool.HikariPool HikariPool-3 housekeeper [32mHikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=32m26s907ms313µs500ns).
 [0;39m

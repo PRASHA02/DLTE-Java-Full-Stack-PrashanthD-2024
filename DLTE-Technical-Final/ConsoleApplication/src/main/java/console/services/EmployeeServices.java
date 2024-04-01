@@ -9,8 +9,6 @@ import entity.console.Employee;
 import entity.console.EmployeeAddress;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import web.SoapEmployee;
-import web.SoapEmployeeService;
 
 import java.sql.SQLException;
 import java.util.*;
@@ -21,8 +19,6 @@ public class EmployeeServices implements EmployeeRepository {
     static Logger logger = LoggerFactory.getLogger(console.application.App.class);
     static Scanner scanner = new Scanner(System.in);
     static Validation validation = new Validation();
-    SoapEmployeeService soapEmployeeService = new SoapEmployeeService();
-    SoapEmployee soapEmployee = soapEmployeeService.getSoapEmployeePort();
 
     //takes the user data
     @Override
@@ -163,34 +159,9 @@ public class EmployeeServices implements EmployeeRepository {
                 Employee employee = new Employee(firstName,middleName,lastName,employeeId,mobileNumber,emailID,employeePermanentAddress,employeeTemporaryAddress);
                 business.logic.App app1 = new business.logic.App();
 
-//                entity.backend.Employee employeeBackend = new entity.backend.Employee();
-//                entity.backend.EmployeeAddress employeeAddressPermanent = new entity.backend.EmployeeAddress();
-//                entity.backend.EmployeeAddress employeeAddressTemporary = new entity.backend.EmployeeAddress();
-//
-//                employeeBackend.setFirstName(employee.getFirstName());
-//                employeeBackend.setMiddleName(employee.getMiddleName());
-//                employeeBackend.setLastName(employee.getLastName());
-//                employeeBackend.setEmpID(employee.getEmpID());
-//                employeeBackend.setMobileNumber(employee.getMobileNumber());
-//                employeeBackend.setEmailID(employee.getEmailID());
-//
-//                employeeAddressPermanent.setHouseName(employeePermanentAddress.getHouseName());
-//                employeeAddressPermanent.setStreetName(employeePermanentAddress.getStreetName());
-//                employeeAddressPermanent.setCityName(employeePermanentAddress.getCityName());
-//                employeeAddressPermanent.setStateName(employeePermanentAddress.getStateName());
-//                employeeAddressPermanent.setPinCode(employeePermanentAddress.getPinCode());
-//                employeeBackend.setPermanentAddress(employeeAddressPermanent);
-//
-//                employeeAddressTemporary.setHouseName(employeeTemporaryAddress.getHouseName());
-//                employeeAddressTemporary.setStreetName(employeeTemporaryAddress.getStreetName());
-//                employeeAddressTemporary.setCityName(employeeTemporaryAddress.getCityName());
-//                employeeAddressTemporary.setStateName(employeeTemporaryAddress.getStateName());
-//                employeeAddressTemporary.setPinCode(employeeTemporaryAddress.getPinCode());
-//                employeeBackend.setTemporaryAddress(employeeAddressTemporary);
-
-                web.Employee employeeBackend = new web.Employee();
-                web.EmployeeAddress employeeAddressPermanent = new web.EmployeeAddress();
-                web.EmployeeAddress employeeAddressTemporary = new web.EmployeeAddress();
+                entity.backend.Employee employeeBackend = new entity.backend.Employee();
+                entity.backend.EmployeeAddress employeeAddressPermanent = new entity.backend.EmployeeAddress();
+                entity.backend.EmployeeAddress employeeAddressTemporary = new entity.backend.EmployeeAddress();
 
                 employeeBackend.setFirstName(employee.getFirstName());
                 employeeBackend.setMiddleName(employee.getMiddleName());
@@ -214,8 +185,8 @@ public class EmployeeServices implements EmployeeRepository {
                 employeeBackend.setTemporaryAddress(employeeAddressTemporary);
 
                 backend.method.EmployeeInterface employeeInterface = new business.logic.App();
-//                boolean success = employeeInterface.writeEmployeeDetails(employeeBackend);
-                boolean success = soapEmployee.callWriteEmployee(employeeBackend);
+                boolean success = employeeInterface.writeEmployeeDetails(employeeBackend);
+//                boolean success = soapEmployee.callWriteEmployee(employeeBackend);
                 if(success){
                     System.out.println(resourceBundle.getString("employee.create.success"));
                 }else{

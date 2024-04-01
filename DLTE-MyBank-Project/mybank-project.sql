@@ -39,6 +39,7 @@ BEGIN
 SELECT mybank_app_account_seq.NEXTVAL INTO :NEW.account_id FROM dual;
 END;
 /
+
 --3).KYC
 
 create sequence mybank_app_kyc_seq start with 200001 increment by 1;
@@ -56,6 +57,7 @@ CREATE TABLE mybank_app_kyc (
 CREATE OR REPLACE TRIGGER mybank_app_kyc_trigger
 BEFORE INSERT ON mybank_app_kyc
 FOR EACH ROW
+BEGIN
 SELECT mybank_app_kyc_seq.NEXTVAL INTO :NEW.kyc_number FROM dual; 
 END;
 /
@@ -93,7 +95,7 @@ CREATE TABLE MYBANK_APP_Payee (
     customer_id NUMBER,
     account_id NUMBER,
     payee_name VARCHAR(255),
-    foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade,
+    foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade
     foreign key (account_id) REFERENCES  mybank_app_account(account_id) on delete cascade
 
 );
@@ -222,7 +224,7 @@ CREATE OR REPLACE TRIGGER mybank_app_debitcard_trigger
 BEFORE INSERT ON mybank_app_debitcard
 FOR EACH ROW
 BEGIN
-SELECT my_bank_app_seq_debitcard.NEXTVAL INTO :NEW.debitcard_number FROM dual;
+SELECT my_bank_app_debitcard_seq.NEXTVAL INTO :NEW.debitcard_number FROM dual;
 END;
 /
 
@@ -258,7 +260,10 @@ CREATE TABLE mybank_app_loanavailed (
     loan_id NUMBER,
     loan_amount DECIMAL(20,2),
     loan_emi DECIMAL(20,2),
-    loan_tenure NUMBER
+    loan_tenure NUMBER,
+    foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade,
+    foreign key (loan_id) REFERENCES  mybank_app_loanavailable(account_id) on delete cascade
+
 );
 
 CREATE OR REPLACE TRIGGER mybank_app_loanavailed_tgr
