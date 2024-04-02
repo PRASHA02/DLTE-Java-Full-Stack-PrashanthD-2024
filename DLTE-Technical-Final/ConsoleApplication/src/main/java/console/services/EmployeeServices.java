@@ -4,12 +4,22 @@ import backend.exceptions.ConnectionFailureException;
 import backend.exceptions.UserAlreadyExistException;
 import backend.exceptions.ValidationException;
 import check.validations.Validation;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import console.repository.EmployeeRepository;
 import entity.console.Employee;
 import entity.console.EmployeeAddress;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -120,7 +130,12 @@ public class EmployeeServices implements EmployeeRepository {
                     }
                 } while (true);
                 employeePermanentAddress.setPinCode(permanentPinCode);
+                employeePermanentAddress.setEmpId(employeeId);
+                employeePermanentAddress.setFlag("permanent");
                 scanner.nextLine();
+
+
+
 
                 EmployeeAddress employeeTemporaryAddress = new EmployeeAddress();
                 System.out.println(resourceBundle.getString("temporary.house"));
@@ -155,6 +170,9 @@ public class EmployeeServices implements EmployeeRepository {
                     }
                 } while (true);
                 employeeTemporaryAddress.setPinCode(temporaryPinCode);
+                scanner.nextLine();
+                employeeTemporaryAddress.setEmpId(employeeId);
+                employeeTemporaryAddress.setFlag("temporary");
 
                 Employee employee = new Employee(firstName,middleName,lastName,employeeId,mobileNumber,emailID,employeePermanentAddress,employeeTemporaryAddress);
                 business.logic.App app1 = new business.logic.App();
@@ -175,6 +193,8 @@ public class EmployeeServices implements EmployeeRepository {
                 employeeAddressPermanent.setCityName(employeePermanentAddress.getCityName());
                 employeeAddressPermanent.setStateName(employeePermanentAddress.getStateName());
                 employeeAddressPermanent.setPinCode(employeePermanentAddress.getPinCode());
+                employeeAddressPermanent.setEmpID(employeePermanentAddress.getEmpId());
+                employeeAddressPermanent.setFlag(employeePermanentAddress.getFlag());
                 employeeBackend.setPermanentAddress(employeeAddressPermanent);
 
                 employeeAddressTemporary.setHouseName(employeeTemporaryAddress.getHouseName());
@@ -182,9 +202,11 @@ public class EmployeeServices implements EmployeeRepository {
                 employeeAddressTemporary.setCityName(employeeTemporaryAddress.getCityName());
                 employeeAddressTemporary.setStateName(employeeTemporaryAddress.getStateName());
                 employeeAddressTemporary.setPinCode(employeeTemporaryAddress.getPinCode());
+                employeeAddressTemporary.setEmpID(employeeTemporaryAddress.getEmpId());
+                employeeAddressTemporary.setFlag(employeeTemporaryAddress.getFlag());
                 employeeBackend.setTemporaryAddress(employeeAddressTemporary);
 
-                backend.method.EmployeeInterface employeeInterface = new business.logic.App();
+                entity.backend.method.EmployeeInterface employeeInterface = new business.logic.App();
                 boolean success = employeeInterface.writeEmployeeDetails(employeeBackend);
 //                boolean success = soapEmployee.callWriteEmployee(employeeBackend);
                 if(success){
@@ -338,12 +360,32 @@ public class EmployeeServices implements EmployeeRepository {
     //displays the output data
     @Override
     public void outputData() throws SQLException {
-        backend.method.EmployeeInterface app1 = new business.logic.App();
+        entity.backend.method.EmployeeInterface app1 = new business.logic.App();
 
         List<Employee> consoleEmployees = new ArrayList<>();  //frontend
+        //entity.backend.Employee[] employees = gson.fromJson(in, entity.backend.Employee[].class);
+//      List<entity.backend.Employee> employeeList = Arrays.asList(employees);
 
-        List<entity.backend.Employee> backendEmployees = app1.displayEmployeeDetails(); //backend
+       // List<entity.backend.Employee> backendEmployees = app1.displayEmployeeDetails(); //backend
+        List<entity.backend.Employee> backendEmployees=null;
+        try {
+            URL url = new URL("http://localhost:7001/EmployeeWebServices/readAll");//specified url
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();//connection to the specified url
+            con.setRequestMethod("GET");//request is a get method
+            Gson gson = new Gson();
+            int status = con.getResponseCode();
+            if (status == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));//gets the response from the server in the form of json
+                Type employeeListType = new TypeToken<List<entity.backend.Employee>>(){}.getType();
+                List<entity.backend.Employee> employeeList = gson.fromJson(in,employeeListType);//
+                backendEmployees = employeeList; //backend
 
+            } else {
+                System.out.println(resourceBundle.getString("web.disconnect")+ status);
+            }
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 
         for (entity.backend.Employee backendEmployee : backendEmployees) {
 
@@ -409,7 +451,7 @@ public class EmployeeServices implements EmployeeRepository {
     //filter the pin code
     @Override
     public void filter() throws SQLException {
-        backend.method.EmployeeInterface employeeInterface = new business.logic.App(); // Instantiate the class where findEmployeesByPincode() is defined
+        entity.backend.method.EmployeeInterface employeeInterface = new business.logic.App(); // Instantiate the class where findEmployeesByPincode() is defined
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter pincode to filter employees:");

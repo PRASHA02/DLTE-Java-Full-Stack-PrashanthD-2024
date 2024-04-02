@@ -8,13 +8,13 @@ public class EmployeeAddress {
     private String cityName;
     private String stateName;
     private Integer pinCode;
-    private Employee empID;
+    private Integer empID;
     private String flag;
 
     public EmployeeAddress() {
     }
 
-    public EmployeeAddress(String houseName, String streetName, String cityName, String stateName, Integer pinCode, Employee empID, String flag) {
+    public EmployeeAddress(String houseName, String streetName, String cityName, String stateName, Integer pinCode,Integer empID, String flag) {
         this.houseName = houseName;
         this.streetName = streetName;
         this.cityName = cityName;
@@ -64,11 +64,11 @@ public class EmployeeAddress {
         this.pinCode = pinCode;
     }
 
-    public Employee getEmpID() {
+    public Integer getEmpID() {
         return empID;
     }
 
-    public void setEmpID(Employee empID) {
+    public void setEmpID(Integer empID) {
         this.empID = empID;
     }
 

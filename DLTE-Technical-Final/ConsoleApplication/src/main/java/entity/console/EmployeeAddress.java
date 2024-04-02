@@ -7,13 +7,13 @@ public class EmployeeAddress {
     private String cityName;
     private String stateName;
     private Integer pinCode;
-    private Employee empId;
+    private Integer empId;
     private String flag;
 
     public EmployeeAddress() {
     }
 
-    public EmployeeAddress(String houseName, String streetName, String cityName, String stateName, Integer pinCode, Employee empId, String flag) {
+    public EmployeeAddress(String houseName, String streetName, String cityName, String stateName, Integer pinCode, Integer empId, String flag) {
         this.houseName = houseName;
         this.streetName = streetName;
         this.cityName = cityName;
@@ -23,11 +23,11 @@ public class EmployeeAddress {
         this.flag = flag;
     }
 
-    public Employee getEmpId() {
+    public Integer getEmpId() {
         return empId;
     }
 
-    public void setEmpId(Employee empId) {
+    public void setEmpId(Integer empId) {
         this.empId = empId;
     }
 

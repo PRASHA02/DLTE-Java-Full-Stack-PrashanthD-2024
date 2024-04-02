@@ -6,6 +6,7 @@ import backend.exceptions.UserAlreadyExistException;
 import console.repository.EmployeeRepository;
 import console.services.EmployeeServices;
 import check.validations.Validation;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,6 +1,5 @@
-backend\validations\Validation.class
 backend\exceptions\ConnectionFailureException.class
-backend\method\EmployeeInterface.class
+entity\backend\validations\Validation.class
 backend\exceptions\BusinessRuleException.class
 backend\exceptions\UserAlreadyExistException.class
 backend\exceptions\InsertionFailureException.class
@@ -9,3 +8,4 @@ backend\exceptions\ValidationException.class
 db\connection\Database.class
 entity\backend\Employee.class
 entity\backend\EmployeeAddress.class
+entity\backend\method\EmployeeInterface.class
