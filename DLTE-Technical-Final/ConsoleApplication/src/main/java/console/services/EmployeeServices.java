@@ -452,19 +452,74 @@ public class EmployeeServices implements EmployeeRepository {
     @Override
     public void filter() throws SQLException {
         entity.backend.method.EmployeeInterface employeeInterface = new business.logic.App(); // Instantiate the class where findEmployeesByPincode() is defined
-
+        List<Employee> consoleEmployees = new ArrayList<>();  //frontend
         Scanner scanner = new Scanner(System.in);
+        List<entity.backend.Employee> filteredEmployees = null;
         System.out.println("Enter pincode to filter employees:");
-        int pincode = scanner.nextInt();
+        String pinCode = scanner.next();
 
-        List<entity.backend.Employee> filteredEmployees = employeeInterface.findEmployeesByPincode(pincode);
+        try {
+            URL url = new URL("http://localhost:7001/EmployeeWebServices/filterPinCode?pinCode="+pinCode);//specified url
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();//connection to the specified url
+            con.setRequestMethod("GET");//request is a get method
+            Gson gson = new Gson();
+            int status = con.getResponseCode();
+            if (status == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));//gets the response from the server in the form of json
+                Type employeeListType = new TypeToken<List<entity.backend.Employee>>(){}.getType();
+                List<entity.backend.Employee> employeeList = gson.fromJson(in,employeeListType);//
+                filteredEmployees = employeeList; //backend
 
-        if (filteredEmployees.isEmpty()) {
+            } else {
+                System.out.println(resourceBundle.getString("web.disconnect")+ status);
+            }
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+
+//        List<entity.backend.Employee> filteredEmployees = employeeInterface.findEmployeesByPincode(pincode);
+
+        for (entity.backend.Employee backendEmployee : filteredEmployees) {
+
+            entity.console.Employee consoleEmployee = new entity.console.Employee();
+
+            consoleEmployee.setEmpID(backendEmployee.getEmpID());
+            consoleEmployee.setFirstName(backendEmployee.getFirstName());
+            consoleEmployee.setMiddleName(backendEmployee.getMiddleName());
+            consoleEmployee.setLastName(backendEmployee.getLastName());
+            consoleEmployee.setMobileNumber(backendEmployee.getMobileNumber());
+            consoleEmployee.setEmailID(backendEmployee.getEmailID());
+
+            // Set permanent address
+            entity.backend.EmployeeAddress backendPermanentAddress = backendEmployee.getPermanentAddress();
+            entity.console.EmployeeAddress consolePermanentAddress = new entity.console.EmployeeAddress();
+            consolePermanentAddress.setHouseName(backendPermanentAddress.getHouseName());
+            consolePermanentAddress.setStreetName(backendPermanentAddress.getStreetName());
+            consolePermanentAddress.setCityName(backendPermanentAddress.getCityName());
+            consolePermanentAddress.setStateName(backendPermanentAddress.getStateName());
+            consolePermanentAddress.setPinCode(backendPermanentAddress.getPinCode());
+            consoleEmployee.setPermanentAddress(consolePermanentAddress);
+
+            // Set temporary address
+            entity.backend.EmployeeAddress backendTemporaryAddress = backendEmployee.getTemporaryAddress();
+            entity.console.EmployeeAddress consoleTemporaryAddress = new entity.console.EmployeeAddress();
+            consoleTemporaryAddress.setHouseName(backendTemporaryAddress.getHouseName());
+            consoleTemporaryAddress.setStreetName(backendTemporaryAddress.getStreetName());
+            consoleTemporaryAddress.setCityName(backendTemporaryAddress.getCityName());
+            consoleTemporaryAddress.setStateName(backendTemporaryAddress.getStateName());
+            consoleTemporaryAddress.setPinCode(backendTemporaryAddress.getPinCode());
+            consoleEmployee.setTemporaryAddress(consoleTemporaryAddress);
+
+            // Add console employee to the list
+            consoleEmployees.add(consoleEmployee);
+        }
+        if (consoleEmployees.isEmpty()) {
             System.out.println("No employees found for the given pincode.");
         } else {
             System.out.println("Filtered Employees:");
-            for (int i = 0; i < filteredEmployees.size(); i++) {
-                entity.backend.Employee employee = filteredEmployees.get(i);
+            for (int i = 0; i < consoleEmployees.size(); i++) {
+                entity.console.Employee employee = consoleEmployees.get(i);
                 System.out.println("Employee " + (i + 1) + ":");
                 System.out.println("First Name: " + employee.getFirstName());
                 System.out.println("Middle Name: " + employee.getMiddleName());
