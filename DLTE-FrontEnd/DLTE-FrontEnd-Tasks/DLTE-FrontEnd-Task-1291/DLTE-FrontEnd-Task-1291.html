@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        body{
+            background-color: lightblue;  /* background-color: lightblue;   */
+        }
         .main{
             display: flex; 
             justify-content: space-around;
             align-items: center; /* Center vertically */
-            background-color: lightblue;  
-            height: 100vh; 
+            height: 60vh; 
         }
         .products{
             margin: 20px;
@@ -30,12 +32,20 @@
             max-height: 200px;
             border-radius: 5px; /* Center media horizontally */
         }
+        h1{
+            text-align: center;
+            font-size: 10vh;
+            color: black;
+            text-shadow: 2px 2px 6px white;
+        }
 
     </style>
     <title>HTML - Media, Text Componenets</title>
 </head>
 <body>
+    <h1>My Bank Products</h1>
     <div class="main">
+        
         <div class="products">
             <h2>Loans</h2>
             <img src="files/loans.jpg" alt="Loans Image">
