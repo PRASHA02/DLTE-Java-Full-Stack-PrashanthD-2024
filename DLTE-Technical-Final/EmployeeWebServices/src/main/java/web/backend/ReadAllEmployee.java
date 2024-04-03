@@ -25,6 +25,7 @@ public class ReadAllEmployee extends HttpServlet {
         try {
 
             EmployeeInterface employeeInterface = new App();
+//            EmployeeInterface employeeInterface = null;
             resp.setContentType("application/json");
             List<Employee> employee = employeeInterface.displayEmployeeDetails();
 

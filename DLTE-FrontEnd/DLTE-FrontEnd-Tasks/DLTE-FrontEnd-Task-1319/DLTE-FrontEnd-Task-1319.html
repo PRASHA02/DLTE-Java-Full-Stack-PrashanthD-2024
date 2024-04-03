@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form</title>
+<style>
+    body {
+        font-family: Georgia;
+    }
+
+    form {
+        background-image: url("files/icon.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    
+
+    input[type="radio"],
+    label {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    textarea {
+        width: calc(100% - 20px); /* Adjusted width considering padding */
+        padding: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: white;
+    }
+
+    h1 {
+        text-align: center;
+        height: 8vh;
+        color: black;
+        text-shadow: 2px 2px 6px white;
+    }
+</style>
+</head>
+<body>
+    <form>
+        <h1>Cheque Book Form</h1>
+        <label for="account_number">Account Number:</label>
+        <input type="text" id="account_number" name="account_number">
+    </br>
+        <label for="account_holder">Account Holder:</label>
+        <input type="text" id="account_holder" name="account_holder">
+    </br>
+        <label>Account Type:</label>
+        <div><input type="radio" id="savings" name="account_type" value="Savings">
+            <label for="savings">Savings</label></div>
+        <div><input type="radio" id="current" name="account_type" value="Current">
+            <label for="current">Current</label></div>
+        </br>
+
+        <label for="cheque_book_type">Cheque Book Type:</label>
+        <select id="cheque_book_type" name="cheque_book_type">
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+        </select>
+    </br>
+        <label for="date_of_apply">Date of Apply:</label>
+        <input type="date" id="date_of_apply" name="date_of_apply">
+    </br>
+        <input type="checkbox" id="terms_conditions" name="terms_conditions">
+        <label for="terms_conditions">I agree to the Terms and Conditions</label>
+    </br>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="2"></textarea>
+    </br>
+        <label for="signature">Signature:</label>
+        <input type="file" id="signature" name="signature">
+    </br>
+        <label for="contact_number">Contact Number:</label>
+        <input type="tel" id="contact_number" name="contact_number">
+    </br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+    </br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

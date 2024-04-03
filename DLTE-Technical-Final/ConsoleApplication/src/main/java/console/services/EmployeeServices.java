@@ -382,33 +382,19 @@ public class EmployeeServices implements EmployeeRepository {
         entity.backend.method.EmployeeInterface app1 = new business.logic.App();
 
         List<Employee> consoleEmployees = new ArrayList<>();  //frontend
-        //entity.backend.Employee[] employees = gson.fromJson(in, entity.backend.Employee[].class);
-//      List<entity.backend.Employee> employeeList = Arrays.asList(employees);
-
        // List<entity.backend.Employee> backendEmployees = app1.displayEmployeeDetails(); //backend
         List<entity.backend.Employee> backendEmployees=null;
         try {
-            URL url = new URL("http://localhost:7001/EmployeeWebServices/readAll");//specified url
+            URL url = new URL(resourceBundle.getString("web.services.read"));//specified url
             HttpURLConnection con = (HttpURLConnection) url.openConnection();//connection to the specified url
             con.setRequestMethod("GET");//request is a get method
             Gson gson = new Gson();
             int status = con.getResponseCode();
             if (status == HttpURLConnection.HTTP_OK) {
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));//gets the response from the server in the form of json
-                Type employeeListType = new TypeToken<List<entity.backend.Employee>>(){}.getType();
+                Type employeeListType = new TypeToken<List<entity.backend.Employee>>(){}.getType();// Type-erasure:-During compilation, the compiler removes all information related to type parameters and replaces them with their bounds or the type Object if no bounds are specified.
                 List<entity.backend.Employee> employeeList = gson.fromJson(in,employeeListType);//
                 backendEmployees = employeeList; //backend
-
-//                StringBuilder response = new StringBuilder();
-//
-//                // Read each line of the InputStream and append it to the StringBuilder
-//                String inputLine;
-//                while ((inputLine = in.readLine()) != null) {
-//                    response.append(inputLine);
-//                }
-//                String jsonData = response.toString();// You can store this JSON data as needed
-//                System.out.println("JSON Data Received: " + jsonData);
-//                backendEmployees = gson.fromJson(jsonData,new TypeToken<List<entity.backend.Employee>>(){}.getType());
             } else {
                 System.out.println(resourceBundle.getString("web.disconnect")+ status);
             }
