@@ -22,12 +22,11 @@ public class WriteEmployee extends HttpServlet {
         try {
             EmployeeInterface employeeInterface = new App();
             Employee employee = gson.fromJson(req.getReader(),Employee.class);
-            Boolean status = employeeInterface.writeEmployeeDetails(employee);
+            employeeInterface.writeEmployeeDetails(employee);
             resp.setStatus(HttpServletResponse.SC_OK);
-            if(status)
-             resp.getWriter().println(employee.getEmpID()+" has added to the records");
-            else
-                resp.getWriter().println("Insertion has not performed");
+            resp.getWriter().println(employee.getEmpID()+" has added to the records");
+            System.out.println(resp.toString());
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

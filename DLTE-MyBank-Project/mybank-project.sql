@@ -29,6 +29,7 @@ CREATE TABLE mybank_app_account (
     account_type VARCHAR(50),
     account_number NUMBER UNIQUE,
     account_status VARCHAR(50),
+    account_balance NUMBER(10,2),
     foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade
 );
 
@@ -87,24 +88,23 @@ END;
 /
 --5).Payee
 
-
 create sequence mybank_app_payee_seq start with 400001 increment by 1;
-
+ 
 CREATE TABLE MYBANK_APP_Payee (
     payee_id NUMBER PRIMARY KEY,
-    customer_id NUMBER,
-    account_number NUMBER,
+    sender_account_number NUMBER,
+    beneficiary_account_number NUMBER,
     payee_name VARCHAR(255),
-    foreign key (customer_id) REFERENCES  mybank_app_customer(customer_id) on delete cascade,
-    foreign key (account_number) REFERENCES  mybank_app_account(account_number) on delete cascade
-
+    foreign key (sender_account_number) REFERENCES  mybank_app_account(account_number) on delete cascade,
+    foreign key (beneficiary_account_number) REFERENCES  mybank_app_account(account_number) on delete cascade
+ 
 );
-
+ 
 CREATE OR REPLACE TRIGGER mybank_app_payee_trigger
 BEFORE INSERT ON mybank_app_payee
 FOR EACH ROW
 BEGIN   
-    SELECT mybank_app_transaction_seq.NEXTVAL INTO :NEW.payee_id FROM dual;
+    SELECT mybank_app_payee_seq.NEXTVAL INTO :NEW.payee_id FROM dual;
 END;
 /
 

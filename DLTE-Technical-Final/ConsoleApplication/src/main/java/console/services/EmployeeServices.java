@@ -12,9 +12,7 @@ import entity.console.EmployeeAddress;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -206,14 +204,35 @@ public class EmployeeServices implements EmployeeRepository {
                 employeeAddressTemporary.setFlag(employeeTemporaryAddress.getFlag());
                 employeeBackend.setTemporaryAddress(employeeAddressTemporary);
 
-                entity.backend.method.EmployeeInterface employeeInterface = new business.logic.App();
-                boolean success = employeeInterface.writeEmployeeDetails(employeeBackend);
-//                boolean success = soapEmployee.callWriteEmployee(employeeBackend);
-                if(success){
-                    System.out.println(resourceBundle.getString("employee.create.success"));
-                }else{
-                    System.out.println(resourceBundle.getString("employee.create.failure"));
+//                entity.backend.method.EmployeeInterface employeeInterface = new business.logic.App();
+                try {
+                    URL url = new URL("http://localhost:7001/EmployeeWebServices/writeEmployee");
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    con.setRequestMethod("POST");
+                    con.setRequestProperty("Content-Type", "application/json");
+                    con.setDoOutput(true);
+
+                    Gson gson = new Gson();
+                    String jsonInputString = gson.toJson(employeeBackend);
+
+                    //Print the JSON string before sending the request
+                    System.out.println("JSON Request Body: " + jsonInputString);
+
+                    // Write JSON string to output stream using BufferedWriter
+                    try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(con.getOutputStream()))) {
+                        writer.write(jsonInputString);
+                    }
+
+                    int responseCode = con.getResponseCode();
+                    if (responseCode == HttpURLConnection.HTTP_OK) {
+                        System.out.println(resourceBundle.getString("web.insert.success"));
+                    } else {
+                        System.out.println(resourceBundle.getString("web.insert.fail"));
+                    }
+                } catch(IOException e) {
+                    System.out.println("IOException occurred: " + e.getMessage());
                 }
+
             }catch (ValidationException ex) {
                 // Handle validation error
                 Employee employee = new Employee();
@@ -380,6 +399,16 @@ public class EmployeeServices implements EmployeeRepository {
                 List<entity.backend.Employee> employeeList = gson.fromJson(in,employeeListType);//
                 backendEmployees = employeeList; //backend
 
+//                StringBuilder response = new StringBuilder();
+//
+//                // Read each line of the InputStream and append it to the StringBuilder
+//                String inputLine;
+//                while ((inputLine = in.readLine()) != null) {
+//                    response.append(inputLine);
+//                }
+//                String jsonData = response.toString();// You can store this JSON data as needed
+//                System.out.println("JSON Data Received: " + jsonData);
+//                backendEmployees = gson.fromJson(jsonData,new TypeToken<List<entity.backend.Employee>>(){}.getType());
             } else {
                 System.out.println(resourceBundle.getString("web.disconnect")+ status);
             }
@@ -469,10 +498,10 @@ public class EmployeeServices implements EmployeeRepository {
                 Type employeeListType = new TypeToken<List<entity.backend.Employee>>(){}.getType();
                 List<entity.backend.Employee> employeeList = gson.fromJson(in,employeeListType);//
                 filteredEmployees = employeeList; //backend
-
             } else {
                 System.out.println(resourceBundle.getString("web.disconnect")+ status);
             }
+
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
