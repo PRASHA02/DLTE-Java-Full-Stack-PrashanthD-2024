@@ -27,7 +27,7 @@ public class EmployeeServices implements EmployeeRepository {
     static Logger logger = LoggerFactory.getLogger(console.application.App.class);
     static Scanner scanner = new Scanner(System.in);
     static Validation validation = new Validation();
-
+    static HttpURLConnection con;
     //takes the user data
     @Override
     public void inputData() throws SQLException, UserAlreadyExistException, ConnectionFailureException {
@@ -206,7 +206,7 @@ public class EmployeeServices implements EmployeeRepository {
 
 //                entity.backend.method.EmployeeInterface employeeInterface = new business.logic.App();
                 try {
-                    URL url = new URL("http://localhost:7001/EmployeeWebServices/writeEmployee");
+                    URL url = new URL(resourceBundle.getString("web.services.write"));
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
                     con.setRequestMethod("POST");
                     con.setRequestProperty("Content-Type", "application/json");
@@ -386,7 +386,7 @@ public class EmployeeServices implements EmployeeRepository {
         List<entity.backend.Employee> backendEmployees=null;
         try {
             URL url = new URL(resourceBundle.getString("web.services.read"));//specified url
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();//connection to the specified url
+            con = (HttpURLConnection) url.openConnection();//connection to the specified url
             con.setRequestMethod("GET");//request is a get method
             Gson gson = new Gson();
             int status = con.getResponseCode();
