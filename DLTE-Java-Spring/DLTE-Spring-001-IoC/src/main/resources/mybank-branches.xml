@@ -5,7 +5,7 @@
         <property name="branchId" value="11610"/>
     </bean>
 
-    <bean id="branch5" class="di.ioc.Branch" >
+    <bean name="branchname" id="branch5" class="di.ioc.Branch" >
         <property name="bankName" value="MyBank"/>
         <property name="branchContact" value="8765678765676"/>
         <property name="branchId" value="122"/>
@@ -13,11 +13,15 @@
         <property name="ifsCode" value="ABD23434"/>
     </bean>
 
-    <bean name="branch5" class="di.ioc.Branch">
+    <bean name="branchName,bname" id="branch3" class="di.ioc.Branch">
         <constructor-arg index="4" value="1234532343"/>
         <constructor-arg index="2" value="124"/>
         <constructor-arg index="3" value="MyBank"/>
         <constructor-arg index="0" value="Bhanshankari"/>
         <constructor-arg index="1" value="ABD234455"/>
+    </bean>
+
+    <bean name="branch" id="test" class="di.ioc.User">
+
     </bean>
 </beans>

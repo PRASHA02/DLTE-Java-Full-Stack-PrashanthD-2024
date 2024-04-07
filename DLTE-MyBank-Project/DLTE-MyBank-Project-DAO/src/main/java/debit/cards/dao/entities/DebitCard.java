@@ -1,23 +1,67 @@
 package debit.cards.dao.entities;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
+//Debit Card Entity
 public class DebitCard {
 
+    @NotNull(message= "{card.number.null}")
+    @Digits(integer=16,fraction = 0,message = "{card.number.invalid}")
     private Long debitCardNumber;
+
+    @NotNull(message= "{account.number.null}")
+    @Digits(integer=14,fraction = 0,message = "{account.number.invalid}")
     private Long accountNumber;
+
+    @NotNull(message= "{customer.id.null}")
+    @Digits(integer =6,fraction = 0,message = "{customer.id.invalid}")
     private Integer customerId;
+
+    @NotNull(message = "{card.cvv.null}")
+    @Digits(integer = 3, fraction = 0, message = "{card.cvv.invalid}")
     private Integer debitCardCvv;
+
+    @NotNull(message = "{card.pin.null}")
+    @Digits(integer = 4,fraction = 0,message = "{card.pin.invalid}")
     private Integer debitCardPin;
+
+    @NotNull(message = "{card.expiry.null}")
     private Date debitCardExpiry;
+    //pattern perform regex validations
+    @NotNull(message = "{card.status.null}")
+    @Pattern(regexp = "^(active|inactive|Active|Inactive|ACTIVE|INACTIVE)$", message = "{card.status.invalid}")
     private String debitCardStatus;
+
+    @NotNull(message = "{card.domestic.null}")
     private Double domesticLimit;
+
+    @NotNull(message = "{card.international.null}")
     private Double internationalLimit;
 
     public Long getDebitCardNumber() {
         return debitCardNumber;
     }
+
+    public DebitCard() {
+    }
+
+    public DebitCard(@NotNull(message = "{card.number.null}") @Digits(integer = 16, fraction = 0, message = "{card.number.invalid}") Long debitCardNumber, @NotNull(message = "{account.number.null}") @Digits(integer = 14, fraction = 0, message = "{account.number.invalid}") Long accountNumber, @NotNull(message = "{customer.id.null}") @Digits(integer = 6, fraction = 0, message = "{customer.id.invalid}") Integer customerId, @NotNull(message = "{card.cvv.null}") @Digits(integer = 3, fraction = 0, message = "{card.cvv.invalid}") Integer debitCardCvv, @NotNull(message = "{card.pin.null}") @Digits(integer = 4, fraction = 0, message = "{card.pin.invalid}") Integer debitCardPin, @NotNull(message = "{card.expiry.null}") Date debitCardExpiry, @NotNull(message = "{card.status.null}") @Pattern(regexp = "^[a-zA-Z]+$", message = "{card.status.invalid}") String debitCardStatus, @NotNull(message = "{card.domestic.null}") Double domesticLimit, @NotNull(message = "{card.international.null}") Double internationalLimit) {
+        this.debitCardNumber = debitCardNumber;
+        this.accountNumber = accountNumber;
+        this.customerId = customerId;
+        this.debitCardCvv = debitCardCvv;
+        this.debitCardPin = debitCardPin;
+        this.debitCardExpiry = debitCardExpiry;
+        this.debitCardStatus = debitCardStatus;
+        this.domesticLimit = domesticLimit;
+        this.internationalLimit = internationalLimit;
+    }
+
+
 
     @Override
     public String toString() {
