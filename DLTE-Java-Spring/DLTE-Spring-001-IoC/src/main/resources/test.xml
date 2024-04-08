@@ -9,7 +9,8 @@
 
     <!-- Define UserController bean -->
     <bean id="userController" class="di.ioc.UserController">
-        <!-- Inject UserService bean into UserController -->
-        <property name="userService" ref="userService" />
+<!--         Inject UserService bean into UserController -->
+        <constructor-arg name="userService" ref="userService"/>
+<!--        <property name="userService" ref="userService"/>-->
     </bean>
 </beans>

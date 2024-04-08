@@ -28,7 +28,7 @@
     <div class="collapse navbar-collapse" id="myBankMenu">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a target="_blank" class="btn btn-outline-light rounded-5 me-2" href="#new-cheque-request">New Cheque Book Request</a>
+          <a target="_blank" class="btn btn-outline-light rounded-5 me-2" href="form.html">New Cheque Book Request</a>
         </li>
         <li class="nav-item">
           <a target="_blank" class="btn btn-outline-light rounded-5 me-2" href="#cheque-details">Cheque Book Details</a>
@@ -36,40 +36,12 @@
         <li class="nav-item" >
           <a   target="_blank" class="btn btn-outline-light rounded-5 me-2 " href="#recent-schemes">Recent Schemes</a>
         </li>
-        <li class="nav-item" >
-          <a  target="_blank" class="btn btn-outline-light rounded-5 me-2 " href="task1.html">Task1</a>
-        </li>
-        <li class="nav-item" >
-          <a  target="_blank" class="btn btn-outline-light rounded-5 me-2 " href="task2.html">Task2</a>
+      
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<!-- New Cheque book request form -->
-<section id="new-cheque-request" class="container py-10">
-    <h2>New Cheque Book Request</h2>
-    <form>
-        <div class="form-group">
-            <label for="account-number">Account Number</label>
-            <input type="text" class="form-control" id="account-number" placeholder="Enter Account Number">
-        </div>
-        <div class="form-group">
-            <label for="account-holder">Account Holder Name</label>
-            <input type="text" class="form-control" id="account-holder" placeholder="Enter Account Holder Name">
-        </div>
-        <div class="form-group">
-            <label for="cheque-type">Cheque Book Type</label>
-            <select class="form-control" id="cheque-type">
-                <option value="personal">Personal</option>
-                <option value="business">Business</option>
-            </select>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Submit Request</button>
-    </form>
-</section>
 
 <!-- Cheque Book Details -->
 <section id="cheque-details" class="container py-5">
@@ -88,13 +60,40 @@
             <tr>
                 <td>1234567890</td>
                 <td>Prashanth D</td>
-                <td>Personal</td>
+                <td>Savings</td>
                 <td>
                     <button class="btn btn-success">Approve</button>
                     <button class="btn btn-danger">Reject</button>
                 </td>
             </tr>
-            <!-- More rows here if needed -->
+            <tr>
+              <td>13265323362</td>
+              <td>Vineeth</td>
+              <td>Current</td>
+              <td>
+                  <button class="btn btn-success">Approve</button>
+                  <button class="btn btn-danger">Reject</button>
+              </td>
+          </tr>
+            <tr>
+              <td>13265323323</td>
+              <td>Ankitha</td>
+              <td>Savings</td>
+              <td>
+                  <button class="btn btn-success">Approve</button>
+                  <button class="btn btn-danger">Reject</button>
+              </td>
+          </tr>
+            <tr>
+              <td>13265323635</td>
+              <td>Elroy</td>
+              <td>Savings</td>
+              <td>
+                  <button class="btn btn-success">Approve</button>
+                  <button class="btn btn-danger">Reject</button>
+              </td>
+          </tr>
+          
         </tbody>
     </table>
 </section>
@@ -126,7 +125,7 @@
           <button class="carousel-control-prev" type="button" data-bs-target="#scheme-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bg-primary" aria-hidden="true"></span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#myscheme-carousel" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#scheme-carousel" data-bs-slide="next">
             <span class="carousel-control-next-icon bg-primary" aria-hidden="true"></span>
           </button>
     </div>

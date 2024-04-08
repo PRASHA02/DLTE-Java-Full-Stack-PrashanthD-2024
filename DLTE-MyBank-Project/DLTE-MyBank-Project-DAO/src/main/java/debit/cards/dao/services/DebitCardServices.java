@@ -30,21 +30,21 @@ public class DebitCardServices implements DebitCardRepository {
 
     private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(DebitCardServices.class);
+    private static final Logger logger = LoggerFactory.getLogger(DebitCardServices.class);
 
     //performs the business logic of getting list of cards
     @Override
     public  List<DebitCard> getDebitCard() {
         List<DebitCard> debitCardList=null;
         try{
-            debitCardList = jdbcTemplate.query("SELECT * FROM mybank_app_debitcard where not debitcard_status='Block'",new DebitCardMapper());
-            LOGGER.info(resourceBundle.getString("card.fetch.success"));
+            debitCardList = jdbcTemplate.query("SELECT * FROM mybank_app_debitcard where not debitcard_status='Blocked'",new DebitCardMapper());
+            logger.info(resourceBundle.getString("card.fetch.success"));
         }catch(DataAccessException sqlException){
-            LOGGER.error(resourceBundle.getString("sql.syntax.invalid"));
+            logger.error(resourceBundle.getString("sql.syntax.invalid"));
             throw new DebitCardException(resourceBundle.getString("sql.syntax.invalid"));
         }
         if(debitCardList.size()==0){
-            LOGGER.warn(resourceBundle.getString("card.list.null"));
+            logger.warn(resourceBundle.getString("card.list.null"));
             throw new DebitCardNullException();
         }
         return debitCardList;

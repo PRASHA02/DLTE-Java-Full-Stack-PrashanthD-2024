@@ -7,10 +7,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.ws.config.annotation.EnableWs;
 import org.springframework.ws.config.annotation.WsConfigurerAdapter;
+import org.springframework.ws.server.EndpointExceptionResolver;
+import org.springframework.ws.soap.server.endpoint.SoapFaultDefinition;
+import org.springframework.ws.soap.server.endpoint.SoapFaultMappingExceptionResolver;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
+
+import java.util.List;
+import java.util.Properties;
 
 //http://localhost:8082/debitcardrepo/debitcard.wsdl
 @EnableWs
@@ -42,4 +48,7 @@ public class DebitCardConfiguration extends WsConfigurerAdapter {
     public XsdSchema debitCardSchema(){
         return new SimpleXsdSchema(new ClassPathResource("debitcard.xsd"));
     }
+
+
+
 }

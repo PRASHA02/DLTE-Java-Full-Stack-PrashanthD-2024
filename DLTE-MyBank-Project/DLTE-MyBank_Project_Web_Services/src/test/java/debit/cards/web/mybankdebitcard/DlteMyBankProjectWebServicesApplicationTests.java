@@ -63,28 +63,26 @@ class DlteMyBankProjectWebServicesApplicationTests {
         assertEquals(debitCardList.size(),response.getDebitCard().size());
     }
 
-//    @Test
-//    void testAllDebitCards_failure() throws SQLException, DebitCardException {
-//        ViewDebitCardRequest viewDebitCardRequest = new ViewDebitCardRequest();
-//
-//        List<DebitCard> debitCardList = new ArrayList<>();
-//
-//
-//        DebitCard debitCard= new DebitCard(1234567890981234L,78903456789123L,200005,111,1234,new Date(2024,04,4), "active", 2000.0,50000.0);
-//        DebitCard debitCard1 = new DebitCard(7837645907637746L,35467956789123L,123658,234,2323,new Date(2024,04,9), "inactive", 4000.0,70000.0);
-//        DebitCard debitCard2 = new DebitCard(1234567890123456L, 78901234567890L, 300007, 555, 9876, new Date(2024, 4, 14), "active", 3000.0, 60000.0);
-//        DebitCard debitCard3 = new DebitCard(9876543210987654L, 65432109876543L, 400009, 777, 5432, new Date(2024, 4, 19), "blocked", 5000.0, 80000.0);
-//        //Add some dummy data into the arrayList for testing
-//        debitCardList = Stream.of(debitCard,debitCard1,debitCard2,debitCard3).collect(Collectors.toList());
-//
-//        when(debitCardServices.getDebitCard()).thenReturn(debitCardList);
-//        // Execute the method under test
-//        ViewDebitCardResponse response = debitCardPhase.viewDebitCardResponse(viewDebitCardRequest);
-//        assertEquals(HttpServletResponse.SC_NOT_FOUND, response.getServiceStatus().getStatus()); //FAIL
-//
-//        assertSame(3,response.getDebitCard().size());//fail
-//
-//    }
+    @Test
+    void testAllDebitCards_failure() throws SQLException, DebitCardException {
+        ViewDebitCardRequest viewDebitCardRequest = new ViewDebitCardRequest();
+
+        List<DebitCard> debitCardList = new ArrayList<>();
+
+
+        DebitCard debitCard= new DebitCard(1234567890981234L,78903456789123L,200005,111,1234,new Date(2024,04,4), "active", 2000.0,50000.0);
+        DebitCard debitCard1 = new DebitCard(7837645907637746L,35467956789123L,123658,234,2323,new Date(2024,04,9), "inactive", 4000.0,70000.0);
+        DebitCard debitCard2 = new DebitCard(1234567890123456L, 78901234567890L, 300007, 555, 9876, new Date(2024, 4, 14), "active", 3000.0, 60000.0);
+        DebitCard debitCard3 = new DebitCard(9876543210987654L, 65432109876543L, 400009, 777, 5432, new Date(2024, 4, 19), "blocked", 5000.0, 80000.0);
+        //Add some dummy data into the arrayList for testing
+        debitCardList = Stream.of(debitCard,debitCard1,debitCard2,debitCard3).collect(Collectors.toList());
+
+        when(debitCardServices.getDebitCard()).thenReturn(debitCardList);
+        // Execute the method under test
+        ViewDebitCardResponse response = debitCardPhase.viewDebitCardResponse(viewDebitCardRequest);
+        assertEquals(HttpServletResponse.SC_NOT_FOUND, response.getServiceStatus().getStatus()); //FAIL
+
+    }
 
     @Test
     public void FetchAllDebitCard_DebitCardException() throws SQLException {

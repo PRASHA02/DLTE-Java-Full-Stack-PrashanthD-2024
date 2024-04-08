@@ -1,5 +1,8 @@
 package di.ioc;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Branch {
     private String branchName;
     private String ifsCode;
