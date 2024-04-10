@@ -2,6 +2,8 @@ package debit.cards.dao.services;
 
 
 import debit.cards.dao.entities.DebitCard;
+import debit.cards.dao.exceptions.AccountException;
+import debit.cards.dao.exceptions.CustomerException;
 import debit.cards.dao.exceptions.DebitCardException;
 import debit.cards.dao.exceptions.DebitCardNullException;
 import debit.cards.dao.remotes.DebitCardRepository;
@@ -9,15 +11,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.*;
 import org.springframework.stereotype.Service;
 
+import javax.security.auth.login.AccountNotFoundException;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import java.util.List;
-import java.util.ResourceBundle;
+import java.sql.Types;
+import java.util.*;
 
 //This services retrieves all the data from my oracle database and if any exception occurs it handles it.
 
@@ -49,7 +52,42 @@ public class DebitCardServices implements DebitCardRepository {
         }
         return debitCardList;
     }
-  //Row Mapper is used for getting the data from database and mapping it to Java objects.
+    @Override
+    public String updateDebitLimit(DebitCard debitCard) {
+        int ack=0;
+        String procedureCall = "{call UPDATE_DEBITCARD_LIMIT(?, ?, ?)}";
+        try {
+         ack = jdbcTemplate.update(procedureCall,
+                    new Object[]{
+                            debitCard.getAccountNumber(),
+                            debitCard.getDomesticLimit(),
+                            debitCard.getInternationalLimit(),
+                    },
+                    new int[]{
+                            Types.NUMERIC,
+                            Types.DOUBLE,
+                            Types.DOUBLE
+                    });
+
+        } catch (DataAccessException e) {
+            String errorMessage = e.getMessage();
+            if (errorMessage.contains("-20001")) {
+                throw new CustomerException(resourceBundle.getString("customer.not.found"));
+            } else if (errorMessage.contains("-20002")) {
+                throw new AccountException(resourceBundle.getString("account.not.found"));
+            } else if (errorMessage.contains("-20003")) {
+                throw new DebitCardException(resourceBundle.getString("limit.update.failed"));
+            } else if (errorMessage.contains("-20004")) {
+                throw new DebitCardException(resourceBundle.getString("sql.syntax.invalid"));
+            }
+        }
+       return resourceBundle.getString("limit.update.success");
+    }
+
+
+
+
+    //Row Mapper is used for getting the data from database and mapping it to Java objects.
    public class DebitCardMapper implements RowMapper<DebitCard>{
 
        @Override

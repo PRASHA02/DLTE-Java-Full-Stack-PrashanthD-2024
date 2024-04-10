@@ -201,7 +201,7 @@ public class App implements EmployeeInterface {
                 employees.add(employee);
             }
         } catch (SQLException e) {
-            throw new ConnectionFailureException("Failed to retrieve employee details: " + e.getMessage());
+            throw new ConnectionFailureException(resourceBundle.getString("fetch.fail"));
         } finally {
             if (resultSet != null) {
                 resultSet.close();
@@ -268,7 +268,7 @@ public class App implements EmployeeInterface {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new ConnectionFailureException("Failed to find employees by pincode: " + e.getMessage());
+            throw new ConnectionFailureException(resourceBundle.getString("fetch.fail"));
         } finally {
             if (resultSet != null) {
                 resultSet.close();
@@ -282,6 +282,7 @@ public class App implements EmployeeInterface {
         }
         return employeeDetailsList;
     }
+
 
 
 

@@ -1,0 +1,638 @@
+[33m2024-04-10 06:10:57,504[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarting SpringDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 23688 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:10:57,521[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:10:58,718[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:10:58,752[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mFinished Spring Data repository scanning in 12 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:11:00,940[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 06:11:00,954[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:11:01,664[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:11:01,664[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 06:11:02,603[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarted SpringDaoApplicationTests in 5.764 seconds (JVM running for 7.546)
+[0;39m[33m2024-04-10 06:11:03,824[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown initiated...
+[0;39m[33m2024-04-10 06:11:03,919[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown completed.
+[0;39m[33m2024-04-10 06:27:55,967[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarting SpringDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 31224 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:27:55,967[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:27:56,723[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:27:56,739[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mFinished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:27:58,170[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 06:27:58,186[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:27:58,614[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:27:58,629[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 06:27:58,867[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarted SpringDaoApplicationTests in 3.189 seconds (JVM running for 4.393)
+[0;39m[33m2024-04-10 06:27:59,244[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown initiated...
+[0;39m[33m2024-04-10 06:27:59,260[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown completed.
+[0;39m[33m2024-04-10 06:29:40,298[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 23044 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:29:40,298[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:29:40,348[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [34mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
+[0;39m[33m2024-04-10 06:29:40,348[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[33m2024-04-10 06:29:40,348[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[33m2024-04-10 06:29:40,954[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:29:40,970[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 11 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:29:41,510[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:29:41,526[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 06:29:41,526[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 06:29:41,636[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 06:29:41,636[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 1288 ms
+[0;39m[33m2024-04-10 06:29:42,096[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 06:29:42,096[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:29:42,219[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:29:42,219[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 06:29:42,298[0;39m [31m[WARN][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mUnable to start LiveReload server
+[0;39m[33m2024-04-10 06:29:42,330[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 06:29:42,330[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 2.441 seconds (JVM running for 3.191)
+[0;39m[33m2024-04-10 06:29:42,536[0;39m [31m[WARN][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mInsertion failed due To violation constraint.Employee Already Exists!!
+[0;39m[33m2024-04-10 06:30:33,765[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 28528 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:30:33,765[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:30:33,808[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [34mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
+[0;39m[33m2024-04-10 06:30:33,808[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[33m2024-04-10 06:30:33,808[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[33m2024-04-10 06:30:34,382[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:30:34,398[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:30:34,789[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:30:34,789[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 06:30:34,789[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 06:30:34,884[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 06:30:34,884[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 1076 ms
+[0;39m[33m2024-04-10 06:30:35,283[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 06:30:35,294[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:30:35,357[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:30:35,357[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 06:30:35,435[0;39m [31m[WARN][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mUnable to start LiveReload server
+[0;39m[33m2024-04-10 06:30:35,467[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 06:30:35,467[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 2.053 seconds (JVM running for 2.753)
+[0;39m[33m2024-04-10 06:34:47,231[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 12624 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:34:47,234[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:34:47,291[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [34mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
+[0;39m[33m2024-04-10 06:34:47,291[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[33m2024-04-10 06:34:47,291[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[33m2024-04-10 06:34:47,876[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:34:47,891[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:34:48,300[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:34:48,318[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 06:34:48,318[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 06:34:48,392[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 06:34:48,414[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 1123 ms
+[0;39m[33m2024-04-10 06:34:48,806[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 06:34:48,806[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:34:48,919[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:34:48,922[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 06:34:49,010[0;39m [31m[WARN][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mUnable to start LiveReload server
+[0;39m[33m2024-04-10 06:34:49,042[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 06:34:49,058[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 2.177 seconds (JVM running for 2.92)
+[0;39m[33m2024-04-10 06:34:49,216[0;39m [31m[WARN][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mInsertion failed due To violation constraint.Employee Already Exists!!
+[0;39m[33m2024-04-10 06:35:40,793[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 27128 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:35:40,794[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:35:40,828[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [34mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
+[0;39m[33m2024-04-10 06:35:40,828[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[33m2024-04-10 06:35:40,828[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[33m2024-04-10 06:35:41,331[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:35:41,346[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:35:41,759[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:35:41,759[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 06:35:41,759[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 06:35:41,852[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 06:35:41,852[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 1024 ms
+[0;39m[33m2024-04-10 06:35:42,247[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 06:35:42,247[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:35:42,310[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:35:42,325[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 06:35:42,389[0;39m [31m[WARN][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mUnable to start LiveReload server
+[0;39m[33m2024-04-10 06:35:42,405[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 06:35:42,420[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 2.015 seconds (JVM running for 2.78)
+[0;39m[33m2024-04-10 06:42:43,140[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 19452 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:42:43,140[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:42:43,171[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [34mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
+[0;39m[33m2024-04-10 06:42:43,186[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[33m2024-04-10 06:42:43,186[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[33m2024-04-10 06:42:43,738[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:42:43,754[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:42:44,128[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:42:44,136[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 06:42:44,136[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 06:42:44,214[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 06:42:44,214[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 1028 ms
+[0;39m[33m2024-04-10 06:42:44,591[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 06:42:44,591[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:42:44,670[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:42:44,670[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 06:42:44,740[0;39m [31m[WARN][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mUnable to start LiveReload server
+[0;39m[33m2024-04-10 06:42:44,765[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 06:42:44,765[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 1.967 seconds (JVM running for 2.688)
+[0;39m[33m2024-04-10 06:42:44,892[0;39m [31m[INFO][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mEmployee Details inserted successfully
+[0;39m[33m2024-04-10 06:43:06,985[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [34mRestarting due to 13 class path changes (0 additions, 12 deletions, 1 modification)
+[0;39m[33m2024-04-10 06:43:07,421[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService Thread-2 [34mStopping service [Tomcat]
+[0;39m[33m2024-04-10 06:43:07,448[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-2 [34mHikariPool-1 - Shutdown initiated...
+[0;39m[33m2024-04-10 06:43:07,473[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-2 [34mHikariPool-1 - Shutdown completed.
+[0;39m[33m2024-04-10 06:43:07,717[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 19452 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:43:07,717[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:43:08,128[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:43:08,128[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:43:08,361[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:43:08,366[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 06:43:08,366[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 06:43:08,386[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 06:43:08,386[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 669 ms
+[0;39m[33m2024-04-10 06:43:08,570[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-2 - Starting...
+[0;39m[33m2024-04-10 06:43:08,570[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:43:09,231[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-2 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:43:09,247[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-2 - Start completed.
+[0;39m[33m2024-04-10 06:43:09,287[0;39m [31m[WARN][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mUnable to start LiveReload server
+[0;39m[33m2024-04-10 06:43:09,310[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 06:43:09,326[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 1.675 seconds (JVM running for 27.241)
+[0;39m[33m2024-04-10 06:43:09,326[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [34mCondition evaluation unchanged
+[0;39m[33m2024-04-10 06:43:09,639[0;39m [31m[WARN][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mInsertion failed due To violation constraint.Employee Already Exists!!
+[0;39m[33m2024-04-10 06:43:10,711[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [34mRestarting due to 12 class path changes (12 additions, 0 deletions, 0 modifications)
+[0;39m[33m2024-04-10 06:43:10,883[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService Thread-14 [34mStopping service [Tomcat]
+[0;39m[33m2024-04-10 06:43:10,894[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-14 [34mHikariPool-2 - Shutdown initiated...
+[0;39m[33m2024-04-10 06:43:10,906[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-14 [34mHikariPool-2 - Shutdown completed.
+[0;39m%PARSER_ERROR[clr] %PARSER_ERROR[clr] dao.technical.spring.SpringDaoApplication restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] dao.technical.spring.SpringDaoApplication restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] dao.technical.spring.SpringDaoApplication restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] dao.technical.spring.SpringDaoApplication restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.apache.catalina.core.StandardService restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.apache.catalina.core.StandardEngine restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.apache.catalina.core.StandardService restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.apache.catalina.core.StandardEngine restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/] restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.apache.catalina.core.StandardService restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] com.zaxxer.hikari.HikariDataSource restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] com.zaxxer.hikari.util.DriverDataSource restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] com.zaxxer.hikari.pool.PoolBase restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] com.zaxxer.hikari.HikariDataSource restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.boot.SpringApplication restartedMain %PARSER_ERROR[clr]org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.7.10.jar:2.7.10]
+	at dao.technical.spring.SpringDaoApplication.main(SpringDaoApplication.java:19) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_292]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.7.10.jar:2.7.10]
+Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324) ~[na:1.8.0_292]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522) ~[na:1.8.0_292]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar.afterPropertiesSet(SpringApplicationAdminMXBeanRegistrar.java:129) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.26.jar:5.3.26]
+	... 21 common frames omitted
+%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] dao.technical.spring.SpringDaoApplication restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain %PARSER_ERROR[clr]%PARSER_ERROR[clr] %PARSER_ERROR[clr] dao.technical.spring.services.EmployeeServices restartedMain %PARSER_ERROR[clr][33m2024-04-10 06:43:12,415[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarting SpringDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 21324 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:43:12,431[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:43:13,644[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:43:13,675[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mFinished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:43:15,662[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 06:43:15,662[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:43:16,179[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:43:16,184[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 06:43:16,483[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarted SpringDaoApplicationTests in 4.699 seconds (JVM running for 6.474)
+[0;39m[33m2024-04-10 06:43:17,018[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown initiated...
+[0;39m[33m2024-04-10 06:43:17,034[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown completed.
+[0;39m%PARSER_ERROR[clr] %PARSER_ERROR[clr] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher %PARSER_ERROR[clr][33m2024-04-10 06:46:24,349[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 19452 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:46:24,349[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:46:24,444[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService Thread-20 [34mStopping service [Tomcat]
+[0;39m[33m2024-04-10 06:46:24,460[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-20 [34mHikariPool-3 - Shutdown initiated...
+[0;39m[33m2024-04-10 06:46:24,474[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-20 [34mHikariPool-3 - Shutdown completed.
+[0;39m[33m2024-04-10 06:46:24,481[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[33m2024-04-10 06:46:24,501[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[33m2024-04-10 06:46:24,652[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 19452 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:46:24,666[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:46:24,666[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[33m2024-04-10 06:46:24,666[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[33m2024-04-10 06:46:24,682[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 19452 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:46:24,682[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:46:24,682[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:46:24,682[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:46:24,807[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:46:24,823[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 474 ms
+[0;39m[33m2024-04-10 06:46:24,855[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:46:24,855[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:46:24,871[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:46:24,871[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:46:24,918[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:46:24,934[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 268 ms
+[0;39m[33m2024-04-10 06:46:24,934[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-4 - Starting...
+[0;39m[33m2024-04-10 06:46:24,934[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:46:24,948[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:46:24,968[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-4 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:46:24,970[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-4 - Start completed.
+[0;39m[33m2024-04-10 06:46:24,981[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 299 ms
+[0;39m[33m2024-04-10 06:46:24,981[0;39m [31m[WARN][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mUnable to start LiveReload server
+[0;39m[33m2024-04-10 06:46:24,996[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 06:46:24,998[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 0.678 seconds (JVM running for 222.914)
+[0;39m[33m2024-04-10 06:46:25,004[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [34mCondition evaluation unchanged
+[0;39m[33m2024-04-10 06:46:25,012[0;39m [31m[WARN][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mInsertion failed due To violation constraint.Employee Already Exists!!
+[0;39m[33m2024-04-10 06:46:25,044[0;39m [31m[WARN][0;39m org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext restartedMain [34mException encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+[0;39m[33m2024-04-10 06:46:25,044[0;39m [31m[INFO][0;39m org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener restartedMain [34m
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[0;39m[33m2024-04-10 06:46:25,059[0;39m [31m[ERROR][0;39m org.springframework.boot.SpringApplication restartedMain [34mApplication run failed
+[0;39morg.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.7.10.jar:2.7.10]
+	at dao.technical.spring.SpringDaoApplication.main(SpringDaoApplication.java:19) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_292]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.7.10.jar:2.7.10]
+Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324) ~[na:1.8.0_292]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522) ~[na:1.8.0_292]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar.afterPropertiesSet(SpringApplicationAdminMXBeanRegistrar.java:129) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.26.jar:5.3.26]
+	... 21 common frames omitted
+[33m2024-04-10 06:46:25,092[0;39m [31m[WARN][0;39m org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext restartedMain [34mException encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+[0;39m[33m2024-04-10 06:46:25,092[0;39m [31m[INFO][0;39m org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener restartedMain [34m
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[0;39m[33m2024-04-10 06:46:25,092[0;39m [31m[ERROR][0;39m org.springframework.boot.SpringApplication restartedMain [34mApplication run failed
+[0;39morg.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.7.10.jar:2.7.10]
+	at dao.technical.spring.SpringDaoApplication.main(SpringDaoApplication.java:19) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_292]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.7.10.jar:2.7.10]
+Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324) ~[na:1.8.0_292]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522) ~[na:1.8.0_292]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar.afterPropertiesSet(SpringApplicationAdminMXBeanRegistrar.java:129) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.26.jar:5.3.26]
+	... 21 common frames omitted
+[33m2024-04-10 06:46:26,416[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [34mRestarting due to 12 class path changes (12 additions, 0 deletions, 0 modifications)
+[0;39m[33m2024-04-10 06:46:26,476[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 19452 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:46:26,476[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:46:26,497[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[33m2024-04-10 06:46:26,497[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[33m2024-04-10 06:46:26,497[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 19452 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:46:26,497[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:46:26,543[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService Thread-30 [34mStopping service [Tomcat]
+[0;39m[33m2024-04-10 06:46:26,559[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-30 [34mHikariPool-4 - Shutdown initiated...
+[0;39m[33m2024-04-10 06:46:26,569[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-30 [34mHikariPool-4 - Shutdown completed.
+[0;39m[33m2024-04-10 06:46:26,598[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarting SpringDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 29084 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:46:26,598[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:46:26,685[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[33m2024-04-10 06:46:26,685[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[33m2024-04-10 06:46:26,702[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 19452 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:46:26,702[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:46:26,702[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[33m2024-04-10 06:46:26,716[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[33m2024-04-10 06:46:26,717[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 19452 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:46:26,717[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:46:26,795[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:46:26,795[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:46:26,827[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:46:26,835[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:46:26,874[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:46:26,874[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 06:46:26,890[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 06:46:26,901[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:46:26,901[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 06:46:26,901[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 06:46:26,905[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat-3].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 06:46:26,905[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 426 ms
+[0;39m[33m2024-04-10 06:46:26,922[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:46:26,922[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat-4].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 06:46:26,937[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 440 ms
+[0;39m[33m2024-04-10 06:46:26,946[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:46:26,948[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 14 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:46:26,950[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:46:27,032[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:46:27,032[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 06:46:27,032[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 06:46:27,032[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:46:27,032[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 06:46:27,047[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 06:46:27,126[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat-6].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 06:46:27,126[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 409 ms
+[0;39m[33m2024-04-10 06:46:27,142[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 06:46:27,142[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 440 ms
+[0;39m[33m2024-04-10 06:46:27,173[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-5 - Starting...
+[0;39m[33m2024-04-10 06:46:27,173[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:46:27,173[0;39m [31m[WARN][0;39m org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext restartedMain [34mException encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+[0;39m[33m2024-04-10 06:46:27,173[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStopping service [Tomcat]
+[0;39m[33m2024-04-10 06:46:27,209[0;39m [31m[INFO][0;39m org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener restartedMain [34m
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[0;39m[33m2024-04-10 06:46:27,212[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-5 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:46:27,212[0;39m [31m[ERROR][0;39m org.springframework.boot.SpringApplication restartedMain [34mApplication run failed
+[0;39morg.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.7.10.jar:2.7.10]
+	at dao.technical.spring.SpringDaoApplication.main(SpringDaoApplication.java:19) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_292]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.7.10.jar:2.7.10]
+Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324) ~[na:1.8.0_292]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522) ~[na:1.8.0_292]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar.afterPropertiesSet(SpringApplicationAdminMXBeanRegistrar.java:129) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.26.jar:5.3.26]
+	... 21 common frames omitted
+[33m2024-04-10 06:46:27,212[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-5 - Start completed.
+[0;39m[33m2024-04-10 06:46:27,226[0;39m [31m[WARN][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mUnable to start LiveReload server
+[0;39m[33m2024-04-10 06:46:27,237[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 06:46:27,237[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 0.763 seconds (JVM running for 225.16)
+[0;39m[33m2024-04-10 06:46:27,249[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [34mCondition evaluation unchanged
+[0;39m[33m2024-04-10 06:46:27,258[0;39m [31m[WARN][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mInsertion failed due To violation constraint.Employee Already Exists!!
+[0;39m[33m2024-04-10 06:46:27,317[0;39m [31m[WARN][0;39m org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext restartedMain [34mException encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+[0;39m[33m2024-04-10 06:46:27,317[0;39m [31m[INFO][0;39m org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener restartedMain [34m
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[0;39m[33m2024-04-10 06:46:27,333[0;39m [31m[ERROR][0;39m org.springframework.boot.SpringApplication restartedMain [34mApplication run failed
+[0;39morg.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.7.10.jar:2.7.10]
+	at dao.technical.spring.SpringDaoApplication.main(SpringDaoApplication.java:19) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_292]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.7.10.jar:2.7.10]
+Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324) ~[na:1.8.0_292]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522) ~[na:1.8.0_292]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar.afterPropertiesSet(SpringApplicationAdminMXBeanRegistrar.java:129) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.26.jar:5.3.26]
+	... 21 common frames omitted
+[33m2024-04-10 06:46:27,344[0;39m [31m[WARN][0;39m org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext restartedMain [34mException encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+[0;39m[33m2024-04-10 06:46:27,349[0;39m [31m[INFO][0;39m org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener restartedMain [34m
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[0;39m[33m2024-04-10 06:46:27,349[0;39m [31m[ERROR][0;39m org.springframework.boot.SpringApplication restartedMain [34mApplication run failed
+[0;39morg.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.26.jar:5.3.26]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.7.10.jar:2.7.10]
+	at dao.technical.spring.SpringDaoApplication.main(SpringDaoApplication.java:19) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_292]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.7.10.jar:2.7.10]
+Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900) ~[na:1.8.0_292]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324) ~[na:1.8.0_292]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522) ~[na:1.8.0_292]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar.afterPropertiesSet(SpringApplicationAdminMXBeanRegistrar.java:129) ~[spring-boot-2.7.10.jar:2.7.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.26.jar:5.3.26]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.26.jar:5.3.26]
+	... 21 common frames omitted
+[33m2024-04-10 06:46:27,586[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:46:27,602[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mFinished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:46:28,819[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 06:46:28,819[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:46:29,142[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:46:29,158[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 06:46:29,300[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarted SpringDaoApplicationTests in 3.02 seconds (JVM running for 3.986)
+[0;39m[33m2024-04-10 06:46:29,668[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown initiated...
+[0;39m[33m2024-04-10 06:46:29,680[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown completed.
+[0;39m[33m2024-04-10 06:48:09,494[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarting SpringDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 17268 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:48:09,494[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:48:10,124[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:48:10,124[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:48:11,382[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 06:48:11,382[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:48:11,665[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:48:11,681[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 06:48:11,807[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarted SpringDaoApplicationTests in 2.584 seconds (JVM running for 3.512)
+[0;39m[33m2024-04-10 06:48:12,158[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown initiated...
+[0;39m[33m2024-04-10 06:48:12,176[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown completed.
+[0;39m[33m2024-04-10 06:58:27,975[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 24560 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 06:58:27,991[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 06:58:28,029[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [34mThe Class-Path manifest attribute in C:\Users\xxdddddp\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxdddddp/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
+[0;39m[33m2024-04-10 06:58:28,029[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[33m2024-04-10 06:58:28,029[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [34mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[33m2024-04-10 06:58:28,527[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 06:58:28,527[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 06:58:28,893[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 06:58:28,905[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 06:58:28,905[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 06:58:29,002[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 06:58:29,002[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 973 ms
+[0;39m[33m2024-04-10 06:58:29,362[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 06:58:29,362[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 06:58:29,440[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 06:58:29,440[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 06:58:29,519[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mLiveReload server is running on port 35729
+[0;39m[33m2024-04-10 06:58:29,534[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 06:58:29,550[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 1.91 seconds (JVM running for 2.707)
+[0;39m[33m2024-04-10 06:58:29,686[0;39m [31m[INFO][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mFetched the Employee Details Successfully
+[0;39m[33m2024-04-10 06:58:29,691[0;39m [31m[INFO][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mFetched the Employee Details Successfully
+[0;39m[33m2024-04-10 07:04:01,569[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [34mRestarting due to 13 class path changes (0 additions, 12 deletions, 1 modification)
+[0;39m[33m2024-04-10 07:04:01,681[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService Thread-10 [34mStopping service [Tomcat]
+[0;39m[33m2024-04-10 07:04:01,681[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-10 [34mHikariPool-1 - Shutdown initiated...
+[0;39m[33m2024-04-10 07:04:01,700[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-10 [34mHikariPool-1 - Shutdown completed.
+[0;39m[33m2024-04-10 07:04:01,821[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 24560 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 07:04:01,821[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 07:04:01,998[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 07:04:01,998[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 07:04:02,074[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 07:04:02,074[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 07:04:02,074[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 07:04:02,089[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 07:04:02,089[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 268 ms
+[0;39m[33m2024-04-10 07:04:02,184[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-2 - Starting...
+[0;39m[33m2024-04-10 07:04:02,184[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 07:04:02,216[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-2 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 07:04:02,216[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-2 - Start completed.
+[0;39m[33m2024-04-10 07:04:02,240[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mLiveReload server is running on port 35729
+[0;39m[33m2024-04-10 07:04:02,248[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 07:04:02,264[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 0.467 seconds (JVM running for 335.419)
+[0;39m[33m2024-04-10 07:04:02,264[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [34mCondition evaluation unchanged
+[0;39m[33m2024-04-10 07:04:02,279[0;39m [31m[INFO][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mFetched the Employee Details Successfully
+[0;39m[33m2024-04-10 07:04:02,279[0;39m [31m[INFO][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mFetched the Employee Details Successfully
+[0;39m[33m2024-04-10 07:04:03,668[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [34mRestarting due to 12 class path changes (12 additions, 0 deletions, 0 modifications)
+[0;39m[33m2024-04-10 07:04:03,779[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService Thread-16 [34mStopping service [Tomcat]
+[0;39m[33m2024-04-10 07:04:03,795[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-16 [34mHikariPool-2 - Shutdown initiated...
+[0;39m[33m2024-04-10 07:04:03,806[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-16 [34mHikariPool-2 - Shutdown completed.
+[0;39m[33m2024-04-10 07:04:03,859[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarting SpringDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 6964 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 07:04:03,859[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 07:04:03,968[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 24560 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 07:04:03,968[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 07:04:04,217[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 07:04:04,223[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 07:04:04,339[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 07:04:04,342[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 07:04:04,342[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 07:04:04,347[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 07:04:04,347[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 379 ms
+[0;39m[33m2024-04-10 07:04:04,489[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-3 - Starting...
+[0;39m[33m2024-04-10 07:04:04,489[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 07:04:04,504[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-3 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 07:04:04,504[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-3 - Start completed.
+[0;39m[33m2024-04-10 07:04:04,520[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mLiveReload server is running on port 35729
+[0;39m[33m2024-04-10 07:04:04,539[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 07:04:04,542[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 0.595 seconds (JVM running for 337.697)
+[0;39m[33m2024-04-10 07:04:04,542[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [34mCondition evaluation unchanged
+[0;39m[33m2024-04-10 07:04:04,557[0;39m [31m[INFO][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mFetched the Employee Details Successfully
+[0;39m[33m2024-04-10 07:04:04,560[0;39m [31m[INFO][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mFetched the Employee Details Successfully
+[0;39m[33m2024-04-10 07:04:04,631[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 07:04:04,647[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mFinished Spring Data repository scanning in 11 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 07:04:06,589[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 07:04:06,605[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 07:04:07,299[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 07:04:07,314[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 07:04:07,621[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarted SpringDaoApplicationTests in 4.091 seconds (JVM running for 5.128)
+[0;39m[33m2024-04-10 07:04:08,184[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown initiated...
+[0;39m[33m2024-04-10 07:04:08,201[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown completed.
+[0;39m[33m2024-04-10 07:08:15,613[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [34mRestarting due to 13 class path changes (0 additions, 12 deletions, 1 modification)
+[0;39m[33m2024-04-10 07:08:15,724[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService Thread-21 [34mStopping service [Tomcat]
+[0;39m[33m2024-04-10 07:08:15,724[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-21 [34mHikariPool-3 - Shutdown initiated...
+[0;39m[33m2024-04-10 07:08:15,740[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-21 [34mHikariPool-3 - Shutdown completed.
+[0;39m[33m2024-04-10 07:08:15,872[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 24560 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 07:08:15,872[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 07:08:16,007[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 07:08:16,007[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 07:08:16,088[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 07:08:16,088[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 07:08:16,088[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 07:08:16,103[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 07:08:16,103[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 222 ms
+[0;39m[33m2024-04-10 07:08:16,182[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-4 - Starting...
+[0;39m[33m2024-04-10 07:08:16,182[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 07:08:16,216[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-4 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 07:08:16,216[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-4 - Start completed.
+[0;39m[33m2024-04-10 07:08:16,216[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mLiveReload server is running on port 35729
+[0;39m[33m2024-04-10 07:08:16,230[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 07:08:16,230[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 0.393 seconds (JVM running for 589.396)
+[0;39m[33m2024-04-10 07:08:16,230[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [34mCondition evaluation unchanged
+[0;39m[33m2024-04-10 07:08:16,254[0;39m [31m[INFO][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mFetched the Employee Details Successfully
+[0;39m[33m2024-04-10 07:08:16,254[0;39m [31m[INFO][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mFetched the Employee Details Successfully
+[0;39m[33m2024-04-10 07:08:17,649[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [34mRestarting due to 12 class path changes (12 additions, 0 deletions, 0 modifications)
+[0;39m[33m2024-04-10 07:08:17,808[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService Thread-26 [34mStopping service [Tomcat]
+[0;39m[33m2024-04-10 07:08:17,808[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-26 [34mHikariPool-4 - Shutdown initiated...
+[0;39m[33m2024-04-10 07:08:17,823[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-26 [34mHikariPool-4 - Shutdown completed.
+[0;39m[33m2024-04-10 07:08:17,873[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarting SpringDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 968 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 07:08:17,873[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 07:08:17,918[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarting SpringDaoApplication using Java 1.8.0_292 on WPF45DYSS with PID 24560 (C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO\target\classes started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-Technical-Final\Spring-DAO)
+[0;39m[33m2024-04-10 07:08:17,918[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[33m2024-04-10 07:08:18,092[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 07:08:18,092[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [34mFinished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 07:08:18,190[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat initialized with port(s): 8083 (http)
+[0;39m[33m2024-04-10 07:08:18,204[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [34mStarting service [Tomcat]
+[0;39m[33m2024-04-10 07:08:18,204[0;39m [31m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [34mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[33m2024-04-10 07:08:18,220[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [34mInitializing Spring embedded WebApplicationContext
+[0;39m[33m2024-04-10 07:08:18,220[0;39m [31m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [34mRoot WebApplicationContext: initialization completed in 302 ms
+[0;39m[33m2024-04-10 07:08:18,346[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-5 - Starting...
+[0;39m[33m2024-04-10 07:08:18,346[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 07:08:18,361[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [34mHikariPool-5 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 07:08:18,361[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [34mHikariPool-5 - Start completed.
+[0;39m[33m2024-04-10 07:08:18,377[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [34mLiveReload server is running on port 35729
+[0;39m[33m2024-04-10 07:08:18,393[0;39m [31m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [34mTomcat started on port(s): 8083 (http) with context path ''
+[0;39m[33m2024-04-10 07:08:18,393[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplication restartedMain [34mStarted SpringDaoApplication in 0.495 seconds (JVM running for 591.559)
+[0;39m[33m2024-04-10 07:08:18,393[0;39m [31m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [34mCondition evaluation unchanged
+[0;39m[33m2024-04-10 07:08:18,408[0;39m [31m[INFO][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mFetched the Employee Details Successfully
+[0;39m[33m2024-04-10 07:08:18,408[0;39m [31m[INFO][0;39m dao.technical.spring.services.EmployeeServices restartedMain [34mFetched the Employee Details Successfully
+[0;39m[33m2024-04-10 07:08:18,581[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[33m2024-04-10 07:08:18,613[0;39m [31m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [34mFinished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
+[0;39m[33m2024-04-10 07:08:19,958[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Starting...
+[0;39m[33m2024-04-10 07:08:19,971[0;39m [31m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [34mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[33m2024-04-10 07:08:20,317[0;39m [31m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [34mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[33m2024-04-10 07:08:20,333[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [34mHikariPool-1 - Start completed.
+[0;39m[33m2024-04-10 07:08:20,528[0;39m [31m[INFO][0;39m dao.technical.spring.SpringDaoApplicationTests main [34mStarted SpringDaoApplicationTests in 2.984 seconds (JVM running for 3.95)
+[0;39m[33m2024-04-10 07:08:20,932[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown initiated...
+[0;39m[33m2024-04-10 07:08:20,959[0;39m [31m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [34mHikariPool-1 - Shutdown completed.
+[0;39m[33m2024-04-10 08:47:29,765[0;39m [31m[WARN][0;39m com.zaxxer.hikari.pool.HikariPool HikariPool-5 housekeeper [34mHikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=34m40s190ms55µs200ns).
+[0;39m[33m2024-04-10 09:26:07,400[0;39m [31m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] http-nio-8083-exec-1 [34mInitializing Spring DispatcherServlet 'dispatcherServlet'
+[0;39m[33m2024-04-10 09:26:07,400[0;39m [31m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8083-exec-1 [34mInitializing Servlet 'dispatcherServlet'
+[0;39m[33m2024-04-10 09:26:07,408[0;39m [31m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8083-exec-1 [34mCompleted initialization in 5 ms
+[0;39m

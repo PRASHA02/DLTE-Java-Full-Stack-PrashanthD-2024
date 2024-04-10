@@ -11,8 +11,5 @@ public class MyBankContext {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("mybank-branches.xml");
         Branch branch=applicationContext.getBean("branchName", Branch.class);
         System.out.println(branch.getIfsCode()+" "+branch.getBranchName());
-
-
-
     }
 }
