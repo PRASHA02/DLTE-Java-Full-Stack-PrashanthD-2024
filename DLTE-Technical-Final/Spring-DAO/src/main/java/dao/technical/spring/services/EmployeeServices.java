@@ -19,10 +19,7 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 @Service
 public class EmployeeServices implements EmployeeInterface {
@@ -118,55 +115,64 @@ public class EmployeeServices implements EmployeeInterface {
     @Override
     public List<Employee> displayEmployeeDetails()  {
         List<Employee> employees = new ArrayList<>();
-        String query = "SELECT * FROM employee_details";
-        String query2 = "SELECT * FROM address_details WHERE emp_id = ? AND flag = 'permanent'";
-        String query3 = "SELECT * FROM address_details WHERE emp_id = ? AND flag = 'temporary'";
-
+//        String query = "SELECT * FROM employee_details";
+//        String query2 = "SELECT * FROM address_details WHERE emp_id = ? AND flag = 'permanent'";
+//        String query3 = "SELECT * FROM address_details WHERE emp_id = ? AND flag = 'temporary'";
+        String query = "SELECT e.first_name, e.middle_name, e.last_name, e.emp_id, e.mobile_number, e.email_id, " +
+                "a.house_name AS permHouseName, a.street_name AS permStreet, a.city_name AS permCity, a.state_name AS permState, a.pin_code AS permPincode, " +
+                "a2.house_name AS tempHouseName, a2.street_name AS tempStreet, a2.city_name AS tempCity, a2.state_name AS tempState, a2.pin_code AS tempPincode " +
+                "FROM employee_details e " +
+                "LEFT JOIN address_details a ON e.emp_id = a.emp_id AND a.flag = 'permanent' " +
+                "LEFT JOIN address_details a2 ON e.emp_id = a2.emp_id AND a2.flag = 'temporary' ";
         try {
-            List<Map<String, Object>> employeeRows = jdbcTemplate.queryForList(query);
-            for (Map<String, Object> employeeRow : employeeRows) {
-                Employee employee = new Employee();
-                int employeeId = ((Number) employeeRow.get("emp_id")).intValue();
-                employee.setFirstName((String) employeeRow.get("first_name"));
-                employee.setMiddleName((String) employeeRow.get("middle_name"));
-                employee.setLastName((String) employeeRow.get("last_name"));
-                employee.setEmpID(((Number) employeeRow.get("emp_id")).intValue());
-                employee.setMobileNumber(((Number) employeeRow.get("mobile_number")).longValue());
-                employee.setEmailID((String) employeeRow.get("email_id"));
+//            List<Map<String, Object>> employeeRows = jdbcTemplate.queryForList(query);
+//            for (Map<String, Object> employeeRow : employeeRows) {
+//                Employee employee = new Employee();
+//                int employeeId = ((Number) employeeRow.get("emp_id")).intValue();
+//                employee.setFirstName((String) employeeRow.get("first_name"));
+//                employee.setMiddleName((String) employeeRow.get("middle_name"));
+//                employee.setLastName((String) employeeRow.get("last_name"));
+//                employee.setEmpID(((Number) employeeRow.get("emp_id")).intValue());
+//                employee.setMobileNumber(((Number) employeeRow.get("mobile_number")).longValue());
+//                employee.setEmailID((String) employeeRow.get("email_id"));
+//
+//                // Fetch permanent address
+//                List<Map<String, Object>> permanentAddressRows = jdbcTemplate.queryForList(query2, employeeId);
+//                if (!permanentAddressRows.isEmpty()) {
+//                    Map<String, Object> permanentAddressRow = permanentAddressRows.get(0);
+//                    EmployeeAddress permanentAddress = new EmployeeAddress();
+//                    permanentAddress.setHouseName((String) permanentAddressRow.get("house_name"));
+//                    permanentAddress.setStreetName((String) permanentAddressRow.get("street_name"));
+//                    permanentAddress.setCityName((String) permanentAddressRow.get("city_name"));
+//                    permanentAddress.setStateName((String) permanentAddressRow.get("state_name"));
+//                    permanentAddress.setPinCode(((Number) permanentAddressRow.get("pin_code")).intValue());
+////                    permanentAddress.setEmpID(employeeId);
+//                    permanentAddress.setFlag((String) permanentAddressRow.get("flag"));
+//                    employee.setPermanentAddress(permanentAddress);
+//                }
+//
+//                // Fetch temporary address
+//                List<Map<String, Object>> temporaryAddressRows = jdbcTemplate.queryForList(query3, employeeId);
+//                if (!temporaryAddressRows.isEmpty()) {
+//                    Map<String, Object> temporaryAddressRow = temporaryAddressRows.get(0);
+//                    EmployeeAddress temporaryAddress = new EmployeeAddress();
+//                    temporaryAddress.setHouseName((String) temporaryAddressRow.get("house_name"));
+//                    temporaryAddress.setStreetName((String) temporaryAddressRow.get("street_name"));
+//                    temporaryAddress.setCityName((String) temporaryAddressRow.get("city_name"));
+//                    temporaryAddress.setStateName((String) temporaryAddressRow.get("state_name"));
+//                    temporaryAddress.setPinCode(((Number) temporaryAddressRow.get("pin_code")).intValue());
+////                    temporaryAddress.setEmpID(employeeId);
+//                    temporaryAddress.setFlag((String) temporaryAddressRow.get("flag"));
+//                    employee.setTemporaryAddress(temporaryAddress);
+//                } else {
+//                    logger.error(resourceBundle.getString("fetch.fail"));
+//                }
+//
+//                employees.add(employee);
 
-                // Fetch permanent address
-                List<Map<String, Object>> permanentAddressRows = jdbcTemplate.queryForList(query2, employeeId);
-                if (!permanentAddressRows.isEmpty()) {
-                    Map<String, Object> permanentAddressRow = permanentAddressRows.get(0);
-                    EmployeeAddress permanentAddress = new EmployeeAddress();
-                    permanentAddress.setHouseName((String) permanentAddressRow.get("house_name"));
-                    permanentAddress.setStreetName((String) permanentAddressRow.get("street_name"));
-                    permanentAddress.setCityName((String) permanentAddressRow.get("city_name"));
-                    permanentAddress.setStateName((String) permanentAddressRow.get("state_name"));
-                    permanentAddress.setPinCode(((Number) permanentAddressRow.get("pin_code")).intValue());
-//                    permanentAddress.setEmpID(employeeId);
-                    permanentAddress.setFlag((String) permanentAddressRow.get("flag"));
-                    employee.setPermanentAddress(permanentAddress);
-                }
-
-                // Fetch temporary address
-                List<Map<String, Object>> temporaryAddressRows = jdbcTemplate.queryForList(query3, employeeId);
-                if (!temporaryAddressRows.isEmpty()) {
-                    Map<String, Object> temporaryAddressRow = temporaryAddressRows.get(0);
-                    EmployeeAddress temporaryAddress = new EmployeeAddress();
-                    temporaryAddress.setHouseName((String) temporaryAddressRow.get("house_name"));
-                    temporaryAddress.setStreetName((String) temporaryAddressRow.get("street_name"));
-                    temporaryAddress.setCityName((String) temporaryAddressRow.get("city_name"));
-                    temporaryAddress.setStateName((String) temporaryAddressRow.get("state_name"));
-                    temporaryAddress.setPinCode(((Number) temporaryAddressRow.get("pin_code")).intValue());
-//                    temporaryAddress.setEmpID(employeeId);
-                    temporaryAddress.setFlag((String) temporaryAddressRow.get("flag"));
-                    employee.setTemporaryAddress(temporaryAddress);
-                }
-
-                employees.add(employee);
-
-            }
+            List<Employee> employeeList = jdbcTemplate.query(query, new EmployeeMapper());
+            employees.addAll(employeeList);
+//        }
         } catch (org.springframework.dao.DataAccessException e) {
             logger.error(resourceBundle.getString("fetch.fail"));
             throw new ConnectionFailureException(resourceBundle.getString("fetch.fail"));
@@ -188,44 +194,8 @@ public class EmployeeServices implements EmployeeInterface {
                     "LEFT JOIN address_details a ON e.emp_id = a.emp_id AND a.flag = 'permanent' " +
                     "LEFT JOIN address_details a2 ON e.emp_id = a2.emp_id AND a2.flag = 'temporary' " +
                     "WHERE a.pin_code = ? OR a2.pin_code = ?";
-            jdbcTemplate.query(query, new Object[]{pincode, pincode}, (ResultSet rs) -> {
-                while (rs.next()) {
-                    Employee employee = new Employee();
-                    employee.setFirstName(rs.getString("first_name"));
-                    employee.setMiddleName(rs.getString("middle_name"));
-                    employee.setLastName(rs.getString("last_name"));
-                    employee.setEmpID(rs.getInt("emp_id"));
-                    employee.setMobileNumber(rs.getLong("mobile_number"));
-                    employee.setEmailID(rs.getString("email_id"));
-
-                    // Retrieve and set permanent address if available
-                    if (rs.getString("emp_id") != null) {
-                        EmployeeAddress permAddress = new EmployeeAddress();
-                        permAddress.setHouseName(rs.getString("permHouseName"));
-                        permAddress.setStreetName(rs.getString("permStreet"));
-                        permAddress.setCityName(rs.getString("permCity"));
-                        permAddress.setStateName(rs.getString("permState"));
-                        permAddress.setPinCode(rs.getInt("permPincode"));
-                        employee.setPermanentAddress(permAddress);
-                    }
-
-                    // Retrieve and set temporary address if available
-                    if (rs.getString("emp_id") != null) {
-                        EmployeeAddress tempAddress = new EmployeeAddress();
-                        tempAddress.setHouseName(rs.getString("tempHouseName"));
-                        tempAddress.setStreetName(rs.getString("tempStreet"));
-                        tempAddress.setCityName(rs.getString("tempCity"));
-                        tempAddress.setStateName(rs.getString("tempState"));
-                        tempAddress.setPinCode(rs.getInt("tempPincode"));
-
-                        employee.setTemporaryAddress(tempAddress);
-                    }
-
-                    employeeDetailsList.add(employee);
-                }
-                logger.info(resourceBundle.getString("fetch.success"));
-                return employeeDetailsList; // Lambda expression requires a return value
-            });
+            List<Employee> rows = jdbcTemplate.query(query, new EmployeeMapper(), pincode, pincode);
+            employeeDetailsList.addAll(rows);
         } catch (org.springframework.dao.DataAccessException e) {
             logger.error(resourceBundle.getString("fetch.fail"));
             throw new ConnectionFailureException(resourceBundle.getString("fetch.fail"));
@@ -252,7 +222,6 @@ public class EmployeeServices implements EmployeeInterface {
             employeePermanentAddress.setCityName(rs.getString(9));
             employeePermanentAddress.setStateName(rs.getString(10));
             employeePermanentAddress.setPinCode(rs.getInt(11));
-            employeePermanentAddress.setEmpID(rs.getInt(1));
 
             EmployeeAddress employeeTemporaryAddress = new EmployeeAddress();
             employeeTemporaryAddress.setHouseName(rs.getString(7));
@@ -260,8 +229,9 @@ public class EmployeeServices implements EmployeeInterface {
             employeeTemporaryAddress.setCityName(rs.getString(9));
             employeeTemporaryAddress.setStateName(rs.getString(10));
             employeeTemporaryAddress.setPinCode(rs.getInt(11));
-            employeeTemporaryAddress.setEmpID(rs.getInt(1));
 
+
+//
             employee.setPermanentAddress(employeePermanentAddress);
             employee.setTemporaryAddress(employeeTemporaryAddress);
             return employee;

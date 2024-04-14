@@ -80,16 +80,5 @@ public class EmployeeAddress {
         this.flag = flag;
     }
 
-    @Override
-    public String toString() {
-        return "EmployeeAddress{" +
-                "houseName='" + houseName + '\'' +
-                ", streetName='" + streetName + '\'' +
-                ", cityName='" + cityName + '\'' +
-                ", stateName='" + stateName + '\'' +
-                ", pinCode=" + pinCode +
-                ", empID=" + empID +
-                ", flag='" + flag + '\'' +
-                '}';
-    }
+
 }

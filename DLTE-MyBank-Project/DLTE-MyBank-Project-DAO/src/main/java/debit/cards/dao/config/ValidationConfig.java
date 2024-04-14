@@ -17,7 +17,7 @@ public class ValidationConfig {
         resourceBundleMessageSource.setDefaultEncoding("UTF-8");
         return  resourceBundleMessageSource;
     }
-
+    @Bean
     public LocalValidatorFactoryBean getValidator(MessageSource messageSource){
         LocalValidatorFactoryBean localValidatorFactoryBean = new LocalValidatorFactoryBean();
         localValidatorFactoryBean.setValidationMessageSource(messageSource);

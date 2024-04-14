@@ -2,13 +2,16 @@ package console.technical.spring.validation;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
+import javax.validation.Valid;
 import java.util.InputMismatchException;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
+@Component
 public class Validation {
-    static Logger logger = LoggerFactory.getLogger(console.technical.spring.application.App.class);
+    static Logger logger = LoggerFactory.getLogger(console.technical.spring.SpringConsoleApplication.class);
     static  Scanner scanner = new Scanner(System.in);
     static ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
     public boolean isValidateMobile(String number) {

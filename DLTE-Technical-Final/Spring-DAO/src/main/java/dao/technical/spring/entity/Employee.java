@@ -96,17 +96,4 @@ public class Employee {
         this.permanentAddress = permanentAddress;
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "firstName='" + firstName + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", empID=" + empID +
-                ", mobileNumber=" + mobileNumber +
-                ", emailID='" + emailID + '\'' +
-                ", temporaryAddress=" + temporaryAddress +
-                ", permanentAddress=" + permanentAddress +
-                '}';
-    }
 }

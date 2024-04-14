@@ -118,6 +118,11 @@ class DlteMyBankProjectWebServicesApplicationTests {
         assertEquals("No Debit cards available", response.getServiceStatus().getMessage());
     }
 
+    @Test
+    public void UpdateLimitSuccess(){
+
+    }
+
 
 
 }

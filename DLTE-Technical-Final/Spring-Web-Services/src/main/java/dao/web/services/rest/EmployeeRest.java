@@ -36,7 +36,7 @@ public class EmployeeRest {
         } catch (InsertionFailureException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         } catch (UserAlreadyExistException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
         }
         }
         @GetMapping("/findAll")
@@ -45,7 +45,8 @@ public class EmployeeRest {
             List<Employee> employeeList = employeeInterface.displayEmployeeDetails();
             return ResponseEntity.ok(employeeList);
         }catch (ConnectionFailureException con){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(con.getMessage());
+
+            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(con.getMessage());
         }
         }
     @GetMapping("/findbypin/{pinCode}")
@@ -54,7 +55,7 @@ public class EmployeeRest {
             List<Employee> employeeList = employeeInterface.findEmployeesByPincode(pinCode);
             return ResponseEntity.ok(employeeList);
         }catch (ConnectionFailureException con){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(con.getMessage());
+            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(con.getMessage());
         }
     }
 }

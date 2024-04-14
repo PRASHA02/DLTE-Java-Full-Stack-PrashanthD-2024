@@ -34,8 +34,6 @@ public class App
                 switch(choice){
                     case 1:try{
                         employeeRepository.inputData();//takes the input from the user
-                    }catch (SQLIntegrityConstraintViolationException sqlException){
-                        System.out.println(resourceBundle.getString("db.fail.insert"));
                     }catch(UserAlreadyExistException userAlreadyExistException){
                         System.out.println(resourceBundle.getString("employee.exists"));
                     }catch(ConnectionFailureException connectionFailureException){

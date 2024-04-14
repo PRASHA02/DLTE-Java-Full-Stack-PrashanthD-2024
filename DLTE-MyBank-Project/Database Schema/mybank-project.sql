@@ -191,7 +191,7 @@ CREATE TABLE mybank_app_insuranceavailed (
 
 );
 
-CREATE OR REPLACE TRIGGER mybank_app_insuranceavailed_tgr
+CREATE OR REPLACE TRIGGER mybank_app_insuranceavld_tgr
 BEFORE INSERT ON mybank_app_insuranceavailed
 FOR EACH ROW
 BEGIN
@@ -202,7 +202,7 @@ END;
 
 --10).Debit card Available
 
-create sequence mybank_app_debitcard_seq start with 900001 increment by 1;
+create sequence mybank_app_debitcard_seq start with  increment by 1;
 
  
 CREATE TABLE mybank_app_debitcard (

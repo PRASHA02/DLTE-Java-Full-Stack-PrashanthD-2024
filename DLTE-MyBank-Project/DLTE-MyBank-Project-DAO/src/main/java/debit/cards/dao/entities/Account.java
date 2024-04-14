@@ -1,9 +1,6 @@
 package debit.cards.dao.entities;
 
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 
 //Account Entity
 public class Account {
@@ -22,11 +19,11 @@ public class Account {
     private String accountType;
 
     @NotNull(message = "{account.number.null}")
-    @Digits(integer = 14, fraction = 0, message = "{account.number.invalid}")
+    @Digits(integer = 14, fraction = 0,message = "{account.number.invalid}")
     private Long accountNumber;
 
     @NotBlank(message = "{account.status.null}")
-    @Pattern(regexp = "^(active|inactive|Active|Inactive|ACTIVE|INACTIVE)$", message = "{card.status.invalid}")
+    @Pattern(regexp = "^(active|inactive)$", message = "{card.status.invalid}")
     private String accountStatus;
 
     @NotNull(message = "{account.balance.null}")

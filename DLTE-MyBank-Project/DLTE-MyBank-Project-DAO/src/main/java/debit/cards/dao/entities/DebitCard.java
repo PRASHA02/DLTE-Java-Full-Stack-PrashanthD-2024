@@ -1,20 +1,23 @@
 package debit.cards.dao.entities;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.CreditCardNumber;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
+
+import javax.validation.constraints.*;
 import java.util.Date;
 
 //Debit Card Entity
 public class DebitCard {
 
     @NotNull(message= "{card.number.null}")
+    @Range(min = 3692468135796670L,max = 9999999999999999L,message = "{card.number.invalid}")
     @Digits(integer=16,fraction = 0,message = "{card.number.invalid}")
     private Long debitCardNumber;
 
     @NotNull(message= "{account.number.null}")
-    @Digits(integer=14,fraction = 0,message = "{account.number.invalid}")
+    @Range(min = 10000000000000L,max = 99999999999999L,message = "{account.number.invalid}")
+    @Digits(integer=14,fraction = 0,message = "{card.number.invalid}")
     private Long accountNumber;
 
     @NotNull(message= "{customer.id.null}")
@@ -33,7 +36,7 @@ public class DebitCard {
     private Date debitCardExpiry;
     //pattern perform regex validations
     @NotNull(message = "{card.status.null}")
-    @Pattern(regexp = "^(active|inactive|Active|Inactive|ACTIVE|INACTIVE)$", message = "{card.status.invalid}")
+    @Pattern(regexp = "^(active|inactive)$", message = "{card.status.invalid}")
     private String debitCardStatus;
 
     @NotNull(message = "{card.domestic.null}")

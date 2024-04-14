@@ -1,9 +1,5 @@
 package console.technical.spring;
 
-import console.technical.spring.repository.EmployeeRepository;
-import console.technical.spring.services.EmployeeServices;
-import console.technical.spring.validation.Validation;
-import dao.technical.spring.SpringDaoApplication;
 import dao.technical.spring.exception.ConnectionFailureException;
 import dao.technical.spring.exception.UserAlreadyExistException;
 import org.slf4j.Logger;
@@ -21,12 +17,11 @@ import java.util.Scanner;
 @SpringBootApplication
 public class SpringConsoleApplication {
         static ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
-        static Logger logger = LoggerFactory.getLogger(console.technical.spring.application.App.class);
-
-        static Validation validation = new Validation();
+        static Logger logger = LoggerFactory.getLogger(console.technical.spring.SpringConsoleApplication.class);
     public static void main(String[] args) {
-        ConfigurableApplicationContext context=  SpringApplication.run(SpringConsoleApplication.class, args);
-        console.technical.spring.services.EmployeeServices employeeServices=context.getBean(console.technical.spring.services.EmployeeServices.class);
+        ConfigurableApplicationContext context =  SpringApplication.run(SpringConsoleApplication.class, args);
+        console.technical.spring.remotes.EmployeeRepository employeeServices=context.getBean(console.technical.spring.services.EmployeeServices.class);
+
             System.out.println(resourceBundle.getString("employee.dashboard"));
             while(true){
                 Scanner scanner = new Scanner(System.in);
@@ -37,23 +32,17 @@ public class SpringConsoleApplication {
                     switch(choice){
                         case 1:try{
                             employeeServices.inputData();//takes the input from the user
-                        }catch (SQLIntegrityConstraintViolationException sqlException){
-                            System.out.println(resourceBundle.getString("db.fail.insert"));
                         }catch(UserAlreadyExistException userAlreadyExistException){
                             System.out.println(resourceBundle.getString("employee.exists"));
-                        }catch(ConnectionFailureException connectionFailureException){
+                        }catch(ConnectionFailureException | SQLException connectionFailureException){
                             System.out.println(resourceBundle.getString("conn.failure"));
-                        }catch(SQLException sqlException){
-                            System.out.println(resourceBundle.getString("insert.invalid"));
                         }
                             break;
 
                         case 2:try{
                             employeeServices.outputData();//displays input to the user
-                        }catch(ConnectionFailureException connectionFailureException){
+                        }catch(ConnectionFailureException | SQLException connectionFailureException){
                             System.out.println(resourceBundle.getString("conn.failure"));
-                        }catch(SQLException sqlException){
-                            System.out.println(resourceBundle.getString("insert.invalid"));
                         }
                             break;
                         case 3:try{
