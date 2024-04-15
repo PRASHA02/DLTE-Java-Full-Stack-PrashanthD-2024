@@ -26,10 +26,12 @@ public class DebitCard {
 
     @NotNull(message = "{card.cvv.null}")
     @Digits(integer = 3, fraction = 0, message = "{card.cvv.invalid}")
+    @Positive(message = "{positive.number}")
     private Integer debitCardCvv;
 
     @NotNull(message = "{card.pin.null}")
     @Digits(integer = 4,fraction = 0,message = "{card.pin.invalid}")
+    @Positive(message = "{positive.number}")
     private Integer debitCardPin;
 
     @NotNull(message = "{card.expiry.null}")
@@ -40,9 +42,11 @@ public class DebitCard {
     private String debitCardStatus;
 
     @NotNull(message = "{card.domestic.null}")
+    @Positive(message = "{positive.number}")
     private Double domesticLimit;
 
     @NotNull(message = "{card.international.null}")
+    @Positive(message = "{positive.number}")
     private Double internationalLimit;
 
     public Long getDebitCardNumber() {

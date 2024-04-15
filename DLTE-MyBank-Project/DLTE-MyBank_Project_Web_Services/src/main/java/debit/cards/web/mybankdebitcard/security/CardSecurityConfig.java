@@ -37,6 +37,8 @@ public class CardSecurityConfig {
                 successHandler(cardSuccessHandler);
         httpSecurity.csrf().disable();
         httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/debitcardrepo/debitcard.wsdl").permitAll();
         httpSecurity.authorizeRequests().anyRequest().authenticated();
 
 

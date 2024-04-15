@@ -1,6 +1,4 @@
 package debit.cards.dao.services;
-
-
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
@@ -12,12 +10,9 @@ import org.springframework.jdbc.core.*;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
 import java.util.*;
 import java.util.Date;
+
 
 //This services retrieves all the data from my oracle database and if any exception occurs it handles it.
 
@@ -49,28 +44,28 @@ public class DebitCardServices implements DebitCardRepository {
         }
         return debitCardList;
     }
-
+    //Update the limits when all the customer,account and debit card status is active otherwise it gives respective error messages
     @Override
     public String updateDebitLimit(DebitCard debitCard) throws SQLException {
-        try {
-            // Fetch the debit card details from the database using the provided account number
+        // Fetch the debit card details from the database using the provided account number
+        try{
             DebitCard fetchedDebitCard = jdbcTemplate.queryForObject(
                     "SELECT * FROM mybank_app_debitcard WHERE account_number = ?",
                     new Object[]{debitCard.getAccountNumber()},
                     new DebitCardMapper());
-
-            // Check if fetched debit card is null
-            if (debitCard == null || fetchedDebitCard == null) {
-                throw new DebitCardNullException("No debit card found for account number: " + debitCard.getAccountNumber());
-            }
-
             // Check if any attributes are incorrect
             List<String> incorrectData = getIncorrectData(debitCard, fetchedDebitCard);
             if (!incorrectData.isEmpty()) {
+                logger.warn(resourceBundle.getString("invalid.request"));
                 // Throw an exception with the list of incorrect attributes
                 throw new ValidationException("Incorrect Data: " + incorrectData);
             }
+        }catch(DataAccessException exception){
+            logger.error(resourceBundle.getString("no.data.found"));
+            throw new DebitCardNullException(resourceBundle.getString("no.data.found"));
+        }
 
+        try {
             // Prepare the callable statement to update the debit card limit
             CallableStatementCreator creator = con -> {
                 CallableStatement statement = con.prepareCall("{call UPDATE_DEBITCARD_LIMIT(?, ?, ?, ?)}");
@@ -90,12 +85,12 @@ public class DebitCardServices implements DebitCardRepository {
                             new SqlOutParameter("status", Types.VARCHAR)
                     }
             ));
-
             // Handle the result of the update operation
             String resultMessage = returnedExecution.get("status").toString();
             if (resultMessage.equals("SQLCODE-000")) {
-                logger.error(resourceBundle.getString("limit.update.success"));
+                logger.info(resourceBundle.getString("limit.update.success"));
             } else {
+                //Throwing any exception occurred in db to web services
                 handleUpdateFailure(resultMessage);
             }
         } catch (DataAccessException dataAccessException) {
@@ -133,20 +128,37 @@ public class DebitCardServices implements DebitCardRepository {
 
         // Check if any of the debit cards is null
         if (providedDebitCard == null || fetchedDebitCard == null) {
-            incorrectData.add("Provided or fetched debit card is null.");
+            incorrectData.add(resourceBundle.getString("number.not.found"));
             return incorrectData;
         }
         if (!Objects.equals(providedDebitCard.getDebitCardNumber(), fetchedDebitCard.getDebitCardNumber())) {
-            incorrectData.add("Debit card number is incorrect");
+            incorrectData.add(resourceBundle.getString("card.number.incorrect"));
         }
         if (!Objects.equals(providedDebitCard.getCustomerId(), fetchedDebitCard.getCustomerId())) {
-            incorrectData.add("Customer ID is incorrect");
+            incorrectData.add(resourceBundle.getString("card.id.incorrect"));
         }
         if (!Objects.equals(providedDebitCard.getDebitCardCvv(), fetchedDebitCard.getDebitCardCvv())) {
-            incorrectData.add("CVV is incorrect");
+            incorrectData.add(resourceBundle.getString("card.cvv.incorrect"));
         }
         if (!Objects.equals(providedDebitCard.getDebitCardPin(), fetchedDebitCard.getDebitCardPin())) {
-            incorrectData.add("PIN is incorrect");
+            incorrectData.add(resourceBundle.getString("card.pin.incorrect"));
+        }
+
+
+        Date providedExpiryDate = providedDebitCard.getDebitCardExpiry();
+        Date fetchedExpiryDate = fetchedDebitCard.getDebitCardExpiry();
+
+        // Calendar instances for comparison
+        Calendar providedCal = Calendar.getInstance();
+        providedCal.setTime(providedExpiryDate);
+        Calendar fetchedCal = Calendar.getInstance();
+        fetchedCal.setTime(fetchedExpiryDate);
+
+        // Comparing day, month, and year
+        if (providedCal.get(Calendar.DAY_OF_MONTH) != fetchedCal.get(Calendar.DAY_OF_MONTH) ||
+                providedCal.get(Calendar.MONTH) != fetchedCal.get(Calendar.MONTH) ||
+                providedCal.get(Calendar.YEAR) != fetchedCal.get(Calendar.YEAR)) {
+            incorrectData.add(resourceBundle.getString("card.expiry.incorrect"));
         }
         return incorrectData;
     }

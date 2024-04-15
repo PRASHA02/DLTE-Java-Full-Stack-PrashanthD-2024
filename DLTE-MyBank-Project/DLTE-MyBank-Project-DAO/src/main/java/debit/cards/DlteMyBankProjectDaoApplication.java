@@ -23,7 +23,7 @@ public class DlteMyBankProjectDaoApplication {
 //                123672,
 //                556,
 //                1234,
-//        new Date(2029,04,26),
+//        new Date("26/04/2029"),
 //        "active",
 //        10000.0,
 //        400000.0);

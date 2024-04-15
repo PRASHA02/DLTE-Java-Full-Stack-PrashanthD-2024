@@ -22,12 +22,14 @@ public class CardSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         CardSecurity cardSecurity= (CardSecurity) authentication.getPrincipal();
-        if(cardSecurity.getCustomerStatus()!="block"){
+        if(!cardSecurity.getCustomerStatus().equals("block")){
             if (cardSecurity.getAttempts() > 1) {
                 cardSecurity.setAttempts(1);
                 cardSecurityServices.updateAttempts(cardSecurity);
             }
             super.setDefaultTargetUrl("/update/limit");
+            //super.setDefaultTargetUrl("http://localhost:8082/debitcardrepo/debitcard.wsdl");
+//            super.setAlwaysUseDefaultTargetUrl(true);
         }
         else{
             logger.warn("Max attempts reached contact admin");

@@ -4,6 +4,9 @@ import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
 import debit.cards.web.mybankdebitcard.soap.configs.DebitCardPhase;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+//This service is used for updating the debit card limits only if all the customer,account,debit card status is active otherwise it gives proper error response for us
 @RestController
 @RequestMapping("/update")
 public class UpdateCardLimit {
@@ -30,6 +34,14 @@ public class UpdateCardLimit {
     private static final Logger logger = LoggerFactory.getLogger(UpdateCardLimit.class);
     private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
    //Updating the limit based on account_number
+   @Operation(summary = "Updating the Debit Card Limit")
+   @ApiResponses(value = {
+           @ApiResponse(responseCode = "200", description = "Debit card limit updated successfully"),
+           @ApiResponse(responseCode = "400", description = "Debit card limit update failed"),
+           @ApiResponse(responseCode = "404", description = "Customer is not Active or No account Number found or Account is not Active"),
+           @ApiResponse(responseCode = "422", description = " Please provide the correct debit card details"),
+           @ApiResponse(responseCode = "500", description = "Internal server error")
+   })
     @PutMapping("/limit")
     public ResponseEntity<String> updateLimit(@Valid @RequestBody DebitCard debitCard) {
         try {
@@ -50,7 +62,7 @@ public class UpdateCardLimit {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resourceBundle.getString("no.data.found"));
         }catch(ValidationException validationException){
             logger.error(resourceBundle.getString("invalid.request"));
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(validationException.getMessage());
+            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(validationException.getMessage());
         }
         catch (SQLException exception) {
             logger.error(resourceBundle.getString("internal.error"));
