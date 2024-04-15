@@ -21,7 +21,7 @@ public class Customer {
     private String customerAddress;
 
     @NotBlank(message = "{customer.status.null}")
-    @Pattern(regexp = "^(active|inactive)$", message = "{card.status.invalid}")
+    @Pattern(regexp = "^(active|inactive|block)$", message = "{card.status.invalid}")
     private String customerStatus;
 
     @NotNull(message = "{customer.contact.null}")

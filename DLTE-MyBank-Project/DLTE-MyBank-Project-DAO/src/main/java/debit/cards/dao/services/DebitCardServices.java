@@ -58,7 +58,7 @@ public class DebitCardServices implements DebitCardRepository {
             if (!incorrectData.isEmpty()) {
                 logger.warn(resourceBundle.getString("invalid.request"));
                 // Throw an exception with the list of incorrect attributes
-                throw new ValidationException("Incorrect Data: " + incorrectData);
+                throw new ValidationException(resourceBundle.getString("incorrect.data") + incorrectData);
             }
         }catch(DataAccessException exception){
             logger.error(resourceBundle.getString("no.data.found"));
@@ -66,7 +66,7 @@ public class DebitCardServices implements DebitCardRepository {
         }
 
         try {
-            // Prepare the callable statement to update the debit card limit
+            // Prepare the callable statement to update the debit card limit, Stored procedures often take input parameters.
             CallableStatementCreator creator = con -> {
                 CallableStatement statement = con.prepareCall("{call UPDATE_DEBITCARD_LIMIT(?, ?, ?, ?)}");
                 statement.setLong(1, debitCard.getAccountNumber());
