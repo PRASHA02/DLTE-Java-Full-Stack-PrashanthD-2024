@@ -1,9 +1,10 @@
-package debit.cards.web.mybankdebitcard.security;
+package debit.cards.dao.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+
 //entity class for the security
 public class CardSecurity implements UserDetails {
 

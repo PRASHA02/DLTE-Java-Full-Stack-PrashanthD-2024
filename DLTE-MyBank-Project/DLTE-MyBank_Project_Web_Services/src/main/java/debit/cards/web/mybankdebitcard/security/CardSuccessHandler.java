@@ -1,5 +1,7 @@
 package debit.cards.web.mybankdebitcard.security;
 
+import debit.cards.dao.security.CardSecurity;
+import debit.cards.dao.security.CardSecurityServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

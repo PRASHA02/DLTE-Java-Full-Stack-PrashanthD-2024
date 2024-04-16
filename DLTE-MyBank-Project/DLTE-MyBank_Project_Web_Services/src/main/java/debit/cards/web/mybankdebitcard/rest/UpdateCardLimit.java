@@ -3,7 +3,7 @@ package debit.cards.web.mybankdebitcard.rest;
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
-import debit.cards.web.mybankdebitcard.soap.configs.DebitCardPhase;
+import debit.cards.dao.security.CardSecurityServices;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -12,11 +12,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -30,6 +31,8 @@ public class UpdateCardLimit {
 
     @Autowired
     private DebitCardRepository debitCardRepository;
+    @Autowired
+    private CardSecurityServices cardSecurityServices;
 
     private static final Logger logger = LoggerFactory.getLogger(UpdateCardLimit.class);
     private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
@@ -44,6 +47,15 @@ public class UpdateCardLimit {
    })
     @PutMapping("/limit")
     public ResponseEntity<String> updateLimit(@Valid @RequestBody DebitCard debitCard) {
+       Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+       String username = authentication.getName();
+
+       // method to fetch the owner's username from the account object
+       String accountOwnerUsername = cardSecurityServices.getAccountOwnerUsername(debitCard.getAccountNumber());
+       // Check if the authenticated user matches the owner of the account
+       if (!username.equals(accountOwnerUsername)) {
+           return ResponseEntity.status(HttpStatus.FORBIDDEN).body(resourceBundle.getString("access.denied"));
+       }
         try {
             String response = debitCardRepository.updateDebitLimit(debitCard);
             logger.info(resourceBundle.getString("limit.update.success"));

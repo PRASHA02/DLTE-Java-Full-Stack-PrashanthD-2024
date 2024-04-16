@@ -6,8 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.util.InputMismatchException;
 import java.util.ResourceBundle;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 public class Validation {
     static Logger logger = LoggerFactory.getLogger(console.application.App.class);

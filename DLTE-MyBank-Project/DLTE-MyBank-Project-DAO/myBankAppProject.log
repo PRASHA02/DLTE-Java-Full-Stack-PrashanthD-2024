@@ -1,87 +1,96 @@
-[31m2024-04-15 09:32:31,648[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 6756 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
-[0;39m[31m2024-04-15 09:32:31,664[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-04-15 09:32:32,090[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-04-15 09:32:32,106[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-04-15 09:32:32,593[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
-[0;39m[31m2024-04-15 09:32:32,609[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-04-15 09:32:32,861[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-04-15 09:32:32,876[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-04-15 09:32:33,018[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 1.664 seconds (JVM running for 3.761)
-[0;39m[31m2024-04-15 09:32:33,096[0;39m [32m[WARN][0;39m debit.cards.dao.services.DebitCardServices main [32mPlease provide the correct debit card details
-[0;39m[31m2024-04-15 09:32:33,182[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
-[0;39m[31m2024-04-15 09:32:33,203[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
-[0;39m[31m2024-04-15 12:35:10,008[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 19372 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
-[0;39m[31m2024-04-15 12:35:10,008[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-04-15 12:35:10,353[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-04-15 12:35:10,405[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-04-15 12:35:10,971[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
-[0;39m[31m2024-04-15 12:35:10,971[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-04-15 12:35:11,253[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-04-15 12:35:11,269[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-04-15 12:35:11,444[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 1.75 seconds (JVM running for 3.96)
-[0;39m[31m2024-04-15 12:35:11,522[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
-[0;39m[31m2024-04-15 12:35:11,568[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
-[0;39m[31m2024-04-15 12:35:11,568[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
-[0;39m[31m2024-04-15 13:02:11,343[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 10116 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
-[0;39m[31m2024-04-15 13:02:11,344[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-04-15 13:02:11,713[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-04-15 13:02:11,729[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-04-15 13:02:12,247[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
-[0;39m[31m2024-04-15 13:02:12,247[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-04-15 13:02:12,705[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-04-15 13:02:12,719[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-04-15 13:02:12,863[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 1.805 seconds (JVM running for 3.892)
-[0;39m[31m2024-04-15 13:02:12,926[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
-[0;39m[31m2024-04-15 13:02:12,972[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
-[0;39m[31m2024-04-15 13:02:12,995[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
-[0;39m[31m2024-04-15 13:02:42,978[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 18792 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
-[0;39m[31m2024-04-15 13:02:42,978[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-04-15 13:02:43,373[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-04-15 13:02:43,388[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-04-15 13:02:43,875[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
-[0;39m[31m2024-04-15 13:02:43,875[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-04-15 13:02:44,210[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-04-15 13:02:44,210[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-04-15 13:02:44,382[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 1.686 seconds (JVM running for 3.513)
-[0;39m[31m2024-04-15 13:02:44,468[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
-[0;39m[31m2024-04-15 13:02:44,525[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
-[0;39m[31m2024-04-15 13:02:44,534[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
-[0;39m[31m2024-04-15 13:03:30,551[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 2136 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
-[0;39m[31m2024-04-15 13:03:30,551[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-04-15 13:03:30,972[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-04-15 13:03:30,976[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-04-15 13:03:31,574[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
-[0;39m[31m2024-04-15 13:03:31,591[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-04-15 13:03:31,842[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-04-15 13:03:31,842[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-04-15 13:03:32,016[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 1.77 seconds (JVM running for 3.667)
-[0;39m[31m2024-04-15 13:03:32,078[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
-[0;39m[31m2024-04-15 13:03:32,133[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
-[0;39m[31m2024-04-15 13:03:32,138[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
-[0;39m[31m2024-04-15 13:03:50,093[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 9244 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
-[0;39m[31m2024-04-15 13:03:50,093[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-04-15 13:03:50,454[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-04-15 13:03:50,469[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-04-15 13:03:51,006[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
-[0;39m[31m2024-04-15 13:03:51,011[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-04-15 13:03:51,241[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-04-15 13:03:51,241[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-04-15 13:03:51,383[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 1.571 seconds (JVM running for 3.359)
-[0;39m[31m2024-04-15 13:03:51,446[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
-[0;39m[31m2024-04-15 13:03:51,484[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
-[0;39m[31m2024-04-15 13:03:51,515[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
-[0;39m[31m2024-04-15 13:03:51,525[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
-[0;39m[31m2024-04-15 13:11:14,009[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 28932 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
-[0;39m[31m2024-04-15 13:11:14,022[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
-[0;39m[31m2024-04-15 13:11:14,413[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[0;39m[31m2024-04-15 13:11:14,429[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
-[0;39m[31m2024-04-15 13:11:14,984[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
-[0;39m[31m2024-04-15 13:11:14,986[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-[0;39m[31m2024-04-15 13:11:15,258[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
-[0;39m[31m2024-04-15 13:11:15,266[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
-[0;39m[31m2024-04-15 13:11:15,420[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 1.709 seconds (JVM running for 3.457)
-[0;39m[31m2024-04-15 13:11:15,515[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
-[0;39m[31m2024-04-15 13:11:15,520[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
-[0;39m[31m2024-04-15 13:11:15,547[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
-[0;39m[31m2024-04-15 13:11:15,566[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[31m2024-04-16 09:18:36,880[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 23180 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
+[0;39m[31m2024-04-16 09:18:36,895[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-04-16 09:18:37,382[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-04-16 09:18:37,444[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-04-16 09:18:38,040[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-04-16 09:18:38,040[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-04-16 09:18:38,330[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-04-16 09:18:38,340[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-04-16 09:18:38,639[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 2.039 seconds (JVM running for 3.98)
+[0;39m[31m2024-04-16 09:18:38,733[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card information successfully fetched from the database.
+[0;39m[31m2024-04-16 09:18:38,811[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
+[0;39m[31m2024-04-16 09:18:38,830[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
+[0;39m[31m2024-04-16 09:18:38,849[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
+[0;39m[31m2024-04-16 09:18:38,849[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
+[0;39m[31m2024-04-16 09:18:38,874[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card information successfully fetched from the database.
+[0;39m[31m2024-04-16 09:18:38,874[0;39m [32m[WARN][0;39m debit.cards.dao.services.DebitCardServices main [32mNo Debit cards available
+[0;39m[31m2024-04-16 09:18:38,890[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-04-16 09:18:38,890[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-04-16 09:20:53,884[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 17668 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
+[0;39m[31m2024-04-16 09:20:53,884[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-04-16 09:20:54,302[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-04-16 09:20:54,309[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-04-16 09:20:54,827[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-04-16 09:20:54,843[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-04-16 09:20:55,084[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-04-16 09:20:55,095[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-04-16 09:20:55,332[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 1.716 seconds (JVM running for 3.436)
+[0;39m[31m2024-04-16 09:20:55,396[0;39m [32m[WARN][0;39m debit.cards.dao.services.DebitCardServices main [32mPlease provide the correct debit card details
+[0;39m[31m2024-04-16 09:20:55,428[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-04-16 09:20:55,440[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-04-16 09:22:48,079[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 33476 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
+[0;39m[31m2024-04-16 09:22:48,079[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-04-16 09:22:48,520[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-04-16 09:22:48,523[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-04-16 09:22:49,023[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-04-16 09:22:49,027[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-04-16 09:22:49,305[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-04-16 09:22:49,305[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-04-16 09:22:49,540[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 1.745 seconds (JVM running for 3.573)
+[0;39m[31m2024-04-16 09:22:49,604[0;39m [32m[WARN][0;39m debit.cards.dao.services.DebitCardServices main [32mPlease provide the correct debit card details
+[0;39m[31m2024-04-16 09:22:49,619[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
+[0;39m[31m2024-04-16 09:22:49,619[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
+[0;39m[31m2024-04-16 09:22:49,651[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-04-16 09:22:49,657[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-04-16 09:57:11,187[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 8560 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
+[0;39m[31m2024-04-16 09:57:11,187[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-04-16 09:57:11,706[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-04-16 09:57:11,722[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-04-16 09:57:12,367[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-04-16 09:57:12,382[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-04-16 09:57:12,684[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-04-16 09:57:12,684[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-04-16 09:57:12,935[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 2.077 seconds (JVM running for 4.101)
+[0;39m[31m2024-04-16 09:57:12,998[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
+[0;39m[31m2024-04-16 09:57:13,058[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
+[0;39m[31m2024-04-16 09:57:13,078[0;39m [32m[WARN][0;39m debit.cards.dao.services.DebitCardServices main [32mPlease provide the correct debit card details
+[0;39m[31m2024-04-16 09:57:13,078[0;39m [32m[WARN][0;39m debit.cards.dao.services.DebitCardServices main [32mPlease provide the correct debit card details
+[0;39m[31m2024-04-16 09:57:13,078[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
+[0;39m[31m2024-04-16 09:57:13,078[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
+[0;39m[31m2024-04-16 09:57:13,093[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-04-16 09:57:13,115[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-04-16 14:15:19,846[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 19608 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
+[0;39m[31m2024-04-16 14:15:19,846[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-04-16 14:15:20,318[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-04-16 14:15:20,333[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-04-16 14:15:20,916[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-04-16 14:15:20,916[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-04-16 14:15:21,197[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-04-16 14:15:21,197[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-04-16 14:15:21,387[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 1.828 seconds (JVM running for 3.758)
+[0;39m[31m2024-04-16 14:15:21,480[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
+[0;39m[31m2024-04-16 14:15:21,528[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
+[0;39m[31m2024-04-16 14:15:21,544[0;39m [32m[WARN][0;39m debit.cards.dao.services.DebitCardServices main [32mPlease provide the correct debit card details
+[0;39m[31m2024-04-16 14:15:21,560[0;39m [32m[WARN][0;39m debit.cards.dao.services.DebitCardServices main [32mPlease provide the correct debit card details
+[0;39m[31m2024-04-16 14:15:21,560[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
+[0;39m[31m2024-04-16 14:15:21,560[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
+[0;39m[31m2024-04-16 14:15:21,579[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-04-16 14:15:21,592[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-04-16 16:18:52,090[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarting DlteMyBankProjectDaoApplicationTests using Java 1.8.0_292 on WPF45DYSS with PID 7220 (started by xxdddddp in C:\DLTE-Java-Full-Stack-PrashanthD-2024\DLTE-MyBank-Project\DLTE-MyBank-Project-DAO)
+[0;39m[31m2024-04-16 16:18:52,090[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-04-16 16:18:52,529[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-04-16 16:18:52,545[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-04-16 16:18:53,128[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-04-16 16:18:53,128[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-04-16 16:18:53,384[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-04-16 16:18:53,398[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-04-16 16:18:53,584[0;39m [32m[INFO][0;39m debit.cards.DlteMyBankProjectDaoApplicationTests main [32mStarted DlteMyBankProjectDaoApplicationTests in 1.759 seconds (JVM running for 3.33)
+[0;39m[31m2024-04-16 16:18:53,647[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
+[0;39m[31m2024-04-16 16:18:53,690[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit updated successfully
+[0;39m[31m2024-04-16 16:18:53,702[0;39m [32m[WARN][0;39m debit.cards.dao.services.DebitCardServices main [32mPlease provide the correct debit card details
+[0;39m[31m2024-04-16 16:18:53,702[0;39m [32m[WARN][0;39m debit.cards.dao.services.DebitCardServices main [32mPlease provide the correct debit card details
+[0;39m[31m2024-04-16 16:18:53,702[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
+[0;39m[31m2024-04-16 16:18:53,714[0;39m [32m[ERROR][0;39m debit.cards.dao.services.DebitCardServices main [32mDebit card limit update failed
+[0;39m[31m2024-04-16 16:18:53,746[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-04-16 16:18:53,760[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
 [0;39m

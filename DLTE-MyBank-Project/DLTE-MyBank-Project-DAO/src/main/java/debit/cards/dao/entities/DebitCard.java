@@ -35,16 +35,19 @@ public class DebitCard {
     private Integer debitCardPin;
 
     @NotNull(message = "{card.expiry.null}")
+    @FutureOrPresent(message = "{date.expiry}")
     private Date debitCardExpiry;
     //pattern perform regex validations
     @NotNull(message = "{card.status.null}")
     @Pattern(regexp = "^(active|inactive)$", message = "{card.status.invalid}")
     private String debitCardStatus;
 
+    @Range(min = 100L,max=100000L,message = "{card.domestic.limit}")
     @NotNull(message = "{card.domestic.null}")
     @Positive(message = "{positive.number}")
     private Double domesticLimit;
 
+    @Range(min = 100L,max=50000L,message = "{card.international.limit}")
     @NotNull(message = "{card.international.null}")
     @Positive(message = "{positive.number}")
     private Double internationalLimit;

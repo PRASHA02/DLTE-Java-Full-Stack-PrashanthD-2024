@@ -1,14 +1,14 @@
-package debit.cards.web.mybankdebitcard.security;
+package debit.cards.dao.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -37,6 +37,20 @@ public class CardSecurityServices implements UserDetailsService {
     public void updateStatus(CardSecurity cardSecurity){
         jdbcTemplate.update("update mybank_app_customer set customer_status = 'block' where username = ?",new Object[]{cardSecurity.getUsername()});
         logger.info("Status has changed");
+    }
+   //For getting particular Account owner username
+    public String getAccountOwnerUsername(Long accountNumber) {
+        try {
+            // Query to fetch the username of the account owner based on the account number
+            String sql = "SELECT c.username FROM mybank_app_customer c JOIN mybank_app_account a ON c.customer_id = a.customer_id  JOIN mybank_app_debitcard d ON a.account_number = d.account_number WHERE d.account_number =  ?";
+            String ownerUsername = jdbcTemplate.queryForObject(sql, new Object[]{accountNumber}, String.class);
+            return ownerUsername;
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace(); // Log the exception for debugging
+            return null;
+        }
     }
 
     @Override

@@ -1,6 +1,10 @@
 package entity.console;
+
+import javax.validation.constraints.NotNull;
+
 //frontend Employee Entity
 public class Employee {
+    @NotNull(message = "{}")
     private String firstName;
     private String middleName;
     private String lastName;

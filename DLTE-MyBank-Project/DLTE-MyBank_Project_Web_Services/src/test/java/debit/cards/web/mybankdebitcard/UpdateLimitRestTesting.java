@@ -64,20 +64,49 @@ public class UpdateLimitRestTesting {
     @InjectMocks
     private UpdateCardLimit updateCardLimit;
 
+
     @Test
-    @WithMockUser(username = "prasha122", password = "prash")
+    @WithMockUser(username = "prasha02", password = "prash321")
     void testUpdateSuccess() throws Exception {
         String request = "{\n" +
                 "  \"debitCardNumber\": 3692468135796670,\n" +
-                "  \"accountNumber\": 78903456789123,\n" +
-                "  \"customerId\": 200005,\n" +
-                "  \"debitCardCvv\": 111,\n" +
+                "  \"accountNumber\": 78909876543530,\n" +
+                "  \"customerId\": 123670,\n" +
+                "  \"debitCardCvv\": 123,\n" +
                 "  \"debitCardPin\": 1234,\n" +
-                "  \"debitCardExpiry\": \"2024-04-04\",\n" +
+                "  \"debitCardExpiry\": \"2024-04-03\",\n" +
                 "  \"debitCardStatus\": \"active\",\n" +
-                "  \"domesticLimit\": 200000.0,\n" +
-                "  \"internationalLimit\": 5000000.0\n" +
-                "}\n";
+                "  \"domesticLimit\": 1000,\n" +
+                "  \"internationalLimit\": 500000\n" +
+                "}";
+
+        when(debitCardRepository.updateDebitLimit(any())).thenReturn("Debit card limit updated successfully");
+
+       // mockMvc.perform(put("/update/limit").contentType(MediaType.APPLICATION_JSON).content(request))
+              //  .andExpect(status().isOk());
+
+
+            mockMvc.perform(put("/update/limit")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(request))
+                    .andExpect(status().isOk())
+                    .andExpect(content().string("Debit card limit updated successfully"));
+        }
+    //Failure condition because username is not correct
+    @Test
+    @WithMockUser(username = "prasha122", password = "prash")
+    void testUpdateFailure() throws Exception {
+        String request = "{\n" +
+                "  \"debitCardNumber\": 3692468135796670,\n" +
+                "  \"accountNumber\": 78909876543530,\n" +
+                "  \"customerId\": 123670,\n" +
+                "  \"debitCardCvv\": 123,\n" +
+                "  \"debitCardPin\": 1234,\n" +
+                "  \"debitCardExpiry\": \"2024-04-03\",\n" +
+                "  \"debitCardStatus\": \"active\",\n" +
+                "  \"domesticLimit\": 1000,\n" +
+                "  \"internationalLimit\": 500000\n" +
+                "}";
 
         when(debitCardRepository.updateDebitLimit(any())).thenReturn("Debit card limit updated successfully");
 
@@ -93,47 +122,19 @@ public class UpdateLimitRestTesting {
     }
 
     @Test
-    @WithMockUser(username = "prasha122", password = "prash")
-    void testUpdateFailure() throws Exception {
+    @WithMockUser(username = "prasha02", password = "prash321")
+    void testException() throws Exception {
         String request = "{\n" +
                 "  \"debitCardNumber\": 3692468135796670,\n" +
-                "  \"accountNumber\": 78903456789123,\n" +
-                "  \"customerId\": 200005,\n" +
-                "  \"debitCardCvv\": 111,\n" +
+                "  \"accountNumber\": 78909876543530,\n" +
+                "  \"customerId\": 123670,\n" +
+                "  \"debitCardCvv\": 123,\n" +
                 "  \"debitCardPin\": 1234,\n" +
-                "  \"debitCardExpiry\": \"2024-04-04\",\n" +
+                "  \"debitCardExpiry\": \"2024-04-03\",\n" +
                 "  \"debitCardStatus\": \"active\",\n" +
-                "  \"domesticLimit\": 200000.0,\n" +
-                "  \"internationalLimit\": 5000000.0\n" +
-                "}\n";
-
-        when(debitCardRepository.updateDebitLimit(any())).thenReturn("Debit card limit updated failure");
-
-       // mockMvc.perform(put("/update/limit").contentType(MediaType.APPLICATION_JSON).content(request))
-              //  .andExpect(status().isOk());
-
-
-            mockMvc.perform(put("/update/limit")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(request))
-                    .andExpect(status().isOk())
-                    .andExpect(content().string("Debit card limit updated successfully"));
-        }
-
-    @Test
-    @WithMockUser(username = "prasha122", password = "prash")
-    void testCustomerException() throws Exception {
-        String request = "{\n" +
-                "  \"debitCardNumber\": 3692468135796670,\n" +
-                "  \"accountNumber\": 78903456789123,\n" +
-                "  \"customerId\": 200005,\n" +
-                "  \"debitCardCvv\": 111,\n" +
-                "  \"debitCardPin\": 1234,\n" +
-                "  \"debitCardExpiry\": \"2024-04-04\",\n" +
-                "  \"debitCardStatus\": \"active\",\n" +
-                "  \"domesticLimit\": 200000.0,\n" +
-                "  \"internationalLimit\": 5000000.0\n" +
-                "}\n";
+                "  \"domesticLimit\": 1000,\n" +
+                "  \"internationalLimit\": 500000\n" +
+                "}";
 
         // Mock repository to throw respective exceptions
         when(debitCardRepository.updateDebitLimit(any()))
@@ -171,7 +172,7 @@ public class UpdateLimitRestTesting {
         mockMvc.perform(put("/update/limit")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(request))
-                .andExpect(status().isNotFound())
+                .andExpect(status().isUnprocessableEntity())
                 .andExpect(content().string("Invalid request"));
 
         mockMvc.perform(put("/update/limit")
@@ -180,11 +181,5 @@ public class UpdateLimitRestTesting {
                 .andExpect(status().isInternalServerError())
                 .andExpect(content().string("Internal Server Error Occurred"));
     }
-
-
-
-
-
-
 
 }

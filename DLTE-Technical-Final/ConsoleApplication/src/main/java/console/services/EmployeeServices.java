@@ -1,12 +1,12 @@
 package console.services;
 
-import backend.exceptions.ConnectionFailureException;
-import backend.exceptions.UserAlreadyExistException;
-import backend.exceptions.ValidationException;
 import check.validations.Validation;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import console.repository.EmployeeRepository;
+import dao.technical.spring.exception.ConnectionFailureException;
+import dao.technical.spring.exception.UserAlreadyExistException;
+import dao.technical.spring.exception.ValidationException;
 import entity.console.Employee;
 import entity.console.EmployeeAddress;
 import org.slf4j.Logger;
@@ -32,7 +32,7 @@ public class EmployeeServices implements EmployeeRepository {
     @Override
     public void inputData() throws SQLException, UserAlreadyExistException, ConnectionFailureException {
         String chance;
-        System.out.println("Enter The Employee Details: ");
+        System.out.println(resourceBundle.getString("employee.name"));
         do{
             try{
                 System.out.println(resourceBundle.getString("first.name"));
@@ -173,11 +173,11 @@ public class EmployeeServices implements EmployeeRepository {
                 employeeTemporaryAddress.setFlag("temporary");
 
                 Employee employee = new Employee(firstName,middleName,lastName,employeeId,mobileNumber,emailID,employeePermanentAddress,employeeTemporaryAddress);
-                business.logic.App app1 = new business.logic.App();
+                //dao.technical.spring.services.EmployeeServices employeeServices = new dao.technical.spring.services.EmployeeServices();
 
-                entity.backend.Employee employeeBackend = new entity.backend.Employee();
-                entity.backend.EmployeeAddress employeeAddressPermanent = new entity.backend.EmployeeAddress();
-                entity.backend.EmployeeAddress employeeAddressTemporary = new entity.backend.EmployeeAddress();
+                dao.technical.spring.entity.Employee employeeBackend = new dao.technical.spring.entity.Employee();
+                dao.technical.spring.entity.EmployeeAddress employeeAddressPermanent = new dao.technical.spring.entity.EmployeeAddress();
+                dao.technical.spring.entity.EmployeeAddress employeeAddressTemporary = new dao.technical.spring.entity.EmployeeAddress();
 
                 employeeBackend.setFirstName(employee.getFirstName());
                 employeeBackend.setMiddleName(employee.getMiddleName());
@@ -236,9 +236,7 @@ public class EmployeeServices implements EmployeeRepository {
             }catch (ValidationException ex) {
                 // Handle validation error
                 Employee employee = new Employee();
-                EmployeeAddress employeePermanentAddress = new EmployeeAddress();
-                EmployeeAddress employeeTemporaryAddress = new EmployeeAddress();
-                entity.backend.Employee employee1 = new entity.backend.Employee();
+                dao.technical.spring.entity.Employee employee1 = new dao.technical.spring.entity.Employee();
                 System.out.println("Validation Error: " + ex.getMessage());
                 if(ex.getMessage()==resourceBundle.getString("VAL-001")){
                     System.out.println(resourceBundle.getString("first.name"));
@@ -379,11 +377,12 @@ public class EmployeeServices implements EmployeeRepository {
     //displays the output data
     @Override
     public void outputData() throws SQLException {
-        entity.backend.method.EmployeeInterface app1 = new business.logic.App();
+
+        // dao.technical.spring.remotes.EmployeeInterface app1 = new dao.technical.spring.services.EmployeeServices();
 
         List<Employee> consoleEmployees = new ArrayList<>();  //frontend
-       // List<entity.backend.Employee> backendEmployees = app1.displayEmployeeDetails(); //backend
-        List<entity.backend.Employee> backendEmployees=null;
+        // List<entity.backend.Employee> backendEmployees = app1.displayEmployeeDetails(); //backend
+        List<dao.technical.spring.entity.Employee> backendEmployees=null;
         try {
             URL url = new URL(resourceBundle.getString("web.services.read"));//specified url
             con = (HttpURLConnection) url.openConnection();//connection to the specified url
@@ -392,8 +391,8 @@ public class EmployeeServices implements EmployeeRepository {
             int status = con.getResponseCode();
             if (status == HttpURLConnection.HTTP_OK) {
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));//gets the response from the server in the form of json
-                Type employeeListType = new TypeToken<List<entity.backend.Employee>>(){}.getType();// Type-erasure:-During compilation, the compiler removes all information related to type parameters and replaces them with their bounds or the type Object if no bounds are specified.
-                List<entity.backend.Employee> employeeList = gson.fromJson(in,employeeListType);//
+                Type employeeListType = new TypeToken<List<dao.technical.spring.entity.Employee>>(){}.getType();// Type-erasure:-During compilation, the compiler removes all information related to type parameters and replaces them with their bounds or the type Object if no bounds are specified.
+                List<dao.technical.spring.entity.Employee> employeeList = gson.fromJson(in,employeeListType);//
                 backendEmployees = employeeList; //backend
             } else {
                 System.out.println(resourceBundle.getString("web.disconnect")+ status);
@@ -402,7 +401,7 @@ public class EmployeeServices implements EmployeeRepository {
             System.out.println("Error: " + e.getMessage());
         }
 
-        for (entity.backend.Employee backendEmployee : backendEmployees) {
+        for (dao.technical.spring.entity.Employee backendEmployee : backendEmployees) {
 
             entity.console.Employee consoleEmployee = new entity.console.Employee();
 
@@ -414,7 +413,7 @@ public class EmployeeServices implements EmployeeRepository {
             consoleEmployee.setEmailID(backendEmployee.getEmailID());
 
             // Set permanent address
-            entity.backend.EmployeeAddress backendPermanentAddress = backendEmployee.getPermanentAddress();
+            dao.technical.spring.entity.EmployeeAddress backendPermanentAddress = backendEmployee.getPermanentAddress();
             entity.console.EmployeeAddress consolePermanentAddress = new entity.console.EmployeeAddress();
             consolePermanentAddress.setHouseName(backendPermanentAddress.getHouseName());
             consolePermanentAddress.setStreetName(backendPermanentAddress.getStreetName());
@@ -424,7 +423,7 @@ public class EmployeeServices implements EmployeeRepository {
             consoleEmployee.setPermanentAddress(consolePermanentAddress);
 
             // Set temporary address
-            entity.backend.EmployeeAddress backendTemporaryAddress = backendEmployee.getTemporaryAddress();
+            dao.technical.spring.entity.EmployeeAddress backendTemporaryAddress = backendEmployee.getTemporaryAddress();
             entity.console.EmployeeAddress consoleTemporaryAddress = new entity.console.EmployeeAddress();
             consoleTemporaryAddress.setHouseName(backendTemporaryAddress.getHouseName());
             consoleTemporaryAddress.setStreetName(backendTemporaryAddress.getStreetName());
@@ -466,23 +465,23 @@ public class EmployeeServices implements EmployeeRepository {
     //filter the pin code
     @Override
     public void filter() throws SQLException {
-        entity.backend.method.EmployeeInterface employeeInterface = new business.logic.App(); // Instantiate the class where findEmployeesByPincode() is defined
+        //entity.backend.method.EmployeeInterface employeeInterface = new business.logic.App(); // Instantiate the class where findEmployeesByPincode() is defined
         List<Employee> consoleEmployees = new ArrayList<>();  //frontend
         Scanner scanner = new Scanner(System.in);
-        List<entity.backend.Employee> filteredEmployees = null;
-        System.out.println("Enter pincode to filter employees:");
+        List<dao.technical.spring.entity.Employee> filteredEmployees = null;
+        System.out.println(resourceBundle.getString("display.pin"));
         String pinCode = scanner.next();
 
         try {
-            URL url = new URL("http://localhost:7001/EmployeeWebServices/filterPinCode?pinCode="+pinCode);//specified url
+            URL url = new URL(resourceBundle.getString("web.services.filter")+pinCode);//specified url
             HttpURLConnection con = (HttpURLConnection) url.openConnection();//connection to the specified url
             con.setRequestMethod("GET");//request is a get method
             Gson gson = new Gson();
             int status = con.getResponseCode();
             if (status == HttpURLConnection.HTTP_OK) {
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));//gets the response from the server in the form of json
-                Type employeeListType = new TypeToken<List<entity.backend.Employee>>(){}.getType();
-                List<entity.backend.Employee> employeeList = gson.fromJson(in,employeeListType);//
+                Type employeeListType = new TypeToken<List<dao.technical.spring.entity.Employee>>(){}.getType();
+                List<dao.technical.spring.entity.Employee> employeeList = gson.fromJson(in,employeeListType);//
                 filteredEmployees = employeeList; //backend
             } else {
                 System.out.println(resourceBundle.getString("web.disconnect")+ status);
@@ -495,7 +494,7 @@ public class EmployeeServices implements EmployeeRepository {
 
 //        List<entity.backend.Employee> filteredEmployees = employeeInterface.findEmployeesByPincode(pincode);
 
-        for (entity.backend.Employee backendEmployee : filteredEmployees) {
+        for (dao.technical.spring.entity.Employee backendEmployee : filteredEmployees) {
 
             entity.console.Employee consoleEmployee = new entity.console.Employee();
 
@@ -507,7 +506,7 @@ public class EmployeeServices implements EmployeeRepository {
             consoleEmployee.setEmailID(backendEmployee.getEmailID());
 
             // Set permanent address
-            entity.backend.EmployeeAddress backendPermanentAddress = backendEmployee.getPermanentAddress();
+            dao.technical.spring.entity.EmployeeAddress backendPermanentAddress = backendEmployee.getPermanentAddress();
             entity.console.EmployeeAddress consolePermanentAddress = new entity.console.EmployeeAddress();
             consolePermanentAddress.setHouseName(backendPermanentAddress.getHouseName());
             consolePermanentAddress.setStreetName(backendPermanentAddress.getStreetName());
@@ -517,7 +516,7 @@ public class EmployeeServices implements EmployeeRepository {
             consoleEmployee.setPermanentAddress(consolePermanentAddress);
 
             // Set temporary address
-            entity.backend.EmployeeAddress backendTemporaryAddress = backendEmployee.getTemporaryAddress();
+            dao.technical.spring.entity.EmployeeAddress backendTemporaryAddress = backendEmployee.getTemporaryAddress();
             entity.console.EmployeeAddress consoleTemporaryAddress = new entity.console.EmployeeAddress();
             consoleTemporaryAddress.setHouseName(backendTemporaryAddress.getHouseName());
             consoleTemporaryAddress.setStreetName(backendTemporaryAddress.getStreetName());
@@ -530,7 +529,7 @@ public class EmployeeServices implements EmployeeRepository {
             consoleEmployees.add(consoleEmployee);
         }
         if (consoleEmployees.isEmpty()) {
-            System.out.println("No employees found for the given pincode.");
+            System.out.println(resourceBundle.getString("employee.not.found"));
         } else {
             System.out.println("Filtered Employees:");
             for (int i = 0; i < consoleEmployees.size(); i++) {

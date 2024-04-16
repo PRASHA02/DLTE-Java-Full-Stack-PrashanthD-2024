@@ -1,12 +1,12 @@
 package console.application;
 
 
-import backend.exceptions.ConnectionFailureException;
-import backend.exceptions.UserAlreadyExistException;
 import console.repository.EmployeeRepository;
 import console.services.EmployeeServices;
 import check.validations.Validation;
 
+import dao.technical.spring.exception.ConnectionFailureException;
+import dao.technical.spring.exception.UserAlreadyExistException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,11 +20,12 @@ public class App
     static ResourceBundle resourceBundle = ResourceBundle.getBundle("employee");
     static Logger logger = LoggerFactory.getLogger(console.application.App.class);
 
-    static Validation validation = new Validation();
     public static void main( String[] args ) throws SQLException {
 
         System.out.println(resourceBundle.getString("employee.dashboard"));
         EmployeeRepository employeeRepository = new EmployeeServices();
+
+        System.out.println(resourceBundle.getString("employee.dashboard"));
         while(true){
             Scanner scanner = new Scanner(System.in);
             try{
@@ -36,21 +37,17 @@ public class App
                         employeeRepository.inputData();//takes the input from the user
                     }catch(UserAlreadyExistException userAlreadyExistException){
                         System.out.println(resourceBundle.getString("employee.exists"));
-                    }catch(ConnectionFailureException connectionFailureException){
+                    }catch(ConnectionFailureException | SQLException connectionFailureException){
                         System.out.println(resourceBundle.getString("conn.failure"));
-                    }catch(SQLException sqlException){
-                        System.out.println(resourceBundle.getString("insert.invalid"));
                     }
-                    break;
+                        break;
 
                     case 2:try{
                         employeeRepository.outputData();//displays input to the user
-                    }catch(ConnectionFailureException connectionFailureException){
+                    }catch(ConnectionFailureException | SQLException connectionFailureException){
                         System.out.println(resourceBundle.getString("conn.failure"));
-                    }catch(SQLException sqlException){
-                        System.out.println(resourceBundle.getString("insert.invalid"));
                     }
-                     break;
+                        break;
                     case 3:try{
                         employeeRepository.filter();//filters the permanent codes
                     }catch(ConnectionFailureException connectionFailureException){
@@ -73,7 +70,7 @@ public class App
                 scanner.next();
             }
 //            scanner.close();
-            }
+        }
 
 
 
