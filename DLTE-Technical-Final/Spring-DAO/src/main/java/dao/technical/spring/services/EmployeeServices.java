@@ -11,6 +11,7 @@ import dao.technical.spring.validations.Validation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
@@ -30,42 +31,45 @@ public class EmployeeServices implements EmployeeInterface {
 
     private static final Logger logger = LoggerFactory.getLogger(EmployeeServices.class);
 
-
-
-
     @Override
     public String writeEmployeeDetails(Employee employee)  {
         Validation validation = new Validation();
         if (employee == null) {
+            logger.info(resourceBundle.getString("employee.empty"));
             throw new ValidationException(resourceBundle.getString("employee.empty"));
         }
 
         if(validation.isValidId(employee.getEmpID())){
             employee.setEmpID(employee.getEmpID());
         }else{
+            logger.warn(resourceBundle.getString("VAL-004"));
             throw new ValidationException(resourceBundle.getString("VAL-004"));
         }
 
         if(validation.isValidateMobile(employee.getMobileNumber())){
             employee.setMobileNumber(employee.getMobileNumber());
         }else{
+            logger.warn(resourceBundle.getString("VAL-005"));
             throw new ValidationException(resourceBundle.getString("VAL-005"));
         }
 
         if(validation.isValidEmailId(employee.getEmailID())){
             employee.setEmailID(employee.getEmailID());
         }else{
+            logger.warn(resourceBundle.getString("VAL-006"));
             throw new ValidationException(resourceBundle.getString("VAL-006"));
         }
 
         if(validation.isValidPin(employee.getPermanentAddress().getPinCode())){
             employee.getPermanentAddress().setPinCode(employee.getPermanentAddress().getPinCode());
         }else{
+            logger.warn(resourceBundle.getString("VAL-007"));
             throw new ValidationException(resourceBundle.getString("VAL-007"));
         }
         if(validation.isValidPin(employee.getTemporaryAddress().getPinCode())){
             employee.getTemporaryAddress().setPinCode(employee.getTemporaryAddress().getPinCode());
         }else{
+            logger.warn(resourceBundle.getString("VAL-008"));
             throw new ValidationException(resourceBundle.getString("VAL-008"));
         }
         try {
@@ -108,6 +112,9 @@ public class EmployeeServices implements EmployeeInterface {
         }catch (org.springframework.dao.DataIntegrityViolationException e) {
             logger.warn(resourceBundle.getString("db.fail.insert"));
             throw new UserAlreadyExistException(resourceBundle.getString("employee.exists"));
+        }catch(DataAccessException e){
+            logger.warn(resourceBundle.getString("db.syntax.fail"));
+            throw new ConnectionFailureException(resourceBundle.getString("db.syntax.fail"));
         }
 
     }
@@ -118,13 +125,14 @@ public class EmployeeServices implements EmployeeInterface {
 //        String query = "SELECT * FROM employee_details";
 //        String query2 = "SELECT * FROM address_details WHERE emp_id = ? AND flag = 'permanent'";
 //        String query3 = "SELECT * FROM address_details WHERE emp_id = ? AND flag = 'temporary'";
-        String query = "SELECT e.first_name, e.middle_name, e.last_name, e.emp_id, e.mobile_number, e.email_id, " +
-                "a.house_name AS permHouseName, a.street_name AS permStreet, a.city_name AS permCity, a.state_name AS permState, a.pin_code AS permPincode, " +
-                "a2.house_name AS tempHouseName, a2.street_name AS tempStreet, a2.city_name AS tempCity, a2.state_name AS tempState, a2.pin_code AS tempPincode " +
-                "FROM employee_details e " +
-                "LEFT JOIN address_details a ON e.emp_id = a.emp_id AND a.flag = 'permanent' " +
-                "LEFT JOIN address_details a2 ON e.emp_id = a2.emp_id AND a2.flag = 'temporary' ";
+
         try {
+            String query = "SELECT e.first_name, e.middle_name, e.last_name, e.emp_id, e.mobile_number, e.email_id, " +
+                    "a.house_name AS permHouseName, a.street_name AS permStreet, a.city_name AS permCity, a.state_name AS permState, a.pin_code AS permPincode, " +
+                    "a2.house_name AS tempHouseName, a2.street_name AS tempStreet, a2.city_name AS tempCity, a2.state_name AS tempState, a2.pin_code AS tempPincode " +
+                    "FROM employee_details e " +
+                    "LEFT JOIN address_details a ON e.emp_id = a.emp_id AND a.flag = 'permanent' " +
+                    "LEFT JOIN address_details a2 ON e.emp_id = a2.emp_id AND a2.flag = 'temporary' ";
 //            List<Map<String, Object>> employeeRows = jdbcTemplate.queryForList(query);
 //            for (Map<String, Object> employeeRow : employeeRows) {
 //                Employee employee = new Employee();
@@ -200,6 +208,7 @@ public class EmployeeServices implements EmployeeInterface {
             logger.error(resourceBundle.getString("fetch.fail"));
             throw new ConnectionFailureException(resourceBundle.getString("fetch.fail"));
         }
+        logger.info(resourceBundle.getString("fetch.success"));
         return employeeDetailsList;
     }
 

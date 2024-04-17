@@ -6,10 +6,12 @@ import console.services.EmployeeServices;
 import check.validations.Validation;
 
 import dao.technical.spring.exception.ConnectionFailureException;
+import dao.technical.spring.exception.InsertionFailureException;
 import dao.technical.spring.exception.UserAlreadyExistException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.*;
@@ -36,36 +38,46 @@ public class App
                     case 1:try{
                         employeeRepository.inputData();//takes the input from the user
                     }catch(UserAlreadyExistException userAlreadyExistException){
-                        System.out.println(resourceBundle.getString("employee.exists"));
-                    }catch(ConnectionFailureException | SQLException connectionFailureException){
-                        System.out.println(resourceBundle.getString("conn.failure"));
+                        logger.error(resourceBundle.getString("db.fail.insert"));
+                        throw new UserAlreadyExistException(resourceBundle.getString("employee.exists"));
+                    }catch(InsertionFailureException exception){
+                        logger.error(resourceBundle.getString("db.push.fail"));
+                        throw new InsertionFailureException(resourceBundle.getString("db.push.fail"));
+                    }
+                    catch(ConnectionFailureException | SQLException connectionFailureException){
+                        logger.warn(resourceBundle.getString("db.syntax.fail"));
+                        throw new ConnectionFailureException(resourceBundle.getString("conn.failure"));
                     }
                         break;
 
                     case 2:try{
                         employeeRepository.outputData();//displays input to the user
                     }catch(ConnectionFailureException | SQLException connectionFailureException){
-                        System.out.println(resourceBundle.getString("conn.failure"));
+                        logger.error(resourceBundle.getString("conn.failure"));
+                        throw new ConnectionFailureException(resourceBundle.getString("conn.failure"));
+                    } catch (IOException e) {
+                        logger.error(resourceBundle.getString("conn.failure"));
+                       throw new ConnectionFailureException(resourceBundle.getString("conn.failure"));
                     }
                         break;
                     case 3:try{
                         employeeRepository.filter();//filters the permanent codes
                     }catch(ConnectionFailureException connectionFailureException){
-                        System.out.println(resourceBundle.getString("conn.failure"));
+                        throw new ConnectionFailureException(resourceBundle.getString("conn.failure"));
                     }catch(SQLException sqlException){
-                        System.out.println(resourceBundle.getString("insert.invalid"));
+                        throw new SQLException(resourceBundle.getString("insert.invalid"));
                     }
                         break;
                     case 4:
-                        System.out.println("Employee Exited!!");
+                        System.out.println(resourceBundle.getString("employee.exit"));
                         return;
                     default:
-                        System.out.println("Invalid choice");
+                        System.out.println(resourceBundle.getString("invalid.choice"));
                         return;
 
                 }
             }catch (InputMismatchException ex) {
-                logger.error("Invalid input!! Try again");
+                logger.warn(resourceBundle.getString("invalid.input"));
                 System.out.println(resourceBundle.getString("wrong.input"));
                 scanner.next();
             }

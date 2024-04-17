@@ -51,13 +51,13 @@ public class SpringDaoApplication {
         temporaryAddress.setEmpID(employee.getEmpID());
         employee.setTemporaryAddress(temporaryAddress);
 
-//        System.out.println(employeeServices.writeEmployeeDetails(employee));
+        System.out.println(employeeServices.writeEmployeeDetails(employee));
         List<Employee> employeeList = employeeServices.displayEmployeeDetails();
 
         employeeList.forEach(System.out::println);
-//        List<Employee> employeeList1 = employeeServices.findEmployeesByPincode(574107);
-//
-//        employeeList1.forEach(System.out::println);
+        List<Employee> employeeList1 = employeeServices.findEmployeesByPincode(574107);
+
+        employeeList1.forEach(System.out::println);
 
     }
 
