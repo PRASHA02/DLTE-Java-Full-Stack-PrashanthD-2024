@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Loan Introduction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script>
+       $(document).ready(() => {
+            $("#cancel").click(() => {
+                $("#cardNumber").val("");
+                $("#accountNumber").val("");
+                $("#customerId").val("");
+                $("#cardCVV").val("");
+                $("#cardPin").val("");
+                $("#cardExpiry").val("");
+                $("#cardStatus").val("");
+                $("#domesticLimit").val("");
+                $("#internationalLimit").val("");
+            });
+
+            $("#update").click(() => {
+                const cardNum = $("#cardNumber").val();
+                const accountNum = $("#accountNumber").val();
+                const id = $("#customerId").val();
+                const cvv = $("#cardCVV").val();
+                const pin = $("#cardPin").val();
+                const expiry = $("#cardExpiry").val();
+                const status = $("#cardStatus").val();
+                const domLimit = $("#domesticLimit").val();
+                const intLimit = $("#internationalLimit").val();
+    
+                const request = {
+                    "debitCardNumber":cardNum,
+                    "accountNumber":accountNum,
+                    "customerId":id,
+                    "debitCardCvv":cvv,
+                    "debitCardPin":pin,
+                    "debitCardExpiry":expiry,
+                    "debitCardStatus":status,
+                    "domesticLimit":domLimit,
+                    "internationalLimit":intLimit
+                
+                };
+                
+                $.ajax({
+                    url: "http://localhost:8082/update/limit",
+                    type: "PUT",
+                    dataType: "text",
+                    beforeSend: function (handler) {
+                        handler.setRequestHeader("Authorization", "Basic " + btoa("prasha02:prash321"));
+                    },
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(request),
+                    success:function(response){
+                        let element = $("#status")
+                        element.append(`<h1>Debit Card Limit has Updated Successfully</h1>`)
+                    },
+                    error:function(err){
+                        let element = $("#status")
+                        element.append(`<h1>${err.status}</h1>`)
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="row justify-content-center ">Debit card Limit Updation</h1>
+        <div class="row justify-content-center">
+            <p id="status" class="display-6 text-center text-primary"></p>
+            <div class="p-5 m-5 rounded-5 shadow">
+                <div class="form-group">
+                    <label>Debit card Number</label>
+                    <input type="number" id="cardNumber" class="form-control" placholder="Debit Card Number" />
+                </div>
+                <div class="form-group">
+                    <label>Account Number</label>
+                    <input type="number" id="accountNumber" class="form-control" placholder="Account Number" />
+                </div>
+                <div class="form-group">
+                    <label>Customer ID</label>
+                    <input type="number" id="customerId" class="form-control" placeholder="Customer ID"/>
+                </div>
+                <div class="form-group">
+                    <label>Debit Card CVV</label>
+                    <input type="number" id="cardCVV" class="form-control" placeholder="Card CVV"/>
+                </div>
+                <div class="form-group">
+                    <label>Debit Card Pin</label>
+                    <input type="number" id="cardPin" class="form-control" placeholder="Card Pin"/>
+                </div>
+                <div class="form-group">
+                    <label>Debit Card Expiry</label>
+                    <input type="date" id="cardExpiry" class="form-control" placeholder="Card Expiry"/>
+                </div>
+                <div class="form-group">
+                    <label>Debit Card Status</label>
+                    <input type="text" id="cardStatus" class="form-control" placeholder="Card Status"/>
+                </div>
+                <div class="form group">
+                    <label>Domestic Limit</label>
+                    <input type="number" id="domesticLimit" class="form-control" placholder="Domestic Limit" />
+                </div>
+                <div class="form group">
+                    <label>International Limit</label>
+                    <input type="number" id="internationalLimit" class="form-control" placholder="International Limit" />
+                </div>
+                <div class="m-5 row justify-content-around">
+                    <button id="update" class="col-1 btn btn-outline-primary"><span>Update</span></p></button>
+                    <button id="cancel" class="col-1 btn btn-outline-dark"><span>Cancel</span></p></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
