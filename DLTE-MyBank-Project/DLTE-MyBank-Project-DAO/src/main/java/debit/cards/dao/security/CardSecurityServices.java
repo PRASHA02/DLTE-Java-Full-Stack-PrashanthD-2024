@@ -11,6 +11,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class CardSecurityServices implements UserDetailsService {
 
@@ -24,11 +27,14 @@ public class CardSecurityServices implements UserDetailsService {
 
         return cardSecurity;
     }
+    //Listing the entire customer table details and performing the filter based on the username
+    public CardSecurity findByUserName(String username) {
+            List<CardSecurity> customerList = jdbcTemplate.query(
+                    "SELECT * FROM mybank_app_customer",
+                    new BeanPropertyRowMapper<>(CardSecurity.class));
+            return filterByUserName(customerList,username);
 
-    public CardSecurity findByUserName(String username){
-        CardSecurity cardSecurity = jdbcTemplate.queryForObject("select * from mybank_app_customer where username = ?",new Object[]{username},new BeanPropertyRowMapper<>(CardSecurity.class));
-        return cardSecurity;
-    }
+        }
 
     public void updateAttempts(CardSecurity cardSecurity){
         jdbcTemplate.update("update mybank_app_customer set attempts = ? where username = ?",new Object[]{cardSecurity.getAttempts(),cardSecurity.getUsername()});
@@ -59,5 +65,18 @@ public class CardSecurityServices implements UserDetailsService {
         if(cardSecurity==null)
             throw new UsernameNotFoundException(username);
         return cardSecurity;
+    }
+
+    public CardSecurity filterByUserName( List<CardSecurity> customerList,String username){
+        // Filter the list based on the provided username
+        List<CardSecurity> filteredCustomers = customerList.stream()
+                .filter(customer -> customer.getUsername().equals(username))
+                .collect(Collectors.toList());
+        filteredCustomers.forEach(System.out::println);
+        if (!filteredCustomers.isEmpty()) {
+            return filteredCustomers.get(0); // Return the first matching customer
+        } else {
+            return null; // Return null if no customer found
+        }
     }
 }

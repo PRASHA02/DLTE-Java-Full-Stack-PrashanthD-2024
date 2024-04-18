@@ -104,5 +104,17 @@ public class CardSecurity implements UserDetails {
         this.attempts = attempts;
     }
 
-
+    @Override
+    public String toString() {
+        return "CardSecurity{" +
+                "customerName='" + customerName + '\'' +
+                ", customerAddress='" + customerAddress + '\'' +
+                ", customerStatus='" + customerStatus + '\'' +
+                ", customerContact=" + customerContact +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", maxAttempt=" + maxAttempt +
+                ", attempts=" + attempts +
+                '}';
+    }
 }
