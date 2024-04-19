@@ -29,7 +29,9 @@ public class CardSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
                 cardSecurity.setAttempts(1);
                 cardSecurityServices.updateAttempts(cardSecurity);
             }
-            super.setDefaultTargetUrl("/update/limit");
+            else if(cardSecurity.getCustomerStatus().equals("active")){
+                super.setDefaultTargetUrl("/update/limit");
+            }
             //super.setDefaultTargetUrl("http://localhost:8082/debitcardrepo/debitcard.wsdl");
 //            super.setAlwaysUseDefaultTargetUrl(true);
         }

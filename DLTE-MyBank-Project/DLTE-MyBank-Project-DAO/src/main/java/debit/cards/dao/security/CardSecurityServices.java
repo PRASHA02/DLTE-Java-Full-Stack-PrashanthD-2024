@@ -72,7 +72,6 @@ public class CardSecurityServices implements UserDetailsService {
         List<CardSecurity> filteredCustomers = customerList.stream()
                 .filter(customer -> customer.getUsername().equals(username))
                 .collect(Collectors.toList());
-        filteredCustomers.forEach(System.out::println);
         if (!filteredCustomers.isEmpty()) {
             return filteredCustomers.get(0); // Return the first matching customer
         } else {

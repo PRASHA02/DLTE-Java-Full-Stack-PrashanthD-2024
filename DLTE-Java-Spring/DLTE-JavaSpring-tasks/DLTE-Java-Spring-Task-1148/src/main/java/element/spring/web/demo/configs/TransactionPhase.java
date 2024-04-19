@@ -64,13 +64,19 @@ public class TransactionPhase {
 
         List<Transactions> received = transactionServices.findBySender(filterBySenderRequest.getSender());
 
-        Iterator<Transactions> iterator= received.iterator();
-
-        while(iterator.hasNext()){
+        received.forEach(transactions -> {
             links.transactions.Transactions currentTransactions=new links.transactions.Transactions();
-            BeanUtils.copyProperties(iterator.next(),currentTransactions);
+            Date date = transactions.getTransactionDate();
+            XMLGregorianCalendar xmlCalendar = null;
+            try {
+                xmlCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(date.toString());
+            } catch (DatatypeConfigurationException e) {
+                e.printStackTrace();
+            }
+            currentTransactions.setTransactionDate(xmlCalendar);
+            BeanUtils.copyProperties(transactions,currentTransactions);
             filterBySender.add(currentTransactions);
-        }
+        });
         serviceStatus.setStatus("SUCCESS");
         serviceStatus.setMessage("Transactions were fetched");
 
@@ -90,13 +96,19 @@ public class TransactionPhase {
 
         List<Transactions> received = transactionServices.findByReceiver(filterByReceiverRequest.getReceiver());
 
-        Iterator<Transactions> iterator= received.iterator();
-
-        while(iterator.hasNext()){
+        received.forEach(transactions -> {
             links.transactions.Transactions currentTransactions=new links.transactions.Transactions();
-            BeanUtils.copyProperties(iterator.next(),currentTransactions);
+            Date date = transactions.getTransactionDate();
+            XMLGregorianCalendar xmlCalendar = null;
+            try {
+                xmlCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(date.toString());
+            } catch (DatatypeConfigurationException e) {
+                e.printStackTrace();
+            }
+            currentTransactions.setTransactionDate(xmlCalendar);
+            BeanUtils.copyProperties(transactions,currentTransactions);
             filterByReceiver.add(currentTransactions);
-        }
+        });
 
         serviceStatus.setStatus("SUCCESS");
         serviceStatus.setMessage("Transactions were fetched");
@@ -117,13 +129,20 @@ public class TransactionPhase {
 
         List<Transactions> received = transactionServices.findByAmount(filterByAmountRequest.getAmount());
 
-        Iterator<Transactions> iterator= received.iterator();
-
-        while(iterator.hasNext()){
+        received.forEach(transactions -> {
             links.transactions.Transactions currentTransactions=new links.transactions.Transactions();
-            BeanUtils.copyProperties(iterator.next(),currentTransactions);
+            Date date = transactions.getTransactionDate();
+            XMLGregorianCalendar xmlCalendar = null;
+            try {
+                xmlCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(date.toString());
+            } catch (DatatypeConfigurationException e) {
+                e.printStackTrace();
+            }
+            currentTransactions.setTransactionDate(xmlCalendar);
+            BeanUtils.copyProperties(transactions,currentTransactions);
             filterByAmount.add(currentTransactions);
-        }
+        });
+
 
         serviceStatus.setStatus("SUCCESS");
         serviceStatus.setMessage("Transactions were fetched");

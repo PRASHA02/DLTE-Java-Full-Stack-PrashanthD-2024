@@ -59,10 +59,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
@@ -83,7 +79,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <schemaDirectory>src/main/resources</schemaDirectory>
+                    <schemaDirectory>C:\Transactions</schemaDirectory>
                     <schemaFiles>transactions.xsd</schemaFiles>
                     <outputDirectory>src/main/java</outputDirectory>
                     <clearOutputDir>false</clearOutputDir>

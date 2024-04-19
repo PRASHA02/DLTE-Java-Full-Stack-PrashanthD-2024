@@ -8,9 +8,9 @@
         <xsd:sequence>
             <xsd:element name="debitCardNumber" type="xsd:long"/>
             <xsd:element name="accountNumber" type="xsd:long"/>
-            <xsd:element name="customerId" type="xsd:integer"/>
-            <xsd:element name="debitCardCvv" type="xsd:integer"/>
-            <xsd:element name="debitCardPin" type="xsd:integer"/>
+            <xsd:element name="customerId" type="xsd:int"/>
+            <xsd:element name="debitCardCvv" type="xsd:int"/>
+            <xsd:element name="debitCardPin" type="xsd:int"/>
             <xsd:element name="debitCardExpiry" type="xsd:date"/>
             <xsd:element name="debitCardStatus" type="xsd:string"/>
             <xsd:element name="domesticLimit" type="xsd:double"/>

@@ -6,11 +6,14 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.ws.config.annotation.EnableWs;
 import org.springframework.ws.config.annotation.WsConfigurationSupport;
 import org.springframework.ws.config.annotation.WsConfigurerAdapter;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
+import org.springframework.ws.wsdl.wsdl11.SimpleWsdl11Definition;
+import org.springframework.ws.wsdl.wsdl11.provider.InliningXsdSchemaTypesProvider;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
 
@@ -42,9 +45,14 @@ public class SoapServiceConfiguration extends WsConfigurerAdapter {
     }
 
 
+
     //xsd is mentioned
     @Bean
     public XsdSchema transactionSchema(){
-        return new SimpleXsdSchema(new ClassPathResource("transactions.xsd"));
+       // return new SimpleXsdSchema(new ClassPathResource("transactions.xsd"));
+        String xsdFilePath = "C:/Transactions/transactions.xsd";
+        FileSystemResource xsdFileResource = new FileSystemResource(xsdFilePath);
+        return new SimpleXsdSchema(xsdFileResource);
     }
+
 }

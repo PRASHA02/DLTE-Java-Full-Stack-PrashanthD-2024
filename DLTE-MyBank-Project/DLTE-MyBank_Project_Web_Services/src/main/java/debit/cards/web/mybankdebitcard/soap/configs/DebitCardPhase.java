@@ -5,6 +5,7 @@ import debit.cards.dao.exceptions.DebitCardException;
 import debit.cards.dao.exceptions.DebitCardNullException;
 import debit.cards.dao.remotes.DebitCardRepository;
 
+import links.debitcard.DebitCard;
 import links.debitcard.ServiceStatus;
 import links.debitcard.ViewDebitCardRequest;
 import links.debitcard.ViewDebitCardResponse;
@@ -23,13 +24,12 @@ import org.springframework.ws.soap.SoapFaultException;
 import org.springframework.ws.soap.server.endpoint.SoapFaultDefinition;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.sql.SQLException;
 import java.sql.SQLSyntaxErrorException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ResourceBundle;
-
+import java.util.*;
 
 
 // Spring will search for classes annotated within the specified package and register them as Spring beans.
@@ -57,14 +57,20 @@ public class DebitCardPhase {
             //lambda function for performing bean utils
             debitCardsDao.forEach(debitCard -> {
                 links.debitcard.DebitCard currentDebitCard =new links.debitcard.DebitCard();
+                Date date = debitCard.getDebitCardExpiry();
+                XMLGregorianCalendar xmlCalendar = null;
+                try {
+                    xmlCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(date.toString());
+                } catch (DatatypeConfigurationException e) {
+                    e.printStackTrace();
+                }
+                currentDebitCard.setDebitCardExpiry(xmlCalendar);
                 BeanUtils.copyProperties(debitCard,currentDebitCard);
                 debitCardList.add(currentDebitCard);
             });
-
             serviceStatus.setStatus(HttpServletResponse.SC_OK);
             serviceStatus.setMessage(resourceBundle.getString("card.fetch.success"));
             viewDebitCardResponse.getDebitCard().addAll(debitCardList);
-
         }catch (DebitCardException syntaxError) {
             serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             logger.error(resourceBundle.getString("soap.sql.error") +  syntaxError + HttpServletResponse.SC_INTERNAL_SERVER_ERROR );
