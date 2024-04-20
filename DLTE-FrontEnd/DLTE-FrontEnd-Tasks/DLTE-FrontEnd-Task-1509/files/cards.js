@@ -108,69 +108,36 @@ const cardsDetails = {
             }
     ]
 };
- 
-function searchCards() {
-  const domesticLimit = document.getElementById('domesticLimit').value.trim();
-  const cardListContainer = document.getElementById('cardList');
-  cardListContainer.innerHTML = '';
 
-  if (domesticLimit in cardsDetails) {
-      const cards = cardsDetails[domesticLimit];
-      cards.forEach((card, index) => {
-          const cardHtml = `
-          <br/>
-              <div class="col-lg-4 col-md-6 mb-4 d-flex">
-                  <div class="card border-primary p-6 mx-auto text-no-wrap justify-content-center shadow-sm">
-                      <div class="card-body">
-                          <h5 class="card-title text-primary">${card.debitCardNumber}</h5>
-                          <div class="card-details">
-                              <p><strong>Debit card Number:</strong> ${card.debitCardNumber}</p>
-                              <p><strong>Domestic Limit:</strong> ${card.accountNumber}</p>
-                              <p><strong>Customer ID:</strong> ${card.customerId}</p>
-                              <p><strong>CVV:</strong> ${card.debitCardCvv}</p>
-                              <p><strong>PIN:</strong> ${card.debitCardPin}</p>
-                              <p><strong>Status:</strong> ${card.debitCardStatus}</p>
-                              <p><strong>International Limit:</strong> ${card.internationalLimit}</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          `;
-          cardListContainer.innerHTML += cardHtml;
-      });
-  } else {
-      cardListContainer.innerHTML = `<p class="text-danger">No debit cards found for this debit card limit.</p>`;
-  }
-}
-
-// Define global variables
-let recordsPerPage = 2;
+const itemsPerPage = 2;
 let currentPage = 1;
 
-// Function to display records based on the current page
-const viewRecords = () => {
-    const begin = (currentPage - 1) * recordsPerPage;
-    const end = begin + recordsPerPage;
-    const keys = Object.keys(cardsDetails);
+function searchCards() {
+    const domesticLimit = document.getElementById('domesticLimit').value.trim();
+    const cardListContainer = document.getElementById('cardList');
+    cardListContainer.innerHTML = '';
 
-    let cardListContainer = $("#cardList");
-    cardListContainer.empty();
-
-    for (let i = begin; i < end && i < keys.length; i++) {
-        const domesticLimit = keys[i];
+    if (domesticLimit in cardsDetails) {
         const cards = cardsDetails[domesticLimit];
-
-        cards.forEach((card) => {
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const paginatedCards = cards.slice(startIndex, startIndex + itemsPerPage);
+        
+        paginatedCards.forEach(card => {
             const cardHtml = `
-            <div class="col-lg-4 col-md-6 mb-4 d-flex">
+            <br/>
+            <div class="col-lg-5 col-md-7 md-2 d-flex">
                 <div class="card border-primary p-6 mx-auto text-no-wrap justify-content-center shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title text-primary">${card.debitCardNumber}</h5>
+                        <p><strong>Debit card Number:</strong> ${card.debitCardNumber}</p>
+                        <p><strong>Domestic Limit:</strong> ${card.accountNumber}</p>
+                        <p><strong>Customer ID:</strong> ${card.customerId}</p>
                         <div class="card-details">
                             <p><strong>Debit card Number:</strong> ${card.debitCardNumber}</p>
                             <p><strong>Domestic Limit:</strong> ${card.accountNumber}</p>
                             <p><strong>Customer ID:</strong> ${card.customerId}</p>
                             <p><strong>CVV:</strong> ${card.debitCardCvv}</p>
+                            <p><strong>PIN:</strong> ${card.debitCardPin}</p>
+                            <p><strong>Expiry:</strong>${card.debitCardExpiry}</p>
                             <p><strong>Status:</strong> ${card.debitCardStatus}</p>
                             <p><strong>International Limit:</strong> ${card.internationalLimit}</p>
                         </div>
@@ -178,47 +145,40 @@ const viewRecords = () => {
                 </div>
             </div>
             `;
-            cardListContainer.append(cardHtml);
+            cardListContainer.innerHTML += cardHtml;
         });
+
+        renderPagination(cards.length); // Update pagination based on filtered cards
+    } else {
+        cardListContainer.innerHTML = `<p class="text-danger">No debit cards found for this domestic limit.</p>`;
     }
-};
+}
 
-// Function to update pagination buttons
-const updatingPage = () => {
-    const keys = Object.keys(cardsDetails);
-    const totalPages = Math.ceil(keys.length / recordsPerPage);
-    let paging = $("#pagination");
-    paging.empty();
+function renderPagination(totalItems) {
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const paginationContainer = document.getElementById('pagination');
+  paginationContainer.innerHTML = '';
 
-    // Previous button
-    if (currentPage > 1) {
-        paging.append('<button class="previous col-1 m-3 btn btn-outline-danger"><h4 class="bi bi-arrow-left-circle-fill"></h4></button>');
-    }
+  if (totalItems > 0) {
+      for (let i = 1; i <= totalPages; i++) {
+          const liClass = (i === currentPage) ? 'page-item active' : 'page-item';
+          const paginationHtml = `
+              <li class="${liClass}">
+                  <button class="page-link" onclick="changePage(${i})">${i}</button>
+              </li>
+          `;
+          paginationContainer.innerHTML += paginationHtml;
+      }
+  } else {
+      paginationContainer.innerHTML = ''; // Hide pagination if no items found
+  }
+}
 
-    // Current page number
-    paging.append('<button class="current col-1 m-3 btn btn-outline-danger">' + currentPage + '</button>');
 
-    // Next button
-    if (currentPage < totalPages) {
-        paging.append('<button class="next col-1 m-3 btn btn-outline-danger"><h4 class="bi bi-arrow-right-circle-fill"></h4></button>');
-    }
-
-    // Attach event listeners to pagination buttons
-    $("button").click(function () {
-        const currentButton = $(this);
-        if (currentButton.hasClass("previous")) {
-            currentPage--;
-        } else if (currentButton.hasClass("next")) {
-            currentPage++;
-        }
-        viewRecords();
-        updatingPage();
-    });
-};
-
-// Initial function call to display records and update pagination
-viewRecords
-
+function changePage(page) {
+    currentPage = page;
+    searchCards(); // Call searchCards again when page changes
+}
 
 
 
