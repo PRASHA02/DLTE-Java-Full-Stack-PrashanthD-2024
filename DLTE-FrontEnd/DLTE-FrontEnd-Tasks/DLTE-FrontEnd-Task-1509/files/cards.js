@@ -129,11 +129,11 @@ function searchCards() {
                 <div class="card border-primary p-6 mx-auto text-no-wrap justify-content-center shadow-sm">
                     <div class="card-body">
                         <p><strong>Debit card Number:</strong> ${card.debitCardNumber}</p>
-                        <p><strong>Domestic Limit:</strong> ${card.accountNumber}</p>
+                        <p><strong>Account Number:</strong> ${card.accountNumber}</p>
                         <p><strong>Customer ID:</strong> ${card.customerId}</p>
                         <div class="card-details">
                             <p><strong>Debit card Number:</strong> ${card.debitCardNumber}</p>
-                            <p><strong>Domestic Limit:</strong> ${card.accountNumber}</p>
+                            <p><strong>Account Number:</strong> ${card.accountNumber}</p>
                             <p><strong>Customer ID:</strong> ${card.customerId}</p>
                             <p><strong>CVV:</strong> ${card.debitCardCvv}</p>
                             <p><strong>PIN:</strong> ${card.debitCardPin}</p>

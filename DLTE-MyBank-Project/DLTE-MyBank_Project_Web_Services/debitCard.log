@@ -345,4 +345,5 @@ Identify and stop the process that's listening on port 8082 or configure this ap
 [0;39m[31m2024-04-22 14:58:44,359[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices http-nio-8082-exec-6 [32mDebit card information successfully fetched from the database.
 [0;39m[31m2024-04-22 14:59:09,289[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices http-nio-8082-exec-4 [32mDebit card information successfully fetched from the database.
 [0;39m[31m2024-04-22 15:04:31,415[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices http-nio-8082-exec-4 [32mDebit card limit updated successfully
+[0;39m[31m2024-04-22 15:04:31,415[0;39m [32m[INFO][0;39m debit.cards.web.mybankdebitcard.rest.UpdateCardLimit http-nio-8082-exec-4 [32mDebit card limit updated successfully
 [0;39m
