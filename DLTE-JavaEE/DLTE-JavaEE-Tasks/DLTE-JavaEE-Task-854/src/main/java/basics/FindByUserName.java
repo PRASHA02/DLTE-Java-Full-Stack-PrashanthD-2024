@@ -33,7 +33,7 @@ public class FindByUserName extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
         try{
-            Customer customerList = userInfoServices.callFindusername("prash");
+            Customer customerList = userInfoServices.callFindusername("prash02");
             Gson gson = new Gson();
             String message = gson.toJson(customerList);
             resp.setStatus(HttpServletResponse.SC_OK);

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Debit Card List</title>
+    <style>
+        .card:hover{
+            transition: 0.3s;
+            transform: scale(1.1);
+        }
+        .card{
+            background-color: lightblue;
+        }
+    </style>
+    <script>
+        const getAllCards = () => {
+        let soapRequest = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:deb="http://debitcard.links">
+            <soapenv:Header/>
+            <soapenv:Body>
+                <deb:viewDebitCardRequest/>
+            </soapenv:Body>
+        </soapenv:Envelope>`;
+
+        $.ajax({
+            url: "http://localhost:8082/debitcardrepo/debitcard.wsdl",
+            type: "POST", 
+            dataType: "xml",
+            beforeSend: function(handler) {
+                handler.setRequestHeader("Authorization","Basic "+sessionStorage.getItem("logged"))
+                handler.setRequestHeader("SOAPAction", "viewDebitCardRequest");
+            },
+            contentType: "text/xml;charset=utf-8",
+            data: soapRequest,
+            success: function(response) {
+                // Clear existing cards
+                $('#viewSection').empty();
+                
+                // Parse XML response
+                $(response).find('ns2\\:debitCard').each(function() {
+                    // Extract debit card details
+                    const debitCardNumber = $(this).find('ns2\\:debitCardNumber').text();
+                    const accountNumber = $(this).find('ns2\\:accountNumber').text();
+                    const customerId = $(this).find('ns2\\:customerId').text();
+                    const customerCVV = $(this).find('ns2\\:debitCardCvv').text();
+                    const debitCardPin = $(this).find('ns2\\:debitCardPin').text();
+                    const debitCardExpiry = $(this).find('ns2\\:debitCardExpiry').text();
+                    const debitCardStatus = $(this).find('ns2\\:debitCardStatus').text();
+                    const domesticLimit = $(this).find('ns2\\:domesticLimit').text();
+                    const internationalLimit = $(this).find('ns2\\:internationalLimit').text();
+                    
+                    // Create card HTML
+                    const cardHtml = `
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">${debitCardNumber}</h5>
+                                    <p class="card-text">Account Number: ${accountNumber}</p>
+                                    <p class="card-text">Customer ID: ${customerId}</p>
+                                    <p class="card-text">CVV: ${customerCVV}</p>
+                                    <p class="card-text">PIN: ${debitCardPin}</p>
+                                    <p class="card-text">Expiry: ${debitCardExpiry}</p>
+                                    <p class="card-text">Status: ${debitCardStatus}</p>
+                                    <p class="card-text">Domestic Limit: ${domesticLimit}</p>
+                                    <p class="card-text">International Limit: ${internationalLimit}</p>
+                                </div>
+                            </div>
+                        </div>`;
+                    
+                    // Append card to viewSection
+                    $('#viewSection').append(cardHtml);
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    }
+
+    // Call getAllCards function when the page loads
+    $(document).ready(function() {
+        getAllCards();
+    });
+    </script>
+</head>
+<body>
+    <div class="container ">
+    <div class="row justify-content-center" id="viewSection">
+
+    </div>
+    </div>
+</body>
+</html>

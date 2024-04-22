@@ -17,36 +17,31 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/CreateAccount/*")
+@WebServlet("/createAccount/*")
 public class CreateAccount extends HttpServlet {
 
-    UserInfoServices userInfoServices;
+    private StorageTarget storageTarget;
+    private UserInfoServices userInfoServices;
     @Override
     public void init() throws ServletException {
-
-
-        StorageTarget storageTarget= null;
         try {
             storageTarget = new DatabaseTarget();
         } catch (SQLException e) {
-            e.printStackTrace();
+
         }
-            userInfoServices=new UserInfoServices(storageTarget);
+        userInfoServices = new UserInfoServices(storageTarget);
     }
 
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        resp.setContentType("application/json");
         try{
             Gson gson=new Gson();
-
-           Customer customer = gson.fromJson(req.getReader(),Customer.class);
-           userInfoServices.callAddInformation(customer);
-
+            Customer customer = gson.fromJson(req.getReader(),Customer.class);
+            userInfoServices.callAddInformation(customer);
             resp.setStatus(HttpServletResponse.SC_OK);
             resp.getWriter().println(customer.toString()+" has added to the records");
-
         }catch(Exception e){
             System.out.println(e);
         }

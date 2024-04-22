@@ -34,22 +34,28 @@ public class SoapServiceConfiguration extends WsConfigurerAdapter {
 
 
     //wsdl properties defined
-    @Bean(name="transactions")
-    public DefaultWsdl11Definition convertToWsdl(XsdSchema xsdSchema){
-        DefaultWsdl11Definition defaultWsdl11Definition = new DefaultWsdl11Definition();
-        defaultWsdl11Definition.setPortTypeName("TransactionsPort");
-        defaultWsdl11Definition.setTargetNamespace("http://transactions.links");
-        defaultWsdl11Definition.setLocationUri("/transRepo");
-        defaultWsdl11Definition.setSchema(xsdSchema);
-        return  defaultWsdl11Definition;
-    }
+//    @Bean(name="transactions")
+//    public DefaultWsdl11Definition convertToWsdl(XsdSchema xsdSchema){
+//        DefaultWsdl11Definition defaultWsdl11Definition = new DefaultWsdl11Definition();
+//        defaultWsdl11Definition.setPortTypeName("TransactionsPort");
+//        defaultWsdl11Definition.setTargetNamespace("http://transactions.links");
+//        defaultWsdl11Definition.setLocationUri("/transRepo");
+//        defaultWsdl11Definition.setSchema(xsdSchema);
+//        return  defaultWsdl11Definition;
+//    }
 
+    @Bean(name = "transactions")
+    public SimpleWsdl11Definition transactionsWsdl(XsdSchema transactionsSchema) {
+        SimpleWsdl11Definition wsdlDefinition = new SimpleWsdl11Definition();
+        wsdlDefinition.setWsdl(new ClassPathResource("transactions.wsdl"));
+        return wsdlDefinition;
+    }
 
 
     //xsd is mentioned
     @Bean
     public XsdSchema transactionSchema(){
-       // return new SimpleXsdSchema(new ClassPathResource("transactions.xsd"));
+        //return new SimpleXsdSchema(new ClassPathResource("transactions.xsd"));
         String xsdFilePath = "C:/Transactions/transactions.xsd";
         FileSystemResource xsdFileResource = new FileSystemResource(xsdFilePath);
         return new SimpleXsdSchema(xsdFileResource);
