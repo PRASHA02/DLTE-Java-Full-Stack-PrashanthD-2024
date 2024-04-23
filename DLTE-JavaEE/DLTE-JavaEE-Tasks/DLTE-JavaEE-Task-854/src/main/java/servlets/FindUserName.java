@@ -34,7 +34,6 @@ public class FindUserName extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
             String username = req.getParameter("username");
-
             Customer customer = userInfoServices.callFindusername(username);
             RequestDispatcher dispatcher = req.getRequestDispatcher("viewByUsername.jsp");
             req.setAttribute("myCards",customer);

@@ -33,7 +33,6 @@ public class CardSecurityServices implements UserDetailsService {
                     "SELECT * FROM mybank_app_customer",
                     new BeanPropertyRowMapper<>(CardSecurity.class));
             return filterByUserName(customerList,username);
-
         }
 
     public void updateAttempts(CardSecurity cardSecurity){
