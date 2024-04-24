@@ -10,59 +10,54 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
 
-    </style>
-
-    //displaying the cards
-
+<!--    displaying the cards-->
 </head>
 <body>
     <div class="container">
-        <h1 class="row justify-content-center ">Debit card Limit Updation</h1>
+        <h1 class="row justify-content-center" th:text="${'Debit card Limit Updation'}"></h1>
         <div class="row justify-content-center">
             <p id="status" class="display-6 text-center text-primary"></p>
             <div class="p-5 m-5 rounded-5 shadow">
                 <div class="form-group">
-                    <label>Debit card Number</label>
+                    <label th:text="${'Debit card Number'}"></label>
                     <input type="number" id="cardNumber" class="form-control" placholder="Debit Card Number" />
                 </div>
                 <div class="form-group">
-                    <label>Account Number</label>
+                    <label th:text="${'Account Number'}"></label>
                     <input type="number" id="accountNumber" class="form-control" placholder="Account Number" />
                 </div>
                 <div class="form-group">
-                    <label>Customer ID</label>
+                    <label th:text="${'Customer ID'}"></label>
                     <input type="number" id="customerId" class="form-control" placeholder="Customer ID"/>
                 </div>
                 <div class="form-group">
-                    <label>Debit Card CVV</label>
+                    <label th:text="${'Debit Card CVV'}"></label>
                     <input type="number" id="cardCVV" class="form-control" placeholder="Card CVV"/>
                 </div>
                 <div class="form-group">
-                    <label>Debit Card Pin</label>
+                    <label th:text="${'Debit Card Pin'}"></label>
                     <input type="number" id="cardPin" class="form-control" placeholder="Card Pin"/>
                 </div>
                 <div class="form-group">
-                    <label>Debit Card Expiry</label>
+                    <label th:text="${'Debit Card Expiry'}"></label>
                     <input type="date" id="cardExpiry" class="form-control" placeholder="Card Expiry"/>
                 </div>
                 <div class="form-group">
-                    <label>Debit Card Status</label>
+                    <label th:text="${'Debit Card Status'}"></label>
                     <input type="text" id="cardStatus" class="form-control" placeholder="Card Status"/>
                 </div>
                 <div class="form group">
-                    <label>Domestic Limit</label>
+                    <label th:text="${'Domestic Limit'}"></label>
                     <input type="number" id="domesticLimit" class="form-control" placholder="Domestic Limit" />
                 </div>
                 <div class="form group">
-                    <label>International Limit</label>
+                    <label th:text="${'International Limit'}"></label>
                     <input type="number" id="internationalLimit" class="form-control" placholder="International Limit" />
                 </div>
                 <div class="m-5 row justify-content-around">
-                    <button id="update" class="col-1 btn btn-outline-primary"><span>Update</span></p></button>
-                    <button id="cancel" class="col-1 btn btn-outline-dark"><span>Cancel</span></p></button>
-                
+                    <button id="update" class="col-1 btn btn-outline-primary"><span th:text="${'Update'}"></span></p></button>
+                    <button id="cancel" class="col-1 btn btn-outline-dark"><span th:text="${'Cancel'}"></span></p></button>
                 </div>
             </div>
         </div>

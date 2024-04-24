@@ -13,15 +13,13 @@
         .navbar {
             font-weight: bold;
             background: linear-gradient(60deg, rgb(37, 238, 238), #f3ef3a,rgb(112, 246, 163));
-
         }
     </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand text-primary text-uppercase" href="#">MyBank</a>
-
+        <a class="navbar-brand text-primary text-uppercase" href="#" th:text="${'MyBank'}"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myBankMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,10 +27,10 @@
         <div class="collapse navbar-collapse" id="myBankMenu">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="view btn btn-outline-primary rounded-5 me-2"  th:href="@{/soap}" target="pageFrame">View Cards</a>
+                    <a class="view btn btn-outline-primary rounded-5 me-2"  th:href="@{'/soap'}" target="pageFrame">View Cards</a>
                 </li>
                 <li class="nav-item">
-                    <a class="view btn btn-outline-primary rounded-5 me-2"  th:href="@{/rest}" target="pageFrame">Update Cards</a>
+                    <a class="view btn btn-outline-primary rounded-5 me-2"  th:href="@{'/rest'}" target="pageFrame">Update Cards</a>
                 </li>
                 <li class="nav-item">
                     <button class="logout btn btn-outline-primary rounded-5 me-2"><span class="bi bi-box-arrow-right"></span> Logout</button>
