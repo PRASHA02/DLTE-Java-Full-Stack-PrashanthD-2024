@@ -23,7 +23,7 @@ public class TransactionServices {
     public JdbcTemplate jdbcTemplate;
 
     //create method
-    public TransactionsModel apiSave(TransactionsModel transactionsModel){
+    public TransactionsModel apiSave(TransactionsModel transactionsModel) {
 //        int ack = jdbcTemplate.update("insert into transactions_model values(?,?,?,?,?,?)",new Object[]{
 //                transactionsModel.getTransactionId(),
 //                transactionsModel.getTransactionDate(),
@@ -36,7 +36,7 @@ public class TransactionServices {
 //            return transactionsModel;
 //        else
 //            throw  new TransactionException("Insertion Failed");
-        jdbcTemplate.update("insert into transactions_model values(?,?,?,?,?,?)",new Object[]{
+        jdbcTemplate.update("insert into transactions_model values(?,?,?,?,?,?)", new Object[]{
                 transactionsModel.getTransactionId(),
                 transactionsModel.getTransactionDate(),
                 transactionsModel.getTransactionBy(),
@@ -48,22 +48,22 @@ public class TransactionServices {
     }
 
     //findBY method
-    public List<TransactionsModel> apiFindBySender(String sender){
-        return jdbcTemplate.query("select * from transactions_model where transaction_by=?",new Object[]{sender},new BeanPropertyRowMapper<>(TransactionsModel.class
+    public List<TransactionsModel> apiFindBySender(String sender) {
+        return jdbcTemplate.query("select * from transactions_model where transaction_by=?", new Object[]{sender}, new BeanPropertyRowMapper<>(TransactionsModel.class
         ));
 
     }
 
     //FindTo method
-    public List<TransactionsModel> apiFindByReceiver(String receiver){
-        return jdbcTemplate.query("select * from transactions_model where transaction_to=?",new Object[]{receiver},new BeanPropertyRowMapper<>(TransactionsModel.class
+    public List<TransactionsModel> apiFindByReceiver(String receiver) {
+        return jdbcTemplate.query("select * from transactions_model where transaction_to=?", new Object[]{receiver}, new BeanPropertyRowMapper<>(TransactionsModel.class
         ));
 
     }
 
     //FindAmount
-    public List<TransactionsModel> apiFindByAmount(Long amount){
-        return jdbcTemplate.query("select * from transactions_model where transaction_amount=?",new Object[]{amount},new BeanPropertyRowMapper<>(TransactionsModel.class
+    public List<TransactionsModel> apiFindByAmount(Long amount) {
+        return jdbcTemplate.query("select * from transactions_model where transaction_amount=?", new Object[]{amount}, new BeanPropertyRowMapper<>(TransactionsModel.class
         ));
 
     }
@@ -71,19 +71,21 @@ public class TransactionServices {
     public TransactionsModel apiUpdate(TransactionsModel transactionsModel) {
         int ack = jdbcTemplate.update("UPDATE transactions_model SET transaction_for=? WHERE transaction_id=?",
                 new Object[]{transactionsModel.getTransactionFor(), transactionsModel.getTransactionId()});
-        if(ack!=0)
-         return transactionsModel;
+        if (ack != 0)
+            return transactionsModel;
         else
             return null;
     }
-    public String removeByDate(Date start, Date end){
-        int ack = jdbcTemplate.update("delete from transactions_model where transactiondate between ? and ?",new Object[]{start,end});
-        if(ack!=0)
+
+    public String removeByDate(Date start, Date end) {
+        int ack = jdbcTemplate.update("delete from transactions_model where transactiondate between ? and ?", new Object[]{start, end});
+        if (ack != 0)
             return "removed";
         else
             return null;
     }
-    private class CardMapper implements RowMapper<TransactionsModel>{
+
+    private class CardMapper implements RowMapper<TransactionsModel> {
 
         @Override
         public TransactionsModel mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -97,7 +99,6 @@ public class TransactionServices {
             return transactionsModel;
         }
     }
-
 
 
 }

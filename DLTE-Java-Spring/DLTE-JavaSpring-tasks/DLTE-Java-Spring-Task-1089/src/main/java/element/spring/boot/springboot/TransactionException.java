@@ -2,11 +2,11 @@ package element.spring.boot.springboot;
 
 public class TransactionException extends RuntimeException {
 
-    public TransactionException(){
+    public TransactionException() {
         super("Transaction failed due to some errors");
     }
 
-    public TransactionException(String message){
+    public TransactionException(String message) {
         super(message);
     }
 }

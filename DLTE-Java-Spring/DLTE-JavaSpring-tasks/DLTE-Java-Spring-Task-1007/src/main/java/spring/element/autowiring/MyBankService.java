@@ -13,7 +13,7 @@ public class MyBankService {
     @Qualifier("HomeLoan")
     private AutoWireInterface autoWireInterface;
 
-    public List<Loan> executeFindAll(){
+    public List<Loan> executeFindAll() {
         return autoWireInterface.find();
     }
 

@@ -17,9 +17,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -32,13 +32,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "serviceStatus",
-    "transactions"
+        "serviceStatus",
+        "transactions"
 })
 @XmlRootElement(name = "updateRemarksTransactionResponse")
 public class UpdateRemarksTransactionResponse {
@@ -50,11 +48,9 @@ public class UpdateRemarksTransactionResponse {
 
     /**
      * Gets the value of the serviceStatus property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ServiceStatus }
-     *     
+     *
+     * @return possible object is
+     * {@link ServiceStatus }
      */
     public ServiceStatus getServiceStatus() {
         return serviceStatus;
@@ -62,11 +58,9 @@ public class UpdateRemarksTransactionResponse {
 
     /**
      * Sets the value of the serviceStatus property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ServiceStatus }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ServiceStatus }
      */
     public void setServiceStatus(ServiceStatus value) {
         this.serviceStatus = value;
@@ -74,11 +68,9 @@ public class UpdateRemarksTransactionResponse {
 
     /**
      * Gets the value of the transactions property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Transactions }
-     *     
+     *
+     * @return possible object is
+     * {@link Transactions }
      */
     public Transactions getTransactions() {
         return transactions;
@@ -86,11 +78,9 @@ public class UpdateRemarksTransactionResponse {
 
     /**
      * Sets the value of the transactions property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Transactions }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Transactions }
      */
     public void setTransactions(Transactions value) {
         this.transactions = value;

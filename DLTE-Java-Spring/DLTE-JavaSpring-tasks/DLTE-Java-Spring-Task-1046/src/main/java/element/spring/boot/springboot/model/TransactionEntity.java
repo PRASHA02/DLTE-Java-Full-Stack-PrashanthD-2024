@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class TransactionEntity implements Serializable{
+public class TransactionEntity implements Serializable {
 
     @Id
     private Long transactionId;

@@ -18,15 +18,15 @@ public class TransactionService {
     @Autowired
     TransactionJpaRepository transactionJpaRepository;
 
-    public TransactionEntity callSave(TransactionEntity transactionEntity){
+    public TransactionEntity callSave(TransactionEntity transactionEntity) {
         return transactionRepository.save(transactionEntity);
     }
 
-    public List<TransactionEntity> callFindUserAndType(String username,String type){
-        return transactionJpaRepository.lookByUsernameAndTransactionType(username,type);
+    public List<TransactionEntity> callFindUserAndType(String username, String type) {
+        return transactionJpaRepository.lookByUsernameAndTransactionType(username, type);
     }
 
-    public List<TransactionEntity> callFindRangeAmount(Long range1,Long range2){
-        return transactionJpaRepository.lookByRangeAmount(range1,range2);
+    public List<TransactionEntity> callFindRangeAmount(Long range1, Long range2) {
+        return transactionJpaRepository.lookByRangeAmount(range1, range2);
     }
 }

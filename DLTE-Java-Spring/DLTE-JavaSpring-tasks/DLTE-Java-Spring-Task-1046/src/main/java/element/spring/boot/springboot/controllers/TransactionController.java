@@ -23,8 +23,8 @@ public class TransactionController {
 //    <amount>310000</amount>
 //    <transactionType>withdraw</transactionType>
 //    </transaction>
-    @PostMapping(value = "/",consumes = "application/xml")
-    public TransactionEntity callApiInsert(@RequestBody TransactionEntity transactionEntity){
+    @PostMapping(value = "/", consumes = "application/xml")
+    public TransactionEntity callApiInsert(@RequestBody TransactionEntity transactionEntity) {
         return transactionService.callSave(transactionEntity);
     }
 
@@ -41,11 +41,11 @@ public class TransactionController {
 //    }
 //    ]
     @GetMapping("/findUserType/{user}/{type}")
-    public List<TransactionEntity> callApiUserType(@PathVariable("user") String user,@PathVariable("type") String type){
-        return transactionService.callFindUserAndType(user,type);
+    public List<TransactionEntity> callApiUserType(@PathVariable("user") String user, @PathVariable("type") String type) {
+        return transactionService.callFindUserAndType(user, type);
     }
 
-   // url:- http://localhost:8082/transaction/findByRange/1000/40000000
+    // url:- http://localhost:8082/transaction/findByRange/1000/40000000
 //    [
 //    {
 //        "transactionId": 777,
@@ -63,7 +63,7 @@ public class TransactionController {
 //    }
 //   ]
     @GetMapping("/findByRange/{rangeAmount1}/{rangeAmount2}")
-    public List<TransactionEntity> callApiRangeAmount(@PathVariable("rangeAmount1") Long rangeAmount1,@PathVariable("rangeAmount2") Long rangeAmount2){
-        return transactionService.callFindRangeAmount(rangeAmount1,rangeAmount2);
+    public List<TransactionEntity> callApiRangeAmount(@PathVariable("rangeAmount1") Long rangeAmount1, @PathVariable("rangeAmount2") Long rangeAmount2) {
+        return transactionService.callFindRangeAmount(rangeAmount1, rangeAmount2);
     }
 }

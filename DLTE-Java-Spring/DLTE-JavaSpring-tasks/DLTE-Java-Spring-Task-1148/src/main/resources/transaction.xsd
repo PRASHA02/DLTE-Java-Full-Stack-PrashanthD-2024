@@ -1,9 +1,9 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             targetNamespace="http://transactions.links"
-            xmlns:tns= "http://transactions.links"
+            xmlns:tns="http://transactions.links"
             elementFormDefault="qualified">
 
-<!--    Entity-->
+    <!--    Entity-->
     <xsd:complexType name="transactions">
         <xsd:sequence>
             <xsd:element name="transactionId" type="xsd:long"/>
@@ -15,17 +15,17 @@
         </xsd:sequence>
     </xsd:complexType>
 
-<!--    Status-->
+    <!--    Status-->
     <xsd:complexType name="serviceStatus">
         <xsd:sequence>
-            <xsd:element name ="status" type="xsd:string"/>
-            <xsd:element name ="message" type="xsd:string"/>
+            <xsd:element name="status" type="xsd:string"/>
+            <xsd:element name="message" type="xsd:string"/>
         </xsd:sequence>
     </xsd:complexType>
-    
-<!--    Operation-->
 
-<!--    new transaction-->
+    <!--    Operation-->
+
+    <!--    new transaction-->
     <xsd:element name="newTransactionRequest">
         <xsd:complexType>
             <xsd:sequence>
@@ -37,12 +37,12 @@
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xsd:element name = "transactions" type="tns:transactions"/>
+                <xsd:element name="transactions" type="tns:transactions"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
 
-<!--    findBySender-->
+    <!--    findBySender-->
     <xsd:element name="filterBySenderRequest">
         <xsd:complexType>
             <xsd:sequence>
@@ -59,7 +59,7 @@
         </xsd:complexType>
     </xsd:element>
 
-<!--    findByReceiver-->
+    <!--    findByReceiver-->
     <xsd:element name="filterByReceiverRequest">
         <xsd:complexType>
             <xsd:sequence>
@@ -76,7 +76,7 @@
         </xsd:complexType>
     </xsd:element>
 
-<!--    findByAmount-->
+    <!--    findByAmount-->
 
     <xsd:element name="filterByAmountRequest">
         <xsd:complexType>
@@ -106,7 +106,7 @@
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="serviceStatus" type="tns:serviceStatus"/>
-                <xsd:element name = "transactions" type="tns:transactions"/>
+                <xsd:element name="transactions" type="tns:transactions"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>

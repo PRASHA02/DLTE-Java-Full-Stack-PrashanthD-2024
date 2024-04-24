@@ -10,65 +10,67 @@
         </xsd:schema>
     </wsdl:types>
     <wsdl:message name="filterByReceiverRequest">
-        <wsdl:part element="tns:filterByReceiverRequest" name="filterByReceiverRequest"> </wsdl:part>
+        <wsdl:part element="tns:filterByReceiverRequest" name="filterByReceiverRequest"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="newTransactionRequest">
-        <wsdl:part element="tns:newTransactionRequest" name="newTransactionRequest"> </wsdl:part>
+        <wsdl:part element="tns:newTransactionRequest" name="newTransactionRequest"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="filterByAmountResponse">
-        <wsdl:part element="tns:filterByAmountResponse" name="filterByAmountResponse"> </wsdl:part>
+        <wsdl:part element="tns:filterByAmountResponse" name="filterByAmountResponse"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="updateRemarksTransactionRequest">
-        <wsdl:part element="tns:updateRemarksTransactionRequest" name="updateRemarksTransactionRequest"> </wsdl:part>
+        <wsdl:part element="tns:updateRemarksTransactionRequest" name="updateRemarksTransactionRequest"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="removeByDateRequest">
-        <wsdl:part element="tns:removeByDateRequest" name="removeByDateRequest"> </wsdl:part>
+        <wsdl:part element="tns:removeByDateRequest" name="removeByDateRequest"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="filterByReceiverResponse">
-        <wsdl:part element="tns:filterByReceiverResponse" name="filterByReceiverResponse"> </wsdl:part>
+        <wsdl:part element="tns:filterByReceiverResponse" name="filterByReceiverResponse"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="removeByDateResponse">
-        <wsdl:part element="tns:removeByDateResponse" name="removeByDateResponse"> </wsdl:part>
+        <wsdl:part element="tns:removeByDateResponse" name="removeByDateResponse"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="filterByAmountRequest">
-        <wsdl:part element="tns:filterByAmountRequest" name="filterByAmountRequest"> </wsdl:part>
+        <wsdl:part element="tns:filterByAmountRequest" name="filterByAmountRequest"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="updateRemarksTransactionResponse">
-        <wsdl:part element="tns:updateRemarksTransactionResponse" name="updateRemarksTransactionResponse"> </wsdl:part>
+        <wsdl:part element="tns:updateRemarksTransactionResponse" name="updateRemarksTransactionResponse"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="newTransactionResponse">
-        <wsdl:part element="tns:newTransactionResponse" name="newTransactionResponse"> </wsdl:part>
+        <wsdl:part element="tns:newTransactionResponse" name="newTransactionResponse"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="filterBySenderResponse">
-        <wsdl:part element="tns:filterBySenderResponse" name="filterBySenderResponse"> </wsdl:part>
+        <wsdl:part element="tns:filterBySenderResponse" name="filterBySenderResponse"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="filterBySenderRequest">
-        <wsdl:part element="tns:filterBySenderRequest" name="filterBySenderRequest"> </wsdl:part>
+        <wsdl:part element="tns:filterBySenderRequest" name="filterBySenderRequest"></wsdl:part>
     </wsdl:message>
     <wsdl:portType name="TransactionsPort">
         <wsdl:operation name="filterByReceiver">
-            <wsdl:input message="tns:filterByReceiverRequest" name="filterByReceiverRequest"> </wsdl:input>
-            <wsdl:output message="tns:filterByReceiverResponse" name="filterByReceiverResponse"> </wsdl:output>
+            <wsdl:input message="tns:filterByReceiverRequest" name="filterByReceiverRequest"></wsdl:input>
+            <wsdl:output message="tns:filterByReceiverResponse" name="filterByReceiverResponse"></wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="newTransaction">
-            <wsdl:input message="tns:newTransactionRequest" name="newTransactionRequest"> </wsdl:input>
-            <wsdl:output message="tns:newTransactionResponse" name="newTransactionResponse"> </wsdl:output>
+            <wsdl:input message="tns:newTransactionRequest" name="newTransactionRequest"></wsdl:input>
+            <wsdl:output message="tns:newTransactionResponse" name="newTransactionResponse"></wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="filterByAmount">
-            <wsdl:input message="tns:filterByAmountRequest" name="filterByAmountRequest"> </wsdl:input>
-            <wsdl:output message="tns:filterByAmountResponse" name="filterByAmountResponse"> </wsdl:output>
+            <wsdl:input message="tns:filterByAmountRequest" name="filterByAmountRequest"></wsdl:input>
+            <wsdl:output message="tns:filterByAmountResponse" name="filterByAmountResponse"></wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="updateRemarksTransaction">
-            <wsdl:input message="tns:updateRemarksTransactionRequest" name="updateRemarksTransactionRequest"> </wsdl:input>
-            <wsdl:output message="tns:updateRemarksTransactionResponse" name="updateRemarksTransactionResponse"> </wsdl:output>
+            <wsdl:input message="tns:updateRemarksTransactionRequest"
+                        name="updateRemarksTransactionRequest"></wsdl:input>
+            <wsdl:output message="tns:updateRemarksTransactionResponse"
+                         name="updateRemarksTransactionResponse"></wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="removeByDate">
-            <wsdl:input message="tns:removeByDateRequest" name="removeByDateRequest"> </wsdl:input>
-            <wsdl:output message="tns:removeByDateResponse" name="removeByDateResponse"> </wsdl:output>
+            <wsdl:input message="tns:removeByDateRequest" name="removeByDateRequest"></wsdl:input>
+            <wsdl:output message="tns:removeByDateResponse" name="removeByDateResponse"></wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="filterBySender">
-            <wsdl:input message="tns:filterBySenderRequest" name="filterBySenderRequest"> </wsdl:input>
-            <wsdl:output message="tns:filterBySenderResponse" name="filterBySenderResponse"> </wsdl:output>
+            <wsdl:input message="tns:filterBySenderRequest" name="filterBySenderRequest"></wsdl:input>
+            <wsdl:output message="tns:filterBySenderResponse" name="filterBySenderResponse"></wsdl:output>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="TransactionsPortSoap11" type="tns:TransactionsPort">

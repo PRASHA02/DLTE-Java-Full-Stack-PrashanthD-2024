@@ -31,11 +31,11 @@ public class TransactionController {
     //  "transactionFor": "mobile"
     //}
     @PostMapping("/")
-    public TransactionsModel callSave(@RequestBody TransactionsModel transactionsModel){
+    public TransactionsModel callSave(@RequestBody TransactionsModel transactionsModel) {
         TransactionsModel transactionsModel1 = null;
-        try{
-            transactionsModel1 =  transactionServices.apiSave(transactionsModel);
-        }catch (TransactionException transactionException){
+        try {
+            transactionsModel1 = transactionServices.apiSave(transactionsModel);
+        } catch (TransactionException transactionException) {
             logger.warn(transactionException.toString());
         }
 
@@ -73,7 +73,7 @@ public class TransactionController {
     //]
 
     @GetMapping("/findBy/{by}")
-    public List<TransactionsModel> callFindBy(@PathVariable("by") String by){
+    public List<TransactionsModel> callFindBy(@PathVariable("by") String by) {
         return transactionServices.apiFindBySender(by);
     }
 
@@ -91,7 +91,7 @@ public class TransactionController {
     //]
 
     @GetMapping("/findTo/{to}")
-    public List<TransactionsModel> callFindTo(@PathVariable("to") String to){
+    public List<TransactionsModel> callFindTo(@PathVariable("to") String to) {
         return transactionServices.apiFindByReceiver(to);
     }
 
@@ -110,7 +110,7 @@ public class TransactionController {
     //]
 
     @GetMapping("/findAmount/{amount}")
-    public List<TransactionsModel> callFindBy(@PathVariable("amount") Long amount){
+    public List<TransactionsModel> callFindBy(@PathVariable("amount") Long amount) {
         return transactionServices.apiFindByAmount(amount);
     }
 
@@ -126,28 +126,28 @@ public class TransactionController {
     //}
 
     @PutMapping("/updateRemarks")
-    public TransactionsModel callUpdateTransaction(@RequestBody TransactionsModel transactionsModel){
-        TransactionsModel transaction1= transactionServices.apiUpdate(transactionsModel);
+    public TransactionsModel callUpdateTransaction(@RequestBody TransactionsModel transactionsModel) {
+        TransactionsModel transaction1 = transactionServices.apiUpdate(transactionsModel);
         return transaction1;
     }
 
     //delete the date
     //url-http://localhost:8082/transaction/deleteByDate/2024-03-21/2024-03-30
     //output-{
-        //removed transaction between 2024-03-21 and 2024-03-30
+    //removed transaction between 2024-03-21 and 2024-03-30
     //}
 
     @DeleteMapping("/deleteByDate/{start}/{end}")
-    public String callDeleteTransaction(@PathVariable("start") String start,@PathVariable("end") String end) throws ParseException {
+    public String callDeleteTransaction(@PathVariable("start") String start, @PathVariable("end") String end) throws ParseException {
         SimpleDateFormat dateFormatStart = new SimpleDateFormat(start);
         Date dateStart = dateFormatStart.parse(start);
         SimpleDateFormat dateFormatEnd = new SimpleDateFormat(end);
         Date dateEnd = dateFormatStart.parse(end);
-        String result = transactionServices.removeByDate(dateStart,dateEnd);
-        if(result.contains("removed"))
-         return result +" transaction between "+ start + " to "+end;
+        String result = transactionServices.removeByDate(dateStart, dateEnd);
+        if (result.contains("removed"))
+            return result + " transaction between " + start + " to " + end;
         else
-            return result +" not removed";
+            return result + " not removed";
 
     }
 }

@@ -12,17 +12,19 @@ import java.util.List;
 public class AccountController {
     @Autowired
     AccountServices accountServices;
+
     @PostMapping("/open")
-    public AccountInfo save(@RequestBody AccountInfo accountInfo){
-        return  accountServices.callSave(accountInfo);
+    public AccountInfo save(@RequestBody AccountInfo accountInfo) {
+        return accountServices.callSave(accountInfo);
     }
-    @PutMapping(value = "/",consumes = "application/json")
-    public AccountInfo update(AccountInfo accountInfo){
-        return  accountServices.callSave(accountInfo);
+
+    @PutMapping(value = "/", consumes = "application/json")
+    public AccountInfo update(AccountInfo accountInfo) {
+        return accountServices.callSave(accountInfo);
     }
 
     @GetMapping("/findAll")
-    public List<AccountInfo> findAll(){
+    public List<AccountInfo> findAll() {
         return accountServices.callFindAll();
     }
 

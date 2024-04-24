@@ -17,9 +17,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -31,12 +31,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "sender"
+        "sender"
 })
 @XmlRootElement(name = "filterBySenderRequest")
 public class FilterBySenderRequest {
@@ -46,11 +44,9 @@ public class FilterBySenderRequest {
 
     /**
      * Gets the value of the sender property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSender() {
         return sender;
@@ -58,11 +54,9 @@ public class FilterBySenderRequest {
 
     /**
      * Sets the value of the sender property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSender(String value) {
         this.sender = value;

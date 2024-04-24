@@ -19,9 +19,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -34,13 +34,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "start",
-    "end"
+        "start",
+        "end"
 })
 @XmlRootElement(name = "removeByDateRequest")
 public class RemoveByDateRequest {
@@ -54,11 +52,9 @@ public class RemoveByDateRequest {
 
     /**
      * Gets the value of the start property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is
+     * {@link XMLGregorianCalendar }
      */
     public XMLGregorianCalendar getStart() {
         return start;
@@ -66,11 +62,9 @@ public class RemoveByDateRequest {
 
     /**
      * Sets the value of the start property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link XMLGregorianCalendar }
      */
     public void setStart(XMLGregorianCalendar value) {
         this.start = value;
@@ -78,11 +72,9 @@ public class RemoveByDateRequest {
 
     /**
      * Gets the value of the end property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is
+     * {@link XMLGregorianCalendar }
      */
     public XMLGregorianCalendar getEnd() {
         return end;
@@ -90,11 +82,9 @@ public class RemoveByDateRequest {
 
     /**
      * Sets the value of the end property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link XMLGregorianCalendar }
      */
     public void setEnd(XMLGregorianCalendar value) {
         this.end = value;

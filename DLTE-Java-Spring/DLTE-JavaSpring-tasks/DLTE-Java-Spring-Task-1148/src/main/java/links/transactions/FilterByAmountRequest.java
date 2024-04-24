@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -30,12 +30,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "amount"
+        "amount"
 })
 @XmlRootElement(name = "filterByAmountRequest")
 public class FilterByAmountRequest {
@@ -44,7 +42,6 @@ public class FilterByAmountRequest {
 
     /**
      * Gets the value of the amount property.
-     * 
      */
     public long getAmount() {
         return amount;
@@ -52,7 +49,6 @@ public class FilterByAmountRequest {
 
     /**
      * Sets the value of the amount property.
-     * 
      */
     public void setAmount(long value) {
         this.amount = value;

@@ -12,10 +12,11 @@ public class Loan {
     private String loanType;
     private String borrowerName;
     private Long borrowerContact;
+
     public Loan() {
     }
 
-    public Loan(Integer loanNumber, Double loanAmount, String loanDate, String loanType, String borrowerName, Long borrowerContact,ArrayList<Integer> number) {
+    public Loan(Integer loanNumber, Double loanAmount, String loanDate, String loanType, String borrowerName, Long borrowerContact, ArrayList<Integer> number) {
         this.loanNumber = loanNumber;
         this.loanAmount = loanAmount;
         this.loanDate = loanDate;

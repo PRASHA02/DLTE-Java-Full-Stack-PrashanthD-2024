@@ -11,7 +11,7 @@
     <groupId>element.spring.boot</groupId>
     <artifactId>spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>DLTE-Java-Spring-Task-1089</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -71,6 +71,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>repackage</id>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

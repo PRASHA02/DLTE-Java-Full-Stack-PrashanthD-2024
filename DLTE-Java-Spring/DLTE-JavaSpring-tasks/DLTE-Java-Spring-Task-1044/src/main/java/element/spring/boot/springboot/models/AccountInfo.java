@@ -5,9 +5,10 @@ import java.io.Serializable;
 
 //model entity
 @Entity
-@Table(name="account_info")
+@Table(name = "account_info")
 public class AccountInfo implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long accountNumber;
     private String name;
     private String type;

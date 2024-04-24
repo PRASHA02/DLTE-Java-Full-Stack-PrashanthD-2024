@@ -11,8 +11,8 @@ public class PersonalLoanImplementation implements AutoWireInterface {
     public List<Loan> find() {
         List<Loan> personalLoan = new ArrayList<>();
 
-        for(Loan each:loans){
-            if(each.getLoanType().equalsIgnoreCase("personalLoan")){
+        for (Loan each : loans) {
+            if (each.getLoanType().equalsIgnoreCase("personalLoan")) {
                 personalLoan.add(each);
             }
         }

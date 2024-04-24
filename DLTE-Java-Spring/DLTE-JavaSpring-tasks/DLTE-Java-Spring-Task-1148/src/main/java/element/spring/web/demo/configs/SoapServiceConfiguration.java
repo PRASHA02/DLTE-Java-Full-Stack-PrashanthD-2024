@@ -25,23 +25,23 @@ public class SoapServiceConfiguration extends WsConfigurerAdapter {
 
     //conversion of xsd to wsdl
     @Bean
-    public ServletRegistrationBean servletRegistrationBean(ApplicationContext applicationContext){
+    public ServletRegistrationBean servletRegistrationBean(ApplicationContext applicationContext) {
         MessageDispatcherServlet messageDispatcherServlet = new MessageDispatcherServlet();
         messageDispatcherServlet.setTransformWsdlLocations(true);
         messageDispatcherServlet.setApplicationContext(applicationContext);
-        return new ServletRegistrationBean(messageDispatcherServlet,"/transRepo/*");
+        return new ServletRegistrationBean(messageDispatcherServlet, "/transRepo/*");
     }
 
 
     //wsdl properties defined
-    @Bean(name="transaction")
-    public DefaultWsdl11Definition convertToWsdl(XsdSchema xsdSchema){
+    @Bean(name = "transaction")
+    public DefaultWsdl11Definition convertToWsdl(XsdSchema xsdSchema) {
         DefaultWsdl11Definition defaultWsdl11Definition = new DefaultWsdl11Definition();
         defaultWsdl11Definition.setPortTypeName("TransactionsPort");
         defaultWsdl11Definition.setTargetNamespace("http://transactions.links");
         defaultWsdl11Definition.setLocationUri("/transRepo");
         defaultWsdl11Definition.setSchema(xsdSchema);
-        return  defaultWsdl11Definition;
+        return defaultWsdl11Definition;
     }
 
     @Bean(name = "transaction")
@@ -53,8 +53,8 @@ public class SoapServiceConfiguration extends WsConfigurerAdapter {
 
     //xsd is mentioned
     @Bean
-    public XsdSchema transactionSchema(){
-       return new SimpleXsdSchema(new ClassPathResource("transaction.xsd"));
+    public XsdSchema transactionSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("transaction.xsd"));
 //        String xsdFilePath = "C:/Transactions/transactions.xsd";
 //        FileSystemResource xsdFileResource = new FileSystemResource(xsdFilePath);
 //        return new SimpleXsdSchema(xsdFileResource);

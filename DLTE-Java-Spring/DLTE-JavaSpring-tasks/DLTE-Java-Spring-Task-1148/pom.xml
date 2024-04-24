@@ -79,7 +79,7 @@
                     </execution>
                 </executions>
                 <configuration>
-<!--                    <schemaDirectory>C:\Transactions</schemaDirectory>-->
+                    <!--                    <schemaDirectory>C:\Transactions</schemaDirectory>-->
                     <schemaFiles>transaction.xsd</schemaFiles>
                     <outputDirectory>src/main/java</outputDirectory>
                     <clearOutputDir>false</clearOutputDir>

@@ -9,6 +9,7 @@ public class Loan {
     private String loanType;
     private String borrowerName;
     private Long borrowerContact;
+
     public Loan() {
     }
 

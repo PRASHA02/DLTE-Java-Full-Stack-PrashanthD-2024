@@ -17,9 +17,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -31,12 +31,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "transactions"
+        "transactions"
 })
 @XmlRootElement(name = "newTransactionRequest")
 public class NewTransactionRequest {
@@ -46,11 +44,9 @@ public class NewTransactionRequest {
 
     /**
      * Gets the value of the transactions property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Transactions }
-     *     
+     *
+     * @return possible object is
+     * {@link Transactions }
      */
     public Transactions getTransactions() {
         return transactions;
@@ -58,11 +54,9 @@ public class NewTransactionRequest {
 
     /**
      * Sets the value of the transactions property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Transactions }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Transactions }
      */
     public void setTransactions(Transactions value) {
         this.transactions = value;
