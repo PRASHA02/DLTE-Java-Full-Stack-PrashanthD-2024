@@ -13,12 +13,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 @Component
 public class CardSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Autowired
     CardSecurityServices cardSecurityServices;
-
+    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
     Logger logger= LoggerFactory.getLogger(CardSuccessHandler.class);
 
     @Override
@@ -32,11 +33,11 @@ public class CardSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
             else if(cardSecurity.getCustomerStatus().equals("active")){
                 super.setDefaultTargetUrl("/update/limit");
             }
-            //super.setDefaultTargetUrl("http://localhost:8082/debitcardrepo/debitcard.wsdl");
+            super.setDefaultTargetUrl(resourceBundle.getString("soap.wsdl"));
 //            super.setAlwaysUseDefaultTargetUrl(true);
         }
         else{
-            logger.warn("Max attempts reached contact admin");
+            logger.warn(resourceBundle.getString("max.admin"));
             super.setDefaultTargetUrl("/login");
         }
         super.onAuthenticationSuccess(request, response, authentication);

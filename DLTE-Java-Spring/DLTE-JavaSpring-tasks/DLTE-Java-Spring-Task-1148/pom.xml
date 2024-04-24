@@ -79,8 +79,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <schemaDirectory>C:\Transactions</schemaDirectory>
-                    <schemaFiles>transactions.xsd</schemaFiles>
+<!--                    <schemaDirectory>C:\Transactions</schemaDirectory>-->
+                    <schemaFiles>transaction.xsd</schemaFiles>
                     <outputDirectory>src/main/java</outputDirectory>
                     <clearOutputDir>false</clearOutputDir>
                 </configuration>

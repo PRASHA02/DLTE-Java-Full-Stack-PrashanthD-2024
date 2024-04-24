@@ -1,8 +1,10 @@
 package debit.cards.web.mybankdebitcard.rest;
 
+import debit.cards.dao.entities.Customer;
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
+import debit.cards.dao.security.CardSecurity;
 import debit.cards.dao.security.CardSecurityServices;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -53,10 +55,14 @@ public class UpdateCardLimit {
        // method to fetch the owner's username from the account object
        String accountOwnerUsername = cardSecurityServices.getAccountOwnerUsername(debitCard.getAccountNumber());
        // Check if the authenticated user matches the owner of the account
-       if (!username.equals(accountOwnerUsername)) {
+       //System.out.println(username.equals(customer.getUsername()));
+
+       if (!username.equals(accountOwnerUsername))
            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(resourceBundle.getString("access.denied"));
-       }
+
         try {
+            CardSecurity customer = cardSecurityServices.findByUserName(username);
+            debitCard.setCustomerId(customer.getCustomerId());
             String response = debitCardRepository.updateDebitLimit(debitCard);
             logger.info(resourceBundle.getString("limit.update.success"));
             return ResponseEntity.ok(response);

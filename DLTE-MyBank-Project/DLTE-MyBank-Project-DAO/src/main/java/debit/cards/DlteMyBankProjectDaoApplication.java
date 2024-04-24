@@ -18,7 +18,7 @@ public class DlteMyBankProjectDaoApplication {
         ConfigurableApplicationContext context=  SpringApplication.run(DlteMyBankProjectDaoApplication.class, args);
 
         DebitCardServices debitCardServices=context.getBean(DebitCardServices.class);
-        System.out.println(debitCardServices.getDebitCard());
+        //System.out.println(debitCardServices.getDebitCard());
 //        DebitCard debitCard = new DebitCard(3692468135796672L,89909876543530L,
 //                123672,
 //                556,

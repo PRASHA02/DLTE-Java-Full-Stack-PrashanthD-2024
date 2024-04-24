@@ -20,8 +20,8 @@ public class DebitCard {
     @Digits(integer=14,fraction = 0,message = "{card.number.invalid}")
     private Long accountNumber;
 
-    @NotNull(message= "{customer.id.null}")
-    @Digits(integer =6,fraction = 0,message = "{customer.id.invalid}")
+//    @NotNull(message= "{customer.id.null}")
+//    @Digits(integer =6,fraction = 0,message = "{customer.id.invalid}")
     private Integer customerId;
 
     @NotNull(message = "{card.cvv.null}")

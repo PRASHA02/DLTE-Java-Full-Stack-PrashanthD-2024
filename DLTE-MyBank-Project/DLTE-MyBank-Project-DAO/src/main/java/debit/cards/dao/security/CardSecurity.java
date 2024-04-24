@@ -7,7 +7,7 @@ import java.util.Collection;
 
 //entity class for the security
 public class CardSecurity implements UserDetails {
-
+    private Integer customerId;
     private String customerName;
     private String customerAddress;
     private String customerStatus;
@@ -47,6 +47,14 @@ public class CardSecurity implements UserDetails {
 
     public void setCustomerContact(Long customerContact) {
         this.customerContact = customerContact;
+    }
+
+    public Integer getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     @Override
@@ -104,17 +112,5 @@ public class CardSecurity implements UserDetails {
         this.attempts = attempts;
     }
 
-    @Override
-    public String toString() {
-        return "CardSecurity{" +
-                "customerName='" + customerName + '\'' +
-                ", customerAddress='" + customerAddress + '\'' +
-                ", customerStatus='" + customerStatus + '\'' +
-                ", customerContact=" + customerContact +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", maxAttempt=" + maxAttempt +
-                ", attempts=" + attempts +
-                '}';
-    }
+
 }

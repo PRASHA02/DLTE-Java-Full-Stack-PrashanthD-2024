@@ -1,4 +1,5 @@
 package debit.cards.dao.services;
+
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
@@ -30,10 +31,10 @@ public class DebitCardServices implements DebitCardRepository {
 
     //performs the business logic of getting list of cards
     @Override
-    public List<DebitCard> getDebitCard() {
+    public List<DebitCard> getDebitCard(String username) {
         List<DebitCard> debitCardList = null;
         try {
-            debitCardList = jdbcTemplate.query("SELECT * FROM mybank_app_debitcard where not debitcard_status='Blocked'", new DebitCardMapper());
+            debitCardList = jdbcTemplate.query("SELECT * FROM mybank_app_debitcard d JOIN mybank_app_customer c ON d.customer_id = c.customer_id JOIN mybank_app_account a on a.account_number=d.account_number WHERE NOT debitcard_status = 'Blocked' AND  a.account_status='active' AND c.customer_status='active' AND username = ?", new Object[]{username}, new DebitCardMapper());
             logger.info(resourceBundle.getString("card.fetch.success"));
         } catch (DataAccessException sqlException) {
             logger.error(resourceBundle.getString("sql.syntax.invalid"));
@@ -45,11 +46,12 @@ public class DebitCardServices implements DebitCardRepository {
         }
         return debitCardList;
     }
+
     //Update the limits when all the customer,account and debit card status is active otherwise it gives respective error messages
     @Override
     public String updateDebitLimit(DebitCard debitCard) throws SQLException {
         // Fetch the debit card details from the database using the provided account number
-        try{
+        try {
             DebitCard fetchedDebitCard = jdbcTemplate.queryForObject(
                     "SELECT * FROM mybank_app_debitcard WHERE account_number = ?",
                     new Object[]{debitCard.getAccountNumber()},
@@ -61,7 +63,7 @@ public class DebitCardServices implements DebitCardRepository {
                 // Throw an exception with the list of incorrect attributes
                 throw new ValidationException(resourceBundle.getString("incorrect.data") + incorrectData);
             }
-        }catch(DataAccessException exception){
+        } catch (DataAccessException exception) {
             logger.error(resourceBundle.getString("no.data.found"));
             throw new DebitCardNullException(resourceBundle.getString("no.data.found"));
         }
@@ -135,9 +137,9 @@ public class DebitCardServices implements DebitCardRepository {
         if (!Objects.equals(providedDebitCard.getDebitCardNumber(), fetchedDebitCard.getDebitCardNumber())) {
             incorrectData.add(resourceBundle.getString("card.number.incorrect"));
         }
-        if (!Objects.equals(providedDebitCard.getCustomerId(), fetchedDebitCard.getCustomerId())) {
-            incorrectData.add(resourceBundle.getString("card.id.incorrect"));
-        }
+//        if (!Objects.equals(providedDebitCard.getCustomerId(), fetchedDebitCard.getCustomerId())) {
+//            incorrectData.add(resourceBundle.getString("card.id.incorrect"));
+//        }
         if (!Objects.equals(providedDebitCard.getDebitCardCvv(), fetchedDebitCard.getDebitCardCvv())) {
             incorrectData.add(resourceBundle.getString("card.cvv.incorrect"));
         }
@@ -164,22 +166,22 @@ public class DebitCardServices implements DebitCardRepository {
         return incorrectData;
     }
 
-  //Row Mapper is used for getting the data from database and mapping it to Java objects.
-   public class DebitCardMapper implements RowMapper<DebitCard>{
+    //Row Mapper is used for getting the data from database and mapping it to Java objects.
+    public class DebitCardMapper implements RowMapper<DebitCard> {
 
-       @Override
-       public DebitCard mapRow(ResultSet rs, int rowNum) throws SQLException {
-           DebitCard debitCard = new DebitCard();
-           debitCard.setDebitCardNumber(rs.getLong(1));
-           debitCard.setAccountNumber(rs.getLong(2));
-           debitCard.setCustomerId(rs.getInt(3));
-           debitCard.setDebitCardCvv(rs.getInt(4));
-           debitCard.setDebitCardPin(rs.getInt(5));
-           debitCard.setDebitCardExpiry(rs.getDate(6));
-           debitCard.setDebitCardStatus(rs.getString(7));
-           debitCard.setDomesticLimit(rs.getDouble(8));
-           debitCard.setInternationalLimit(rs.getDouble(9));
-           return debitCard;
-       }
-   }
+        @Override
+        public DebitCard mapRow(ResultSet rs, int rowNum) throws SQLException {
+            DebitCard debitCard = new DebitCard();
+            debitCard.setDebitCardNumber(rs.getLong(1));
+            debitCard.setAccountNumber(rs.getLong(2));
+            debitCard.setCustomerId(rs.getInt(3));
+            debitCard.setDebitCardCvv(rs.getInt(4));
+            debitCard.setDebitCardPin(rs.getInt(5));
+            debitCard.setDebitCardExpiry(rs.getDate(6));
+            debitCard.setDebitCardStatus(rs.getString(7));
+            debitCard.setDomesticLimit(rs.getDouble(8));
+            debitCard.setInternationalLimit(rs.getDouble(9));
+            return debitCard;
+        }
+    }
 }

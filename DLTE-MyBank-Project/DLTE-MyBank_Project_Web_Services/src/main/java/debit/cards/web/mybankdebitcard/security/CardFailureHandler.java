@@ -14,10 +14,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 @Component
 public class CardFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
+       private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
         @Autowired
         CardSecurityServices cardSecurityServices;
 
@@ -32,16 +34,16 @@ public class CardFailureHandler extends SimpleUrlAuthenticationFailureHandler {
                     if(cardSecurity.getAttempts()< cardSecurity.getMaxAttempt()){
                         cardSecurity.setAttempts(cardSecurity.getAttempts()+1);
                         cardSecurityServices.updateAttempts(cardSecurity);
-                        logger.warn("Invalid credentials and attempts taken");
-                        exception=new LockedException("Attempts are taken");
+                        logger.warn(resourceBundle.getString("invalid.attempts"));
+                        exception=new LockedException(resourceBundle.getString("attempts.taken"));
                     }
                     else{
                         cardSecurityServices.updateStatus(cardSecurity);
-                        exception=new LockedException("Max Attempts reached account is suspended");
+                        exception=new LockedException(resourceBundle.getString("account.suspend"));
                     }
                 }
                 else{
-                    logger.warn("Account suspended contact admin to redeem");
+                    logger.warn(resourceBundle.getString("contact.admin"));
                 }
             }
             super.setDefaultFailureUrl("/login?error=true");

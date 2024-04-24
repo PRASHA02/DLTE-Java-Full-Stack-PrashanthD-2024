@@ -60,7 +60,7 @@ public class CardSecurityConfig {
         httpSecurity.cors();
         httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();
-        httpSecurity.authorizeRequests().antMatchers("/debitcardrepo/debitcard.wsdl").permitAll();
+        //httpSecurity.authorizeRequests().antMatchers("/debitcardrepo/debitcard.wsdl").permitAll();
         httpSecurity.authorizeRequests().anyRequest().authenticated();
 
 

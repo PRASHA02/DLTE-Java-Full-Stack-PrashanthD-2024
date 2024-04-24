@@ -1,10 +1,12 @@
 <!-- transactions.wsdl -->
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://transactions.links"
-                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-                  xmlns:xsd="http://xmlns.jcp.org/xml/ns/persistence/orm" targetNamespace="http://transactions.links">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://transactions.links"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  targetNamespace="http://transactions.links">
     <wsdl:types>
-        <xsd:schema>
-            <xsd:include schemaLocation="C:/Transactions/transactions.xsd"/>
+        <xsd:schema targetNamespace="http://transactions.links">
+            <xsd:include schemaLocation="transaction.xsd"/>
         </xsd:schema>
     </wsdl:types>
     <wsdl:message name="filterByReceiverRequest">
