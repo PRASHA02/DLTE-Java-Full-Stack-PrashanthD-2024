@@ -148,6 +148,5 @@ public class TransactionController {
             return result + " transaction between " + start + " to " + end;
         else
             return result + " not removed";
-
     }
 }

@@ -62,6 +62,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.ws.commons.schema/XmlSchema -->
+        <dependency>
+            <groupId>org.apache.ws.commons.schema</groupId>
+            <artifactId>XmlSchema</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -80,6 +87,7 @@
                 </executions>
                 <configuration>
                     <!--                    <schemaDirectory>C:\Transactions</schemaDirectory>-->
+                    <schemaDirectory>src/main/resources/</schemaDirectory>
                     <schemaFiles>transaction.xsd</schemaFiles>
                     <outputDirectory>src/main/java</outputDirectory>
                     <clearOutputDir>false</clearOutputDir>

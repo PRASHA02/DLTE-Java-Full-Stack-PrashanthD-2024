@@ -7,21 +7,26 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import org.springframework.ws.config.annotation.EnableWs;
 import org.springframework.ws.config.annotation.WsConfigurationSupport;
 import org.springframework.ws.config.annotation.WsConfigurerAdapter;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.ws.wsdl.wsdl11.SimpleWsdl11Definition;
+import org.springframework.ws.wsdl.wsdl11.Wsdl11Definition;
 import org.springframework.ws.wsdl.wsdl11.provider.InliningXsdSchemaTypesProvider;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
+import org.springframework.xml.xsd.XsdSchemaCollection;
+import org.springframework.xml.xsd.commons.CommonsXsdSchema;
+import org.springframework.xml.xsd.commons.CommonsXsdSchemaCollection;
 
 @EnableWs
 @Configuration
 public class SoapServiceConfiguration extends WsConfigurerAdapter {
 
-//    final endpoint:-http://localhost:8082/transRepo/transactions.wsdl
+    //final endpoint:-http://localhost:8082/transRepo/transactions.wsdl
 
     //conversion of xsd to wsdl
     @Bean
@@ -31,6 +36,7 @@ public class SoapServiceConfiguration extends WsConfigurerAdapter {
         messageDispatcherServlet.setApplicationContext(applicationContext);
         return new ServletRegistrationBean(messageDispatcherServlet, "/transRepo/*");
     }
+
 
 
     //wsdl properties defined
@@ -44,17 +50,19 @@ public class SoapServiceConfiguration extends WsConfigurerAdapter {
         return defaultWsdl11Definition;
     }
 
-    @Bean(name = "transaction")
-    public SimpleWsdl11Definition transactionsWsdl() {
-        SimpleWsdl11Definition wsdlDefinition = new SimpleWsdl11Definition();
-        wsdlDefinition.setWsdl(new ClassPathResource("transactions.wsdl"));
-        return wsdlDefinition;
-    }
+//    @Bean(name = "transaction")
+//    public SimpleWsdl11Definition transactionsWsdl() {
+//        SimpleWsdl11Definition wsdlDefinition = new SimpleWsdl11Definition();
+//        wsdlDefinition.setWsdl(new ClassPathResource("transactions.wsdl"));
+//        return wsdlDefinition;
+//    }
+
 
     //xsd is mentioned
     @Bean
     public XsdSchema transactionSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("transaction.xsd"));
+        XsdSchema xsdSchema = new SimpleXsdSchema(new ClassPathResource("transaction.xsd"));
+        return xsdSchema;
 //        String xsdFilePath = "C:/Transactions/transactions.xsd";
 //        FileSystemResource xsdFileResource = new FileSystemResource(xsdFilePath);
 //        return new SimpleXsdSchema(xsdFileResource);

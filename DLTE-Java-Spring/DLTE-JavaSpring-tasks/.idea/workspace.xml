@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1df4d0d9-28eb-42d8-bc00-c7aca910ef10" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/element/spring/web/demo/configs/SoapServiceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/element/spring/web/demo/configs/SoapServiceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/element/spring/web/demo/configs/TransactionPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/element/spring/web/demo/configs/TransactionPhase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterByAmountRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterByAmountRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterByAmountResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterByAmountResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterByReceiverRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterByReceiverRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterByReceiverResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterByReceiverResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterBySenderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterBySenderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterBySenderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/FilterBySenderResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/NewTransactionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/NewTransactionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/NewTransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/NewTransactionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/RemoveByDateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/RemoveByDateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/RemoveByDateResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/RemoveByDateResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/ServiceStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/ServiceStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/Transactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/Transactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/UpdateRemarksTransactionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/UpdateRemarksTransactionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/UpdateRemarksTransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/UpdateRemarksTransactionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/java/links/transactions/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/resources/transactions.wsdl" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/src/main/resources/transactions.wsdl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/transaction.log" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Task-1148/transaction.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-Java-Spring-Thymeleaf-1681/mybank-card.log" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-Java-Spring-Thymeleaf-1681/mybank-card.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-MyBank-Project/DLTE-MyBank_Project_Web_Services/debitCard.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-MyBank-Project/DLTE-MyBank_Project_Web_Services/debitCard.log" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2fYWyIOLnisMF4vYZ2EIFsiTSeu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1df4d0d9-28eb-42d8-bc00-c7aca910ef10" name="Default Changelist" comment="" />
+      <created>1713978745049</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713978745049</updated>
+      <workItem from="1713978746735" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

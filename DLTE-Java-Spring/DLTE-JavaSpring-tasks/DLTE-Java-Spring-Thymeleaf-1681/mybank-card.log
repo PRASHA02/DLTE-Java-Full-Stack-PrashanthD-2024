@@ -635,4 +635,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse
 [0;39m[31m2024-04-24 15:59:40,812[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8084 (http) with context path ''
 [0;39m[31m2024-04-24 15:59:40,828[0;39m [32m[INFO][0;39m com.example.elementdashboard.DlteJavaSpringThymeleaf1681Application restartedMain [32mStarted DlteJavaSpringThymeleaf1681Application in 1.959 seconds (JVM running for 2.762)
 [0;39m[31m2024-04-24 15:59:48,357[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] http-nio-8084-exec-1 [32mInitializing Spring DispatcherServlet 'dispatcherServlet'
+[0;39m[31m2024-04-24 15:59:48,357[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8084-exec-1 [32mInitializing Servlet 'dispatcherServlet'
+[0;39m[31m2024-04-24 15:59:48,357[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8084-exec-1 [32mCompleted initialization in 0 ms
+[0;39m[31m2024-04-24 16:23:45,757[0;39m [32m[WARN][0;39m com.zaxxer.hikari.pool.HikariPool HikariPool-1 housekeeper [32mHikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m4s868ms870µs300ns).
 [0;39m
