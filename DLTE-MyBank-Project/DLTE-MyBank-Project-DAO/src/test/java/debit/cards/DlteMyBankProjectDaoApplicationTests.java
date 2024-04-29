@@ -1,9 +1,11 @@
 //package debit.cards;
 //
+//import debit.cards.dao.entities.Account;
 //import debit.cards.dao.entities.Customer;
 //import debit.cards.dao.entities.DebitCard;
 //import debit.cards.dao.exceptions.*;
 //import debit.cards.dao.services.DebitCardServices;
+//import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.Test;
 //import org.junit.jupiter.api.extension.ExtendWith;
 //import org.mockito.InjectMocks;
@@ -13,6 +15,9 @@
 //import org.springframework.dao.DataAccessException;
 //import org.springframework.jdbc.core.CallableStatementCreator;
 //import org.springframework.jdbc.core.JdbcTemplate;
+//import org.springframework.security.core.Authentication;
+//import org.springframework.security.core.context.SecurityContext;
+//import org.springframework.security.core.context.SecurityContextHolder;
 //
 //import java.sql.SQLException;
 //import java.sql.SQLSyntaxErrorException;
@@ -36,73 +41,104 @@
 //    public DebitCardServices debitCardServices;
 //
 //
-////    @Test
-////    void testAllDebitCards() throws SQLException {
-////        // Mocking the response from the database
-////        List<DebitCard> debitCardList = new ArrayList<>();
-////
-////
-////        DebitCard debitCard = new DebitCard(1234567890981234L, 78903456789123L, 200005, 111, 1234, new Date(2024, 04, 4), "active", 2000.0, 50000.0);
-////        DebitCard debitCard1 = new DebitCard(7837645907637746L, 35467956789123L, 123658, 234, 2323, new Date(2024, 04, 9), "inactive", 4000.0, 70000.0);
-////        DebitCard debitCard2 = new DebitCard(1234567890123456L, 78901234567890L, 300007, 555, 9876, new Date(2024, 4, 14), "active", 3000.0, 60000.0);
-////        DebitCard debitCard3 = new DebitCard(9876543210987654L, 65432109876543L, 400009, 777, 5432, new Date(2024, 4, 19), "blocked", 5000.0, 80000.0);
-////        //Add some dummy data into the arrayList for testing
-////        debitCardList = Stream.of(debitCard, debitCard1, debitCard2, debitCard3).collect(Collectors.toList());
-////
-////        //Fetching the data from database
-////        when(jdbcTemplate.query(anyString(), any(DebitCardServices.DebitCardMapper.class))).thenReturn(debitCardList);
-////
-////        List<DebitCard> actualList = debitCardServices.getDebitCard();
-////
-////        assertTrue(debitCardList.size() == actualList.size());//success
-////        assertEquals(debitCardList.get(0).getCustomerId(), actualList.get(0).getCustomerId());//success
-////
-////    }
-////
-//////    @Test
-//////    void testAllDebitCardsFail() throws SQLException {
-//////        // Mocking the response from the database
-//////        List<DebitCard> debitCardList = new ArrayList<>();
-//////
-//////
-//////        DebitCard debitCard= new DebitCard(1234567890981234L,78903456789123L,200005,111,1234,new Date(2024,04,4), "active", 2000.0,50000.0);
-//////        DebitCard debitCard1 = new DebitCard(7837645907637746L,35467956789123L,123658,234,2323,new Date(2024,04,9), "inactive", 4000.0,70000.0);
-//////        DebitCard debitCard2 = new DebitCard(1234567890123456L, 78901234567890L, 300007, 555, 9876, new Date(2024, 4, 14), "active", 3000.0, 60000.0);
-//////        DebitCard debitCard3 = new DebitCard(9876543210987654L, 65432109876543L, 400009, 777, 5432, new Date(2024, 4, 19), "blocked", 5000.0, 80000.0);
-//////        //Add some dummy data into the arrayList for testing
-//////        debitCardList = Stream.of(debitCard,debitCard1,debitCard2,debitCard3).collect(Collectors.toList());
-//////
-//////        //Fetching the data from database
-//////        when(jdbcTemplate.query(anyString(),any(DebitCardServices.DebitCardMapper.class))).thenReturn(debitCardList);
-//////
-//////        List<DebitCard> actualList = debitCardServices.getDebitCard();
-//////
-//////        assertFalse(debitCardList.get(0).getCustomerId()==actualList.get(0).getCustomerId());
-//////        assertSame(debitCardList,actualList);
-//////    }
-////
-////    @Test
-////    void testGetDebitCardEmptyList() {
-////        // Mocking an empty response from the database
-////        when(jdbcTemplate.query(anyString(), any(DebitCardServices.DebitCardMapper.class))).thenReturn(new ArrayList<>())
-////                .thenThrow(new DebitCardNullException() {
-////                });
-////
-////        //If an exception of the specified type DebitCardException is thrown, the assertThrows method will pass; otherwise, it will fail.
-////        assertThrows(DebitCardNullException.class, () -> debitCardServices.getDebitCard());
-////    }
-////
-////    @Test
-////    void testGetDebitCard_SQLException() throws SQLException {
-////        // Mocking the jdbcTemplate.query() method to throw a SQLException
-////        when(jdbcTemplate.query(anyString(), any(DebitCardServices.DebitCardMapper.class)))
-////                .thenThrow(new DebitCardException("SQL Syntax is Not proper try to resolve it"));
-////
-////        // Testing that DebitCardException is thrown when SQLException occurs
-////        assertThrows(DebitCardException.class, () -> {
-////            debitCardServices.getDebitCard();
-////        });
-////    }
+//    @Test
+//    void testAllDebitCards() throws SQLException {
+//        // Mock authentication
+//        Authentication authentication = mock(Authentication.class);
+//        when(authentication.getName()).thenReturn("testUser"); // Set the authenticated username
+//
+//        // Mock SecurityContext
+//        SecurityContext securityContext = mock(SecurityContext.class);
+//        when(securityContext.getAuthentication()).thenReturn(authentication);
+//        SecurityContextHolder.setContext(securityContext);
+//
+//
+//        Customer customer = new Customer();
+//
+//        // Set values using setter methods
+//        customer.setCustomerId(200005);
+//        customer.setCustomerName("Prashanth");
+//        customer.setCustomerAddress("karkala");
+//        customer.setCustomerStatus("active");
+//        customer.setCustomerContact(1234567890L);
+//        customer.setUsername("prasha02");
+//        customer.setPassword("prash");
+//
+//        Account account = new Account();
+//        account.setAccountId(1001);
+//        account.setCustomerId(200005);
+//        account.setAccountType("Savings");
+//        account.setAccountNumber(78903456789123L);
+//        account.setAccountStatus("active");
+//        account.setAccountBalance(50000.0);
+//
+//
+//        // Mocking the response from the database
+//        List<DebitCard> debitCardList = new ArrayList<>();
+//
+//        DebitCard debitCard = new DebitCard(1234567890981234L, 78903456789123L, 200005, 111, 1234, new Date(2024, 04, 4), "active", 2000.0, 50000.0);
+//        DebitCard debitCard1 = new DebitCard(7837645907637746L, 35467956789123L, 123658, 234, 2323, new Date(2024, 04, 9), "inactive", 4000.0, 70000.0);
+//        DebitCard debitCard2 = new DebitCard(1234567890123456L, 78901234567890L, 300007, 555, 9876, new Date(2024, 4, 14), "active", 3000.0, 60000.0);
+//        DebitCard debitCard3 = new DebitCard(9876543210987654L, 65432109876543L, 400009, 777, 5432, new Date(2024, 4, 19), "blocked", 5000.0, 80000.0);
+//        //Add some dummy data into the arrayList for testing
+//        debitCardList = Stream.of(debitCard, debitCard1, debitCard2, debitCard3).collect(Collectors.toList());
+//
+//        //Fetching the data from database
+//      when(jdbcTemplate.query(eq("SELECT * FROM mybank_app_debitcard d JOIN mybank_app_customer c ON d.customer_id = c.customer_id JOIN mybank_app_account a on a.account_number=d.account_number WHERE NOT debitcard_status = 'Blocked' AND  a.account_status='active'  AND c.customer_status='active' AND c.username = ?"),  any(Object[].class), any(DebitCardServices.DebitCardMapper.class))).
+//                thenReturn(debitCardList);
+//
+//        List<DebitCard> actualList = debitCardServices.getDebitCard("prasha");
+//
+//        assertTrue(debitCardList.size() == actualList.size());//success
+//        assertEquals(debitCardList.get(0).getCustomerId(), actualList.get(0).getCustomerId());//success
+//    }
+//
+//    @Test
+//    void testAllDebitCardsFail() throws SQLException {
+//        // Mocking the response from the database
+//        List<DebitCard> debitCardList = new ArrayList<>();
+//
+//
+//        DebitCard debitCard= new DebitCard(1234567890981234L,78903456789123L,200005,111,1234,new Date(2024,04,4), "active", 2000.0,50000.0);
+//        DebitCard debitCard1 = new DebitCard(7837645907637746L,35467956789123L,123658,234,2323,new Date(2024,04,9), "inactive", 4000.0,70000.0);
+//        DebitCard debitCard2 = new DebitCard(1234567890123456L, 78901234567890L, 300007, 555, 9876, new Date(2024, 4, 14), "active", 3000.0, 60000.0);
+//        DebitCard debitCard3 = new DebitCard(9876543210987654L, 65432109876543L, 400009, 777, 5432, new Date(2024, 4, 19), "blocked", 5000.0, 80000.0);
+//        //Add some dummy data into the arrayList for testing
+//        debitCardList = Stream.of(debitCard,debitCard1,debitCard2,debitCard3).collect(Collectors.toList());
+//
+//        //Fetching the data from database
+//       // when(jdbcTemplate.query(anyString(),any(DebitCardServices.DebitCardMapper.class))).thenReturn(debitCardList);
+//
+//        when(jdbcTemplate.query(anyString(), any(Object[].class), any(DebitCardServices.DebitCardMapper.class)))
+//                .thenReturn(debitCardList);
+//        List<DebitCard> actualList = debitCardServices.getDebitCard("prasha02");
+//
+//        assertFalse(debitCardList.get(0).getCustomerId()==actualList.get(0).getCustomerId());
+//        assertSame(debitCardList,actualList);
+//    }
+//
+//    @Test
+//    void testGetDebitCardEmptyList() {
+//        // Mocking an empty response from the database
+//        when(jdbcTemplate.query(anyString(), any(DebitCardServices.DebitCardMapper.class))).thenReturn(new ArrayList<>())
+//                .thenThrow(new DebitCardNullException() {
+//                });
+//
+//        //If an exception of the specified type DebitCardException is thrown, the assertThrows method will pass; otherwise, it will fail.
+//        assertThrows(DebitCardNullException.class, () -> debitCardServices.getDebitCard("prasha02"));
+//    }
+//
+//    @Test
+//    void testGetDebitCard_SQLException() throws SQLException {
+//        // Mocking the jdbcTemplate.query() method to throw a SQLException
+//        when(jdbcTemplate.query(anyString(), any(DebitCardServices.DebitCardMapper.class)))
+//                .thenThrow(new DebitCardException("SQL Syntax is Not proper try to resolve it"));
+//
+//        // Testing that DebitCardException is thrown when SQLException occurs
+//        assertThrows(DebitCardException.class, () -> {
+//            debitCardServices.getDebitCard("prasha02");
+//        });
+//    }
 //
 //   //Rest testing for updating the limits of the debit card
 //    @Test

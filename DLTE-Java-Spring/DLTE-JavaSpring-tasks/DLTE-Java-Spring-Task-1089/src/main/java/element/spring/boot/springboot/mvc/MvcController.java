@@ -38,7 +38,7 @@ public class MvcController {
     public String requestToSubmission(Model model){
         TransactionsModel transactionsModel = new TransactionsModel();
         model.addAttribute("transactionsModel",new TransactionsModel());
-        return "newtransaction.html";
+        return "newtransaction";
     }
 
     @RequestMapping(value = "/index",method = RequestMethod.POST)
@@ -59,7 +59,7 @@ public class MvcController {
             model.addAttribute("error",transactionException.toString());
             return "newtransaction";
         }
-        return "newtransaction.html";
+        return "newtransaction";
     }
     @GetMapping("/sname")
     public String searchShow(Model model){
@@ -126,7 +126,7 @@ public class MvcController {
             model.addAttribute("error",cardException.toString());
             return "removedate";
         }
-        return "removedate.html";
+        return "removedate";
 
     }
 

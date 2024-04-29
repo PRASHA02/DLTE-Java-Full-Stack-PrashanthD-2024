@@ -35,7 +35,7 @@ public class DebitCardServices implements DebitCardRepository {
     public List<DebitCard> getDebitCard(String username) {
         List<DebitCard> debitCardList = null;
         try {
-            debitCardList = jdbcTemplate.query("SELECT * FROM mybank_app_debitcard d JOIN mybank_app_customer c ON d.customer_id = c.customer_id JOIN mybank_app_account a on a.account_number=d.account_number WHERE NOT debitcard_status = 'Blocked' AND  a.account_status='active'  AND c.customer_status='active' AND username = ?", new Object[]{username}, new DebitCardMapper());
+            debitCardList = jdbcTemplate.query("SELECT d.debitcard_number,d.account_number,d.customer_id,d.debitcard_cvv,d.debitcard_pin,d.debitcard_expiry,d.debitcard_status,d.debitcard_domestic_limit,d.debitcard_international_limit FROM mybank_app_debitcard d JOIN mybank_app_customer c ON d.customer_id = c.customer_id JOIN mybank_app_account a on a.account_number=d.account_number WHERE NOT debitcard_status = 'Blocked' AND  a.account_status='active'  AND c.customer_status='active' AND c.username = ?", new Object[]{username}, new DebitCardMapper());
             logger.info(resourceBundle.getString("card.fetch.success"));
         } catch (DataAccessException sqlException) {
             logger.error(resourceBundle.getString("sql.syntax.invalid"));
@@ -111,7 +111,7 @@ public class DebitCardServices implements DebitCardRepository {
     public List<Account> accountList(String username) throws SQLSyntaxErrorException {
         List<Account> accountList = null;
         try {
-            accountList = jdbcTemplate.query("SELECT * FROM mybank_app_account a JOIN mybank_app_customer c ON a.customer_id = c.customer_id  WHERE NOT a.account_status='Blocked' AND username = ?", new Object[]{username}, new AccountMapper());
+            accountList = jdbcTemplate.query("SELECT a.account_number,a.account_status,a.account_balance FROM mybank_app_account a JOIN mybank_app_customer c ON a.customer_id = c.customer_id  WHERE NOT a.account_status='Blocked' AND username = ?", new Object[]{username}, new AccountMapper());
             logger.info(resourceBundle.getString("account.fetch.success"));
         } catch (DataAccessException sqlException) {
             logger.error(resourceBundle.getString("sql.syntax.invalid"));
