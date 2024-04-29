@@ -34,6 +34,7 @@ public class CardSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
                 super.setDefaultTargetUrl("/update/limit");
             }
             super.setDefaultTargetUrl(resourceBundle.getString("soap.wsdl"));
+            super.setDefaultTargetUrl(resourceBundle.getString("account.list"));
 //            super.setAlwaysUseDefaultTargetUrl(true);
         }
         else{

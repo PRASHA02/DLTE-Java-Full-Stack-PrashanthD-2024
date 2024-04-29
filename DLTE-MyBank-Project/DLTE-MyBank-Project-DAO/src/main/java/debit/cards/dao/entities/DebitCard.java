@@ -17,11 +17,9 @@ public class DebitCard {
 
     @NotNull(message= "{account.number.null}")
     @Range(min = 10000000000000L,max = 99999999999999L,message = "{account.number.invalid}")
-    @Digits(integer=14,fraction = 0,message = "{card.number.invalid}")
+    @Digits(integer=14,fraction = 0,message = "{account.number.invalid}")
     private Long accountNumber;
 
-//    @NotNull(message= "{customer.id.null}")
-//    @Digits(integer =6,fraction = 0,message = "{customer.id.invalid}")
     private Integer customerId;
 
     @NotNull(message = "{card.cvv.null}")

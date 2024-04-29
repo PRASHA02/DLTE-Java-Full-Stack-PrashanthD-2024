@@ -1,6 +1,7 @@
 package debit.cards.dao.remotes;
 
 
+import debit.cards.dao.entities.Account;
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.DebitCardException;
 import org.springframework.stereotype.Repository;
@@ -18,4 +19,6 @@ public interface DebitCardRepository {
     List<DebitCard> getDebitCard(String username);
     //Updating the limit of debit card and getting the response if its success or failure
     String updateDebitLimit(DebitCard debitCard) throws SQLException;
+
+    List<Account> accountList(String username) throws SQLSyntaxErrorException;
 }

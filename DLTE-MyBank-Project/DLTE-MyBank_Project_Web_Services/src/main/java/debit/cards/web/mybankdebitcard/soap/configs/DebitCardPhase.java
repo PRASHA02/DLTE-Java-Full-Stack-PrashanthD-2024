@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -57,6 +58,7 @@ public class DebitCardPhase {
         ViewDebitCardResponse viewDebitCardResponse = new ViewDebitCardResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
         String username = authentication.getName();
         try {
             List<links.debitcard.DebitCard> debitCardList = new ArrayList<>();
@@ -85,8 +87,8 @@ public class DebitCardPhase {
             serviceStatus.setMessage(resourceBundle.getString("sql.syntax.invalid"));
 
         } catch (DebitCardNullException e) {
-            serviceStatus.setStatus(HttpServletResponse.SC_NO_CONTENT);
-            logger.error(resourceBundle.getString("card.list.null") + e + HttpServletResponse.SC_NO_CONTENT);
+            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            logger.error(resourceBundle.getString("card.list.null") + e + HttpServletResponse.SC_NOT_FOUND);
             serviceStatus.setMessage(resourceBundle.getString("card.null.available"));
 
         }

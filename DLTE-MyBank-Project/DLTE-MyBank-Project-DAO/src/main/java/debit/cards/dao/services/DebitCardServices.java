@@ -1,5 +1,6 @@
 package debit.cards.dao.services;
 
+import debit.cards.dao.entities.Account;
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
@@ -34,7 +35,7 @@ public class DebitCardServices implements DebitCardRepository {
     public List<DebitCard> getDebitCard(String username) {
         List<DebitCard> debitCardList = null;
         try {
-            debitCardList = jdbcTemplate.query("SELECT * FROM mybank_app_debitcard d JOIN mybank_app_customer c ON d.customer_id = c.customer_id JOIN mybank_app_account a on a.account_number=d.account_number WHERE NOT debitcard_status = 'Blocked' AND  a.account_status='active' AND c.customer_status='active' AND username = ?", new Object[]{username}, new DebitCardMapper());
+            debitCardList = jdbcTemplate.query("SELECT * FROM mybank_app_debitcard d JOIN mybank_app_customer c ON d.customer_id = c.customer_id JOIN mybank_app_account a on a.account_number=d.account_number WHERE NOT debitcard_status = 'Blocked' AND  a.account_status='active'  AND c.customer_status='active' AND username = ?", new Object[]{username}, new DebitCardMapper());
             logger.info(resourceBundle.getString("card.fetch.success"));
         } catch (DataAccessException sqlException) {
             logger.error(resourceBundle.getString("sql.syntax.invalid"));
@@ -47,13 +48,15 @@ public class DebitCardServices implements DebitCardRepository {
         return debitCardList;
     }
 
+
+
     //Update the limits when all the customer,account and debit card status is active otherwise it gives respective error messages
     @Override
     public String updateDebitLimit(DebitCard debitCard) throws SQLException {
         // Fetch the debit card details from the database using the provided account number
         try {
             DebitCard fetchedDebitCard = jdbcTemplate.queryForObject(
-                    "SELECT * FROM mybank_app_debitcard WHERE account_number = ?",
+                    "SELECT debitcard_number,account_number,customer_id,debitcard_cvv,debitcard_pin,debitcard_expiry,debitcard_status,debitcard_domestic_limit,debitcard_international_limit FROM mybank_app_debitcard WHERE account_number = ?",
                     new Object[]{debitCard.getAccountNumber()},
                     new DebitCardMapper());
             // Check if any attributes are incorrect
@@ -102,6 +105,23 @@ public class DebitCardServices implements DebitCardRepository {
             throw new SQLException(resourceBundle.getString("internal.error"));
         }
         return resourceBundle.getString("limit.update.success");
+    }
+
+    @Override
+    public List<Account> accountList(String username) throws SQLSyntaxErrorException {
+        List<Account> accountList = null;
+        try {
+            accountList = jdbcTemplate.query("SELECT * FROM mybank_app_account a JOIN mybank_app_customer c ON a.customer_id = c.customer_id  WHERE NOT a.account_status='Blocked' AND username = ?", new Object[]{username}, new AccountMapper());
+            logger.info(resourceBundle.getString("account.fetch.success"));
+        } catch (DataAccessException sqlException) {
+            logger.error(resourceBundle.getString("sql.syntax.invalid"));
+            throw new SQLSyntaxErrorException(resourceBundle.getString("sql.syntax.invalid"));
+        }
+        if (accountList.size() == 0) {
+            logger.warn(resourceBundle.getString("account.list.null"));
+            throw new AccountException(resourceBundle.getString("account.list.null"));
+        }
+        return accountList;
     }
 
     // Method to handle update failure based on the result message
@@ -182,6 +202,20 @@ public class DebitCardServices implements DebitCardRepository {
             debitCard.setDomesticLimit(rs.getDouble(8));
             debitCard.setInternationalLimit(rs.getDouble(9));
             return debitCard;
+        }
+    }
+
+    public class AccountMapper implements RowMapper<Account> {
+        @Override
+        public Account mapRow(ResultSet rs, int rowNum) throws SQLException {
+            Account account = new Account();
+            account.setAccountId(rs.getInt(1));
+            account.setCustomerId(rs.getInt(2));
+            account.setAccountType(rs.getString(3));
+            account.setAccountNumber(rs.getLong(4));
+            account.setAccountStatus(rs.getString(5));
+            account.setAccountBalance(rs.getDouble(6));
+            return account;
         }
     }
 }

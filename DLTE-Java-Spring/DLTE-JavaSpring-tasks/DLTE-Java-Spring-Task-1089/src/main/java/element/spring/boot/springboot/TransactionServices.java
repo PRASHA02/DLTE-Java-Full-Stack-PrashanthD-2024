@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLSyntaxErrorException;
@@ -23,7 +24,7 @@ public class TransactionServices {
     public JdbcTemplate jdbcTemplate;
 
     //create method
-    public TransactionsModel apiSave(TransactionsModel transactionsModel) {
+    public TransactionsModel apiSave(@Valid TransactionsModel transactionsModel) {
 //        int ack = jdbcTemplate.update("insert into transactions_model values(?,?,?,?,?,?)",new Object[]{
 //                transactionsModel.getTransactionId(),
 //                transactionsModel.getTransactionDate(),
@@ -78,7 +79,7 @@ public class TransactionServices {
     }
 
     public String removeByDate(Date start, Date end) {
-        int ack = jdbcTemplate.update("delete from transactions_model where transactiondate between ? and ?", new Object[]{start, end});
+        int ack = jdbcTemplate.update("delete from transactions_model where transaction_date between ? and ?", new Object[]{start, end});
         if (ack != 0)
             return "removed";
         else

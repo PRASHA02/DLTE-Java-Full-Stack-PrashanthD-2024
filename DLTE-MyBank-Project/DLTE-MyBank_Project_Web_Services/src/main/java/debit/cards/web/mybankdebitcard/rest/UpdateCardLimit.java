@@ -54,9 +54,8 @@ public class UpdateCardLimit {
 
        // method to fetch the owner's username from the account object
        String accountOwnerUsername = cardSecurityServices.getAccountOwnerUsername(debitCard.getAccountNumber());
-       // Check if the authenticated user matches the owner of the account
-       //System.out.println(username.equals(customer.getUsername()));
 
+       // Check if the authenticated user matches the owner of the account
        if (!username.equals(accountOwnerUsername))
            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(resourceBundle.getString("access.denied"));
 

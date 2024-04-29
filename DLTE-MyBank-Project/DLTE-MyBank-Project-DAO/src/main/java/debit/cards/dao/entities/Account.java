@@ -1,5 +1,7 @@
 package debit.cards.dao.entities;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.validation.constraints.*;
 
 //Account Entity
@@ -16,17 +18,21 @@ public class Account {
     private Integer customerId;
     //No blank Validation is for blank inputs
     @NotBlank(message = "{account.type.null}")
+    @Pattern(regexp = "^[a-zA-Z]+$",message = "{account.type.invalid}")
     private String accountType;
 
-    @NotNull(message = "{account.number.null}")
-    @Digits(integer = 14, fraction = 0,message = "{account.number.invalid}")
+    @NotNull(message= "{account.number.null}")
+    @Range(min = 10000000000000L,max = 99999999999999L,message = "{account.number.invalid}")
+    @Digits(integer=14,fraction = 0,message = "{account.number.invalid}")
     private Long accountNumber;
 
     @NotBlank(message = "{account.status.null}")
     @Pattern(regexp = "^(active|inactive)$", message = "{card.status.invalid}")
     private String accountStatus;
 
+    @Range(min = 0)
     @NotNull(message = "{account.balance.null}")
+    @Positive(message = "{positive.number}")
     private Double accountBalance;
 
     public Integer getAccountId() {
