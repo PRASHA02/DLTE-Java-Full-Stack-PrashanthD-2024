@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 public class CardSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Autowired
     CardSecurityServices cardSecurityServices;
-    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
+    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("card");
     Logger logger= LoggerFactory.getLogger(CardSuccessHandler.class);
 
     @Override
@@ -33,13 +33,13 @@ public class CardSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
             else if(cardSecurity.getCustomerStatus().equals("active")){
                 super.setDefaultTargetUrl("/update/limit");
             }
-            super.setDefaultTargetUrl(resourceBundle.getString("soap.wsdl"));
-            super.setDefaultTargetUrl(resourceBundle.getString("account.list"));
+            super.setDefaultTargetUrl("/card/dashboard");
+           // super.setDefaultTargetUrl("/debitcardrepo/debitcard.wsdl");
 //            super.setAlwaysUseDefaultTargetUrl(true);
         }
         else{
             logger.warn(resourceBundle.getString("max.admin"));
-            super.setDefaultTargetUrl("/login");
+            super.setDefaultTargetUrl("/card/login/?errors="+ resourceBundle.getString("max.admin"));
         }
         super.onAuthenticationSuccess(request, response, authentication);
     }

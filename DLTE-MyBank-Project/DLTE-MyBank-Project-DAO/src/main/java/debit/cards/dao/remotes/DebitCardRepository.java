@@ -17,7 +17,6 @@ import java.util.List;
 public interface DebitCardRepository {
     //List of Debit cards will be Fetched
     List<DebitCard> getDebitCard(String username);
-    //Updating the limit of debit card and getting the response if its success or failure
     String updateDebitLimit(DebitCard debitCard) throws SQLException;
 
     List<Account> accountList(String username) throws SQLSyntaxErrorException;

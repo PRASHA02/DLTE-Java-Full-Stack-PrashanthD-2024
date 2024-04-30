@@ -37,7 +37,7 @@ public class UpdateCardLimit {
     private CardSecurityServices cardSecurityServices;
 
     private static final Logger logger = LoggerFactory.getLogger(UpdateCardLimit.class);
-    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
+    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("card");
    //Updating the limit based on account_number
    @Operation(summary = "Updating the Debit Card Limit")
    @ApiResponses(value = {
@@ -67,16 +67,16 @@ public class UpdateCardLimit {
             return ResponseEntity.ok(response);
         } catch (CustomerException customerException) {
             logger.error(resourceBundle.getString("customer.not.found"));
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resourceBundle.getString("customer.not.found"));
+            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("customer.not.found"));
         } catch (AccountException accountException) {
             logger.error(resourceBundle.getString("account.not.found"));
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resourceBundle.getString("account.not.found"));
+            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("account.not.found"));
         } catch (DebitCardException debitCardException) {
             logger.error(resourceBundle.getString("limit.update.failed"));
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resourceBundle.getString("limit.update.failed"));
+            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("limit.update.failed"));
         } catch (DebitCardNullException debitCardNullException){
             logger.error(resourceBundle.getString("no.data.found"));
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resourceBundle.getString("no.data.found"));
+            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("no.data.found"));
         }catch(ValidationException validationException){
             logger.error(resourceBundle.getString("invalid.request"));
             return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(validationException.getMessage());

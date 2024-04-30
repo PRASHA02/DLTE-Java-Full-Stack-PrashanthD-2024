@@ -13,11 +13,11 @@ public class Customer {
     private Integer customerId;
 
     @NotBlank(message = "{customer.name.null}")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "{card.status.invalid}")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{card.name.invalid}")
     private String customerName;
 
     @NotBlank(message = "{customer.address.null}")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "{card.status.invalid}")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{card.saddress.invalid}")
     private String customerAddress;
 
     @NotBlank(message = "{customer.status.null}")

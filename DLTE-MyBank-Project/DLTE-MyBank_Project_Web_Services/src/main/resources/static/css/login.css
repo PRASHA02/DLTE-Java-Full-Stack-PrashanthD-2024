@@ -1,0 +1,83 @@
+#title-logo{
+    margin-top: 60px;
+    margin-left: 40px;
+}
+.title-text{
+    font-family: "Montserrat";
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+    background: rgba(251, 246, 246, 0.8);
+    width: 375px;
+}
+
+.card button {
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    background-color: #ff7f00;
+    width: 150px;
+    border-radius: 20px;
+}
+
+.row button {
+    background-color: #ff7f00;
+    width: 150px;
+    border-radius: 20px;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: white;
+}
+
+
+
+
+h1,
+p {
+    font-family: "Montserrat", sans-serif;
+
+
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+input[type="text"],
+input[type="password"] {
+    border-radius: 20px;
+    background: rgba(251, 246, 246, 0.2);
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+}
+
+#title-logo {
+    position: absolute;
+    top: -3%;
+    left: 4%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.btn-orange {
+    transition: all 0.3s ease;
+}
+
+.btn-orange:hover {
+    background-color: #ff7f00;
+    transform: scale(1.05);
+}
+

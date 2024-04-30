@@ -111,10 +111,11 @@ public class DebitCardServices implements DebitCardRepository {
     public List<Account> accountList(String username) throws SQLSyntaxErrorException {
         List<Account> accountList = null;
         try {
-            accountList = jdbcTemplate.query("SELECT a.account_number,a.account_status,a.account_balance FROM mybank_app_account a JOIN mybank_app_customer c ON a.customer_id = c.customer_id  WHERE NOT a.account_status='Blocked' AND username = ?", new Object[]{username}, new AccountMapper());
+            accountList = jdbcTemplate.query("SELECT * FROM mybank_app_account a JOIN mybank_app_customer c ON a.customer_id = c.customer_id  WHERE NOT a.account_status='Blocked' AND c.username = ?", new Object[]{username}, new AccountMapper());
             logger.info(resourceBundle.getString("account.fetch.success"));
         } catch (DataAccessException sqlException) {
             logger.error(resourceBundle.getString("sql.syntax.invalid"));
+            sqlException.printStackTrace();
             throw new SQLSyntaxErrorException(resourceBundle.getString("sql.syntax.invalid"));
         }
         if (accountList.size() == 0) {

@@ -31,7 +31,7 @@ public class AccountDisplay {
     private CardSecurityServices cardSecurityServices;
 
     private static final Logger logger = LoggerFactory.getLogger(UpdateCardLimit.class);
-    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
+    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("card");
 
     @GetMapping("/list")
     public ResponseEntity<?> getAccountList() {
@@ -43,7 +43,7 @@ public class AccountDisplay {
             logger.info(resourceBundle.getString("account.fetch.success"));
         } catch (AccountException e) {
             logger.error(resourceBundle.getString("account.list.null"));
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resourceBundle.getString("account.list.null"));
+            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("account.list.null"));
         } catch (DataAccessException sqlException) {
             logger.error(resourceBundle.getString("internal.error"));
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(resourceBundle.getString("internal.error"));

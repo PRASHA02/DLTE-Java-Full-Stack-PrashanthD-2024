@@ -51,7 +51,7 @@
                 const credentials = btoa(username+":"+password)
 
                 $.ajax({
-                    url:"http://localhost:8082/login",
+                    url:"http://localhost:8082/card/login/",
                     type:"GET",
                     beforeSend:function(handler){
                         handler.setRequestHeader("Authorization","Basic "+credentials)

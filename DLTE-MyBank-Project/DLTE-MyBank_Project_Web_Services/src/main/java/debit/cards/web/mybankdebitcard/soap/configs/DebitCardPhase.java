@@ -49,7 +49,7 @@ public class DebitCardPhase {
     private CardSecurityServices cardSecurityServices;
 
     private static final Logger logger = LoggerFactory.getLogger(DebitCardPhase.class);
-    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
+    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("card");
 
     //This specifies the Debit Card list to be viewed
     @PayloadRoot(namespace = url, localPart = "viewDebitCardRequest")
@@ -57,10 +57,10 @@ public class DebitCardPhase {
     public ViewDebitCardResponse viewDebitCardResponse(@RequestPayload ViewDebitCardRequest viewDebitCardRequest) throws SQLException {
         ViewDebitCardResponse viewDebitCardResponse = new ViewDebitCardResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        String username = authentication.getName();
         try {
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+            String username = authentication.getName();
             List<links.debitcard.DebitCard> debitCardList = new ArrayList<>();
 
             List<debit.cards.dao.entities.DebitCard> debitCardsDao = debitCardRepository.getDebitCard(username);
@@ -87,10 +87,9 @@ public class DebitCardPhase {
             serviceStatus.setMessage(resourceBundle.getString("sql.syntax.invalid"));
 
         } catch (DebitCardNullException e) {
-            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            serviceStatus.setStatus(HttpServletResponse.SC_OK);
             logger.error(resourceBundle.getString("card.list.null") + e + HttpServletResponse.SC_NOT_FOUND);
             serviceStatus.setMessage(resourceBundle.getString("card.null.available"));
-
         }
         viewDebitCardResponse.setServiceStatus(serviceStatus);
         return viewDebitCardResponse;

@@ -66,7 +66,7 @@ public class UpdateLimitRestTesting {
 
 
     @Test
-    @WithMockUser(username = "prasha02", password = "prash321")
+    @WithMockUser(username = "prasha02")
     void testUpdateSuccess() throws Exception {
         String request = "{\n" +
                 "  \"debitCardNumber\": 3692468135796670,\n" +
@@ -74,10 +74,10 @@ public class UpdateLimitRestTesting {
                 "  \"customerId\": 123670,\n" +
                 "  \"debitCardCvv\": 123,\n" +
                 "  \"debitCardPin\": 1234,\n" +
-                "  \"debitCardExpiry\": \"2024-04-03\",\n" +
+                "  \"debitCardExpiry\": \"2025-04-30\",\n" +
                 "  \"debitCardStatus\": \"active\",\n" +
                 "  \"domesticLimit\": 1000,\n" +
-                "  \"internationalLimit\": 500000\n" +
+                "  \"internationalLimit\": 5000\n" +
                 "}";
 
         when(debitCardRepository.updateDebitLimit(any())).thenReturn("Debit card limit updated successfully");
@@ -105,7 +105,7 @@ public class UpdateLimitRestTesting {
                 "  \"debitCardExpiry\": \"2024-04-03\",\n" +
                 "  \"debitCardStatus\": \"active\",\n" +
                 "  \"domesticLimit\": 1000,\n" +
-                "  \"internationalLimit\": 500000\n" +
+                "  \"internationalLimit\": 50\n" +
                 "}";
 
         when(debitCardRepository.updateDebitLimit(any())).thenReturn("Debit card limit updated successfully");
@@ -130,10 +130,10 @@ public class UpdateLimitRestTesting {
                 "  \"customerId\": 123670,\n" +
                 "  \"debitCardCvv\": 123,\n" +
                 "  \"debitCardPin\": 1234,\n" +
-                "  \"debitCardExpiry\": \"2024-04-03\",\n" +
+                "  \"debitCardExpiry\": \"2025-04-30\",\n" +
                 "  \"debitCardStatus\": \"active\",\n" +
                 "  \"domesticLimit\": 1000,\n" +
-                "  \"internationalLimit\": 500000\n" +
+                "  \"internationalLimit\": 5\n" +
                 "}";
 
         // Mock repository to throw respective exceptions

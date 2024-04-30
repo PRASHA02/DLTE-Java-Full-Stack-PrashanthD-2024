@@ -38,7 +38,7 @@ public class CardSecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource(){
         CorsConfiguration configuration=new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(Arrays.asList("http://127.0.0.1:5500"));
+        configuration.setAllowedOriginPatterns(Arrays.asList("http://127.0.0.1:5501/card.html"));
 
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
@@ -52,12 +52,18 @@ public class CardSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.httpBasic();
-        httpSecurity.formLogin()
-                .usernameParameter("username")
-                .failureHandler(cardFailureHandler).
+
+        httpSecurity.formLogin().loginPage("/card/login").
+                usernameParameter("username").
+                failureHandler(cardFailureHandler).
                 successHandler(cardSuccessHandler);
         httpSecurity.csrf().disable();
+
         httpSecurity.cors();
+        httpSecurity.authorizeRequests().antMatchers("/card/login/**").permitAll();
+
+        httpSecurity.authorizeRequests().antMatchers("/images/**").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/css/**").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();
         //httpSecurity.authorizeRequests().antMatchers("/debitcardrepo/debitcard.wsdl").permitAll();

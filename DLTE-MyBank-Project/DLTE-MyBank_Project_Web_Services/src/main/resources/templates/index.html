@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bank Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/login.css'}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-dark text-white" th:background="@{'/images/background.jpg'}">
+
+<div id="title-logo">
+    <img src="/images/bank-logo.png" alt="Logo" th:height="50px" th:width="50px">
+    <h3 class="title-text">
+        <i class="fa fa-globe"></i>&nbsp My Bank
+    </h3>
+</div>
+
+<div class="container mt3-l px-4">
+    <div class="row justify-content-center align-items-center vh-100">
+        <div class="col-md-6 pr-md-4">
+            <h1 class="login-text" style="font-size: 50px;">Login</h1>
+            <h3 style="font-size: 40px;">Sign in to continue</h3>
+        </div>
+
+        <div class="col-md-6 ml-auto d-flex align-items-center justify-content-center">
+            <div class="card text-white mb-3 p-3 shadow-lg">
+                <h2 class="mb-4">Sign in</h2>
+                <h1 th:if="${param.error}" style="font-family: 'Poppins', sans-serif;text-align: center;font-size: 5px;">
+                    <span style="font-size:15px;color:red;" th:text="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}"></span>
+                </h1>
+                <h5 th:if="${param.errors}" style="text-align: center; margin-bottom: 20px;">
+                    <span style="font-size: 20px; color: Red;" th:text="${param.errors}"></span>
+                </h5>
+                <form action="#" th:action="@{'/card/login'}" method="post" id="login-form">
+                    <!-- Username Input -->
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <!-- Password Input -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" id="login" class="btn btn-orange mb-3">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
