@@ -74,63 +74,13 @@
     //         });
     //     }); -->
      <!-- </script> -->
-    <script>
-    $.ajax({
-    url: "http://localhost:8082/account/list",
-    type: "GET",
-    dataType: 'json', // Expecting text response
-            contentType:"application/json;charset=utf-8",
-    beforeSend: function (handler) {
-        handler.setRequestHeader("Authorization", "Basic " + sessionStorage.getItem("logged"));
-    },
-    contentType: "application/json;charset=utf-8",
-    success: function (response) {
-        $('#activeAccounts').empty();
-        $('#inactiveAccounts').empty();
-        displayAccounts(response);
-    },
-    error: function (xhr, status, error) {
-        console.error("Error fetching account details:", error);
-        // Display error message on the page
-        $('#activeAccounts').html("<p>Error fetching account details. Please try again later.</p>");
-    }
-        });
-    
-        function displayAccounts(accounts) {
-            var activeHtml = "";
-            var inactiveHtml = "";
-            
-    
-            $.each(accounts, function (index, account) {
-                if (account.accountStatus === "active") {
-                    activeHtml += "<div class='col-md-6 mb-4'>";
-                    activeHtml += "<div class='card'>";
-                    activeHtml += "<div class='card-body'>";
-                    activeHtml += "<h5 class='card-title'>Account Number: " + account.accountNumber + "</h5>";
-                    activeHtml += "<p class='card-text'>Status: " + account.accountStatus + "</p>";
-                    activeHtml += "<p class='card-text'>Balance: " + account.accountBalance + "</p>";
-                    activeHtml += "<button class='btn btn-primary'>View Details</button>";
-                    activeHtml += "</div></div></div>";
-                } else if (account.accountStatus === "inactive") {
-                    inactiveHtml += "<div class='col-md-6 mb-4'>";
-                    inactiveHtml += "<div class='card'>";
-                    inactiveHtml += "<div class='card-body'>";
-                    inactiveHtml += "<h5 class='card-title'>Account Number: " + account.accountNumber + "</h5>";
-                    inactiveHtml += "<p class='card-text'>Status: " + account.accountStatus + "</p>";
-                    inactiveHtml += "</div></div></div>";
-                }
-            });
-    
-            $("#activeAccounts").append(activeHtml);
-            $("#inactiveAccounts").append(inactiveHtml);
-        }
-</script>    
+   
 </head>
 <body>
     <div class="container">
         <h1 class="row justify-content-center ">Debit card Limit Updation</h1>
         <div class="row justify-content-center">
-            <!-- <p id="status" class="display-6 text-center text-primary"></p>
+            <p id="status" class="display-6 text-center text-primary"></p>
             <div class="p-5 m-5 rounded-5 shadow">
                 <div class="form-group">
                     <label>Debit card Number</label>
@@ -173,14 +123,8 @@
                     <button id="cancel" class="col-1 btn btn-outline-dark"><span>Cancel</span></p></button>
                 
                 </div>
-            </div> -->
-            <div class="container mt-4">
-                <h2>Account Details</h2>
-                <div class="container ">
-                    <div id="activeAccounts" class="row mt-4"></div>
-                    <div id="inactiveAccounts" class="row mt-4"></div>
-                </div>
             </div>
+        
         </div>
     </div>
 </body>

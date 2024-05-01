@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account - MY BANK</title>
+    <title>view Card - MY BANK</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -14,17 +14,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" th:href="@{'/css/dashboard.css'}">
     <script th:src="@{'/js/dashboard.js'}"></script>
+    <style>
+        .btn{
+            background-color: #f7f7f7;
+            justify-content: center;
+            color: #182052;
+            border-radius: 30px;
+        }
+    </style>
 </head>
 <div th:include="dashboard :: header"></div>
 <body>
 <div class="container mt-4">
-    <h2>Account Details</h2>
-    <div class="row row-cols-1 ">
-        <div id="accounts" class="row"></div>
-    </div>
+    <h2>Debit Card Details</h2>
+    <div class="row justify-content-around" id="debit"></div>
 </div>
-<div id="pagination" class="d-flex justify-content-center mt-3"></div>
-<script th:src="@{'/js/account.js'}"></script>
+<script th:src="@{'/js/view.js'}"></script>
 </body>
 <div th:include="dashboard :: footer"></div>
 </html>

@@ -39,6 +39,21 @@ public class CardController {
         return "dashboard";
     }
 
+    @RequestMapping(value = "/account",method = RequestMethod.GET)
+    public String accountView() {
+        return "account";
+    }
+
+    @RequestMapping(value = "/view",method = RequestMethod.GET)
+    public String debitCardDetails(){
+        return "view";
+    }
+
+    @RequestMapping(value = "/update",method = RequestMethod.GET)
+    public String updateCardLimit(){
+        return "update";
+    }
+
     @GetMapping("/name")
     @ResponseBody
     public String Customername(){
@@ -48,9 +63,6 @@ public class CardController {
         return cardSecurity.getCustomerName();
     }
 
-    @GetMapping("/account")
-    public String accountView() {
-        return "account";
-    }
+
 
 }

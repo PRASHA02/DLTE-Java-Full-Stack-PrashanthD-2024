@@ -95,7 +95,13 @@ public class UpdateCardLimit {
         ve.getBindingResult().getAllErrors().forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
             String errorMessage = error.getDefaultMessage();
-            errors.put(fieldName, errorMessage);
+//           if(fieldName.equals("debitCardNumber")){
+//               errors.put("PRA001", errorMessage);
+//           }
+//           if(fieldName.equals("debitCardCvv")){
+//               errors.put("PRA002",errorMessage);
+//           }
+           errors.put(fieldName,errorMessage);
         });
         return errors;
     }

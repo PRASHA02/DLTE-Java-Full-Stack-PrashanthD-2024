@@ -1,3 +1,10 @@
+body {
+    background-image:url('../images/login-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+
+}
 #title-logo{
     margin-top: 60px;
     margin-left: 40px;

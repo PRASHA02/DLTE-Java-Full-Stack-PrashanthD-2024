@@ -1,0 +1,73 @@
+. body {
+    color: #182052;
+    font-family: "Poppins";
+}
+
+#myBank {
+    color: #182052;
+    font-family: "Poppins";
+}
+
+.logo {
+    height: 7vh;
+
+}
+
+button {
+    background-color: #182052;
+    margin-top: 2vh;
+    margin-right: 35px;
+    height: 7vh;
+    border-radius: 5rem;
+}
+
+.loginButton {
+    font-family: "Montserrat";
+    display: flex;
+    justify-content: center;
+    color: #182052;
+}
+
+
+.navbar-custom {
+    background-color: #182052;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-custom .nav-item.active .nav-link {
+    color: #f8f9fa !important;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-menu {
+    background-color: #24307F;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.navbar-brand {
+    font-size: 46px;
+    font-weight: 800;
+}
+
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-text {
+    margin-right: 0;
+}
+
+footer {
+    background-color: #182052;
+}

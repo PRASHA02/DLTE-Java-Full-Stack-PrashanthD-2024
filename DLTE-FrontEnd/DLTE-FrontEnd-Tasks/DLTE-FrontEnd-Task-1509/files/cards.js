@@ -156,23 +156,15 @@ function searchCards() {
 
 function renderPagination(totalItems) {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const paginationContainer = document.getElementById('pagination');
-  paginationContainer.innerHTML = '';
+  let paginationHtml = "";
 
-  if (totalItems > 0) {
-      for (let i = 1; i <= totalPages; i++) {
-          const liClass = (i === currentPage) ? 'page-item active' : 'page-item';
-          const paginationHtml = `
-              <li class="${liClass}">
-                  <button class="page-link" onclick="changePage(${i})">${i}</button>
-              </li>
-          `;
-          paginationContainer.innerHTML += paginationHtml;
-      }
-  } else {
-      paginationContainer.innerHTML = ''; // Hide pagination if no items found
+  for (let i = 1; i <= totalPages; i++) {
+      paginationHtml += `<button class="btn btn-sm btn-outline-primary mx-1" onclick="changePage(${i})">${i}</button>`;
   }
+
+  $("#pagination").html(paginationHtml);
 }
+
 
 
 function changePage(page) {

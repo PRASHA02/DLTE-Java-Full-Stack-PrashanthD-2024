@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard - MY BANK</title>
     <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -14,91 +14,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <style>
-        body {
-            color: #182052;
-            font-family: "Poppins";
-        }
-
-        #myBank {
-            color: #182052;
-            font-family: "Poppin";
-        }
-
-        .logo {
-            height: 7vh;
-
-        }
-
-        button {
-            background-color: #182052;
-            margin-top: 2vh;
-            margin-right: 35px;
-            height: 7vh;
-            border-radius: 5rem;
-        }
-
-        .loginButton {
-            font-family: "Montserrat";
-            display: flex;
-            justify-content: center;
-            color: #182052;
-        }
-
-
-        .navbar-custom {
-            background-color: #182052;
-        }
-
-        .navbar-custom .navbar-brand,
-        .navbar-custom .navbar-nav .nav-link {
-            color: white;
-        }
-
-        .navbar-custom .nav-item.active .nav-link {
-            color: #f8f9fa !important;
-        }
-
-        .dropdown-toggle::after {
-            display: none;
-        }
-
-        .dropdown-menu {
-            background-color: #24307F;
-        }
-
-        .dropdown-item {
-            color: white;
-        }
-
-        .navbar-brand {
-            font-size: 46px;
-            font-weight: 800;
-        }
-
-        .navbar {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-
-        .navbar-text {
-            margin-right: 0;
-        }
-
-        footer {
-            background-color: #182052;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/dashboard.css'}">
     <script th:src="@{'/js/dashboard.js'}"></script>
 </head>
-
-<body>
-
-
-<!-- Navbar 1 Main Heading-->
-
-<div th:fragment="collapse">
+<div th:fragment="header">
     <nav>
         <ul class="nav">
             <li class="nav-item d-flex ml-3 mt-3">
@@ -178,6 +97,7 @@
     </nav>
 
 </div>
+<body>
 
 
 <!--Caurosel-->
@@ -216,10 +136,10 @@
     </a>
 </div>
 
-
+</body>
 <!--footer section-->
 
-<div th:fragment="bottom">
+<div th:fragment="footer">
     <footer class="footer text-white text-center py-3 mt-4" style="border-radius: 35px 35px 0 0;">
         <li class="nav-item d-flex ml-3 mt-3">
             <img class="logo" src="/images/bank-logo.png"/>
@@ -254,13 +174,10 @@
         <hr class="bg-white mt-0"/>
 
         <div class="col-12 d-flex justify-content-between">
-            <span>&copy;MyBank Inc. All rights reserved 2024</span>
+            <span>MyBank Inc. All rights reserved 2024</span>
             <span>Terms & Conditions</span>
         </div>
 
     </footer>
 </div>
-
-</body>
-
 </html>
