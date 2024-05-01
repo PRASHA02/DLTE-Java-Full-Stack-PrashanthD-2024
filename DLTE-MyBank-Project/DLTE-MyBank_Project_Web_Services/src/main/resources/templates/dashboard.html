@@ -5,25 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <script th:src="@{'/js/dashboard.js'}"></script>
-    <style>
-        /*body {*/
-        /*    color: #182052;*/
-        /*    font-family: "Poppins";*/
-        /*}*/
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        .title-text{
-            font-family: "Montserrat", sans-serif;
+    <style>
+        body {
+            color: #182052;
+            font-family: "Poppins";
+        }
+
+        #myBank {
+            color: #182052;
+            font-family: "Poppin";
+        }
+
+        .logo {
+            height: 7vh;
+
         }
 
         button {
@@ -31,13 +36,12 @@
             margin-top: 2vh;
             margin-right: 35px;
             height: 7vh;
-            border-radius: 25rem;
+            border-radius: 5rem;
         }
 
         .loginButton {
             font-family: "Montserrat";
             display: flex;
-            height: 2vh;
             justify-content: center;
             color: #182052;
         }
@@ -47,12 +51,12 @@
             background-color: #182052;
         }
 
-
-        .navbar-custom .navbar-custom {
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-nav .nav-link {
             color: white;
         }
 
-        .navbar-custom {
+        .navbar-custom .nav-item.active .nav-link {
             color: #f8f9fa !important;
         }
 
@@ -61,44 +65,53 @@
         }
 
         .dropdown-menu {
-            background-color: #182052;
+            background-color: #24307F;
         }
 
         .dropdown-item {
             color: white;
         }
 
+        .navbar-brand {
+            font-size: 46px;
+            font-weight: 800;
+        }
+
+        .navbar {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .navbar-text {
+            margin-right: 0;
+        }
 
         footer {
             background-color: #182052;
         }
-
-
     </style>
+    <script th:src="@{'/js/dashboard.js'}"></script>
 </head>
 
 <body>
+
+
 <!-- Navbar 1 Main Heading-->
 
 <div th:fragment="collapse">
     <nav>
         <ul class="nav">
             <li class="nav-item d-flex ml-3 mt-3">
-                <img src="/images/bank-logo.png" alt="Logo" th:height="50px" th:width="50px">
-                <h3 class="title-text">
-                    <i class="fa fa-globe"></i>&nbsp My Bank
-                </h3>
+                <img class="logo" src="/images/bank-logo.png"/>
+                <h2 id="myBank" class="justify-content-start "> MyBank</h2>
             </li>
 
-            <li class="nav-item  ml-auto mt-4">
-                <h4 class="justify-content-end">Hey, </h4>
-            </li>
-            <li class="nav-item mt-4"  >
+            <li class="nav-item  ml-auto mt-3">
                 <h4 class="justify-content-end" th:id="Username"></h4>
                 <!--Name should be dynamically given need to change in the -->
             </li>
-            <div class="loginButton">
-                <button class="border-0  rounded-5 "><a class="nav-link text-white" th:href="@{'/logout'}">Logout</a></button>
+            <div class="loginButton  ml-3">
+                <button class="rounded-5 border-0 col-10 text-white "> <a class="nav-link text-white" th:href="@{'/logout'}">Logout</a></button>
             </div>
         </ul>
     </nav>
@@ -169,44 +182,38 @@
 
 <!--Caurosel-->
 
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div id="carouselSlide" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                    <li data-target="#carouselSlide" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselSlide" data-slide-to="1"></li>
-                    <li data-target="#carouselSlide" data-slide-to="2"></li>
-                    <li data-target="#carouselSlide" data-slide-to="3"></li>
-                </ul>
+<div id="depositesSlide" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#depositesSlide" data-slide-to="0" class="active"></li>
+        <li data-target="#depositesSlide" data-slide-to="1"></li>
+        <li data-target="#depositesSlide" data-slide-to="2"></li>
+        <li data-target="#depositesSlide" data-slide-to="3"></li>
+    </ul>
 
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="/images/background-one.jpg" alt="Slide 1" class="d-block w-100" style="height: 400px;">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/images/background-two.jpg" alt="Slide 2" style="height: 400px; width: 100%;">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/images/background-three.jpg" alt="Slide 3" style="height: 400px; width: 100%;">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/images/background-four.jpg" alt="Slide 3" style="height: 400px; width: 100%;">
-                    </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#carouselSlide" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#carouselSlide" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-            </div>
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/images/background-one.jpg" alt="Slide 1" style="height: 400px; width:100%">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/background-two.jpg" alt="Slide 2" style="height: 400px; width: 100%;">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/background-three.jpg" alt="Slide 3" style="height: 400px; width: 100%;">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/background-four.jpg" alt="Slide 3" style="height: 400px; width: 100%;">
         </div>
     </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#depositesSlide" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#depositesSlide" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
 </div>
 
 
@@ -215,10 +222,8 @@
 <div th:fragment="bottom">
     <footer class="footer text-white text-center py-3 mt-4" style="border-radius: 35px 35px 0 0;">
         <li class="nav-item d-flex ml-3 mt-3">
-            <img src="/images/bank-logo.png" alt="Logo" th:height="50px" th:width="50px">
-            <h3 class="title-text">
-                <i class="fa fa-globe"></i>&nbsp My Bank
-            </h3>
+            <img class="logo" src="/images/bank-logo.png"/>
+            <h2 id="myBankFooter" class="justify-content-start " style="color: #f8f9fa;"> MyBank</h2>
         </li>
         <div class="row justify-content-end mr-5">
 

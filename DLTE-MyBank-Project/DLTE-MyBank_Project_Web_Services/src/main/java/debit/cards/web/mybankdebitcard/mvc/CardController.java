@@ -45,7 +45,7 @@ public class CardController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String name = authentication.getName();
         CardSecurity cardSecurity = cardSecurityServices.findByUserName(name);
-        return cardSecurity.getUsername();
+        return cardSecurity.getCustomerName();
     }
 
     @GetMapping("/account")

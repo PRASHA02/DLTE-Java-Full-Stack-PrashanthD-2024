@@ -78,7 +78,8 @@
     $.ajax({
     url: "http://localhost:8082/account/list",
     type: "GET",
-    dataType: "text",
+    dataType: 'json', // Expecting text response
+            contentType:"application/json;charset=utf-8",
     beforeSend: function (handler) {
         handler.setRequestHeader("Authorization", "Basic " + sessionStorage.getItem("logged"));
     },
@@ -98,6 +99,7 @@
         function displayAccounts(accounts) {
             var activeHtml = "";
             var inactiveHtml = "";
+            
     
             $.each(accounts, function (index, account) {
                 if (account.accountStatus === "active") {
