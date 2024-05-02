@@ -22,9 +22,6 @@ const getDebitCardDetails = () => {
                 // Extract debit card details
                 window.debitCardNumber = $(this).find('ns2\\:debitCardNumber').text();
                 window.accountNumber = $(this).find('ns2\\:accountNumber').text();
-
-                window.debitCardCvv = $(this).find('ns2\\:debitCardCvv').text();
-                window.debitCardPin = $(this).find('ns2\\:debitCardPin').text();
                 window.debitCardExpiry = $(this).find('ns2\\:debitCardExpiry').text();
                 window.debitCardStatus = $(this).find('ns2\\:debitCardStatus').text();
                 window.domesticLimit = $(this).find('ns2\\:domesticLimit').text();
@@ -35,9 +32,8 @@ const getDebitCardDetails = () => {
                         <div class="col-md-4 mb-4">
                             <div class="card" style="background-color:#182057;">
                                 <div class="card-body">
-                                    <p class="card-text text-light">${debitCardNumber}</p>
+                                    <p class="card-text text-light">DebitCard Number: ${debitCardNumber}</p>
                                     <p class="card-text text-light">Account Number: ${accountNumber}</p>
-                                    <p class="card-text text-light">Card Cvv: ${debitCardCvv}</p>
                                     <p class="card-text text-light">Expiry: ${debitCardExpiry}</p>
                                     <p class="card-text text-light">Status: ${debitCardStatus}</p>
                                     <p class="card-text text-light">Domestic Limit: ${domesticLimit}</p>
@@ -50,19 +46,20 @@ const getDebitCardDetails = () => {
                                 </div>
                             </div>
                         </div>`;
-
                 // Append card to debit
                 $('#debit').append(cardHtml);
             });
         },
         error: function(xhr, status, error) {
-            console.error(xhr.responseText);
+            console.error('Error fetching debit cards:', error);
+            alert('Failed to fetch debit cards.');
         }
     });
 }
 window.sendData = function(){
-    
+    window.location.href = '../card/update?accountNumber=' + accountNumber;
 }
+
 
 // Call getDebitCardDetails function when the page loads
 $(document).ready(function() {

@@ -25,17 +25,14 @@ public class CardSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         CardSecurity cardSecurity= (CardSecurity) authentication.getPrincipal();
-        if(!cardSecurity.getCustomerStatus().equals("block")){
+        if(cardSecurity.getCustomerStatus().equals("active")  ){
             if (cardSecurity.getAttempts() > 1) {
                 cardSecurity.setAttempts(1);
                 cardSecurityServices.updateAttempts(cardSecurity);
             }
-            else if(cardSecurity.getCustomerStatus().equals("active")){
-                super.setDefaultTargetUrl("/update/limit");
+            else {
+                super.setDefaultTargetUrl("/card/dashboard");
             }
-            super.setDefaultTargetUrl("/card/dashboard");
-           // super.setDefaultTargetUrl("/debitcardrepo/debitcard.wsdl");
-//            super.setAlwaysUseDefaultTargetUrl(true);
         }
         else{
             logger.warn(resourceBundle.getString("max.admin"));

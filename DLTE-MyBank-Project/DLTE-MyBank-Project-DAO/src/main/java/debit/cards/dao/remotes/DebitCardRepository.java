@@ -18,6 +18,5 @@ public interface DebitCardRepository {
     //List of Debit cards will be Fetched
     List<DebitCard> getDebitCard(String username);
     String updateDebitLimit(DebitCard debitCard) throws SQLException;
-
     List<Account> accountList(String username) throws SQLSyntaxErrorException;
 }
