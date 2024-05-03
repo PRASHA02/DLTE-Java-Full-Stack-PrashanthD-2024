@@ -69,6 +69,10 @@ public class CardController {
         return "update";
     }
 
+    @GetMapping("/error")
+    public String error(){
+        return "error";
+    }
 
     @GetMapping("/name")
     @ResponseBody

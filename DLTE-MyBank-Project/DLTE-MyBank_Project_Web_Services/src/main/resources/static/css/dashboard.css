@@ -3,15 +3,29 @@
     font-family: "Poppins";
 }
 
+
+.title-text{
+    font-family: "Montserrat";
+    font-size: 46px;
+}
+
 #myBank {
     color: #182052;
-    font-family: "Poppins";
+    font-family: "Montserrat";
+    font-size: 46px;
 }
 
-.logo {
-    height: 7vh;
-
+#myBankFooter{
+    color: #f7f7f7;
+    font-family: "Montserrat";
+    font-size: 46px;
 }
+@media (max-width: 768px) {
+    .loginButton {
+        margin-left: 20px;
+    }
+}
+
 
 button {
     background-color: #182052;
@@ -20,6 +34,12 @@ button {
     height: 7vh;
     border-radius: 5rem;
 }
+
+
+.btn-custom:hover {
+    background-color: #15213e; /* Darker background color on hover */
+}
+
 
 .loginButton {
     font-family: "Montserrat";

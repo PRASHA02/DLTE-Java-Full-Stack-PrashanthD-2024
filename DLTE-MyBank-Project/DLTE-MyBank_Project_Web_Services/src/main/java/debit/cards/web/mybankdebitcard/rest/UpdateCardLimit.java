@@ -88,7 +88,7 @@ public class UpdateCardLimit {
     }
 
     //For Handling Bean Validation Exception
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.OK)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String,String> handleValidationException(MethodArgumentNotValidException ve){
         Map<String, String> errors = new HashMap<>();

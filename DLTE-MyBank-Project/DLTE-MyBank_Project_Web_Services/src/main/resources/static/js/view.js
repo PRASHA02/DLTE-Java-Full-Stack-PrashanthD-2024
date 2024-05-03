@@ -51,8 +51,9 @@ const getDebitCardDetails = () => {
             });
         },
         error: function(xhr, status, error) {
-            console.error('Error fetching debit cards:', error);
-            alert('Failed to fetch debit cards.');
+            const errorCode = xhr.status;
+            const errorMessage = xhr.responseText;
+            window.location.href = `error?code=${errorCode}&message=${encodeURIComponent(errorMessage)}`;
         }
     });
 }

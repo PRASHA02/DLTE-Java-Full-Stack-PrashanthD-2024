@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - MY BANK</title>
+    <title th:text="${'Dashboard - MY BANK'}"></title>
     <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -14,23 +14,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" th:href="@{'/css/dashboard.css'}">
     <script th:src="@{'/js/dashboard.js'}"></script>
 </head>
 <div th:fragment="header">
     <nav>
         <ul class="nav">
-            <li class="nav-item d-flex ml-3 mt-3">
-                <img class="logo" src="/images/bank-logo.png"/>
-                <h2 id="myBank" class="justify-content-start "> MyBank</h2>
+            <li class=" nav-item d-flex ml-3 mt-3">
+                <img src="/images/bank-logo.png" alt="Logo" th:height="50px" th:width="50px">
+                <h3 class="title-text" th:text="${'&nbsp My Bank'}">
+                    <i class="fa fa-globe"></i>
+                </h3>
             </li>
 
-            <li class="nav-item  ml-auto mt-3">
+            <li class="nav-item  ml-auto mt-4 ">
                 <h4 class="justify-content-end" th:id="Username"></h4>
-                <!--Name should be dynamically given need to change in the -->
             </li>
-            <div class="loginButton  ml-3">
-                <button class="rounded-5 border-0 col-10 text-white "> <a class="nav-link text-white" th:href="@{'/logout'}">Logout</a></button>
+            <div class="row-col-10 loginButton row ml-4">
+               <button class="rounded-4 border-0 col-10  text-white " th:text="Logout"> <a class="nav-link text-white" th:href="@{'/logout'}"></a></button>
             </div>
         </ul>
     </nav>
@@ -81,7 +85,7 @@
                             Cards <i class="bi bi-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu" style="min-width: 3rem;">
-                            <a class="dropdown-item" th:href="@{'/card/account'}">View Cards</a>
+                            <a class="dropdown-item" th:href="@{'/card/account'}" th:text="${'View Cards'}"></a>
                         </div>
                     </li>
 
@@ -142,40 +146,42 @@
 <div th:fragment="footer">
     <footer class="footer text-white text-center py-3 mt-4" style="border-radius: 35px 35px 0 0;">
         <li class="nav-item d-flex ml-3 mt-3">
-            <img class="logo" src="/images/bank-logo.png"/>
-            <h2 id="myBankFooter" class="justify-content-start " style="color: #f8f9fa;"> MyBank</h2>
+            <img src="/images/bank-logo.png" alt="Logo" th:height="50px" th:width="50px">
+            <h3 class="title-text" th:text="${'&nbsp My Bank'}">
+                <i class="fa fa-globe"></i>
+            </h3>
         </li>
         <div class="row justify-content-end mr-5">
+            <ul style="list-style-type: none;">
+                <li><h5 th:text="${'Company'}"></h5></li>
+                <li><h6 th:text="${'Home'}"></h6></li>
+                <li><h6 th:text="${'About'}"></h6></li>
+                <li><h6 th:text="${'Solution'}"></h6></li>
+                <li><h6 th:text="${'Pricing'}"></h6></li>
+                <li><h6 th:text="${'Team'}"></h6></li>
+                <li><h6 th:text="${'Career'}"></h6></li>
+            </ul>
+            <ul style="list-style-type: none;">
+                <li><h5 th:text="${'Documentation'}"></h5></li>
+                <li><h6 th:text="${'Help Center'}"></h6></li>
+                <li><h6 th:text="${'Contact'}"></h6></li>
+                <li><h6 th:text="${'FAQ'}"></h6></li>
+                <li><h6 th:text="${'Privacy Policy'}"></h6></li>
+            </ul>
+            <ul style="list-style-type: none;">
+                <li><h5 th:text="${'Social'}"></h5></li>
+                <li><h6 th:text="${'Facebook'}"></h6></li>
+                <li><h6 th:text="${'Instagram'}"></h6></li>
+                <li><h6 th:text="${'Youtube'}"></h6></li>
+                <li><h6 th:text="${'Twitter'}"></h6></li>
+            </ul>
 
-            <ul style="list-style-type: none;">
-                <li><h5>Company</h5></li>
-                <li><h6>Home</h6></li>
-                <li><h6>About</h6></li>
-                <li><h6>Solution</h6></li>
-                <li><h6>Pricing</h6></li>
-                <li><h6>Team</h6></li>
-                <li><h6>Career</h6></li>
-            </ul>
-            <ul style="list-style-type: none;">
-                <li><h5>Documentation</h5></li>
-                <li><h6>Help Center</h6></li>
-                <li><h6>Contact</h6></li>
-                <li><h6>FAQ</h6></li>
-                <li><h6>Privacy Policy</h6></li>
-            </ul>
-            <ul style="list-style-type: none;">
-                <li><h5>Social</h5></li>
-                <li><h6>Facebook</h6></li>
-                <li><h6>Instagram</h6></li>
-                <li><h6>Youtube</h6></li>
-                <li><h6>Twitter</h6></li>
-            </ul>
         </div>
         <hr class="bg-white mt-0"/>
 
         <div class="col-12 d-flex justify-content-between">
-            <span>MyBank Inc. All rights reserved 2024</span>
-            <span>Terms & Conditions</span>
+            <span th:text="${'&copy; MyBank Inc. All rights reserved 2024'}"></span>
+            <span th:text="${'Terms & Conditions'}"></span>
         </div>
 
     </footer>

@@ -1,19 +1,4 @@
 $(document).ready(function() {
-    // function populateForm() {
-    //     //const debitCardData = JSON.parse(sessionStorage.getItem('debitCardData'));
-    //     // Populate form fields
-    //     $('#debitCardNumber').val(debitCardData.debitCardNumber);
-    //     $('#accountNumber').val(debitCardData.accountNumber);
-    //     $('#debitCardCvv').val([[${sendCardDetails.debitCardCvv}]]);
-    //     $('#debitCardPin').val(debitCardData.debitCardPin);
-    //     $('#debitCardExpiry').val(debitCardData.debitCardExpiry);
-    //     $('#debitCardStatus').val(debitCardData.debitCardStatus);
-    //     sessionStorage.clear();
-    // }
-    //
-    // populateForm();
-
-
     // Function to handle form submission
     $("#update").click(function(event) {
         event.preventDefault(); // Prevent the form from submitting normally
@@ -54,21 +39,9 @@ $(document).ready(function() {
                 $("#updateModal").modal("show");
             },
             error: function(xhr, status, error) {
-                if (xhr.status === 409) {
-                    // Extract the response body from xhr.responseText
-                    const responseBody = xhr.responseText;
-                    $("#errorMessage").text(responseBody);
-                    $("#errorModal").modal("show");
-                }else {
-                    const errorCode = xhr.status;
-                    const errorMessage = xhr.responseText;
-                    const errorPageUrl = `/error?code=${errorCode}&message=${encodeURIComponent(errorMessage)}`;
-
-                    // Navigate to the error page
-                    window.location.href = errorPageUrl;
-
-                }
-
+                const errorCode = xhr.status;
+                const errorMessage = xhr.responseText;
+                window.location.href = `error?code=${errorCode}&message=${encodeURIComponent(errorMessage)}`;
             }
         });
     });

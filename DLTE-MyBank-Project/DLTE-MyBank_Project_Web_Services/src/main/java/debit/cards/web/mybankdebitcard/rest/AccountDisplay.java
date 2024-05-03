@@ -34,7 +34,7 @@ public class AccountDisplay {
     private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("card");
 
     @GetMapping("/list")
-    public ResponseEntity<?> getAccountList() {
+    public ResponseEntity<?> getAccountList() throws SQLSyntaxErrorException {
         List<Account> accountList = null;
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
@@ -47,9 +47,6 @@ public class AccountDisplay {
         } catch (DataAccessException sqlException) {
             logger.error(resourceBundle.getString("internal.error"));
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(resourceBundle.getString("internal.error"));
-        } catch (SQLSyntaxErrorException exception) {
-            logger.warn(resourceBundle.getString("sql.syntax.invalid"));
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resourceBundle.getString("sql.syntax.invalid"));
         }
         return ResponseEntity.ok(accountList);
     }

@@ -2,22 +2,29 @@ body {
     background-image:url('../images/login-image.jpg');
     background-size: cover;
     background-position: center;
-    height: 70vh;
-
 }
+
 #title-logo{
     margin-top: 60px;
     margin-left: 40px;
 }
+
 .title-text{
     font-family: "Montserrat";
+    font-size: 46px;
 }
+
+@media (max-width: 768px) {
+    #title-logo {
+        margin-left: -20px; /* Adjust margin for smaller screens */
+    }
+}
+
 
 .card {
     border: none;
     border-radius: 20px;
     background: rgba(251, 246, 246, 0.8);
-    width: 375px;
 }
 
 .card button {
@@ -29,39 +36,14 @@ body {
     border-radius: 20px;
 }
 
-.row button {
-    background-color: #ff7f00;
-    width: 150px;
-    border-radius: 20px;
-    color: white;
-}
-
 h2 {
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
-    color: white;
 }
 
-
-
-
-h1{
-    font-family: "Montserrat", sans-serif;
-    font-size: 50px;
-}
-
-p {
-    font-family: "Montserrat", sans-serif;
-
-
-}
-
-h3 {
+h1, h3, p {
     font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 40px;
-    font-style: normal;
 }
 
 input[type="text"],
@@ -93,12 +75,17 @@ input::placeholder {
     transform: scale(1.05);
 }
 
-@media(max-width: 576px){
-    h1{
+@media (max-width: 768px) {
+    h1 {
         font-size: 24px;
         margin-top: 30px;
     }
-    h3{
+
+    h3 {
         font-size: 24px;
+    }
+
+    .card {
+        width: 90%;
     }
 }

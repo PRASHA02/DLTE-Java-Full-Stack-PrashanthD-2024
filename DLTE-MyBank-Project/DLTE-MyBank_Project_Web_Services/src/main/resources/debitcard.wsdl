@@ -1,0 +1,40 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://debitcard.links" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://debitcard.links" targetNamespace="http://debitcard.links">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+           <xsd:import namespace="http://debitcard.links" schemaLocation="debitcard.xsd"/>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="viewDebitCardRequest">
+    <wsdl:part element="tns:viewDebitCardRequest" name="viewDebitCardRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="viewDebitCardResponse">
+    <wsdl:part element="tns:viewDebitCardResponse" name="viewDebitCardResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DebitCardPort">
+    <wsdl:operation name="viewDebitCard">
+      <wsdl:input message="tns:viewDebitCardRequest" name="viewDebitCardRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:viewDebitCardResponse" name="viewDebitCardResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DebitCardPortSoap11" type="tns:DebitCardPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="viewDebitCard">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="viewDebitCardRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="viewDebitCardResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DebitCardPortService">
+    <wsdl:port binding="tns:DebitCardPortSoap11" name="DebitCardPortSoap11">
+      <soap:address location="http://localhost:8082/debitcardrepo"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

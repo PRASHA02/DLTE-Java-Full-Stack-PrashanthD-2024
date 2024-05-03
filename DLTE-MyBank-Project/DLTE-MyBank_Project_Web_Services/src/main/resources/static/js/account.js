@@ -9,7 +9,6 @@ function changePage(page) {
 
 // Function to fetch active accounts
 function fetchAccountDetails() {
-
     $.ajax({
         url: "/account/list",
         type: "GET",
@@ -59,13 +58,13 @@ function fetchAccountDetails() {
                     combinedHtml += "</div></div></div>";
                 }
             });
-
             combinedHtml += "<div>"; // This line was originally at the end
             $("#accounts").append(combinedHtml);
         },
-        error: function (err) {
-            let element = $("#accounts")
-            element.append(`<h1>${err.status}</h1>`)
+        error: function (xhr, status, error) {
+            const errorCode = xhr.status;
+            const errorMessage = xhr.responseText;
+            window.location.href = `error?code=${errorCode}&message=${encodeURIComponent(errorMessage)}`;
         }
     });
 }

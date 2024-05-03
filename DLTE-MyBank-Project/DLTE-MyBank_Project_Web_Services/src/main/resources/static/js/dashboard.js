@@ -11,7 +11,7 @@ $(document).ready(function () {
             },
             error: function (xhr, status, error) {
                 console.error(xhr.responseText);
-                $('#Username').text("Error fetching name");
+                $('#Username').text("Not able to get the Username");
             }
         });
     }
