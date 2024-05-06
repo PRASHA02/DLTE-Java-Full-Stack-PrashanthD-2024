@@ -140,29 +140,6 @@ public class UpdateLimitRestTesting {
                 .andExpect(content().string("Debit card limit updated successfully"));
     }
 
-    @Test
-    @WithMockUser(username = "prasha")
-    void testUpdateForbidden() throws Exception {
-        String request = "{\n" +
-                "  \"debitCardNumber\": 3692468135796670,\n" +
-                "  \"accountNumber\": 78909876543530,\n" +
-                "  \"customerId\": 123670,\n" +
-                "  \"debitCardCvv\": 123,\n" +
-                "  \"debitCardPin\": 1234,\n" +
-                "  \"debitCardExpiry\": \"2024-05-30\",\n" +
-                "  \"debitCardStatus\": \"active\",\n" +
-                "  \"domesticLimit\": 1000,\n" +
-                "  \"internationalLimit\": 5000\n" +
-                "}";
-
-        when(debitCardRepository.updateDebitLimit(any())).thenReturn("Access Denied Username is not correct");
-
-        mockMvc.perform(put("/update/limit")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(request))
-                .andExpect(status().isForbidden())
-                .andExpect(content().string("Access Denied Username is not correct"));
-    }
 
     @Test
     @WithMockUser(username = "prasha02", password = "prash321")

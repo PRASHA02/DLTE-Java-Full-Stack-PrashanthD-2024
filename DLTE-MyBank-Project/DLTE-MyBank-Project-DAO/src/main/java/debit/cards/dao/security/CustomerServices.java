@@ -43,20 +43,7 @@ public class CustomerServices implements UserDetailsService {
         jdbcTemplate.update("update mybank_app_customer set customer_status = 'block' where username = ?",new Object[]{customer.getUsername()});
         logger.info("Status has changed");
     }
-   //For getting particular Account owner username
-    public String getAccountOwnerUsername(Long accountNumber) {
-        try {
-            // Query to fetch the username of the account owner based on the account number
-            String sql = "SELECT c.username FROM mybank_app_customer c JOIN mybank_app_account a ON c.customer_id = a.customer_id  JOIN mybank_app_debitcard d ON a.account_number = d.account_number WHERE d.account_number =  ?";
-            String ownerUsername = jdbcTemplate.queryForObject(sql, new Object[]{accountNumber}, String.class);
-            return ownerUsername;
-        } catch (EmptyResultDataAccessException e) {
-            return null;
-        } catch (Exception e) {
-            e.printStackTrace(); // Log the exception for debugging
-            return null;
-        }
-    }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

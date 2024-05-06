@@ -26,13 +26,13 @@ public class DebitCardServices implements DebitCardRepository {
     private static final Logger logger = LoggerFactory.getLogger(DebitCardServices.class);
 
     @Override
-    public List<DebitCard> getDebitCard(String username) throws SQLException {
+    public List<DebitCard> getDebitCard(String username) throws SQLException,DebitCardException {
         List<DebitCard> debitCardList = null;
         try {
-            debitCardList = jdbcTemplate.query("SELECT d.debitcard_number,d.account_number,d.customer_id,d.debitcard_cvv,d.debitcard_pin,d.debitcard_expiry,d.debitcard_status,d.debitcard_domestic_limit,d.debitcard_international_limit FROM mybank_app_debitcard d JOIN mybank_app_customer c ON d.customer_id = c.customer_id JOIN mybank_app_account a on a.account_number=d.account_number WHERE NOT debitcard_status = 'block' AND  a.account_status='active'  AND c.customer_status='active' AND c.username = ?", new Object[]{username}, new DebitCardMapper());
+            debitCardList = jdbcTemplate.query("SELECT d.debitcard_number,d.account_number,d.customer_id,d.debitcard_cvv,d.debitcard_pin,d.debitcard_expiry,d.debitcard_status,d.debitcard_domestic_limit,d.debitcard_international_limit FROM mybank_app_debitcard d JOIN mybank_app_customer c ON d.customer_id = c.customer_id JOIN mybank_app_account a on a.account_number=d.account_number WHERE  c.username = ?", new Object[]{username}, new DebitCardMapper());
             logger.info(resourceBundle.getString("card.fetch.success"));
         } catch (DataAccessException sqlException) {
-            logger.error(resourceBundle.getString("sql.syntax.invalid"));
+
             throw new SQLException(resourceBundle.getString("sql.syntax.invalid"));
         }
         if (debitCardList.size() == 0) {
@@ -44,17 +44,19 @@ public class DebitCardServices implements DebitCardRepository {
     //Update the limits when all the customer,account and debit card status is active otherwise it gives respective error messages
     @Override
     public String updateDebitLimit(DebitCard debitCard) throws SQLException {
-
         DebitCard fetchedDebitCard=null;
-        fetchedDebitCard = jdbcTemplate.queryForObject(
+        try{
+
+            fetchedDebitCard = jdbcTemplate.queryForObject(
                     "SELECT debitcard_number,account_number,customer_id,debitcard_cvv,debitcard_pin,debitcard_expiry,debitcard_status,debitcard_domestic_limit,debitcard_international_limit FROM mybank_app_debitcard WHERE account_number = ?",
                     new Object[]{debitCard.getAccountNumber()},
                     new DebitCardMapper());
-        if(!(fetchedDebitCard.getAccountNumber().equals(debitCard.getAccountNumber()))){
-            throw new DebitCardException(resourceBundle.getString("no.account.found"));
+                if(!(fetchedDebitCard.getAccountNumber().equals(debitCard.getAccountNumber()))){
+                throw new DebitCardException(resourceBundle.getString("no.account.found"));
+            }
+        }catch(DataAccessException  | NullPointerException exception){
+            throw new SQLException(resourceBundle.getString("internal.error"));
         }
-
-
         try {
             // Prepare the callable statement to update the debit card limit, Stored procedures often take input parameters.
             debitCard.setCustomerId(fetchedDebitCard.getCustomerId());
@@ -85,7 +87,6 @@ public class DebitCardServices implements DebitCardRepository {
                     throw new SQLException(resourceBundle.getString("internal.error"));
             }
         } catch (DataAccessException dataAccessException) {
-            logger.error(resourceBundle.getString("internal.error"));
             throw new SQLException(resourceBundle.getString("internal.error"));
         }
         return resourceBundle.getString("limit.update.success");

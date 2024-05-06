@@ -4,6 +4,7 @@ import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
 
+import debit.cards.dao.security.Customer;
 import debit.cards.dao.security.CustomerServices;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -51,15 +52,6 @@ public class UpdateCardLimit {
    })
     @PutMapping("/limit")
     public ResponseEntity<String> updateLimit(@Valid @RequestBody DebitCard debitCard) {
-       Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-       String username = authentication.getName();
-
-       // method to fetch the owner's username from the account object
-       String accountOwnerUsername = customerServices.getAccountOwnerUsername(debitCard.getAccountNumber());
-
-       // Check if the authenticated user matches the owner of the account
-       if (!username.equals(accountOwnerUsername))
-           return ResponseEntity.status(HttpStatus.FORBIDDEN).body(resourceBundle.getString("access.denied"));
 
         try {
             String response = debitCardRepository.updateDebitLimit(debitCard);

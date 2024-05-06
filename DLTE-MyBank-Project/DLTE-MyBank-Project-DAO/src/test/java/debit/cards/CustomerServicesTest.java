@@ -10,12 +10,14 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -136,46 +138,6 @@ class CustomerServicesTest {
     }
 
 
-
-    @Test
-    void getAccountUsernameFound() {
-        Long accountNumber = 12345L;
-        String expectedUsername = "john";
-
-        when(jdbcTemplate.queryForObject(anyString(), any(Object[].class), eq(String.class))).thenReturn(expectedUsername);
-
-        String result = customerServices.getAccountOwnerUsername(accountNumber);
-
-        assertEquals(expectedUsername, result);
-        verify(jdbcTemplate, times(1)).queryForObject(anyString(), any(Object[].class), eq(String.class));
-    }
-
-    @Test
-    void getAccountUsernameNotFound() {
-        Long accountNumber = 12345L;
-
-        when(jdbcTemplate.queryForObject(anyString(), any(Object[].class), eq(String.class))).thenThrow(EmptyResultDataAccessException.class);
-
-        String result = customerServices.getAccountOwnerUsername(accountNumber);
-
-        assertNull(result);
-        verify(jdbcTemplate, times(1)).queryForObject(anyString(), any(Object[].class), eq(String.class));
-    }
-
-    @Test
-    void getAccountException() {
-        Long accountNumber = 12345L;
-
-        when(jdbcTemplate.queryForObject(anyString(), any(Object[].class), eq(String.class))).thenThrow(RuntimeException.class);
-
-        String result = customerServices.getAccountOwnerUsername(accountNumber);
-
-        assertNull(result);
-        verify(jdbcTemplate, times(1)).queryForObject(anyString(), any(Object[].class), eq(String.class));
-    }
-
-
-
     @Test
     void loadUserByUsernameNotFound() {
         assertThrows(UsernameNotFoundException.class, () -> customerServices.loadUserByUsername("john"));
@@ -274,6 +236,57 @@ class CustomerServicesTest {
 
         assertTrue(passwordEncoder.matches(enteredPassword, userDetails.getPassword()));
 
+    }
+
+    @Test
+    public void testIsAccountNonExpired() {
+        Customer userDetails = new Customer();
+        assertTrue(userDetails.isAccountNonExpired());
+    }
+
+    @Test
+    public void testIsAccountNonLocked() {
+        Customer userDetails = new Customer();
+        assertTrue(userDetails.isAccountNonLocked());
+    }
+
+    @Test
+    public void testIsCredentialsNonExpired() {
+        Customer userDetails = new Customer();
+        assertTrue(userDetails.isCredentialsNonExpired());
+    }
+
+    @Test
+    public void testIsEnabled() {
+        Customer userDetails = new Customer();
+        assertTrue(userDetails.isEnabled());
+    }
+    @Test
+    public void maxAttempts() {
+        int expectedMaxAttempt = 3; // Assuming the maxAttempt value is 5
+        Customer customUserDetails = new Customer();
+
+        customUserDetails.setAttempts(expectedMaxAttempt);
+
+        // When
+        int actualMaxAttempt = customUserDetails.getMaxAttempt();
+
+        // Then
+        assertEquals(expectedMaxAttempt, actualMaxAttempt);
+    }
+
+
+    @Test
+    public void testGetAuthoritiesIsNull() {
+        // Given
+        Customer customUserDetails = new Customer();
+
+        // When
+        Collection<? extends GrantedAuthority> authorities = customUserDetails.getAuthorities();
+
+        // Then
+        assertEquals(null, authorities);
+        // Add additional assertions based on how your application handles null authorities
     }
 
     // Add more tests for edge cases and error scenarios if necessary

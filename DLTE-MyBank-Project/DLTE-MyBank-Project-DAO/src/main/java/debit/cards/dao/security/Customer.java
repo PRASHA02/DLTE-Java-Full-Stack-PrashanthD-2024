@@ -13,23 +13,23 @@ import java.util.ResourceBundle;
 //entity class for the security
 public class Customer implements UserDetails {
     private Integer customerId;
-    @NotBlank(message = "{customer.name.null}")
-    @Pattern(regexp = "^[a-zA-Z\\\\W_]+$", message = "{customer.name.invalid}")
+    @NotBlank(message = "{VAL014}")
+    @Pattern(regexp = "^[a-zA-Z\\\\W_]+$", message = "{VAL015}")
     private String customerName;
-    @NotBlank(message = "{customer.address.null}")
-    @Pattern(regexp = "^[a-zA-Z\\\\W_]+$", message = "{customer.address.invalid}")
+    @NotBlank(message = "{VAL019}")
+    @Pattern(regexp = "^[a-zA-Z\\\\W_]+$", message = "{VAL025}")
     private String customerAddress;
-    @NotBlank(message = "{customer.status.null}")
-    @Pattern(regexp = "^(active|inactive|block)$", message = "{customer.status.invalid}")
+    @NotBlank(message = "{VAL018}")
+    @Pattern(regexp = "^(active|inactive|block)$", message = "{VAL024}")
     private String customerStatus;
-    @NotNull(message = "{customer.contact.null}")
-    @Digits(integer = 10,fraction = 0,message = "{customer.contact.invalid}")
+    @NotNull(message = "{VAL016}")
+    @Digits(integer = 10,fraction = 0,message = "{VAL017}")
     private Long customerContact;
-    @NotBlank(message = "{user.name.null}")
-    @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*\\d)[a-zA-Z\\d]+$", message = "{user.username.invalid}")
+    @NotBlank(message = "{VAL020}")
+    @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*\\d)[a-zA-Z\\d]+$", message = "{VAL021}")
     private String username;
-    @NotBlank(message = "{password.null}")
-    @Pattern(regexp ="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?\":{}|<>])(?=.{8,})\n",message = "{password.invalid}")
+    @NotBlank(message = "{VAL022}")
+    @Pattern(regexp ="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?\":{}|<>])(?=.{8,})\n",message = "{VAL023}")
     private String password;
     private final int maxAttempt=3;
     private Integer attempts;

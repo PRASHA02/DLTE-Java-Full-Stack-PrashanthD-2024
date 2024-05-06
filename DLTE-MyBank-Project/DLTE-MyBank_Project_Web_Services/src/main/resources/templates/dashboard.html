@@ -60,6 +60,12 @@
                            data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                             Accounts <i class="bi bi-chevron-down"></i>
                         </a>
+                        <div class="dropdown-menu" style="min-width: 3rem;">
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}" th:text="${'List all Deposits'}"></a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}" th:text="${'Search Deposits'}"></a>
+                        </div>
+
+
                     </li>
 
                     <li class="nav-item dropdown ml-3">
@@ -67,13 +73,25 @@
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Deposits <i class="bi bi-chevron-down"></i>
                         </a>
+                        <div class="dropdown-menu" style="min-width: 3rem;">
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Available Deposits</a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Search Deposits</a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Deposit Calculator</a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Avail Deposits</a>
+                        </div>
                     </li>
 
                     <li class="nav-item dropdown ml-3">
                         <a class="nav-link dropdown-toggle" href="#" id="paymentsDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Payments <i class="bi bi-chevron-down"></i>
+                            Insurance <i class="bi bi-chevron-down"></i>
                         </a>
+                        <div class="dropdown-menu" style="min-width: 3rem;">
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">List Insurance plans</a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Search Insurance</a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Choose Insurance And View benefits</a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Avail Insurance</a>
+                        </div>
                     </li>
 
                     <li class="nav-item dropdown ml-3">
@@ -81,6 +99,12 @@
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Loans <i class="bi bi-chevron-down"></i>
                         </a>
+                        <div class="dropdown-menu" style="min-width: 3rem;">
+                        <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">List Available Loans</a>
+                        <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Search Loans</a>
+                        <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Choose Loan and EMI Calculator</a>
+                        <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Apply Loan</a>
+                        </div>
                     </li>
 
                     <li class="nav-item dropdown ml-3">
@@ -96,8 +120,16 @@
                     <li class="nav-item dropdown ml-3">
                         <a class="nav-link dropdown-toggle" href="#" id="insuranceDropdown" role="button"
                            data-toggle="dropdown">
-                            Insurance <i class="bi bi-chevron-down"></i>
+                            Payments <i class="bi bi-chevron-down"></i>
                         </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Search Payee</a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Option 2</a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">List available payee</a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">New Payee</a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Modify Payee</a>
+                            <a class="dropdown-item" th:href="@{'/card/error?code=400&message=Requested page is not available, Page Under Construction'}">Make Payment</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -152,9 +184,11 @@
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                 <div class="row">
                     <div class="col">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand d-flex" href="#">
                             <img th:src="@{'/images/bank-logo.png'}" alt="Logo" width="50px" height="50px" class="d-inline-block align-text-top">
-                            <b style="font-size: larger; color: #f7f7f7;">My Bank</b>
+                            <h3 class="title-text" style="color: #f7f7f7" th:text="${'&nbsp My Bank'}">
+                                <i class="fa fa-globe"></i>
+                            </h3>
                         </a>
                     </div>
                 </div>

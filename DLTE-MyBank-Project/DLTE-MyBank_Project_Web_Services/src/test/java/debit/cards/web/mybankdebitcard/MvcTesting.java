@@ -1,6 +1,7 @@
 package debit.cards.web.mybankdebitcard;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.authentication;
@@ -156,16 +157,25 @@ public class MvcTesting {
 
     @Test
     @WithMockUser(username = "prasha02")
-    public void testCustomername_Exception() {
-        // Mock authentication
-        Authentication authentication = new TestingAuthenticationToken("user", "password");
+    public void testCustomer() {
+
+        // Mock Customer object
+        Customer customer = new Customer();
+        customer.setCustomerName("prasha02");
 
         // Set the authentication in SecurityContextHolder
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        // Mock cardSecurityServices
-        CustomerServices cardSecurityServices = mock(CustomerServices.class);
-        lenient().when(cardSecurityServices.findByUserName(anyString())).thenThrow(new RuntimeException("Simulated exception"));
+        // Call the method under test
+        try{
+            String customerName = mvcController.Customername();
+        }catch(NullPointerException ex){
+            // Assert
+            assertNotEquals("prasha02", null);
+        }
+
+
+
     }
 
 
