@@ -39,34 +39,32 @@ class FailureTesting {
         MockitoAnnotations.initMocks(this);
     }
 
+
     @Test
     @WithMockUser(username = "prasha02")
     public void testOnAuthenticationFailure_ValidUsername() throws Exception {
-        // Mock HttpServletRequest, HttpServletResponse, CardSecurityServices, and ResourceBundle
+
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
-        CustomerServices CustomerServices = mock(CustomerServices.class);
-        ResourceBundle resourceBundle = mock(ResourceBundle.class);
+        CustomerServices customerServices = mock(CustomerServices.class);
 
         // Mock values
-        when(request.getParameter("username")).thenReturn("validUsername");
+        when(request.getParameter("username")).thenReturn("Prashanth");
         Customer customer = new Customer();
         customer.setCustomerStatus("active");
-        when(customerServices.findByUserName("validUsername")).thenReturn(customer);
-        when(resourceBundle.getString(anyString())).thenReturn(""); // Mock resource bundle strings
+        when(customerServices.findByUserName("Prashanth")).thenReturn(customer);
 
-        // Create instance of CardFailureHandler
+        // Create instance of CustomerFailureHandler
         CustomerFailureHandler failureHandler = new CustomerFailureHandler();
-
 
         // Call the method under test
         AuthenticationException exception = assertThrows(LockedException.class, () -> {
-            failureHandler.onAuthenticationFailure(request, response, new AuthenticationException("") {});
+            failureHandler.onAuthenticationFailure(request, response, new AuthenticationException("Account Locked") {});
         });
 
         // Verify expected behavior
         verify(customerServices, times(1)).updateAttempts(customer);
-        verify(resourceBundle, times(1)).getString("invalid.attempts");
+
         // Add more verifications as needed
     }
 }

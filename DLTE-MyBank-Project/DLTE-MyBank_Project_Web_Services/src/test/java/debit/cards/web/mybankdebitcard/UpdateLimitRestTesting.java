@@ -4,8 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
-import debit.cards.dao.security.CardSecurity;
-import debit.cards.dao.security.CardSecurityServices;
+
+import debit.cards.dao.security.Customer;
+import debit.cards.dao.security.CustomerServices;
 import debit.cards.web.mybankdebitcard.rest.UpdateCardLimit;
 import com.jayway.jsonpath.JsonPath;
 import org.junit.jupiter.api.BeforeEach;
@@ -72,7 +73,7 @@ public class UpdateLimitRestTesting {
     private MockMvc mockMvc;
 
     @InjectMocks
-    private CardSecurityServices cardSecurityServices;
+    private CustomerServices customerServices;
 
     @Mock
     private BindingResult bindingResult;

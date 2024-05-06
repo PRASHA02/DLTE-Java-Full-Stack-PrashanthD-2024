@@ -1,8 +1,9 @@
 package debit.cards.web.mybankdebitcard.mvc;
 
 import debit.cards.dao.remotes.DebitCardRepository;
-import debit.cards.dao.security.CardSecurity;
-import debit.cards.dao.security.CardSecurityServices;
+
+import debit.cards.dao.security.Customer;
+import debit.cards.dao.security.CustomerServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class MvcController {
     DebitCardRepository debitCardRepository;
 
     @Autowired
-    CardSecurityServices cardSecurityServices;
+    CustomerServices customerServices;
 
     Logger logger= LoggerFactory.getLogger(MvcController.class);
 
@@ -74,8 +75,8 @@ public class MvcController {
     public String Customername(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String name = authentication.getName();
-        CardSecurity cardSecurity = cardSecurityServices.findByUserName(name);
-        return cardSecurity.getCustomerName();
+        Customer customer = customerServices.findByUserName(name);
+        return customer.getCustomerName();
     }
 
 

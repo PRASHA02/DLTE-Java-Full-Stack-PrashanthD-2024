@@ -35,7 +35,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.net.URLEncoder;
 
-
 @ExtendWith(MockitoExtension.class)
 @AutoConfigureMockMvc
 @SpringBootTest
@@ -61,7 +60,7 @@ public class MvcTesting {
         String indexName = mvcController.index();
         assertEquals("index", indexName);
     }
-     @Test
+    @Test
     @WithMockUser(username = "prasha02")
     public void testDashboard() {
         String dashboardName = mvcController.dashboard();

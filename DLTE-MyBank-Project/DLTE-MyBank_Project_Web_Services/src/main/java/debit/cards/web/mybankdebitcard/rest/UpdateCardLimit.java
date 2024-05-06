@@ -3,8 +3,8 @@ package debit.cards.web.mybankdebitcard.rest;
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
-import debit.cards.dao.security.CardSecurity;
-import debit.cards.dao.security.CardSecurityServices;
+
+import debit.cards.dao.security.CustomerServices;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -36,7 +36,7 @@ public class UpdateCardLimit {
     @Autowired
     private DebitCardRepository debitCardRepository;
     @Autowired
-    private CardSecurityServices cardSecurityServices;
+    private CustomerServices customerServices;
 
 
     private static final Logger logger = LoggerFactory.getLogger(UpdateCardLimit.class);
@@ -55,7 +55,7 @@ public class UpdateCardLimit {
        String username = authentication.getName();
 
        // method to fetch the owner's username from the account object
-       String accountOwnerUsername = cardSecurityServices.getAccountOwnerUsername(debitCard.getAccountNumber());
+       String accountOwnerUsername = customerServices.getAccountOwnerUsername(debitCard.getAccountNumber());
 
        // Check if the authenticated user matches the owner of the account
        if (!username.equals(accountOwnerUsername))

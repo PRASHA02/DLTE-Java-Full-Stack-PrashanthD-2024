@@ -4,7 +4,7 @@ package debit.cards.web.mybankdebitcard.soap.configs;
 import debit.cards.dao.exceptions.DebitCardException;
 import debit.cards.dao.remotes.DebitCardRepository;
 
-import debit.cards.dao.security.CardSecurityServices;
+import debit.cards.dao.security.CustomerServices;
 import links.debitcard.DebitCard;
 import links.debitcard.ServiceStatus;
 import links.debitcard.ViewDebitCardRequest;
@@ -45,7 +45,7 @@ public class DebitCardPhase {
     private DebitCardRepository debitCardRepository;
 
     @Autowired
-    private CardSecurityServices cardSecurityServices;
+    private CustomerServices customerServices;
 
 
 
