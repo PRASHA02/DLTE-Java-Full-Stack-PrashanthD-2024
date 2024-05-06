@@ -12,7 +12,7 @@
 </head>
 <body class="bg-dark text-white">
 
-<div id="title-logo">
+<div id="title-logo" class="mx-auto">
     <img src="/images/bank-logo.png" alt="Logo" th:height="50px" th:width="50px">
     <h3 class="title-text" th:text="${'&nbsp My Bank'}">
         <i class="fa fa-globe"></i>
@@ -29,7 +29,7 @@
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card text-white mx-auto mb-3 p-3 shadow-lg">
                 <h2 class="mb-4">Sign in</h2>
-                <h1 th:if="${param.error}" class="error-message" th:text="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}"></h1>
+                <h3 th:if="${param.error}" class="error-message" th:text="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}"></h3>
                 <h5 th:if="${param.errors}" class="error-message" th:text="${param.errors}"></h5>
                 <form action="#" th:action="@{'/card/login'}" method="post" id="login-form">
                     <!-- Username Input -->

@@ -10,7 +10,7 @@
     </parent>
     <groupId>debit.cards.web</groupId>
     <artifactId>mybank-debit-card</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>DLTE-MyBank_Project_Web_Services</name>
     <description>web services and integration of DAO</description>
@@ -61,20 +61,20 @@
                 			<version>4.0.1</version>
                 			<scope>provided</scope>
                 		</dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>debit.cards.application</groupId>
             <artifactId>card-spring-boot</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.6.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>

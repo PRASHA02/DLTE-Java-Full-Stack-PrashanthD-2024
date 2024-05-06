@@ -1,6 +1,5 @@
 package debit.cards.web.mybankdebitcard.rest;
 
-import debit.cards.dao.entities.Customer;
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
@@ -11,7 +10,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.MethodInvocationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -28,6 +29,7 @@ import java.util.ResourceBundle;
 
 //This service is used for updating the debit card limits only if all the customer,account,debit card status is active otherwise it gives proper error response for us
 @RestController
+@ComponentScan("debit.cards.dao")
 @RequestMapping("/update")
 public class UpdateCardLimit {
 
@@ -36,14 +38,14 @@ public class UpdateCardLimit {
     @Autowired
     private CardSecurityServices cardSecurityServices;
 
+
     private static final Logger logger = LoggerFactory.getLogger(UpdateCardLimit.class);
-    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("card");
+    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("webservice");
    //Updating the limit based on account_number
    @Operation(summary = "Updating the Debit Card Limit")
    @ApiResponses(value = {
            @ApiResponse(responseCode = "200", description = "Debit card limit updated successfully"),
            @ApiResponse(responseCode = "400", description = "Debit card limit update failed"),
-           @ApiResponse(responseCode = "404", description = "Customer is not Active or No account Number found or Account is not Active"),
            @ApiResponse(responseCode = "422", description = " Please provide the correct debit card details"),
            @ApiResponse(responseCode = "500", description = "Internal server error")
    })
@@ -60,30 +62,16 @@ public class UpdateCardLimit {
            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(resourceBundle.getString("access.denied"));
 
         try {
-            CardSecurity customer = cardSecurityServices.findByUserName(username);
-            debitCard.setCustomerId(customer.getCustomerId());
             String response = debitCardRepository.updateDebitLimit(debitCard);
             logger.info(resourceBundle.getString("limit.update.success"));
             return ResponseEntity.ok(response);
-        } catch (CustomerException customerException) {
-            logger.error(resourceBundle.getString("customer.not.found"));
-            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("customer.not.found"));
-        } catch (AccountException accountException) {
-            logger.error(resourceBundle.getString("account.not.found"));
-            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("account.not.found"));
         } catch (DebitCardException debitCardException) {
-            logger.error(resourceBundle.getString("limit.update.failed"));
-            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("limit.update.failed"));
-        } catch (DebitCardNullException debitCardNullException){
-            logger.error(resourceBundle.getString("no.data.found"));
-            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("no.data.found"));
-        }catch(ValidationException validationException){
-            logger.error(resourceBundle.getString("invalid.request"));
-            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(validationException.getMessage());
+            logger.error(debitCardException.getMessage());
+            return ResponseEntity.status(HttpStatus.OK).body(debitCardException.getMessage());
         }
         catch (SQLException exception) {
             logger.error(resourceBundle.getString("internal.error"));
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(resourceBundle.getString("internal.error"));
+            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("internal.error"));
         }
     }
 
@@ -95,15 +83,10 @@ public class UpdateCardLimit {
         ve.getBindingResult().getAllErrors().forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
             String errorMessage = error.getDefaultMessage();
-//           if(fieldName.equals("debitCardNumber")){
-//               errors.put("PRA001", errorMessage);
-//           }
-//           if(fieldName.equals("debitCardCvv")){
-//               errors.put("PRA002",errorMessage);
-//           }
-           errors.put(fieldName,errorMessage);
+            errors.put(fieldName,errorMessage);
         });
         return errors;
     }
+
 
 }

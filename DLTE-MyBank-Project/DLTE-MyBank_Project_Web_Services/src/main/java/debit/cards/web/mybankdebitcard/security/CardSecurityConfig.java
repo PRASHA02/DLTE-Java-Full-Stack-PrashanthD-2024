@@ -38,8 +38,7 @@ public class CardSecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource(){
         CorsConfiguration configuration=new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(Arrays.asList("http://127.0.0.1:5500"));
-        configuration.setAllowedOriginPatterns(Arrays.asList("http://127.0.0.1:5501"));
+        configuration.setAllowedOriginPatterns(Arrays.asList("http://127.0.0.1:5500/"));
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
         configuration.setAllowCredentials(true);

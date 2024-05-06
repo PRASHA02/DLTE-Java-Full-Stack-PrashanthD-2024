@@ -1,28 +1,23 @@
 package debit.cards.dao.services;
 
-import debit.cards.dao.entities.Account;
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.*;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
 import java.util.*;
-import java.util.Date;
 
-
-//This services retrieves all the data from my oracle database and if any exception occurs it handles it.
 
 //Stereotype annotation for Service based Implementation
 @Service
 public class DebitCardServices implements DebitCardRepository {
-    //Injects the dependency of one objects with another
     @Autowired
     public JdbcTemplate jdbcTemplate;
 
@@ -30,49 +25,41 @@ public class DebitCardServices implements DebitCardRepository {
 
     private static final Logger logger = LoggerFactory.getLogger(DebitCardServices.class);
 
-    //performs the business logic of getting list of cards
     @Override
-    public List<DebitCard> getDebitCard(String username) {
+    public List<DebitCard> getDebitCard(String username) throws SQLException {
         List<DebitCard> debitCardList = null;
         try {
-            debitCardList = jdbcTemplate.query("SELECT d.debitcard_number,d.account_number,d.customer_id,d.debitcard_cvv,d.debitcard_pin,d.debitcard_expiry,d.debitcard_status,d.debitcard_domestic_limit,d.debitcard_international_limit FROM mybank_app_debitcard d JOIN mybank_app_customer c ON d.customer_id = c.customer_id JOIN mybank_app_account a on a.account_number=d.account_number WHERE NOT debitcard_status = 'Blocked' AND  a.account_status='active'  AND c.customer_status='active' AND c.username = ?", new Object[]{username}, new DebitCardMapper());
+            debitCardList = jdbcTemplate.query("SELECT d.debitcard_number,d.account_number,d.customer_id,d.debitcard_cvv,d.debitcard_pin,d.debitcard_expiry,d.debitcard_status,d.debitcard_domestic_limit,d.debitcard_international_limit FROM mybank_app_debitcard d JOIN mybank_app_customer c ON d.customer_id = c.customer_id JOIN mybank_app_account a on a.account_number=d.account_number WHERE NOT debitcard_status = 'block' AND  a.account_status='active'  AND c.customer_status='active' AND c.username = ?", new Object[]{username}, new DebitCardMapper());
             logger.info(resourceBundle.getString("card.fetch.success"));
         } catch (DataAccessException sqlException) {
             logger.error(resourceBundle.getString("sql.syntax.invalid"));
-            throw new DebitCardException(resourceBundle.getString("sql.syntax.invalid"));
+            throw new SQLException(resourceBundle.getString("sql.syntax.invalid"));
         }
         if (debitCardList.size() == 0) {
             logger.warn(resourceBundle.getString("card.list.null"));
-            throw new DebitCardNullException();
+            throw new DebitCardException((resourceBundle.getString("card.list.null")));
         }
         return debitCardList;
     }
-
-
-
     //Update the limits when all the customer,account and debit card status is active otherwise it gives respective error messages
     @Override
     public String updateDebitLimit(DebitCard debitCard) throws SQLException {
-        // Fetch the debit card details from the database using the provided account number
-        try {
-            DebitCard fetchedDebitCard = jdbcTemplate.queryForObject(
+
+        DebitCard fetchedDebitCard=null;
+        fetchedDebitCard = jdbcTemplate.queryForObject(
                     "SELECT debitcard_number,account_number,customer_id,debitcard_cvv,debitcard_pin,debitcard_expiry,debitcard_status,debitcard_domestic_limit,debitcard_international_limit FROM mybank_app_debitcard WHERE account_number = ?",
                     new Object[]{debitCard.getAccountNumber()},
                     new DebitCardMapper());
-            // Check if any attributes are incorrect
-            List<String> incorrectData = getIncorrectData(debitCard, fetchedDebitCard);
-            if (!incorrectData.isEmpty()) {
-                logger.warn(resourceBundle.getString("invalid.request"));
-                // Throw an exception with the list of incorrect attributes
-                throw new ValidationException(resourceBundle.getString("incorrect.data") + incorrectData);
-            }
-        } catch (DataAccessException exception) {
-            logger.error(resourceBundle.getString("no.data.found"));
-            throw new DebitCardNullException(resourceBundle.getString("no.data.found"));
+        if(!(fetchedDebitCard.getAccountNumber().equals(debitCard.getAccountNumber()))){
+            throw new DebitCardException(resourceBundle.getString("no.account.found"));
         }
+
 
         try {
             // Prepare the callable statement to update the debit card limit, Stored procedures often take input parameters.
+            debitCard.setCustomerId(fetchedDebitCard.getCustomerId());
+            debitCard.setDebitCardCvv(fetchedDebitCard.getDebitCardCvv());
+            debitCard.setDebitCardPin(fetchedDebitCard.getDebitCardPin());
             CallableStatementCreator creator = con -> {
                 CallableStatement statement = con.prepareCall("{call UPDATE_DEBITCARD_LIMIT(?, ?, ?, ?)}");
                 statement.setLong(1, debitCard.getAccountNumber());
@@ -81,8 +68,6 @@ public class DebitCardServices implements DebitCardRepository {
                 statement.registerOutParameter(4, Types.VARCHAR);
                 return statement;
             };
-
-            // Execute the update operation
             Map<String, Object> returnedExecution = jdbcTemplate.call(creator, Arrays.asList(
                     new SqlParameter[]{
                             new SqlParameter(Types.NUMERIC),
@@ -91,101 +76,21 @@ public class DebitCardServices implements DebitCardRepository {
                             new SqlOutParameter("status", Types.VARCHAR)
                     }
             ));
-            // Handle the result of the update operation
             String resultMessage = returnedExecution.get("status").toString();
-            if (resultMessage.equals("SQLCODE-000")) {
+            if(resultMessage.equals("SQLCODE-000")) {
                 logger.info(resourceBundle.getString("limit.update.success"));
-            } else {
-                //Throwing any exception occurred in db to web services
-                handleUpdateFailure(resultMessage);
+            } else if(resultMessage.equals("SQLCODE-003")){
+                throw new DebitCardException(resourceBundle.getString("limit.update.failed"));
+             } else if(resultMessage.equals("SQLCODE-005")){
+                    throw new SQLException(resourceBundle.getString("internal.error"));
             }
         } catch (DataAccessException dataAccessException) {
-            // Handle JDBC data access exception
             logger.error(resourceBundle.getString("internal.error"));
             throw new SQLException(resourceBundle.getString("internal.error"));
         }
         return resourceBundle.getString("limit.update.success");
     }
 
-    @Override
-    public List<Account> accountList(String username) throws SQLSyntaxErrorException {
-        List<Account> accountList = null;
-        try {
-            accountList = jdbcTemplate.query("SELECT * FROM mybank_app_account a JOIN mybank_app_customer c ON a.customer_id = c.customer_id  WHERE NOT a.account_status='Blocked' AND c.username = ?", new Object[]{username}, new AccountMapper());
-            logger.info(resourceBundle.getString("account.fetch.success"));
-        } catch (DataAccessException sqlException) {
-            logger.error(resourceBundle.getString("sql.syntax.invalid"));
-            sqlException.printStackTrace();
-            throw new SQLSyntaxErrorException(resourceBundle.getString("sql.syntax.invalid"));
-        }
-        if (accountList.size() == 0) {
-            logger.warn(resourceBundle.getString("account.list.null"));
-            throw new AccountException(resourceBundle.getString("account.list.null"));
-        }
-        return accountList;
-    }
-
-    // Method to handle update failure based on the result message
-    private void handleUpdateFailure(String resultMessage) throws SQLException {
-        switch (resultMessage) {
-            case "SQLCODE-001":
-                logger.error(resourceBundle.getString("customer.not.found"));
-                throw new CustomerException(resourceBundle.getString("customer.not.found"));
-            case "SQLCODE-002":
-                logger.error(resourceBundle.getString("account.not.found"));
-                throw new AccountException(resourceBundle.getString("account.not.found"));
-            case "SQLCODE-003":
-                logger.error(resourceBundle.getString("limit.update.failed"));
-                throw new DebitCardException(resourceBundle.getString("limit.update.failed"));
-            case "SQLCODE-004":
-                logger.error(resourceBundle.getString("no.data.found"));
-                throw new DebitCardNullException(resourceBundle.getString("no.data.found"));
-            case "SQLCODE-005":
-                logger.error(resourceBundle.getString("internal.error"));
-                throw new SQLException(resourceBundle.getString("internal.error"));
-        }
-    }
-
-    // Method to compare the provided debit card attributes with the fetched debit card attributes and return a list of incorrect attributes
-    private List<String> getIncorrectData(DebitCard providedDebitCard, DebitCard fetchedDebitCard) {
-        List<String> incorrectData = new ArrayList<>();
-
-        // Check if any of the debit cards is null
-        if (providedDebitCard == null || fetchedDebitCard == null) {
-            incorrectData.add(resourceBundle.getString("number.not.found"));
-            return incorrectData;
-        }
-        if (!Objects.equals(providedDebitCard.getDebitCardNumber(), fetchedDebitCard.getDebitCardNumber())) {
-            incorrectData.add(resourceBundle.getString("card.number.incorrect"));
-        }
-//        if (!Objects.equals(providedDebitCard.getCustomerId(), fetchedDebitCard.getCustomerId())) {
-//            incorrectData.add(resourceBundle.getString("card.id.incorrect"));
-//        }
-        if (!Objects.equals(providedDebitCard.getDebitCardCvv(), fetchedDebitCard.getDebitCardCvv())) {
-            incorrectData.add(resourceBundle.getString("card.cvv.incorrect"));
-        }
-        if (!Objects.equals(providedDebitCard.getDebitCardPin(), fetchedDebitCard.getDebitCardPin())) {
-            incorrectData.add(resourceBundle.getString("card.pin.incorrect"));
-        }
-
-
-        Date providedExpiryDate = providedDebitCard.getDebitCardExpiry();
-        Date fetchedExpiryDate = fetchedDebitCard.getDebitCardExpiry();
-
-        // Calendar instances for comparison
-        Calendar providedCal = Calendar.getInstance();
-        providedCal.setTime(providedExpiryDate);
-        Calendar fetchedCal = Calendar.getInstance();
-        fetchedCal.setTime(fetchedExpiryDate);
-
-        // Comparing day, month, and year
-        if (providedCal.get(Calendar.DAY_OF_MONTH) != fetchedCal.get(Calendar.DAY_OF_MONTH) ||
-                providedCal.get(Calendar.MONTH) != fetchedCal.get(Calendar.MONTH) ||
-                providedCal.get(Calendar.YEAR) != fetchedCal.get(Calendar.YEAR)) {
-            incorrectData.add(resourceBundle.getString("card.expiry.incorrect"));
-        }
-        return incorrectData;
-    }
 
     //Row Mapper is used for getting the data from database and mapping it to Java objects.
     public class DebitCardMapper implements RowMapper<DebitCard> {
@@ -206,17 +111,4 @@ public class DebitCardServices implements DebitCardRepository {
         }
     }
 
-    public class AccountMapper implements RowMapper<Account> {
-        @Override
-        public Account mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Account account = new Account();
-            account.setAccountId(rs.getInt(1));
-            account.setCustomerId(rs.getInt(2));
-            account.setAccountType(rs.getString(3));
-            account.setAccountNumber(rs.getLong(4));
-            account.setAccountStatus(rs.getString(5));
-            account.setAccountBalance(rs.getDouble(6));
-            return account;
-        }
-    }
 }

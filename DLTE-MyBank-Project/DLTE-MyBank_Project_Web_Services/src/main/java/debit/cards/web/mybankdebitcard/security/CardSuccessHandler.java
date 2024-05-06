@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 public class CardSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Autowired
     CardSecurityServices cardSecurityServices;
-    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("card");
+    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("webservice");
     Logger logger= LoggerFactory.getLogger(CardSuccessHandler.class);
 
     @Override

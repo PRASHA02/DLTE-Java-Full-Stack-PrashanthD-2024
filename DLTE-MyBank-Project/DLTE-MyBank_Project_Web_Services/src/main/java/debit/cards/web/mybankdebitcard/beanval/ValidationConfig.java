@@ -1,4 +1,4 @@
-package debit.cards.dao.config;
+package debit.cards.web.mybankdebitcard.beanval;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +13,7 @@ public class ValidationConfig {
     @Bean
     public MessageSource messageSource(){
         ResourceBundleMessageSource resourceBundleMessageSource = new ResourceBundleMessageSource();
-        resourceBundleMessageSource.setBasename("application");
+        resourceBundleMessageSource.setBasename("webservice");
         resourceBundleMessageSource.setDefaultEncoding("UTF-8");
         return  resourceBundleMessageSource;
     }

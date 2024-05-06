@@ -1,6 +1,5 @@
 package debit.cards.web.mybankdebitcard.security;
 
-import debit.cards.dao.exceptions.CustomerException;
 import debit.cards.dao.security.CardSecurity;
 import debit.cards.dao.security.CardSecurityServices;
 import org.slf4j.Logger;
@@ -21,7 +20,7 @@ import java.util.ResourceBundle;
 @Component
 public class CardFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
-       private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("card");
+       private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("webservice");
         @Autowired
         CardSecurityServices cardSecurityServices;
 
@@ -30,43 +29,52 @@ public class CardFailureHandler extends SimpleUrlAuthenticationFailureHandler {
         @Override
         public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
             String username = request.getParameter("username");
-            try{
-                CardSecurity cardSecurity = cardSecurityServices.findByUserName(username);
-                if(cardSecurity!=null){
-                    if (!cardSecurity.getCustomerStatus().equals("block")) {
-                        if(cardSecurity.getAttempts()< cardSecurity.getMaxAttempt()){
-                            cardSecurity.setAttempts(cardSecurity.getAttempts()+1);
-                            cardSecurityServices.updateAttempts(cardSecurity);
-                            logger.warn(resourceBundle.getString("invalid.attempts"));
-                            int leftAttempts=4;
-                            exception = new LockedException(leftAttempts-cardSecurity.getAttempts() + " " +resourceBundle.getString("attempts.taken"));
-                            String error = cardSecurity.getAttempts() + " " + exception.getMessage();
-                            logger.warn(error);
-                            setDefaultFailureUrl("/card/login/?error=" + exception.getMessage());
+
+            try {
+                // Check if username is not null
+                if (username != null && !username.isEmpty()) {
+                    CardSecurity cardSecurity = cardSecurityServices.findByUserName(username);
+
+                    if (cardSecurity != null) {
+                        if (!"block".equals(cardSecurity.getCustomerStatus())) {
+                            if (cardSecurity.getAttempts() < cardSecurity.getMaxAttempt()) {
+                                cardSecurity.setAttempts(cardSecurity.getAttempts() + 1);
+                                cardSecurityServices.updateAttempts(cardSecurity);
+                                logger.warn(resourceBundle.getString("invalid.attempts"));
+                                int leftAttempts = 4;
+                                exception = new LockedException(leftAttempts - cardSecurity.getAttempts() + " " + resourceBundle.getString("attempts.taken"));
+                                String error = cardSecurity.getAttempts() + " " + exception.getMessage();
+                                logger.warn(error);
+                                setDefaultFailureUrl("/card/login/?error=" + exception.getMessage());
+                            } else {
+                                cardSecurityServices.updateStatus(cardSecurity);
+                                logger.warn(resourceBundle.getString("account.suspend"));
+                                exception = new LockedException(resourceBundle.getString("account.suspend"));
+                                setDefaultFailureUrl("/card/login/?error=" + exception.getMessage());
+                            }
+                        } else {
+                            logger.warn(resourceBundle.getString("contact.admin"));
+                            exception = new LockedException(resourceBundle.getString("contact.admin"));
+                            super.setDefaultFailureUrl("/card/login/?error=" + exception.getMessage());
                         }
-                        else{
-                            cardSecurityServices.updateStatus(cardSecurity);
-                            logger.warn(resourceBundle.getString("account.suspend"));
-                            exception=new LockedException(resourceBundle.getString("account.suspend"));
-                            setDefaultFailureUrl("/card/login/?error=" + exception.getMessage());
-                        }
-                    }
-                    else{
+                    } else {
                         logger.warn(resourceBundle.getString("contact.admin"));
-                        exception = new LockedException(resourceBundle.getString("contact.admin"));
+                        exception = new LockedException(resourceBundle.getString("incorrect.username"));
                         super.setDefaultFailureUrl("/card/login/?error=" + exception.getMessage());
                     }
-                }else {
-                    logger.warn(resourceBundle.getString("contact.admin"));
-                    exception = new LockedException(resourceBundle.getString("incorrect.username"));
+                } else {
+                    // Handle case where username parameter is null or empty
+                    logger.warn(resourceBundle.getString("invalid.username"));
+                    exception = new LockedException(resourceBundle.getString("invalid.username"));
                     super.setDefaultFailureUrl("/card/login/?error=" + exception.getMessage());
                 }
-            }catch (UsernameNotFoundException e){
+            } catch (UsernameNotFoundException e) {
                 logger.info(e.toString());
                 logger.warn(resourceBundle.getString("contact.admin"));
                 exception = new LockedException(resourceBundle.getString("incorrect.username"));
                 super.setDefaultFailureUrl("/card/login/?error=" + exception.getMessage());
             }
+
             super.onAuthenticationFailure(request, response, exception);
         }
 

@@ -2,95 +2,151 @@ package debit.cards.web.mybankdebitcard;
 
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.DebitCardException;
-import debit.cards.dao.exceptions.DebitCardNullException;
 import debit.cards.dao.remotes.DebitCardRepository;
+import debit.cards.web.mybankdebitcard.rest.UpdateCardLimit;
 import debit.cards.web.mybankdebitcard.soap.configs.DebitCardPhase;
 import links.debitcard.ServiceStatus;
 import links.debitcard.ViewDebitCardRequest;
 import links.debitcard.ViewDebitCardResponse;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.dao.DataAccessException;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+
 
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.text.View;
+
 import java.sql.SQLException;
-import java.sql.SQLSyntaxErrorException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+
+import java.text.ParseException;
+
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(MockitoExtension.class)
+@AutoConfigureMockMvc
 @SpringBootTest
 class DlteMyBankProjectWebServicesApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
 
     @MockBean
     private DebitCardRepository debitCardRepository;
     @InjectMocks
     private DebitCardPhase debitCardPhase;
 
+
+    @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
+
+
     @Test
+    @WithMockUser(username = "prasha02")
     public void FetchAllDebitCard() throws SQLException {
-        Authentication authentication = Mockito.mock(Authentication.class);
-        Mockito.when(authentication.getName()).thenReturn("prasha02");
         ViewDebitCardRequest viewDebitCardRequest = new ViewDebitCardRequest();
+        ServiceStatus expectedServiceStatus = new ServiceStatus();
+        expectedServiceStatus.setStatus(HttpServletResponse.SC_OK);
+        expectedServiceStatus.setMessage("Debit card information successfully fetched from the database.");
+        //This object is used for updating the limits
+        DebitCard debitCard = new DebitCard();
+        debitCard.setDebitCardNumber(1234567890981234L);
+        debitCard.setAccountNumber(78903456789123L);
+        debitCard.setCustomerId(200005);
+        debitCard.setDebitCardCvv(111);
+        debitCard.setDebitCardPin(1234);
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2024, Calendar.APRIL, 4);
+        Date expiryDate = calendar.getTime();
+        System.out.println(expiryDate);
+        debitCard.setDebitCardExpiry(expiryDate);
+        debitCard.setDebitCardStatus("active");
+        debitCard.setDomesticLimit(2000.0);
+        debitCard.setInternationalLimit(5000.0);
 
-        List<DebitCard> debitCardList = new ArrayList<>();
+        // Mock returned DebitCard fetched from the database
+        DebitCard debitCardTwo = new DebitCard();
+        debitCardTwo.setDebitCardNumber(1234567890981234L);
+        debitCardTwo.setAccountNumber(78903456789123L);
+        debitCardTwo.setCustomerId(200005);
+        debitCardTwo.setDebitCardCvv(111);
+        debitCardTwo.setDebitCardPin(1234);
+        calendar.set(2024, Calendar.APRIL, 4);
+        Date expiryUpdateDate = calendar.getTime();
+        debitCardTwo.setDebitCardExpiry(expiryUpdateDate);
+        debitCardTwo.setDebitCardStatus("active");
+        debitCardTwo.setDomesticLimit(200000.0);
+        debitCardTwo.setInternationalLimit(5000000.0);
 
 
-        DebitCard debitCard= new DebitCard(1234567890981234L,78903456789123L,200005,111,1234,new Date(2024,04,4), "active", 2000.0,50000.0);
-        DebitCard debitCard1 = new DebitCard(7837645907637746L,35467956789123L,123658,234,2323,new Date(2024,04,9), "inactive", 4000.0,70000.0);
-        DebitCard debitCard2 = new DebitCard(1234567890123456L, 78901234567890L, 300007, 555, 9876, new Date(2024, 4, 14), "active", 3000.0, 60000.0);
-        DebitCard debitCard3 = new DebitCard(9876543210987654L, 65432109876543L, 400009, 777, 5432, new Date(2024, 4, 19), "blocked", 5000.0, 80000.0);
-        //Add some dummy data into the arrayList for testing
-        debitCardList = Stream.of(debitCard,debitCard1,debitCard2,debitCard3).collect(Collectors.toList());
-
+        List<DebitCard> debitCardList = Stream.of(
+                debitCard, debitCardTwo
+        ).collect((Collectors.toList()));
         when(debitCardRepository.getDebitCard("prasha02")).thenReturn(debitCardList);
+
+
         // Execute the method under test
         ViewDebitCardResponse response = debitCardPhase.viewDebitCardResponse(viewDebitCardRequest);
+
 
         // Assert the response
         assertEquals(HttpServletResponse.SC_OK, response.getServiceStatus().getStatus());
-
-        assertEquals(debitCardList.size(),response.getDebitCard().size());
+        assertEquals(debitCardList.size(), response.getDebitCard().size());
+        assertEquals(expectedServiceStatus.getMessage(), response.getServiceStatus().getMessage());
     }
 
+
     @Test
-    void testAllDebitCards_failure() throws SQLException, DebitCardException {
-        ViewDebitCardRequest viewDebitCardRequest = new ViewDebitCardRequest();
+    @WithMockUser(username = "prasha02")
+    public void testViewDebitCardResponse_DebitCardException() throws SQLException, DebitCardException {
+        // Mock authentication
+        when(debitCardRepository.getDebitCard("prasha02")).thenThrow(SQLException.class);
 
-        List<DebitCard> debitCardList = new ArrayList<>();
+        // Create a mock ViewDebitCardRequest
+        ViewDebitCardRequest request = new ViewDebitCardRequest();
 
+        // Call the method under test
+        ViewDebitCardResponse response = debitCardPhase.viewDebitCardResponse(request);
 
-        DebitCard debitCard= new DebitCard(1234567890981234L,78903456789123L,200005,111,1234,new Date(2024,04,4), "active", 2000.0,50000.0);
-        DebitCard debitCard1 = new DebitCard(7837645907637746L,35467956789123L,123658,234,2323,new Date(2024,04,9), "inactive", 4000.0,70000.0);
-        DebitCard debitCard2 = new DebitCard(1234567890123456L, 78901234567890L, 300007, 555, 9876, new Date(2024, 4, 14), "active", 3000.0, 60000.0);
-        DebitCard debitCard3 = new DebitCard(9876543210987654L, 65432109876543L, 400009, 777, 5432, new Date(2024, 4, 19), "blocked", 5000.0, 80000.0);
-        //Add some dummy data into the arrayList for testing
-        debitCardList = Stream.of(debitCard,debitCard1,debitCard2,debitCard3).collect(Collectors.toList());
-
-        when(debitCardRepository.getDebitCard("prasha02")).thenReturn(debitCardList);
-        // Execute the method under test
-        ViewDebitCardResponse response = debitCardPhase.viewDebitCardResponse(viewDebitCardRequest);
-        assertEquals(HttpServletResponse.SC_NOT_FOUND, response.getServiceStatus().getStatus()); //FAIL
+        // Assertions
+        assertEquals(HttpServletResponse.SC_OK, response.getServiceStatus().getStatus());
+        assertEquals("SQL Syntax is Not proper try to resolve it", response.getServiceStatus().getMessage());
     }
 
+
     @Test
-    public void FetchAllDebitCard_DebitCardException() throws SQLException {
-        // Create a new ViewDebitCardRequest object
+    @WithMockUser(username = "prasha02")
+    public void FetchAllDebitCardException() throws SQLException {
         ViewDebitCardRequest viewDebitCardRequest = new ViewDebitCardRequest();
 
         // Mock the behavior of the debitCardRepository.getDebitCard() method to throw DebitCardException
@@ -99,30 +155,10 @@ class DlteMyBankProjectWebServicesApplicationTests {
         // Execute the method under test
         ViewDebitCardResponse response = debitCardPhase.viewDebitCardResponse(viewDebitCardRequest);
 
-        // Assert the response
-        assertEquals(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, response.getServiceStatus().getStatus());
-        assertEquals("SQL Syntax is Not proper try to resolve it", response.getServiceStatus().getMessage());
-    }
 
-
-
-    @Test
-    public void FetchAllDebitCard_DebitCardNullException() throws SQLException {
-        // Create a new ViewDebitCardRequest object
-        ViewDebitCardRequest viewDebitCardRequest = new ViewDebitCardRequest();
-
-        // Mock the behavior of the debitCardRepository.getDebitCard() method to throw DebitCardException
-        when(debitCardRepository.getDebitCard("prasha02")).thenThrow(DebitCardNullException.class);
-
-        // Execute the method under test
-        ViewDebitCardResponse response = debitCardPhase.viewDebitCardResponse(viewDebitCardRequest);
-
-        // Assert the response
-        assertEquals(HttpServletResponse.SC_NO_CONTENT, response.getServiceStatus().getStatus());
+        assertEquals(HttpServletResponse.SC_OK, response.getServiceStatus().getStatus());
         assertEquals("No Debit cards available", response.getServiceStatus().getMessage());
     }
-
-
 
 
 

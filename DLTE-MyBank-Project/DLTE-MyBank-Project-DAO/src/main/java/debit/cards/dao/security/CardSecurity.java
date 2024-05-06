@@ -3,16 +3,33 @@ package debit.cards.dao.security;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.Collection;
+import java.util.ResourceBundle;
 
 //entity class for the security
 public class CardSecurity implements UserDetails {
     private Integer customerId;
+    @NotBlank(message = "{customer.name.null}")
+    @Pattern(regexp = "^[a-zA-Z\\\\W_]+$", message = "{customer.name.invalid}")
     private String customerName;
+    @NotBlank(message = "{customer.address.null}")
+    @Pattern(regexp = "^[a-zA-Z\\\\W_]+$", message = "{customer.address.invalid}")
     private String customerAddress;
+    @NotBlank(message = "{customer.status.null}")
+    @Pattern(regexp = "^(active|inactive|block)$", message = "{customer.status.invalid}")
     private String customerStatus;
+    @NotNull(message = "{customer.contact.null}")
+    @Digits(integer = 10,fraction = 0,message = "{customer.contact.invalid}")
     private Long customerContact;
+    @NotBlank(message = "{user.name.null}")
+    @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*\\d)[a-zA-Z\\d]+$", message = "{user.username.invalid}")
     private String username;
+    @NotBlank(message = "{password.null}")
+    @Pattern(regexp ="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?\":{}|<>])(?=.{8,})\n",message = "{password.invalid}")
     private String password;
     private final int maxAttempt=3;
     private Integer attempts;

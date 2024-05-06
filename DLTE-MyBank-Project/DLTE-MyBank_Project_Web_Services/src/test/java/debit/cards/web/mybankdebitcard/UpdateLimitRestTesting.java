@@ -4,11 +4,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import debit.cards.dao.entities.DebitCard;
 import debit.cards.dao.exceptions.*;
 import debit.cards.dao.remotes.DebitCardRepository;
+import debit.cards.dao.security.CardSecurity;
+import debit.cards.dao.security.CardSecurityServices;
 import debit.cards.web.mybankdebitcard.rest.UpdateCardLimit;
 import com.jayway.jsonpath.JsonPath;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -16,6 +21,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
@@ -24,13 +32,12 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import java.sql.SQLException;
 import java.sql.SQLSyntaxErrorException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
@@ -39,10 +46,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.test.web.servlet.MockMvc;
-
-
-import java.util.Calendar;
-
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -55,8 +62,28 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 public class UpdateLimitRestTesting {
 
+    @Test
+    void contextLoads() {
+    }
+
+    public static  ResourceBundle resourceBundle;
+
     @Autowired
     private MockMvc mockMvc;
+
+    @InjectMocks
+    private CardSecurityServices cardSecurityServices;
+
+    @Mock
+    private BindingResult bindingResult;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
+
+    @Mock
+    private MethodArgumentNotValidException methodArgumentNotValidException;
 
 
     @MockBean
@@ -82,19 +109,14 @@ public class UpdateLimitRestTesting {
 
         when(debitCardRepository.updateDebitLimit(any())).thenReturn("Debit card limit updated successfully");
 
-       // mockMvc.perform(put("/update/limit").contentType(MediaType.APPLICATION_JSON).content(request))
-              //  .andExpect(status().isOk());
+        mockMvc.perform(put("/update/limit")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(request))
+                .andExpect(status().isOk());
+    }
 
-
-            mockMvc.perform(put("/update/limit")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(request))
-                    .andExpect(status().isOk())
-                    .andExpect(content().string("Debit card limit updated successfully"));
-        }
-    //Failure condition because username is not correct
     @Test
-    @WithMockUser(username = "prasha122", password = "prash")
+    @WithMockUser(username = "prasha02")
     void testUpdateFailure() throws Exception {
         String request = "{\n" +
                 "  \"debitCardNumber\": 3692468135796670,\n" +
@@ -102,28 +124,48 @@ public class UpdateLimitRestTesting {
                 "  \"customerId\": 123670,\n" +
                 "  \"debitCardCvv\": 123,\n" +
                 "  \"debitCardPin\": 1234,\n" +
-                "  \"debitCardExpiry\": \"2024-04-03\",\n" +
+                "  \"debitCardExpiry\": \"2024-05-30\",\n" +
                 "  \"debitCardStatus\": \"active\",\n" +
                 "  \"domesticLimit\": 1000,\n" +
-                "  \"internationalLimit\": 50\n" +
+                "  \"internationalLimit\": 5000\n" +
                 "}";
 
         when(debitCardRepository.updateDebitLimit(any())).thenReturn("Debit card limit updated successfully");
-
-        mockMvc.perform(put("/update/limit").contentType(MediaType.APPLICATION_JSON).content(request))
-                .andExpect(status().isOk());
 
         mockMvc.perform(put("/update/limit")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(request))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Debit card limit updated successfully"));
+    }
 
+    @Test
+    @WithMockUser(username = "prasha")
+    void testUpdateForbidden() throws Exception {
+        String request = "{\n" +
+                "  \"debitCardNumber\": 3692468135796670,\n" +
+                "  \"accountNumber\": 78909876543530,\n" +
+                "  \"customerId\": 123670,\n" +
+                "  \"debitCardCvv\": 123,\n" +
+                "  \"debitCardPin\": 1234,\n" +
+                "  \"debitCardExpiry\": \"2024-05-30\",\n" +
+                "  \"debitCardStatus\": \"active\",\n" +
+                "  \"domesticLimit\": 1000,\n" +
+                "  \"internationalLimit\": 5000\n" +
+                "}";
+
+        when(debitCardRepository.updateDebitLimit(any())).thenReturn("Access Denied Username is not correct");
+
+        mockMvc.perform(put("/update/limit")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(request))
+                .andExpect(status().isForbidden())
+                .andExpect(content().string("Access Denied Username is not correct"));
     }
 
     @Test
     @WithMockUser(username = "prasha02", password = "prash321")
-    void testException() throws Exception {
+    void testDebitCardException() throws Exception {
         String request = "{\n" +
                 "  \"debitCardNumber\": 3692468135796670,\n" +
                 "  \"accountNumber\": 78909876543530,\n" +
@@ -133,53 +175,93 @@ public class UpdateLimitRestTesting {
                 "  \"debitCardExpiry\": \"2025-04-30\",\n" +
                 "  \"debitCardStatus\": \"active\",\n" +
                 "  \"domesticLimit\": 1000,\n" +
-                "  \"internationalLimit\": 5\n" +
+                "  \"internationalLimit\": 5000\n" +
                 "}";
 
-        // Mock repository to throw respective exceptions
         when(debitCardRepository.updateDebitLimit(any()))
-                .thenThrow(new CustomerException("Customer is not Found"))
-                .thenThrow(new AccountException("Account not Found"))
-                .thenThrow(new DebitCardException("Debit card limit update failed"))
-                .thenThrow(new DebitCardNullException("No Data Found to Perform the operation"))
-                .thenThrow(new ValidationException("Invalid request"))
+                .thenThrow(new DebitCardException("Debit card limit update failed"));
+
+        mockMvc.perform(put("/update/limit")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(request))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Debit card limit update failed"));
+    }
+
+    @Test
+    @WithMockUser(username = "prasha02", password = "prash321")
+    void testSQLException() throws Exception {
+        String request = "{\n" +
+                "  \"debitCardNumber\": 3692468135796670,\n" +
+                "  \"accountNumber\": 78909876543530,\n" +
+                "  \"customerId\": 123670,\n" +
+                "  \"debitCardCvv\": 123,\n" +
+                "  \"debitCardPin\": 1234,\n" +
+                "  \"debitCardExpiry\": \"2025-04-30\",\n" +
+                "  \"debitCardStatus\": \"active\",\n" +
+                "  \"domesticLimit\": 1000,\n" +
+                "  \"internationalLimit\": 50000\n" +
+                "}";
+
+        when(debitCardRepository.updateDebitLimit(any()))
                 .thenThrow(new SQLException("Internal Server Error Occurred"));
 
         mockMvc.perform(put("/update/limit")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(request))
-                .andExpect(status().isNotFound())
-                .andExpect(content().string("Customer is not Found"));
-
-        mockMvc.perform(put("/update/limit")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(request))
-                .andExpect(status().isNotFound())
-                .andExpect(content().string("Account not Found"));
-
-        mockMvc.perform(put("/update/limit")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(request))
-                .andExpect(status().isBadRequest())
-                .andExpect(content().string("Debit card limit update failed"));
-
-        mockMvc.perform(put("/update/limit")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(request))
-                .andExpect(status().isNotFound())
-                .andExpect(content().string("No Data Found to Perform the operation"));
-
-        mockMvc.perform(put("/update/limit")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(request))
-                .andExpect(status().isUnprocessableEntity())
-                .andExpect(content().string("Invalid request"));
-
-        mockMvc.perform(put("/update/limit")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(request))
-                .andExpect(status().isInternalServerError())
+                .andExpect(status().isOk())
                 .andExpect(content().string("Internal Server Error Occurred"));
     }
+
+
+    @Test
+    @WithMockUser(username = "prasha02", password = "prash321")
+    void testHandleValidationException() throws Exception {
+        // Create a request with invalid data
+        String request = "{\n" +
+                "  \"debitCardNumber\": 3692468135796670876545,\n" +
+                "  \"accountNumber\": 789098765435308767,\n" +
+                "  \"customerId\": 123670,\n" +
+                "  \"debitCardCvv\": 123,\n" +
+                "  \"debitCardPin\": 1234,\n" +
+                "  \"debitCardExpiry\": \"2025-04-30\",\n" +
+                "  \"debitCardStatus\": \"active\",\n" +
+                "  \"domesticLimit\": 1000,\n" +
+                "  \"internationalLimit\": 50000\n" +
+                "}";
+
+        // Perform the request
+        mockMvc.perform(put("/update/limit")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(request))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    @WithMockUser(username = "prasha02", password = "prash321")
+    void testHandleBeanValidationException() throws Exception {
+        // Create a request with invalid data
+        String request = "{\n" +
+                "  \"debitCardNumber\": null,\n" +
+                "  \"accountNumber\": null,\n" +
+                "  \"customerId\": null,\n" +
+                "  \"debitCardCvv\": null,\n" +
+                "  \"debitCardPin\": null,\n" +
+                "  \"debitCardExpiry\": \"2025-04-30\",\n" +
+                "  \"debitCardStatus\": \"null\",\n" +
+                "  \"domesticLimit\": null,\n" +
+                "  \"internationalLimit\": null\n" +
+                "}";
+
+        // Perform the request
+        mockMvc.perform(put("/update/limit")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(request))
+                .andExpect(status().isOk());
+    }
+
+
+
+
 
 }

@@ -7,7 +7,6 @@
     <title>Update - MY BANK</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -32,40 +31,37 @@
 <body>
 <div class="container">
     <div class="row justify-content-center">
-        <div  class="container p-5 m-5 rounded shadow-lg"  style="background-color: #182052;">
-            <h1 class="row justify-content-center text-white">Debit card Limit update</h1>
-            <form>
+        <div class="container p-3 p-md-5 rounded shadow-lg" style="background-color: #182052;">
+            <h1 class="text-white text-center">Debit card Limit update</h1>
+            <form name="Application">
                 <div class="row mb-3">
-                    <div class="col">
-                        <label class="card-text text-light" for="debitCardNumber">Debit card Number</label>
-                        <input type="number" id="debitCardNumber" class="form-control" placeholder="Debit Card Number" th:value="${sendCardDetails.debitCardNumber}" readonly required/>
+                    <div class="col-12 col-md-6 mb-3 mb-md-0">
+                        <label class="text-light" for="debitCardNumber">Debit card Number:</label>
+                        <input type="number" id="debitCardNumber" class="form-control" placeholder="Debit Card Number" readonly required/>
                     </div>
-                    <div class="col">
-                        <label class="card-text text-light" for="accountNumber">Account Number</label>
-                        <input type="number" id="accountNumber" class="form-control" placeholder="Account Number" th:value="${sendCardDetails.accountNumber}"  readonly required/>
+                    <div class="col-12 col-md-6">
+                        <label class="text-light" for="accountNumber">Account Number:</label>
+                        <input type="number" id="accountNumber" class="form-control" placeholder="Account Number" readonly required/>
                     </div>
                 </div>
 
-                <input type="hidden" id="debitCardCvv" class="form-control" placeholder="Card CVV"  name="debitCardCvv" th:value="${sendCardDetails.debitCardCvv}"readonly required/>
-
-                <input type="hidden" id="debitCardPin" class="form-control" placeholder="Card Pin" name="debitCardPin" th:value="${sendCardDetails.debitCardPin}" readonly required>
                 <div class="row mb-3">
-                    <div class="col">
-                        <label class="card-text text-light" for="debitCardExpiry">Debit Card Expiry</label>
-                        <input type="date" id="debitCardExpiry" class="form-control" placeholder="Card Expiry" th:value="${sendCardDetails.debitCardExpiry}" readonly required/>
+                    <div class="col-12 col-md-6 mb-3 mb-md-0">
+                        <label class="card-text text-light" for="debitCardExpiry">Debit Card Expiry: <span id="debitCardExpiryError"></span></label>
+                        <input type="date" id="debitCardExpiry" class="form-control" placeholder="Card Expiry"  readonly required/>
                     </div>
-                    <div class="col">
-                        <label class="card-text text-light" for="debitCardStatus">Debit Card Status</label>
-                        <input type="text" id="debitCardStatus" class="form-control" placeholder="Card Status" th:value="${sendCardDetails.debitCardStatus}" readonly required />
+                    <div class="col-12 col-md-6">
+                        <label class="card-text text-light" for="debitCardStatus">Debit Card Status: <span id="debitCardStatusError"></span></label>
+                        <input type="text" id="debitCardStatus" class="form-control" placeholder="Card Status"  readonly required />
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col">
-                        <label class="card-text text-light" for="domesticLimit">Domestic Limit</label>
+                    <div class="col-12 col-md-6 mb-3 mb-md-0">
+                        <label class="card-text text-light" for="domesticLimit">Domestic Limit: <span id="domesticLimitError"></span></label>
                         <input type="number" id="domesticLimit" class="form-control" placeholder="Domestic Limit" required/>
                     </div>
-                    <div class="col">
-                        <label class="card-text text-light" for="internationalLimit">International Limit</label>
+                    <div class="col-12 col-md-6">
+                        <label class="card-text text-light" for="internationalLimit">International Limit: <span id="internationalLimitError"></span></label>
                         <input type="number" id="internationalLimit" class="form-control" placeholder="International Limit" required/>
                     </div>
                 </div>
@@ -86,19 +82,20 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body text-center">
-                <p id="successMessage" style="color: #182052; font-family: 'Poppins', sans-serif;">Debit Card Updated Successfully </p>
+                <p id="successMessage" style="color: #182052; font-family: 'Poppins', sans-serif;"></p>
                 <p>Click <span style="color: #182052; font-family: 'Poppins', sans-serif;">Back to Dashboard</span> to go back to Dashboard</p>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center">
-                <button type="button" class="col-4 btn btn-outline-white rounded-pill" id="backHome" >Back to Home</button>
+                <button type="button" class="col-10 col-md-4 btn btn-outline-white rounded-pill" id="backHome" >Back to Home</button>
             </div>
         </div>
     </div>
 </div>
 
+
 <script th:src="@{'/js/update.js'}"></script>
 <br><br>
 </body>
-<div th:include="dashboard :: footer"></div>
+<div th:replace="dashboard :: footer"></div>
 </html>

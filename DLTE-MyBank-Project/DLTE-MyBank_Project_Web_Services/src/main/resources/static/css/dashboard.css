@@ -4,6 +4,7 @@
 }
 
 
+
 .title-text{
     font-family: "Montserrat";
     font-size: 46px;
@@ -20,12 +21,6 @@
     font-family: "Montserrat";
     font-size: 46px;
 }
-@media (max-width: 768px) {
-    .loginButton {
-        margin-left: 20px;
-    }
-}
-
 
 button {
     background-color: #182052;

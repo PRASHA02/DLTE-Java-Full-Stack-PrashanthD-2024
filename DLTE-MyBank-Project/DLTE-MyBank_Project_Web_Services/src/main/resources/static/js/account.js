@@ -15,7 +15,7 @@ function fetchAccountDetails() {
         dataType: "json",
         contentType: "application/json;charset=utf-8",
         success: function(response) {
-            totalItems = response.length;
+            let totalItems = response.length;
             renderPagination(totalItems);
 
             $('#accounts').empty();
@@ -28,6 +28,7 @@ function fetchAccountDetails() {
 
             // Loop through paginated accounts using forEach
             paginatedAccounts.forEach(function (account) {
+
                 if (account.accountStatus === "active") {
                     combinedHtml += "<div class='row'><div class='col-md-6 mb-4'>";
                     combinedHtml += "<div class='card' style='width: 400px; height: 250px; background-color:#182057;' >";
@@ -83,10 +84,9 @@ function renderPagination(totalItems) {
 
         // Left arrow for previous page
         paginationHtml += `
+                <ul class="pagination justify-content-center">
                 <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-                    <button class="page-link" onclick="changePage(${currentPage - 1})" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </button>
+                    <button class="page-link left-arrow" onclick="changePage(${currentPage - 1})" aria-label="Previous"></button>
                 </li>
             `;
 
@@ -99,10 +99,8 @@ function renderPagination(totalItems) {
 
         // Right arrow for next page
         paginationHtml += `
-                <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
-                    <button class="page-link" onclick="changePage(${currentPage + 1})" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </button>
+               <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                 <button class="page-link right-arrow" onclick="changePage(${currentPage + 1})" aria-label="Next"></button>
                 </li>
             `;
 
