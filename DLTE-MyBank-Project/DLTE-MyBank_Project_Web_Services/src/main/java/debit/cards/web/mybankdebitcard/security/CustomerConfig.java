@@ -1,6 +1,6 @@
 package debit.cards.web.mybankdebitcard.security;
 
-import debit.cards.dao.security.CardSecurityServices;
+import debit.cards.dao.security.CustomerServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,17 +17,17 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 
 @Configuration
-public class CardSecurityConfig {
+public class CustomerConfig {
 
     @Autowired
-    CardSecurityServices cardSecurityServices;
+    CustomerServices customerServices;
 
     AuthenticationManager authenticationManager;
 
     @Autowired
-    CardFailureHandler cardFailureHandler;
+    CustomerFailureHandler customerFailureHandler;
     @Autowired
-    CardSuccessHandler cardSuccessHandler;
+    CustomerSuccessHandler customerSuccessHandler;
 
     @Bean
     PasswordEncoder passwordEncoder(){
@@ -54,8 +54,8 @@ public class CardSecurityConfig {
 
         httpSecurity.formLogin().loginPage("/card/login").
                 usernameParameter("username").
-                failureHandler(cardFailureHandler).
-                successHandler(cardSuccessHandler);
+                failureHandler(customerFailureHandler).
+                successHandler(customerSuccessHandler);
         httpSecurity.csrf().disable();
 
         httpSecurity.cors();
@@ -70,7 +70,7 @@ public class CardSecurityConfig {
 
 
         AuthenticationManagerBuilder builder = httpSecurity.getSharedObject(AuthenticationManagerBuilder.class);
-        builder.userDetailsService(cardSecurityServices);
+        builder.userDetailsService(customerServices);
         authenticationManager = builder.build();
         httpSecurity.authenticationManager(authenticationManager);
         return httpSecurity.build();

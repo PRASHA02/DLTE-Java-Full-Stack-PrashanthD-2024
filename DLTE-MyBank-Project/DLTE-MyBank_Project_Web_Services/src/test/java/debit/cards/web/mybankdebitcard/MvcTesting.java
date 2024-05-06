@@ -9,8 +9,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import debit.cards.dao.remotes.DebitCardRepository;
-import debit.cards.dao.security.CardSecurity;
-import debit.cards.dao.security.CardSecurityServices;
+
+import debit.cards.dao.security.Customer;
+import debit.cards.dao.security.CustomerServices;
 import debit.cards.web.mybankdebitcard.mvc.MvcController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -49,7 +50,7 @@ public class MvcTesting {
     private MockMvc mockMvc;
 
     @MockBean
-    private CardSecurityServices cardSecurityServices;
+    private CustomerServices customerServices;
 
     @Mock
     private Authentication authentication;
@@ -120,9 +121,9 @@ public class MvcTesting {
     @Test
     @WithMockUser(username = "prasha02")
     public void testCustomerName() throws Exception {
-        CardSecurity customer = new CardSecurity();
+        Customer customer = new Customer();
         customer.setCustomerName("");
-        lenient().when(cardSecurityServices.findByUserName("prasha02")).thenReturn(customer);
+        lenient().when(customerServices.findByUserName("prasha02")).thenReturn(customer);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/name"))
                 .andExpect(MockMvcResultMatchers.status().isNotFound())
@@ -144,9 +145,9 @@ public class MvcTesting {
 
         // Mock the cardSecurityServices
         String expectedCustomerName = "";
-        CardSecurity cardSecurity = new CardSecurity();
+        Customer cardSecurity = new Customer();
         cardSecurity.setCustomerName(expectedCustomerName);
-        lenient().when(cardSecurityServices.findByUserName(userName)).thenReturn(cardSecurity);
+        lenient().when(customerServices.findByUserName(userName)).thenReturn(cardSecurity);
 
         // Perform GET request and verify response
         mockMvc.perform(get("/name"))
@@ -164,7 +165,7 @@ public class MvcTesting {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         // Mock cardSecurityServices
-        CardSecurityServices cardSecurityServices = mock(CardSecurityServices.class);
+        CustomerServices cardSecurityServices = mock(CustomerServices.class);
         lenient().when(cardSecurityServices.findByUserName(anyString())).thenThrow(new RuntimeException("Simulated exception"));
     }
 

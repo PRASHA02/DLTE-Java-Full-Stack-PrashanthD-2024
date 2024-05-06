@@ -1,7 +1,8 @@
 package debit.cards.web.mybankdebitcard.security;
 
-import debit.cards.dao.security.CardSecurity;
-import debit.cards.dao.security.CardSecurityServices;
+
+import debit.cards.dao.security.Customer;
+import debit.cards.dao.security.CustomerServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,17 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/profile")
-public class CardSecurityApi {
+public class CustomerApi {
 
     @Autowired
-    CardSecurityServices cardSecurityServices;
+    CustomerServices customerServices;
 
     @Autowired
     PasswordEncoder passwordEncoder;
 
     @PostMapping("/register")
-    public CardSecurity save(@RequestBody CardSecurity cardSecurity){
-        cardSecurity.setPassword(passwordEncoder.encode(cardSecurity.getPassword()));
-        return cardSecurityServices.signingUp(cardSecurity);
+    public Customer save(@RequestBody Customer customer){
+        customer.setPassword(passwordEncoder.encode(customer.getPassword()));
+        return customerServices.signingUp(customer);
     }
 }

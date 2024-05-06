@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.ResourceBundle;
 
 //entity class for the security
-public class CardSecurity implements UserDetails {
+public class Customer implements UserDetails {
     private Integer customerId;
     @NotBlank(message = "{customer.name.null}")
     @Pattern(regexp = "^[a-zA-Z\\\\W_]+$", message = "{customer.name.invalid}")
@@ -66,13 +66,6 @@ public class CardSecurity implements UserDetails {
         this.customerContact = customerContact;
     }
 
-    public Integer getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
-    }
 
     @Override
     public String getUsername() {

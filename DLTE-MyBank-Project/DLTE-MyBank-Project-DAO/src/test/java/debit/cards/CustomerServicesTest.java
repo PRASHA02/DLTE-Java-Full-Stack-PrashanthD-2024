@@ -1,7 +1,7 @@
 package debit.cards;
 
-import debit.cards.dao.security.CardSecurity;
-import debit.cards.dao.security.CardSecurityServices;
+import debit.cards.dao.security.Customer;
+import debit.cards.dao.security.CustomerServices;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -15,9 +15,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,24 +23,24 @@ import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class CardSecurityServicesTest {
+class CustomerServicesTest {
 
     @Mock
     private JdbcTemplate jdbcTemplate;
 
     @InjectMocks
-    private CardSecurityServices cardSecurityServices;
+    private CustomerServices customerServices;
 
     @Test
     void signingUp_Success() {
-        CardSecurity cardSecurity = new CardSecurity();
-        cardSecurity.setCustomerName("prasha02");
-        cardSecurity.setCustomerAddress("karkala");
-        cardSecurity.setCustomerStatus("active");
-        cardSecurity.setCustomerContact(1234567890L);
-        cardSecurity.setUsername("john");
-        cardSecurity.setPassword("prash321");
-        cardSecurity.setAttempts(1);
+        Customer customer = new Customer();
+        customer.setCustomerName("prasha02");
+        customer.setCustomerAddress("karkala");
+        customer.setCustomerStatus("active");
+        customer.setCustomerContact(1234567890L);
+        customer.setUsername("john");
+        customer.setPassword("prash321");
+        customer.setAttempts(1);
 
         // Adjust stubbing to match the method invocation in the test
         when(jdbcTemplate.update(
@@ -51,9 +48,9 @@ class CardSecurityServicesTest {
                 "prasha02", "karkala", "active", 1234567890L, "john", "prash321", 1))
                 .thenReturn(1);
 
-        CardSecurity result = cardSecurityServices.signingUp(cardSecurity);
+        Customer result = customerServices.signingUp(customer);
 
-        assertEquals(cardSecurity, result);
+        assertEquals(customer, result);
         // Verify that the update method was called with the correct arguments
         verify(jdbcTemplate, times(1)).update(
                 "insert into mybank_app_customer (CUSTOMER_NAME, CUSTOMER_ADDRESS, CUSTOMER_STATUS, CUSTOMER_CONTACT, USERNAME, PASSWORD, ATTEMPTS) values(?,?,?,?,?,?,?)",
@@ -63,21 +60,21 @@ class CardSecurityServicesTest {
 
     @Test
     void findByUserName_Exists() {
-        CardSecurity cardSecurity = new CardSecurity();
-        cardSecurity.setCustomerName("prasha02");
-        cardSecurity.setCustomerAddress("karkala");
-        cardSecurity.setCustomerStatus("active");
-        cardSecurity.setCustomerContact(1234567890L);
-        cardSecurity.setUsername("john");
-        cardSecurity.setPassword("prash321");
-        cardSecurity.setAttempts(1);
-        List<CardSecurity> customerList = Arrays.asList(cardSecurity);
+        Customer customer = new Customer();
+        customer.setCustomerName("prasha02");
+        customer.setCustomerAddress("karkala");
+        customer.setCustomerStatus("active");
+        customer.setCustomerContact(1234567890L);
+        customer.setUsername("john");
+        customer.setPassword("prash321");
+        customer.setAttempts(1);
+        List<Customer> customerList = Arrays.asList(customer);
 
         when(jdbcTemplate.query(anyString(), any(RowMapper.class))).thenReturn(customerList);
 
-        CardSecurity result = cardSecurityServices.findByUserName("john");
+        Customer result = customerServices.findByUserName("john");
 
-        assertEquals(cardSecurity, result);
+        assertEquals(customer, result);
         verify(jdbcTemplate, times(1)).query(anyString(), any(RowMapper.class));
     }
 
@@ -85,7 +82,7 @@ class CardSecurityServicesTest {
     void findByUserName_NotFound() {
         when(jdbcTemplate.query(anyString(), any(RowMapper.class))).thenReturn(Arrays.asList());
 
-        CardSecurity result = cardSecurityServices.findByUserName("john");
+        Customer result = customerServices.findByUserName("john");
 
         assertNull(result);
         verify(jdbcTemplate, times(1)).query(anyString(), any(RowMapper.class));
@@ -93,20 +90,20 @@ class CardSecurityServicesTest {
 
     @Test
     void updateAttempts_Success() {
-        CardSecurity cardSecurity = new CardSecurity();
-        cardSecurity.setCustomerName("prasha02");
-        cardSecurity.setCustomerAddress("karkala");
-        cardSecurity.setCustomerStatus("active");
-        cardSecurity.setCustomerContact(1234567890L);
-        cardSecurity.setUsername("john");
-        cardSecurity.setPassword("prash321");
-        cardSecurity.setAttempts(1);
+        Customer customer = new Customer();
+        customer.setCustomerName("prasha02");
+        customer.setCustomerAddress("karkala");
+        customer.setCustomerStatus("active");
+        customer.setCustomerContact(1234567890L);
+        customer.setUsername("john");
+        customer.setPassword("prash321");
+        customer.setAttempts(1);
         when(jdbcTemplate.update(
                 "update mybank_app_customer set attempts = ? where username = ?",
                 1, "john"))
                 .thenReturn(1);
 
-       cardSecurityServices.updateAttempts(cardSecurity);
+       customerServices.updateAttempts(customer);
 
         verify(jdbcTemplate, times(1)).update(
                 "update mybank_app_customer set attempts = ? where username = ?",
@@ -116,17 +113,17 @@ class CardSecurityServicesTest {
 
     @Test
     void updateStatus_Success() {
-        CardSecurity cardSecurity = new CardSecurity();
-        cardSecurity.setCustomerName("prasha02");
-        cardSecurity.setCustomerAddress("karkala");
-        cardSecurity.setCustomerStatus("active");
-        cardSecurity.setCustomerContact(1234567890L);
-        cardSecurity.setUsername("john");
-        cardSecurity.setPassword("prash321");
-        cardSecurity.setAttempts(1);
+        Customer customer = new Customer();
+        customer.setCustomerName("prasha02");
+        customer.setCustomerAddress("karkala");
+        customer.setCustomerStatus("active");
+        customer.setCustomerContact(1234567890L);
+        customer.setUsername("john");
+        customer.setPassword("prash321");
+        customer.setAttempts(1);
 
         // Invoke the method under test
-        cardSecurityServices.updateStatus(cardSecurity);
+        customerServices.updateStatus(customer);
 
         // Verify that jdbcTemplate's update method was called with specific arguments
         verify(jdbcTemplate, times(1)).update(
@@ -147,7 +144,7 @@ class CardSecurityServicesTest {
 
         when(jdbcTemplate.queryForObject(anyString(), any(Object[].class), eq(String.class))).thenReturn(expectedUsername);
 
-        String result = cardSecurityServices.getAccountOwnerUsername(accountNumber);
+        String result = customerServices.getAccountOwnerUsername(accountNumber);
 
         assertEquals(expectedUsername, result);
         verify(jdbcTemplate, times(1)).queryForObject(anyString(), any(Object[].class), eq(String.class));
@@ -159,7 +156,7 @@ class CardSecurityServicesTest {
 
         when(jdbcTemplate.queryForObject(anyString(), any(Object[].class), eq(String.class))).thenThrow(EmptyResultDataAccessException.class);
 
-        String result = cardSecurityServices.getAccountOwnerUsername(accountNumber);
+        String result = customerServices.getAccountOwnerUsername(accountNumber);
 
         assertNull(result);
         verify(jdbcTemplate, times(1)).queryForObject(anyString(), any(Object[].class), eq(String.class));
@@ -171,7 +168,7 @@ class CardSecurityServicesTest {
 
         when(jdbcTemplate.queryForObject(anyString(), any(Object[].class), eq(String.class))).thenThrow(RuntimeException.class);
 
-        String result = cardSecurityServices.getAccountOwnerUsername(accountNumber);
+        String result = customerServices.getAccountOwnerUsername(accountNumber);
 
         assertNull(result);
         verify(jdbcTemplate, times(1)).queryForObject(anyString(), any(Object[].class), eq(String.class));
@@ -181,59 +178,59 @@ class CardSecurityServicesTest {
 
     @Test
     void loadUserByUsernameNotFound() {
-        assertThrows(UsernameNotFoundException.class, () -> cardSecurityServices.loadUserByUsername("john"));
+        assertThrows(UsernameNotFoundException.class, () -> customerServices.loadUserByUsername("john"));
     }
 
 
     @Test
     void filterByUserNameFound() {
-        CardSecurity cardSecurity = new CardSecurity();
-        cardSecurity.setCustomerName("prasha02");
-        cardSecurity.setCustomerAddress("karkala");
-        cardSecurity.setCustomerStatus("active");
-        cardSecurity.setCustomerContact(1234567890L);
-        cardSecurity.setUsername("john");
-        cardSecurity.setPassword("prash321");
-        cardSecurity.setAttempts(1);
-        CardSecurity cardSecurityTwo = new CardSecurity();
-        cardSecurityTwo.setCustomerName("prasha02");
-        cardSecurityTwo.setCustomerAddress("karkala");
-        cardSecurityTwo.setCustomerStatus("active");
-        cardSecurityTwo.setCustomerContact(1234567890L);
-        cardSecurityTwo.setUsername("prash");
-        cardSecurityTwo.setPassword("prash321");
-        cardSecurityTwo.setAttempts(1);
-        List<CardSecurity> customerList = Arrays.asList(
-              cardSecurity,cardSecurityTwo
+        Customer customer = new Customer();
+        customer.setCustomerName("prasha02");
+        customer.setCustomerAddress("karkala");
+        customer.setCustomerStatus("active");
+        customer.setCustomerContact(1234567890L);
+        customer.setUsername("john");
+        customer.setPassword("prash321");
+        customer.setAttempts(1);
+        Customer customerTwo = new Customer();
+        customerTwo.setCustomerName("prasha02");
+        customerTwo.setCustomerAddress("karkala");
+        customerTwo.setCustomerStatus("active");
+        customerTwo.setCustomerContact(1234567890L);
+        customerTwo.setUsername("prash");
+        customerTwo.setPassword("prash321");
+        customerTwo.setAttempts(1);
+        List<Customer> customerList = Arrays.asList(
+                customer, customerTwo
         );
 
-        CardSecurity result = cardSecurityServices.filterByUserName(customerList, "john");
+        Customer result = customerServices.filterByUserName(customerList, "john");
 
         assertEquals(customerList.get(0), result);
     }
 
     @Test
     void filterByUserNameNotFound() {
-        CardSecurity cardSecurity = new CardSecurity();
-        cardSecurity.setCustomerName("prasha02");
-        cardSecurity.setCustomerAddress("karkala");
-        cardSecurity.setCustomerStatus("active");
-        cardSecurity.setCustomerContact(1234567890L);
-        cardSecurity.setUsername("john");
-        cardSecurity.setPassword("prash321");
-        cardSecurity.setAttempts(1);
-        CardSecurity cardSecurityTwo = new CardSecurity();
-        cardSecurityTwo.setCustomerName("prasha02");
-        cardSecurityTwo.setCustomerAddress("karkala");
-        cardSecurityTwo.setCustomerStatus("active");
-        cardSecurityTwo.setCustomerContact(1234567890L);
-        cardSecurityTwo.setUsername("prash");
-        cardSecurityTwo.setPassword("prash321");
-        List<CardSecurity> customerList = Arrays.asList(
-              cardSecurity,cardSecurityTwo
+        Customer customer = new Customer();
+        customer.setCustomerName("prasha02");
+        customer.setCustomerAddress("karkala");
+        customer.setCustomerStatus("active");
+        customer.setCustomerContact(1234567890L);
+        customer.setUsername("john");
+        customer.setPassword("prash321");
+        customer.setAttempts(1);
+        Customer customerTwo = new Customer();
+        customerTwo.setCustomerName("prasha02");
+        customerTwo.setCustomerAddress("karkala");
+        customerTwo.setCustomerStatus("active");
+        customerTwo.setCustomerContact(1234567890L);
+        customerTwo.setUsername("prash");
+        customerTwo.setPassword("prash321");
+        List<Customer> customerList = Arrays.asList(
+                customer, customerTwo
         );
 
-        CardSecurity result = cardSecurityServices.filterByUserName(customerList, "john");
+        Customer result = customerServices.filterByUserName(customerList, "john");
 
         assertNotNull(result);
     }
@@ -242,7 +239,7 @@ class CardSecurityServicesTest {
 
     public void testPasswordMatch() {
 
-        CardSecurityServices myBankUsersServices = mock(CardSecurityServices.class);
+        CustomerServices myBankUsersServices = mock(CustomerServices.class);
 
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -257,7 +254,7 @@ class CardSecurityServicesTest {
 
         // Configure mock behavior
 
-        CardSecurity customer = new CardSecurity();
+        Customer customer = new Customer();
 
         customer.setUsername(username);
 

@@ -1,7 +1,7 @@
 package debit.cards.web.mybankdebitcard.security;
 
-import debit.cards.dao.security.CardSecurity;
-import debit.cards.dao.security.CardSecurityServices;
+import debit.cards.dao.security.Customer;
+import debit.cards.dao.security.CustomerServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,19 +16,19 @@ import java.io.IOException;
 import java.util.ResourceBundle;
 
 @Component
-public class CardSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+public class CustomerSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Autowired
-    CardSecurityServices cardSecurityServices;
+    CustomerServices customerServices;
     private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("webservice");
-    Logger logger= LoggerFactory.getLogger(CardSuccessHandler.class);
+    Logger logger= LoggerFactory.getLogger(CustomerSuccessHandler.class);
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
-        CardSecurity cardSecurity= (CardSecurity) authentication.getPrincipal();
-        if(cardSecurity.getCustomerStatus().equals("active")  ){
-            if (cardSecurity.getAttempts() > 1) {
-                cardSecurity.setAttempts(1);
-                cardSecurityServices.updateAttempts(cardSecurity);
+        Customer customer= (Customer) authentication.getPrincipal();
+        if(customer.getCustomerStatus().equals("active")  ){
+            if (customer.getAttempts() > 1) {
+                customer.setAttempts(1);
+                customerServices.updateAttempts(customer);
             }
             else {
                 super.setDefaultTargetUrl("/card/dashboard");

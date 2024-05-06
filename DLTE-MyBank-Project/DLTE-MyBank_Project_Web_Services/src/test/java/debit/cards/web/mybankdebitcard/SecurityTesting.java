@@ -1,10 +1,11 @@
 package debit.cards.web.mybankdebitcard;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import debit.cards.dao.security.CardSecurity;
-import debit.cards.dao.security.CardSecurityServices;
-import debit.cards.web.mybankdebitcard.security.CardSecurityApi;
-import debit.cards.web.mybankdebitcard.security.CardSuccessHandler;
+
+import debit.cards.dao.security.Customer;
+import debit.cards.dao.security.CustomerServices;
+import debit.cards.web.mybankdebitcard.security.CustomerApi;
+import debit.cards.web.mybankdebitcard.security.CustomerSuccessHandler;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -14,7 +15,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
@@ -33,7 +33,7 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest(CardSecurityApi.class)
+@WebMvcTest(CustomerApi.class)
 @ExtendWith({SpringExtension.class, MockitoExtension.class})
 @AutoConfigureMockMvc
 public class SecurityTesting {
@@ -45,7 +45,7 @@ public class SecurityTesting {
     private ObjectMapper objectMapper;
 
     @MockBean
-    private CardSecurityServices cardSecurityServices;
+    private CustomerServices customerServices;
 
     @MockBean
     private PasswordEncoder passwordEncoder;
@@ -57,13 +57,13 @@ public class SecurityTesting {
     @Mock
     private Authentication authentication;
     @InjectMocks
-    private CardSuccessHandler cardSuccessHandler;
+    private CustomerSuccessHandler customerSuccessHandler;
 
     @Test
     @WithMockUser(username = "prasha02")
     public void testOnAuthenticationSuccess_InactiveCustomer() throws Exception {
         // Arrange
-        CardSecurity customer = new CardSecurity();
+        Customer customer = new Customer();
         customer.setCustomerStatus("block");
 
         // Mock authentication principal
@@ -86,7 +86,7 @@ public class SecurityTesting {
         });
 
         // Act
-        cardSuccessHandler.onAuthenticationSuccess(request, response, authentication);
+        customerSuccessHandler.onAuthenticationSuccess(request, response, authentication);
 
         // Assert
         Mockito.verify(response).encodeRedirectURL(expectedRedirectURL);
@@ -99,21 +99,21 @@ public class SecurityTesting {
     @WithMockUser(username = "prasha02")
     public void testRegister() throws Exception {
         // Mock the card security object
-        CardSecurity cardSecurity = new CardSecurity();
-        cardSecurity.setUsername("prasha02");
-        cardSecurity.setPassword("prash321"); // Plain text password
+        Customer customer = new Customer();
+        customer.setUsername("prasha02");
+        customer.setPassword("prash321"); // Plain text password
 
         // Mock the behavior of passwordEncoder
-        when(passwordEncoder.encode(cardSecurity.getPassword()))
+        when(passwordEncoder.encode(customer.getPassword()))
                 .thenReturn("$2a$10$scvXI.KiZPNROqCj4rE2pu2yMfVaX85/Sybh9HA1m/3V8D01UyS5K"); // Encoded password
 
-        // Mock the behavior of cardSecurityServices
-        when(cardSecurityServices.signingUp(Mockito.any(CardSecurity.class)))
-                .thenReturn(cardSecurity); // Mocking the registration response
+        // Mock the behavior of CustomerServices
+        when(customerServices.signingUp(Mockito.any(Customer.class)))
+                .thenReturn(customer); // Mocking the registration response
 
         // Perform the POST request to /profile/register
         mockMvc.perform(post("/profile/register")
-                .content(objectMapper.writeValueAsString(cardSecurity)))
+                .content(objectMapper.writeValueAsString(customer)))
                 .andExpect(status().isForbidden())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.username").value("prasha02"))

@@ -15,32 +15,32 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class CardSecurityServices implements UserDetailsService {
+public class CustomerServices implements UserDetailsService {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    Logger logger = LoggerFactory.getLogger(CardSecurityServices.class);
+    Logger logger = LoggerFactory.getLogger(CustomerServices.class);
 
-    public CardSecurity signingUp(CardSecurity cardSecurity){
-        jdbcTemplate.update("insert into mybank_app_customer (CUSTOMER_NAME, CUSTOMER_ADDRESS, CUSTOMER_STATUS, CUSTOMER_CONTACT, USERNAME, PASSWORD, ATTEMPTS) values(?,?,?,?,?,?,?)",new Object[]{cardSecurity.getCustomerName(),cardSecurity.getCustomerAddress(),cardSecurity.getCustomerStatus(),cardSecurity.getCustomerContact(),cardSecurity.getUsername(),cardSecurity.getPassword(), cardSecurity.getAttempts()});
+    public Customer signingUp(Customer customer){
+        jdbcTemplate.update("insert into mybank_app_customer (CUSTOMER_NAME, CUSTOMER_ADDRESS, CUSTOMER_STATUS, CUSTOMER_CONTACT, USERNAME, PASSWORD, ATTEMPTS) values(?,?,?,?,?,?,?)",new Object[]{customer.getCustomerName(), customer.getCustomerAddress(), customer.getCustomerStatus(), customer.getCustomerContact(), customer.getUsername(), customer.getPassword(), customer.getAttempts()});
 
-        return cardSecurity;
+        return customer;
     }
     //Listing the entire customer table details and performing the filter based on the username
-    public CardSecurity findByUserName(String username) {
-            List<CardSecurity> customerList = jdbcTemplate.query(
+    public Customer findByUserName(String username) {
+            List<Customer> customerList = jdbcTemplate.query(
                     "SELECT * FROM mybank_app_customer",
-                    new BeanPropertyRowMapper<>(CardSecurity.class));
+                    new BeanPropertyRowMapper<>(Customer.class));
             return filterByUserName(customerList,username);
         }
 
-    public void updateAttempts(CardSecurity cardSecurity){
-        jdbcTemplate.update("update mybank_app_customer set attempts = ? where username = ?",new Object[]{cardSecurity.getAttempts(),cardSecurity.getUsername()});
+    public void updateAttempts(Customer customer){
+        jdbcTemplate.update("update mybank_app_customer set attempts = ? where username = ?",new Object[]{customer.getAttempts(), customer.getUsername()});
         logger.info("Attempts are Updated");
     }
-    public void updateStatus(CardSecurity cardSecurity){
-        jdbcTemplate.update("update mybank_app_customer set customer_status = 'block' where username = ?",new Object[]{cardSecurity.getUsername()});
+    public void updateStatus(Customer customer){
+        jdbcTemplate.update("update mybank_app_customer set customer_status = 'block' where username = ?",new Object[]{customer.getUsername()});
         logger.info("Status has changed");
     }
    //For getting particular Account owner username
@@ -60,15 +60,15 @@ public class CardSecurityServices implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        CardSecurity cardSecurity = findByUserName(username);
-        if(cardSecurity==null)
+        Customer customer = findByUserName(username);
+        if(customer ==null)
             throw new UsernameNotFoundException(username);
-        return cardSecurity;
+        return customer;
     }
 
-    public CardSecurity filterByUserName( List<CardSecurity> customerList,String username){
+    public Customer filterByUserName(List<Customer> customerList, String username){
         // Filter the list based on the provided username
-        List<CardSecurity> filteredCustomers = customerList.stream()
+        List<Customer> filteredCustomers = customerList.stream()
                 .filter(customer -> customer.getUsername().equals(username))
                 .collect(Collectors.toList());
         if (!filteredCustomers.isEmpty()) {

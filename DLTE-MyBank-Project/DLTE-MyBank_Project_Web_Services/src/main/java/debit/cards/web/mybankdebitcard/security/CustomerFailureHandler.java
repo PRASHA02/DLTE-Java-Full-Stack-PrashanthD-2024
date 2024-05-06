@@ -1,7 +1,8 @@
 package debit.cards.web.mybankdebitcard.security;
 
-import debit.cards.dao.security.CardSecurity;
-import debit.cards.dao.security.CardSecurityServices;
+
+import debit.cards.dao.security.Customer;
+import debit.cards.dao.security.CustomerServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,13 @@ import java.io.IOException;
 import java.util.ResourceBundle;
 
 @Component
-public class CardFailureHandler extends SimpleUrlAuthenticationFailureHandler {
+public class CustomerFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
        private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("webservice");
         @Autowired
-        CardSecurityServices cardSecurityServices;
+        CustomerServices customerServices;
 
-        Logger logger= LoggerFactory.getLogger(CardFailureHandler.class);
+        Logger logger= LoggerFactory.getLogger(CustomerFailureHandler.class);
 
         @Override
         public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
@@ -33,21 +34,21 @@ public class CardFailureHandler extends SimpleUrlAuthenticationFailureHandler {
             try {
                 // Check if username is not null
                 if (username != null && !username.isEmpty()) {
-                    CardSecurity cardSecurity = cardSecurityServices.findByUserName(username);
+                    Customer customer = customerServices.findByUserName(username);
 
-                    if (cardSecurity != null) {
-                        if (!"block".equals(cardSecurity.getCustomerStatus())) {
-                            if (cardSecurity.getAttempts() < cardSecurity.getMaxAttempt()) {
-                                cardSecurity.setAttempts(cardSecurity.getAttempts() + 1);
-                                cardSecurityServices.updateAttempts(cardSecurity);
+                    if (customer != null) {
+                        if (!"block".equals(customer.getCustomerStatus())) {
+                            if (customer.getAttempts() < customer.getMaxAttempt()) {
+                                customer.setAttempts(customer.getAttempts() + 1);
+                                customerServices.updateAttempts(customer);
                                 logger.warn(resourceBundle.getString("invalid.attempts"));
                                 int leftAttempts = 4;
-                                exception = new LockedException(leftAttempts - cardSecurity.getAttempts() + " " + resourceBundle.getString("attempts.taken"));
-                                String error = cardSecurity.getAttempts() + " " + exception.getMessage();
+                                exception = new LockedException(leftAttempts - customer.getAttempts() + " " + resourceBundle.getString("attempts.taken"));
+                                String error = customer.getAttempts() + " " + exception.getMessage();
                                 logger.warn(error);
                                 setDefaultFailureUrl("/card/login/?error=" + exception.getMessage());
                             } else {
-                                cardSecurityServices.updateStatus(cardSecurity);
+                                customerServices.updateStatus(customer);
                                 logger.warn(resourceBundle.getString("account.suspend"));
                                 exception = new LockedException(resourceBundle.getString("account.suspend"));
                                 setDefaultFailureUrl("/card/login/?error=" + exception.getMessage());
