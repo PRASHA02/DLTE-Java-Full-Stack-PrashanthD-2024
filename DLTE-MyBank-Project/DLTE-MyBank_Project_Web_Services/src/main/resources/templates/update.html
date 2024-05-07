@@ -24,6 +24,10 @@
             background-color:  #182052;
             color: #f7f7f7;
         }
+        .grey-background {
+            background-color: darkgrey; /* Grey color */
+        }
+
     </style>
 </head>
 <div th:include="dashboard :: header"></div>
@@ -44,29 +48,29 @@
             <form name="Application">
                 <div class="row mb-3">
                     <div class="col-12 col-md-6 mb-3 mb-md-0">
-                        <label class="text-light" for="debitCardNumber">Debit card Number:</label>
-                        <input type="number" id="debitCardNumber" class="form-control" placeholder="Debit Card Number" readonly required/>
+                        <label class="text-light" for="debitCardNumber">Debit card Number: <span id="debitCardNumberError"></span></label>
+                        <input type="number" id="debitCardNumber" class="form-control bg-secondary text-white" placeholder="Debit Card Number" readonly required />
                     </div>
                     <div class="col-12 col-md-6">
-                        <label class="text-light" for="accountNumber">Account Number:</label>
-                        <input type="number" id="accountNumber" class="form-control" placeholder="Account Number" readonly required/>
+                        <label class="text-light" for="accountNumber">Account Number: <span id="accountNumberError"></span></label>
+                        <input type="number" id="accountNumber" class="form-control bg-secondary text-white" placeholder="Account Number" readonly required/>
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col-12 col-md-6 mb-3 mb-md-0">
                         <label class="card-text text-light" for="debitCardExpiry">Debit Card Expiry: <span id="debitCardExpiryError"></span></label>
-                        <input type="date" id="debitCardExpiry" class="form-control" placeholder="Card Expiry"  readonly required/>
+                        <input type="date" id="debitCardExpiry" class="form-control bg-secondary text-white" placeholder="Card Expiry"  readonly required/>
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="card-text text-light" for="debitCardStatus">Debit Card Status: <span id="debitCardStatusError"></span></label>
-                        <input type="text" id="debitCardStatus" class="form-control" placeholder="Card Status"  readonly required />
+                        <input type="text" id="debitCardStatus" class="form-control bg-secondary text-white" placeholder="Card Status"  readonly required />
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-12 col-md-6 mb-3 mb-md-0">
                         <label class="card-text text-light" for="domesticLimit">Domestic Limit: <span id="domesticLimitError"></span></label>
-                        <input type="number" id="domesticLimit" class="form-control" placeholder="Domestic Limit" required/>
+                        <input type="number" id="domesticLimit" class="form-control" placeholder="Domestic Limit"  required/>
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="card-text text-light" for="internationalLimit">International Limit: <span id="internationalLimitError"></span></label>

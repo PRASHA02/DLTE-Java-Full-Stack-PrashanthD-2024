@@ -46,7 +46,6 @@ public class UpdateCardLimit {
    @Operation(summary = "Updating the Debit Card Limit")
    @ApiResponses(value = {
            @ApiResponse(responseCode = "200", description = "Debit card limit updated successfully"),
-           @ApiResponse(responseCode = "200", description = "Debit card limit update failed"),
            @ApiResponse(responseCode = "500", description = "Internal server error")
    })
     @PutMapping("/limit")

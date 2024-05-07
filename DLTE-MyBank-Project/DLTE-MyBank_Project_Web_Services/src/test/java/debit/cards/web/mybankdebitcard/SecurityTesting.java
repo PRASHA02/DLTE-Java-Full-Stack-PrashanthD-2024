@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import debit.cards.dao.security.Customer;
 import debit.cards.dao.security.CustomerServices;
 import debit.cards.web.mybankdebitcard.security.CustomerApi;
+import debit.cards.web.mybankdebitcard.security.CustomerFailureHandler;
 import debit.cards.web.mybankdebitcard.security.CustomerSuccessHandler;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,14 +21,22 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -58,6 +67,8 @@ public class SecurityTesting {
     private Authentication authentication;
     @InjectMocks
     private CustomerSuccessHandler customerSuccessHandler;
+    @InjectMocks
+    private CustomerFailureHandler customerFailureHandler;
 
     @Test
     @WithMockUser(username = "prasha02")
@@ -114,6 +125,38 @@ public class SecurityTesting {
         verify(customerServices).signingUp(customer);
         assertEquals("prasha02", savedCustomer.getUsername());
         assertEquals("$2a$10$scvXI.KiZPNROqCj4rE2pu2yMfVaX85/Sybh9HA1m/3V8D01UyS5K", savedCustomer.getPassword());
+    }
+
+    @Test
+    public void testAuthenticationFailureAttemptsExceeded() throws IOException, ServletException {
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        MockHttpServletResponse response = new MockHttpServletResponse();
+        AuthenticationException exception = new BadCredentialsException("Invalid credentials");
+
+        String username = "testUser";
+        Customer customer = new Customer();
+        customer.setUsername(username);
+        customer.setCustomerStatus("active"); // Assuming status allows authentication
+        customer.setAttempts(3); // Assuming maximum attempts are 3
+        when(customerServices.findByUserName(username)).thenReturn(customer);
+
+        customerFailureHandler.onAuthenticationFailure(request, response, exception);
+
+        assertEquals("/card/login/?error=Username Not Found",response.getRedirectedUrl());
+    }
+
+    @Test
+    public void testAuthenticationFailureUserNotExists() throws IOException, ServletException {
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        MockHttpServletResponse response = new MockHttpServletResponse();
+        AuthenticationException exception = new UsernameNotFoundException("User not exists");
+
+        String username = "nonExistingUser";
+        when(customerServices.findByUserName(username)).thenReturn(null);
+
+        customerFailureHandler.onAuthenticationFailure(request, response, exception);
+
+        assertEquals("/card/login/?error=Username Not Found", response.getRedirectedUrl());
     }
 
 

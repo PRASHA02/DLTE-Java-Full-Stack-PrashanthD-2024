@@ -90,9 +90,8 @@ public class DebitCardPhase {
             serviceStatus.setMessage(resourceBundle.getString("sql.syntax.invalid"));
 
         }catch (DebitCardException e) {
-
             serviceStatus.setStatus(HttpServletResponse.SC_OK);
-            serviceStatus.setMessage(resourceBundle.getString("card.null.available"));
+            serviceStatus.setMessage(resourceBundle.getString("error.one")+resourceBundle.getString("card.null.available"));
         }
         viewDebitCardResponse.setServiceStatus(serviceStatus);
         return viewDebitCardResponse;

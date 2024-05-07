@@ -8,6 +8,8 @@ function updatePage() {
         $('#accountNumber').val(debitCardData.accountNumber);
         $('#debitCardExpiry').val(debitCardData.debitCardExpiry);
         $('#debitCardStatus').val(debitCardData.debitCardStatus);
+        $('#domesticLimit').val(debitCardData.domesticLimit);
+        $('#internationalLimit').val(debitCardData.internationalLimit)
     }
 
     updateForm();
@@ -58,7 +60,7 @@ function updatePage() {
 
     // Function to handle cancellation
     $("#cancel").click(function() {
-        window.history.back()
+        window.location.href = "/card/view";
     });
 
     // Function to handle redirect to home
@@ -73,6 +75,36 @@ $(document).ready(function() {
     updatePage();
 });
 
+
+
+// function validateLimit(input) {
+//     const defaultValue = 100; // Change this to your default value
+//
+//     // Add event listener for the blur event
+//     $(input).on('blur', function() {
+//         let enteredValue = parseInt($(this).val());
+//
+//         // Check if the entered value is smaller than the default value
+//         if (enteredValue < defaultValue) {
+//             // Reset the input field value to the default value
+//             $(this).val(defaultValue);
+//
+//             $('#notification').html(`
+//                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
+//                     The entered value is less than the default value. It has been reset to ${defaultValue}.
+//                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+//                         <span aria-hidden="true">&times;</span>
+//                     </button>
+//                 </div>
+//             `);
+//
+//             // Set a timer to hide the notification after 3 seconds
+//             setTimeout(function() {
+//                 $('.alert').alert('close');
+//             }, 2000);
+//         }
+//     });
+// }
 
 
 
@@ -97,6 +129,8 @@ const validateForm = () => {
 
     domLimitErr.innerHTML = "";
     intLimitErr.innerHTML = "";
+
+
 
     // Debit Card Number Validation
     try {

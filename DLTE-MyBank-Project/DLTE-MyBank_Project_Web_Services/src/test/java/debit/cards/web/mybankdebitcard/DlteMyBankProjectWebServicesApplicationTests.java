@@ -77,8 +77,9 @@ class DlteMyBankProjectWebServicesApplicationTests {
         ViewDebitCardRequest viewDebitCardRequest = new ViewDebitCardRequest();
         ServiceStatus expectedServiceStatus = new ServiceStatus();
         expectedServiceStatus.setStatus(HttpServletResponse.SC_OK);
+
         expectedServiceStatus.setMessage("Debit card information successfully fetched from the database.");
-        //This object is used for updating the limits
+
         DebitCard debitCard = new DebitCard();
         debitCard.setDebitCardNumber(1234567890981234L);
         debitCard.setAccountNumber(78903456789123L);
@@ -128,17 +129,16 @@ class DlteMyBankProjectWebServicesApplicationTests {
 
     @Test
     @WithMockUser(username = "prasha02")
-    public void testViewDebitCardResponse_DebitCardException() throws SQLException, DebitCardException {
-        // Mock authentication
+    public void testViewDebitCardException() throws SQLException, DebitCardException {
+
         when(debitCardRepository.getDebitCard("prasha02")).thenThrow(SQLException.class);
 
-        // Create a mock ViewDebitCardRequest
+
         ViewDebitCardRequest request = new ViewDebitCardRequest();
 
-        // Call the method under test
+
         ViewDebitCardResponse response = debitCardPhase.viewDebitCardResponse(request);
 
-        // Assertions
         assertEquals(HttpServletResponse.SC_OK, response.getServiceStatus().getStatus());
         assertEquals("SQL Syntax is Not proper try to resolve it", response.getServiceStatus().getMessage());
     }
@@ -149,15 +149,14 @@ class DlteMyBankProjectWebServicesApplicationTests {
     public void FetchAllDebitCardException() throws SQLException {
         ViewDebitCardRequest viewDebitCardRequest = new ViewDebitCardRequest();
 
-        // Mock the behavior of the debitCardRepository.getDebitCard() method to throw DebitCardException
+
         when(debitCardRepository.getDebitCard("prasha02")).thenThrow(DebitCardException.class);
 
-        // Execute the method under test
         ViewDebitCardResponse response = debitCardPhase.viewDebitCardResponse(viewDebitCardRequest);
 
 
         assertEquals(HttpServletResponse.SC_OK, response.getServiceStatus().getStatus());
-        assertEquals("No Debit cards available", response.getServiceStatus().getMessage());
+        assertEquals("EXC001 :No Debit cards available", response.getServiceStatus().getMessage());
     }
 
 

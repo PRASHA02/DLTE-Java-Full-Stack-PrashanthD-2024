@@ -12,14 +12,24 @@ function fetchDebitCard(page, pageSize) {
                     </soapenv:Body>
                 </soapenv:Envelope>`,
         success: function (response) {
+            var exceptionRegex = /EXC00\d\s*:/;
             $(response).find(`ns2\\:serviceStatus`).each(function () {
                 $('#cardContainer').empty(); // Clear existing cards
                 const debitCards = $(response).find('ns2\\:debitCard');
                 const totalDebitCards = debitCards.length;
 
+
+
+                if(exceptionRegex.test($(this).find('ns2\\:message').text())) {
+                    var errorMessage = $(this).find('ns2\\:message').text().replace(exceptionRegex, '').trim();
+                    $("#modalhead").text(`No cards available `);
+                    $("#message").text(errorMessage);
+                    $("#showmodal").modal("show");
+                }
+
                 if (totalDebitCards == 0) {
                     const errorMessage = $(this).text($(this).find("ns2\\:message").text())
-                    window.location.href = `error?message=${encodeURIComponent(errorMessage.toString())}`;
+                   // window.location.href = `error?message=${encodeURIComponent(errorMessage.toString())}`;
                     return;
                 }else {
                     const totalPages = Math.ceil(totalDebitCards / pageSize);
@@ -46,6 +56,8 @@ function fetchDebitCard(page, pageSize) {
                                     data-account-number="${accountNumber}"
                                    data-debit-card-expiry="${debitCardExpiry}"
                                    data-debit-card-status="${debitCardStatus}"
+                                   data-debit-card-domestic="${domesticLimit}"
+                                   data-debit-card-international="${internationalLimit}"
                                    onclick="sendData(this)">Update</button>` :
                             `<button class="btn btn-light mb-3 text-center" style="border-radius: 25px;width: 6rem" onclick="errorPage()">Update</button>`
                         }
@@ -62,7 +74,7 @@ function fetchDebitCard(page, pageSize) {
                     // Add page buttons
                     for (let i = 1; i <= totalPages; i++) {
                         $('#pagination').append(`
-                                    <li class=" justify-content-center page-item ${i === page ? 'active' : ''}">
+                                    <li class=" justify-content-center page-item ${i === page ? 'active' : ''}" style="color: #182052">
                                         <a class="page-link" href="#" onclick="fetchDebitCard(${i}, ${pageSize})">${i}</a>
                                     </li>
                                 `);
@@ -90,6 +102,9 @@ function sendData(button) {
     const accountNumber = button.getAttribute('data-account-number');
     const debitCardExpiry = button.getAttribute('data-debit-card-expiry');
     const debitCardStatus = button.getAttribute('data-debit-card-status');
+    const domesticLimit = button.getAttribute('data-debit-card-domestic');
+    const internationalLimit = button.getAttribute('data-debit-card-international');
+
 
     // Store form data in session storage
     const debitCardData = {
@@ -97,6 +112,8 @@ function sendData(button) {
         accountNumber: accountNumber,
         debitCardExpiry: debitCardExpiry,
         debitCardStatus: debitCardStatus,
+        domesticLimit: domesticLimit,
+        internationalLimit: internationalLimit
     };
 
     sessionStorage.setItem('debitCardData', JSON.stringify(debitCardData));
@@ -105,8 +122,8 @@ function sendData(button) {
     window.location.href = '../card/update';
 }
 function errorPage(){
-    const errorMessage = "Failed to update the Card";
-    window.location.href = `error?message=${encodeURIComponent(errorMessage)}`;
+    const errorMessage = "Failed to update the Card,status must be active";
+    window.location.href = `error?code=200&message=${encodeURIComponent(errorMessage)}`;
 
 }
 
