@@ -38,11 +38,6 @@ public class MvcController {
         return "dashboard";
     }
 
-    @RequestMapping(value = "/account",method = RequestMethod.GET)
-    public String accountView() {
-        return "account";
-    }
-
     @RequestMapping(value = "/view",method = RequestMethod.GET)
     public String debitCardDetails(){
         return "view";

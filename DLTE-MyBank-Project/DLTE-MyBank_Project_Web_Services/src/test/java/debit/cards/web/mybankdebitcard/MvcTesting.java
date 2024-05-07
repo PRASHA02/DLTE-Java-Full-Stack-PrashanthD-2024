@@ -68,12 +68,6 @@ public class MvcTesting {
         assertEquals("dashboard", dashboardName);
     }
 
-    @Test
-    @WithMockUser(username = "prasha02")
-    public void testAccountView() {
-        String viewName = mvcController.accountView();
-        assertEquals("account", viewName);
-    }
 
     @Test
     @WithMockUser(username = "prasha02")

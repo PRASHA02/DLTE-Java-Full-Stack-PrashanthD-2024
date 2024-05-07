@@ -58,8 +58,7 @@ function updatePage() {
 
     // Function to handle cancellation
     $("#cancel").click(function() {
-        $("#domesticLimit").val("");
-        $("#internationalLimit").val("");
+        window.history.back()
     });
 
     // Function to handle redirect to home
@@ -80,6 +79,7 @@ $(document).ready(function() {
 const validateForm = () => {
     var isValid = true;
 
+
     var form = document.forms['Application'];
     const cardNum = form.debitCardNumber.value;
     const accountNum = form.accountNumber.value;
@@ -95,11 +95,6 @@ const validateForm = () => {
     var domLimitErr = document.getElementById("domesticLimitError");
     var intLimitErr = document.getElementById("internationalLimitError");
 
-    // Clear previous error messages
-    cardNumErr.innerHTML = "";
-    accountNumErr.innerHTML = "";
-    expiryErr.innerHTML = "";
-    statusErr.innerHTML = "";
     domLimitErr.innerHTML = "";
     intLimitErr.innerHTML = "";
 

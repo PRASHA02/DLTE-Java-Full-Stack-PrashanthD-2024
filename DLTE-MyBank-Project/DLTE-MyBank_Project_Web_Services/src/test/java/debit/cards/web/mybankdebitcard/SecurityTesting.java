@@ -116,4 +116,6 @@ public class SecurityTesting {
         assertEquals("$2a$10$scvXI.KiZPNROqCj4rE2pu2yMfVaX85/Sybh9HA1m/3V8D01UyS5K", savedCustomer.getPassword());
     }
 
+
+
 }
