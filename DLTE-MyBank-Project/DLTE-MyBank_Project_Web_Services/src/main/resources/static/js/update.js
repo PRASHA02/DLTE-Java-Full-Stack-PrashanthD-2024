@@ -60,13 +60,17 @@ function updatePage() {
 
     // Function to handle cancellation
     $("#cancel").click(function() {
-        window.location.href = "/card/view";
+        var domLimitErr = document.getElementById("domesticLimitError");
+        var intLimitErr = document.getElementById("internationalLimitError");
+
+        domLimitErr.innerHTML = "";
+        intLimitErr.innerHTML = "";
     });
 
     // Function to handle redirect to home
     $("#backHome").click(function() {
         // Redirect to the home page
-        window.location.href = "/card/dashboard";
+        window.location.href = "../card/dashboard";
     });
 }
 
@@ -75,36 +79,6 @@ $(document).ready(function() {
     updatePage();
 });
 
-
-
-// function validateLimit(input) {
-//     const defaultValue = 100; // Change this to your default value
-//
-//     // Add event listener for the blur event
-//     $(input).on('blur', function() {
-//         let enteredValue = parseInt($(this).val());
-//
-//         // Check if the entered value is smaller than the default value
-//         if (enteredValue < defaultValue) {
-//             // Reset the input field value to the default value
-//             $(this).val(defaultValue);
-//
-//             $('#notification').html(`
-//                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-//                     The entered value is less than the default value. It has been reset to ${defaultValue}.
-//                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-//                         <span aria-hidden="true">&times;</span>
-//                     </button>
-//                 </div>
-//             `);
-//
-//             // Set a timer to hide the notification after 3 seconds
-//             setTimeout(function() {
-//                 $('.alert').alert('close');
-//             }, 2000);
-//         }
-//     });
-// }
 
 
 

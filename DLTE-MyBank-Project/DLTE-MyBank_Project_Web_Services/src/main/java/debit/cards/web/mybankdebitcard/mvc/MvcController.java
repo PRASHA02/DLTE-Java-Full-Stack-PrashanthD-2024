@@ -48,18 +48,6 @@ public class MvcController {
         return "update";
     }
 
-//    @GetMapping("/update")
-//    public String updateCardLimit(@RequestParam Long accountNumber,Model model){
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        String username = authentication.getName();
-//        List<DebitCard> debitCard = debitCardRepository.getDebitCard(username);
-//        List<DebitCard> filteredCardDetails = debitCard.stream()
-//                .filter(accountNum -> accountNum.getAccountNumber().equals(accountNumber))
-//                .collect(Collectors.toList());
-//        model.addAttribute("sendCardDetails",filteredCardDetails.get(0));
-//        return "update";
-//    }
-
     @GetMapping("/error")
     public String error(){
         return "error";
@@ -73,6 +61,7 @@ public class MvcController {
         Customer customer = customerServices.findByUserName(name);
         return customer.getCustomerName();
     }
+
 
 
 

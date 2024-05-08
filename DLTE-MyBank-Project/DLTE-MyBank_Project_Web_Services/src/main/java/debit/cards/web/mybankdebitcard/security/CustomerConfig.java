@@ -58,6 +58,8 @@ public class CustomerConfig {
                 successHandler(customerSuccessHandler);
         httpSecurity.csrf().disable();
 
+        httpSecurity.authorizeRequests().antMatchers("http://localhost:8082/english?lang=en").permitAll();
+
         httpSecurity.cors();
         httpSecurity.authorizeRequests().antMatchers("/card/login/**").permitAll();
 

@@ -22,7 +22,7 @@ function fetchDebitCard(page, pageSize) {
 
                 if(exceptionRegex.test($(this).find('ns2\\:message').text())) {
                     var errorMessage = $(this).find('ns2\\:message').text().replace(exceptionRegex, '').trim();
-                    $("#modalhead").text(`No cards available `);
+                    $("#modalhead").text(errorMessage.toString());
                     $("#message").text(errorMessage);
                     $("#showmodal").modal("show");
                 }
