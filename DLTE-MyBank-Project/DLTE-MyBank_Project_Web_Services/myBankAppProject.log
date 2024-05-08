@@ -6339,4 +6339,8 @@
 [0;39m[31m2024-05-08 11:36:25,770[0;39m [32m[INFO][0;39m org.springframework.ws.transport.http.MessageDispatcherServlet http-nio-8082-exec-4 [32mCompleted initialization in 31 ms
 [0;39m[31m2024-05-08 11:36:26,089[0;39m [32m[INFO][0;39m debit.cards.dao.services.DebitCardServices http-nio-8082-exec-4 [32mDebit card information successfully fetched from the database.
 [0;39m[31m2024-05-08 11:36:26,089[0;39m [32m[WARN][0;39m debit.cards.dao.services.DebitCardServices http-nio-8082-exec-4 [32mNo Debit cards available
+[0;39m[31m2024-05-08 12:01:39,497[0;39m [32m[WARN][0;39m com.zaxxer.hikari.pool.HikariPool HikariPool-1 housekeeper [32mHikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s271ms391µs400ns).
+[0;39m[31m2024-05-08 15:37:14,061[0;39m [32m[WARN][0;39m com.zaxxer.hikari.pool.HikariPool HikariPool-1 housekeeper [32mHikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h37m14s495ms260µs600ns).
+[0;39m[31m2024-05-08 17:22:30,042[0;39m [32m[WARN][0;39m com.zaxxer.hikari.pool.HikariPool HikariPool-1 housekeeper [32mHikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m40s306ms670µs200ns).
+[0;39m[31m2024-05-08 17:56:27,011[0;39m [32m[WARN][0;39m com.zaxxer.hikari.pool.HikariPool HikariPool-1 housekeeper [32mHikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m25s952ms41µs800ns).
 [0;39m
